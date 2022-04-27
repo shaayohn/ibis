@@ -1122,11 +1122,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#breaking-changes" class="md-nav__link">
-    Breaking Changes
+  <a href="#other-changes" class="md-nav__link">
+    Other Changes
   </a>
   
-    <nav class="md-nav" aria-label="Breaking Changes">
+    <nav class="md-nav" aria-label="Other Changes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1137,8 +1137,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#removal-of-materialize" class="md-nav__link">
-    Removal of .materialize()
+  <a href="#deprecation-of-materialize" class="md-nav__link">
+    Deprecation of .materialize()
   </a>
   
 </li>
@@ -1780,11 +1780,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#breaking-changes" class="md-nav__link">
-    Breaking Changes
+  <a href="#other-changes" class="md-nav__link">
+    Other Changes
   </a>
   
-    <nav class="md-nav" aria-label="Breaking Changes">
+    <nav class="md-nav" aria-label="Other Changes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1795,8 +1795,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#removal-of-materialize" class="md-nav__link">
-    Removal of .materialize()
+  <a href="#deprecation-of-materialize" class="md-nav__link">
+    Deprecation of .materialize()
   </a>
   
 </li>
@@ -1889,18 +1889,17 @@ Some of the related operations that have been implemented are:</p>
 <h3 id="pretty-print-tables-in-ipython-notebooks">Pretty print tables in ipython notebooks<a class="headerlink" href="#pretty-print-tables-in-ipython-notebooks" title="Anchor link to this section for reference">&para;</a></h3>
 <p>For users that use jupyter notebooks, <code>repr_html</code> has been added for expressions to enable pretty printing tables in the notebook. This is currently only available for interactive mode (currently delegating to pandas implementation) and should help notebooks become more readable. An example of what this looks like can be seen below.</p>
 <p><img alt="pretty print repr" src="../repr.png" /></p>
-<h2 id="breaking-changes">Breaking Changes<a class="headerlink" href="#breaking-changes" title="Anchor link to this section for reference">&para;</a></h2>
-<p>3.0.0 is a major release and according to the project's use of semantic versioning, breaking changes are on the table. The full list of these changes can be found <a href="https://ibis-project.org/docs/dev/release_notes/">here</a>.</p>
+<h2 id="other-changes">Other Changes<a class="headerlink" href="#other-changes" title="Anchor link to this section for reference">&para;</a></h2>
+<p>3.0.0 is a major release and according to the project's use of semantic versioning, breaking changes are on the table. The full list of these changes can be found <a href="https://ibis-project.org/docs/dev/release_notes/">here</a>. Some of the important changes include:</p>
 <ol>
 <li>Python 3.8 is now the minimum supported version</li>
-<li>Removal of <code>.materialize()</code></li>
+<li>Deprecation of <code>.materialize()</code></li>
 </ol>
 <p>Refer to the sections below for more detail on these changes.</p>
 <h3 id="the-minimum-supported-python-version-is-now-python-38">The minimum supported Python version is now Python 3.8<a class="headerlink" href="#the-minimum-supported-python-version-is-now-python-38" title="Anchor link to this section for reference">&para;</a></h3>
 <p>Ibis currently follows <a href="https://numpy.org/neps/nep-0029-deprecation_policy.html">NEP 29</a>, a community policy standard that recommends Python and Numpy versions to support. NEP 29 suggests that all projects across the Scientific Python ecosystem adopt a common “time window-based” policy for support of Python and NumPy versions. Standardizing a recommendation for project support of minimum Python and NumPy versions will improve downstream project planning. As part of the 3.0.0 release, support for Python 3.7 has been dropped and the project has now adopted support for version 3.8 and higher.</p>
-<h3 id="removal-of-materialize">Removal of .materialize()<a class="headerlink" href="#removal-of-materialize" title="Anchor link to this section for reference">&para;</a></h3>
-<p>This release sees the removal of the <code>.materialize()</code> method from TableExpr. In the past, the materialize method has caused a lot of confusion. Doing simple things like <code>t.join(s, t.foo == s.foo).select(["unambiguous_column"])</code> raised an exception because of it. It turns out that .materialize() isn't necessary and therefore has been removed. This is a breaking change for some code that uses materialize. The materialize method still exists, but is now a pass-through and triggers a warning.</p>
-<p>There are also some breaking changes introduced here in the case of overlapping column names. If there are any overlapping column names, a suffix will be attached to both the left and right tables. So, in the case of <code>s.asof_join(t, "time")</code> the resulting schema will have both a <code>time_x</code> and a <code>time_y</code> column.</p>
+<h3 id="deprecation-of-materialize">Deprecation of .materialize()<a class="headerlink" href="#deprecation-of-materialize" title="Anchor link to this section for reference">&para;</a></h3>
+<p>This release sees the deprecation of the <code>.materialize()</code> method from TableExpr. In the past, the materialize method has caused a lot of confusion. Doing simple things like <code>t.join(s, t.foo == s.foo).select(["unambiguous_column"])</code> raised an exception because of it. It turns out that .materialize() isn't necessary. The materialize method still exists, but is now a no-op and doesn't need to be used.</p>
 <h2 id="performance-improvements">Performance Improvements<a class="headerlink" href="#performance-improvements" title="Anchor link to this section for reference">&para;</a></h2>
 <p>The following changes to the Ibis codebase have resulted in performance improvements.</p>
 <ol>
@@ -1915,6 +1914,17 @@ Some of the related operations that have been implemented are:</p>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Anchor link to this section for reference">&para;</a></h2>
 <p>In summary, the 3.0.0 release includes a number of new features including the ability to query an Ibis table using inline SQL, a DuckDB backend, a backend support matrix tool, support for arrays and tuples, suffixes in joins, timestamps from component fields and prettier tables in ipython. Some breaking changes to take note of are the removal of .materialize() and the switch to Python 3.8 as the minimum supported version. A wide range of changes to the code has also led to significant speed ups in 3.0.0 as well.</p>
 <p>Ibis is a community led, open source project. If you’d like to contribute to the project check out the contribution guide <a href="https://ibis-project.org/docs/dev/contribute/01_environment/">here</a>. If you run into a problem and would like to submit an issue you can do so through Ibis’ <a href="https://github.com/ibis-project/ibis">Github repository</a>. Finally, Ibis relies on community support to grow and to become successful! You can help promote Ibis by following and sharing the project on <a href="https://twitter.com/IbisData">Twitter</a>, <a href="https://github.com/ibis-project/ibis">starring the repo</a> or <a href="https://ibis-project.org/docs/dev/">contributing</a> to the code. Ibis continues to improve with every release. Keep an eye on the blog for updates on the next one!</p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 26, 2022</span>
+      
+    
+  </small>
+</div>
 
               
 
