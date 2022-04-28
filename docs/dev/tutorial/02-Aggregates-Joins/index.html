@@ -2802,133 +2802,119 @@ countries['name', 'continent', 'area_km2', 'population']</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NoSuchTableError</span>                          Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [2]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 9&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      6</span> ibis<span style="color: rgb(98,98,98)">.</span>options<span style="color: rgb(98,98,98)">.</span>interactive <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">True</span>
-<span class="ansi-green-intense-fg ansi-bold">      8</span> connection <span style="color: rgb(98,98,98)">=</span> ibis<span style="color: rgb(98,98,98)">.</span>sqlite<span style="color: rgb(98,98,98)">.</span>connect(os<span style="color: rgb(98,98,98)">.</span>path<span style="color: rgb(98,98,98)">.</span>join(tempfile<span style="color: rgb(98,98,98)">.</span>gettempdir(), <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">geography.db</span><span style="color: rgb(175,0,0)">&#39;</span>))
-<span class="ansi-green-fg">----&gt; 9</span> countries <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">connection</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">table</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">countries</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span> countries[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">name</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">continent</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">area_km2</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">population</span><span style="color: rgb(175,0,0)">&#39;</span>]
 
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/sqlite/__init__.py:122</span>, in <span class="ansi-cyan-fg">Backend.table</span><span class="ansi-blue-fg">(self, name, database)</span>
-<span class="ansi-green-intense-fg ansi-bold">    107</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">table</span>(<span style="color: rgb(0,135,0)">self</span>, name: <span style="color: rgb(0,135,0)">str</span>, database: <span style="color: rgb(0,135,0)">str</span> <span style="color: rgb(98,98,98)">|</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> ir<span style="color: rgb(98,98,98)">.</span>TableExpr:
-<span class="ansi-green-intense-fg ansi-bold">    108</span>     <span style="color: rgb(175,0,0)">&#34;&#34;&#34;Create a table expression from a table in the SQLite database.</span>
-<span class="ansi-green-intense-fg ansi-bold">    109</span> 
-<span class="ansi-green-intense-fg ansi-bold">    110</span> <span style="color: rgb(175,0,0)">    Parameters</span>
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    120</span> <span style="color: rgb(175,0,0)">        Table expression</span>
-<span class="ansi-green-intense-fg ansi-bold">    121</span> <span style="color: rgb(175,0,0)">    &#34;&#34;&#34;</span>
-<span class="ansi-green-fg">--&gt; 122</span>     alch_table <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_get_sqla_table</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">name</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">schema</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">database</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    123</span>     node <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>table_class(source<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(0,135,0)">self</span>, sqla_table<span style="color: rgb(98,98,98)">=</span>alch_table)
-<span class="ansi-green-intense-fg ansi-bold">    124</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>table_expr_class(node)
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/sqlite/__init__.py:100</span>, in <span class="ansi-cyan-fg">Backend._get_sqla_table</span><span class="ansi-blue-fg">(self, name, schema, autoload)</span>
-<span class="ansi-green-intense-fg ansi-bold">     99</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">_get_sqla_table</span>(<span style="color: rgb(0,135,0)">self</span>, name, schema<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">None</span>, autoload<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">True</span>):
-<span class="ansi-green-fg">--&gt; 100</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">sa</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">Table</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-intense-fg ansi-bold">    101</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">name</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    102</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">meta</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    103</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">schema</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">schema</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(175,0,255)">or</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">current_database</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    104</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">autoload</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">autoload</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    105</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-File <span class="ansi-green-fg">&lt;string&gt;:2</span>, in <span class="ansi-cyan-fg">__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
-
-File <span class="ansi-green-fg">/nix/store/wcmj4j7bqxzvn3zm06smdjc5715qpg5w-python3-3.10.4-env/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py:309</span>, in <span class="ansi-cyan-fg">deprecated_params.&lt;locals&gt;.decorate.&lt;locals&gt;.warned</span><span class="ansi-blue-fg">(fn, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    302</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> m <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> kwargs:
-<span class="ansi-green-intense-fg ansi-bold">    303</span>         _warn_with_version(
-<span class="ansi-green-intense-fg ansi-bold">    304</span>             messages[m],
-<span class="ansi-green-intense-fg ansi-bold">    305</span>             versions[m],
-<span class="ansi-green-intense-fg ansi-bold">    306</span>             version_warnings[m],
-<span class="ansi-green-intense-fg ansi-bold">    307</span>             stacklevel<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">3</span>,
-<span class="ansi-green-intense-fg ansi-bold">    308</span>         )
-<span class="ansi-green-fg">--&gt; 309</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">fn</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
-
-File <span class="ansi-green-fg">/nix/store/wcmj4j7bqxzvn3zm06smdjc5715qpg5w-python3-3.10.4-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:615</span>, in <span class="ansi-cyan-fg">Table.__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
-<span class="ansi-green-intense-fg ansi-bold">    613</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> table
-<span class="ansi-green-intense-fg ansi-bold">    614</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> <span class="ansi-bold" style="color: rgb(215,95,95)">Exception</span>:
-<span class="ansi-green-fg">--&gt; 615</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> util<span style="color: rgb(98,98,98)">.</span>safe_reraise():
-<span class="ansi-green-intense-fg ansi-bold">    616</span>         metadata<span style="color: rgb(98,98,98)">.</span>_remove_table(name, schema)
-
-File <span class="ansi-green-fg">/nix/store/wcmj4j7bqxzvn3zm06smdjc5715qpg5w-python3-3.10.4-env/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py:70</span>, in <span class="ansi-cyan-fg">safe_reraise.__exit__</span><span class="ansi-blue-fg">(self, type_, value, traceback)</span>
-<span class="ansi-green-intense-fg ansi-bold">     68</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_exc_info <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>  <span style="color: rgb(95,135,135)"># remove potential circular references</span>
-<span class="ansi-green-intense-fg ansi-bold">     69</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>warn_only:
-<span class="ansi-green-fg">---&gt; 70</span>         <span class="ansi-yellow-bg">compat</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">raise_</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-intense-fg ansi-bold">     71</span> <span class="ansi-yellow-bg">            </span><span class="ansi-yellow-bg">exc_value</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">     72</span> <span class="ansi-yellow-bg">            </span><span class="ansi-yellow-bg">with_traceback</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">exc_tb</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">     73</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     74</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
-<span class="ansi-green-intense-fg ansi-bold">     75</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> compat<span style="color: rgb(98,98,98)">.</span>py3k <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_exc_info <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_exc_info[<span style="color: rgb(98,98,98)">1</span>]:
-<span class="ansi-green-intense-fg ansi-bold">     76</span>         <span style="color: rgb(95,135,135)"># emulate Py3K&#39;s behavior of telling us when an exception</span>
-<span class="ansi-green-intense-fg ansi-bold">     77</span>         <span style="color: rgb(95,135,135)"># occurs in an exception handler.</span>
-
-File <span class="ansi-green-fg">/nix/store/wcmj4j7bqxzvn3zm06smdjc5715qpg5w-python3-3.10.4-env/lib/python3.10/site-packages/sqlalchemy/util/compat.py:207</span>, in <span class="ansi-cyan-fg">raise_</span><span class="ansi-blue-fg">(***failed resolving arguments***)</span>
-<span class="ansi-green-intense-fg ansi-bold">    204</span>     exception<span style="color: rgb(98,98,98)">.</span>__cause__ <span style="color: rgb(98,98,98)">=</span> replace_context
-<span class="ansi-green-intense-fg ansi-bold">    206</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
-<span class="ansi-green-fg">--&gt; 207</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> exception
-<span class="ansi-green-intense-fg ansi-bold">    208</span> <span class="ansi-bold" style="color: rgb(0,135,0)">finally</span>:
-<span class="ansi-green-intense-fg ansi-bold">    209</span>     <span style="color: rgb(95,135,135)"># credit to</span>
-<span class="ansi-green-intense-fg ansi-bold">    210</span>     <span style="color: rgb(95,135,135)"># https://cosmicpercolator.com/2016/01/13/exception-leaks-in-python-2-and-3/</span>
-<span class="ansi-green-intense-fg ansi-bold">    211</span>     <span style="color: rgb(95,135,135)"># as the __traceback__ object creates a cycle</span>
-<span class="ansi-green-intense-fg ansi-bold">    212</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">del</span> exception, replace_context, from_, with_traceback
-
-File <span class="ansi-green-fg">/nix/store/wcmj4j7bqxzvn3zm06smdjc5715qpg5w-python3-3.10.4-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:611</span>, in <span class="ansi-cyan-fg">Table.__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
-<span class="ansi-green-intense-fg ansi-bold">    609</span> metadata<span style="color: rgb(98,98,98)">.</span>_add_table(name, schema, table)
-<span class="ansi-green-intense-fg ansi-bold">    610</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
-<span class="ansi-green-fg">--&gt; 611</span>     <span class="ansi-yellow-bg">table</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_init</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">name</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">metadata</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kw</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    612</span>     table<span style="color: rgb(98,98,98)">.</span>dispatch<span style="color: rgb(98,98,98)">.</span>after_parent_attach(table, metadata)
-<span class="ansi-green-intense-fg ansi-bold">    613</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> table
-
-File <span class="ansi-green-fg">/nix/store/wcmj4j7bqxzvn3zm06smdjc5715qpg5w-python3-3.10.4-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:686</span>, in <span class="ansi-cyan-fg">Table._init</span><span class="ansi-blue-fg">(self, name, metadata, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    682</span> <span style="color: rgb(95,135,135)"># load column definitions from the database if &#39;autoload&#39; is defined</span>
-<span class="ansi-green-intense-fg ansi-bold">    683</span> <span style="color: rgb(95,135,135)"># we do it after the table is in the singleton dictionary to support</span>
-<span class="ansi-green-intense-fg ansi-bold">    684</span> <span style="color: rgb(95,135,135)"># circular foreign keys</span>
-<span class="ansi-green-intense-fg ansi-bold">    685</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> autoload:
-<span class="ansi-green-fg">--&gt; 686</span>     <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_autoload</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-intense-fg ansi-bold">    687</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">metadata</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    688</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">autoload_with</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    689</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">include_columns</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    690</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">_extend_on</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">_extend_on</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    691</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">resolve_fks</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">resolve_fks</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    692</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    694</span> <span style="color: rgb(95,135,135)"># initialize all the column, etc. objects.  done after reflection to</span>
-<span class="ansi-green-intense-fg ansi-bold">    695</span> <span style="color: rgb(95,135,135)"># allow user-overrides</span>
-<span class="ansi-green-intense-fg ansi-bold">    697</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_init_items(
-<span class="ansi-green-intense-fg ansi-bold">    698</span>     <span style="color: rgb(98,98,98)">*</span>args,
-<span class="ansi-green-intense-fg ansi-bold">    699</span>     allow_replacements<span style="color: rgb(98,98,98)">=</span>extend_existing <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> keep_existing <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> autoload
-<span class="ansi-green-intense-fg ansi-bold">    700</span> )
-
-File <span class="ansi-green-fg">/nix/store/wcmj4j7bqxzvn3zm06smdjc5715qpg5w-python3-3.10.4-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:721</span>, in <span class="ansi-cyan-fg">Table._autoload</span><span class="ansi-blue-fg">(self, metadata, autoload_with, include_columns, exclude_columns, resolve_fks, _extend_on)</span>
-<span class="ansi-green-intense-fg ansi-bold">    719</span> insp <span style="color: rgb(98,98,98)">=</span> inspection<span style="color: rgb(98,98,98)">.</span>inspect(autoload_with)
-<span class="ansi-green-intense-fg ansi-bold">    720</span> <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> insp<span style="color: rgb(98,98,98)">.</span>_inspection_context() <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> conn_insp:
-<span class="ansi-green-fg">--&gt; 721</span>     <span class="ansi-yellow-bg">conn_insp</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">reflect_table</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-intense-fg ansi-bold">    722</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    723</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">include_columns</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    724</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">exclude_columns</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    725</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">resolve_fks</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    726</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">_extend_on</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">_extend_on</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    727</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
-
-File <span class="ansi-green-fg">/nix/store/wcmj4j7bqxzvn3zm06smdjc5715qpg5w-python3-3.10.4-env/lib/python3.10/site-packages/sqlalchemy/engine/reflection.py:789</span>, in <span class="ansi-cyan-fg">Inspector.reflect_table</span><span class="ansi-blue-fg">(self, table, include_columns, exclude_columns, resolve_fks, _extend_on)</span>
-<span class="ansi-green-intense-fg ansi-bold">    787</span> <span style="color: rgb(95,135,135)"># NOTE: support tables/views with no columns</span>
-<span class="ansi-green-intense-fg ansi-bold">    788</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> found_table <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>has_table(table_name, schema):
-<span class="ansi-green-fg">--&gt; 789</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> exc<span style="color: rgb(98,98,98)">.</span>NoSuchTableError(table_name)
-<span class="ansi-green-intense-fg ansi-bold">    791</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_reflect_pk(
-<span class="ansi-green-intense-fg ansi-bold">    792</span>     table_name, schema, table, cols_by_orig_name, exclude_columns
-<span class="ansi-green-intense-fg ansi-bold">    793</span> )
-<span class="ansi-green-intense-fg ansi-bold">    795</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_reflect_fk(
-<span class="ansi-green-intense-fg ansi-bold">    796</span>     table_name,
-<span class="ansi-green-intense-fg ansi-bold">    797</span>     schema,
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    803</span>     reflection_options,
-<span class="ansi-green-intense-fg ansi-bold">    804</span> )
-
-<span class="ansi-red-fg">NoSuchTableError</span>: countries</pre>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>continent</th>
+      <th>area_km2</th>
+      <th>population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Andorra</td>
+      <td>EU</td>
+      <td>468.0</td>
+      <td>84000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>United Arab Emirates</td>
+      <td>AS</td>
+      <td>82880.0</td>
+      <td>4975593</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Afghanistan</td>
+      <td>AS</td>
+      <td>647500.0</td>
+      <td>29121286</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Antigua and Barbuda</td>
+      <td>NA</td>
+      <td>443.0</td>
+      <td>86754</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Anguilla</td>
+      <td>NA</td>
+      <td>102.0</td>
+      <td>13254</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>247</th>
+      <td>Yemen</td>
+      <td>AS</td>
+      <td>527970.0</td>
+      <td>23495361</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>Mayotte</td>
+      <td>AF</td>
+      <td>374.0</td>
+      <td>159042</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>South Africa</td>
+      <td>AF</td>
+      <td>1219912.0</td>
+      <td>49000000</td>
+    </tr>
+    <tr>
+      <th>250</th>
+      <td>Zambia</td>
+      <td>AF</td>
+      <td>752614.0</td>
+      <td>13460305</td>
+    </tr>
+    <tr>
+      <th>251</th>
+      <td>Zimbabwe</td>
+      <td>AF</td>
+      <td>390580.0</td>
+      <td>13061000</td>
+    </tr>
+  </tbody>
+</table>
+<p>252 rows × 4 columns</p>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -3020,29 +3006,83 @@ continent_name</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [3]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> continent_name <span style="color: rgb(98,98,98)">=</span> (<span class="ansi-yellow-bg">countries</span>[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">continent</span><span style="color: rgb(175,0,0)">&#39;</span>]<span style="color: rgb(98,98,98)">.</span>case()
-<span class="ansi-green-intense-fg ansi-bold">      2</span>                                         <span style="color: rgb(98,98,98)">.</span>when(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">NA</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">North America</span><span style="color: rgb(175,0,0)">&#39;</span>)
-<span class="ansi-green-intense-fg ansi-bold">      3</span>                                         <span style="color: rgb(98,98,98)">.</span>when(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">SA</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">South America</span><span style="color: rgb(175,0,0)">&#39;</span>)
-<span class="ansi-green-intense-fg ansi-bold">      4</span>                                         <span style="color: rgb(98,98,98)">.</span>when(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">EU</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Europe</span><span style="color: rgb(175,0,0)">&#39;</span>)
-<span class="ansi-green-intense-fg ansi-bold">      5</span>                                         <span style="color: rgb(98,98,98)">.</span>when(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">AF</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Africa</span><span style="color: rgb(175,0,0)">&#39;</span>)
-<span class="ansi-green-intense-fg ansi-bold">      6</span>                                         <span style="color: rgb(98,98,98)">.</span>when(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">AS</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Asia</span><span style="color: rgb(175,0,0)">&#39;</span>)
-<span class="ansi-green-intense-fg ansi-bold">      7</span>                                         <span style="color: rgb(98,98,98)">.</span>when(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">OC</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Oceania</span><span style="color: rgb(175,0,0)">&#39;</span>)
-<span class="ansi-green-intense-fg ansi-bold">      8</span>                                         <span style="color: rgb(98,98,98)">.</span>when(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">AN</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Anctartica</span><span style="color: rgb(175,0,0)">&#39;</span>)
-<span class="ansi-green-intense-fg ansi-bold">      9</span>                                         <span style="color: rgb(98,98,98)">.</span>else_(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Unknown continent</span><span style="color: rgb(175,0,0)">&#39;</span>)
-<span class="ansi-green-intense-fg ansi-bold">     10</span>                                         <span style="color: rgb(98,98,98)">.</span>end()
-<span class="ansi-green-intense-fg ansi-bold">     11</span>                                         <span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">continent_name</span><span style="color: rgb(175,0,0)">&#39;</span>))
-<span class="ansi-green-intense-fg ansi-bold">     12</span> continent_name
 
-<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>continent_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Europe</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Asia</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Asia</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>North America</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>North America</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>247</th>
+      <td>Asia</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>Africa</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>Africa</td>
+    </tr>
+    <tr>
+      <th>250</th>
+      <td>Africa</td>
+    </tr>
+    <tr>
+      <th>251</th>
+      <td>Africa</td>
+    </tr>
+  </tbody>
+</table>
+<p>252 rows × 1 columns</p>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -3107,18 +3147,15 @@ variable, and the results are not stored. They have been computed when we printe
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [4]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span style="color: rgb(0,135,0)">type</span>(<span class="ansi-yellow-bg">continent_name</span>)
 
-<span class="ansi-red-fg">NameError</span>: name &#39;continent_name&#39; is not defined</pre>
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>ibis.expr.types.strings.StringColumn</pre>
 </div>
+
 </div>
 
 </div>
@@ -3186,18 +3223,119 @@ has a name when being returned.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [5]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">countries</span>[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">name</span><span style="color: rgb(175,0,0)">&#39;</span>, continent_name, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">area_km2</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">population</span><span style="color: rgb(175,0,0)">&#39;</span>]
 
-<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>continent_name</th>
+      <th>area_km2</th>
+      <th>population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Andorra</td>
+      <td>Europe</td>
+      <td>468.0</td>
+      <td>84000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>United Arab Emirates</td>
+      <td>Asia</td>
+      <td>82880.0</td>
+      <td>4975593</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>647500.0</td>
+      <td>29121286</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Antigua and Barbuda</td>
+      <td>North America</td>
+      <td>443.0</td>
+      <td>86754</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Anguilla</td>
+      <td>North America</td>
+      <td>102.0</td>
+      <td>13254</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>247</th>
+      <td>Yemen</td>
+      <td>Asia</td>
+      <td>527970.0</td>
+      <td>23495361</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>Mayotte</td>
+      <td>Africa</td>
+      <td>374.0</td>
+      <td>159042</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>South Africa</td>
+      <td>Africa</td>
+      <td>1219912.0</td>
+      <td>49000000</td>
+    </tr>
+    <tr>
+      <th>250</th>
+      <td>Zambia</td>
+      <td>Africa</td>
+      <td>752614.0</td>
+      <td>13460305</td>
+    </tr>
+    <tr>
+      <th>251</th>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>390580.0</td>
+      <td>13061000</td>
+    </tr>
+  </tbody>
+</table>
+<p>252 rows × 4 columns</p>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -3259,18 +3397,119 @@ when using it in the list of columns to fetch.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [6]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">countries</span>[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">name</span><span style="color: rgb(175,0,0)">&#39;</span>, continent_name<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">continent</span><span style="color: rgb(175,0,0)">&#39;</span>), <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">area_km2</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">population</span><span style="color: rgb(175,0,0)">&#39;</span>]
 
-<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>continent</th>
+      <th>area_km2</th>
+      <th>population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Andorra</td>
+      <td>Europe</td>
+      <td>468.0</td>
+      <td>84000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>United Arab Emirates</td>
+      <td>Asia</td>
+      <td>82880.0</td>
+      <td>4975593</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>647500.0</td>
+      <td>29121286</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Antigua and Barbuda</td>
+      <td>North America</td>
+      <td>443.0</td>
+      <td>86754</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Anguilla</td>
+      <td>North America</td>
+      <td>102.0</td>
+      <td>13254</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>247</th>
+      <td>Yemen</td>
+      <td>Asia</td>
+      <td>527970.0</td>
+      <td>23495361</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>Mayotte</td>
+      <td>Africa</td>
+      <td>374.0</td>
+      <td>159042</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>South Africa</td>
+      <td>Africa</td>
+      <td>1219912.0</td>
+      <td>49000000</td>
+    </tr>
+    <tr>
+      <th>250</th>
+      <td>Zambia</td>
+      <td>Africa</td>
+      <td>752614.0</td>
+      <td>13460305</td>
+    </tr>
+    <tr>
+      <th>251</th>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>390580.0</td>
+      <td>13061000</td>
+    </tr>
+  </tbody>
+</table>
+<p>252 rows × 4 columns</p>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -3331,18 +3570,74 @@ Input <span class="ansi-green-fg">In [6]</span>, in <span class="ansi-cyan-fg">&
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [7]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">countries</span><span style="color: rgb(98,98,98)">.</span>group_by(continent_name)<span style="color: rgb(98,98,98)">.</span>aggregate(countries[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">population</span><span style="color: rgb(175,0,0)">&#39;</span>]<span style="color: rgb(98,98,98)">.</span>sum()<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">total_population</span><span style="color: rgb(175,0,0)">&#39;</span>))
 
-<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>continent_name</th>
+      <th>total_population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Africa</td>
+      <td>1021238685</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Anctartica</td>
+      <td>170</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Asia</td>
+      <td>4130584841</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Europe</td>
+      <td>750724554</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>North America</td>
+      <td>540204371</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Oceania</td>
+      <td>36067549</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>South America</td>
+      <td>400143568</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -3412,19 +3707,15 @@ total_population</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [8]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> total_population <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">countries</span>[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">population</span><span style="color: rgb(175,0,0)">&#39;</span>]<span style="color: rgb(98,98,98)">.</span>sum()<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">total_population</span><span style="color: rgb(175,0,0)">&#39;</span>)
-<span class="ansi-green-intense-fg ansi-bold">      2</span> total_population
 
-<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>6878963738</pre>
 </div>
+
 </div>
 
 </div>
@@ -3487,18 +3778,74 @@ over every group defined by the <code>group_by</code> method.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [9]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">countries</span><span style="color: rgb(98,98,98)">.</span>group_by(continent_name)<span style="color: rgb(98,98,98)">.</span>aggregate(total_population)
 
-<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>continent_name</th>
+      <th>total_population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Africa</td>
+      <td>1021238685</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Anctartica</td>
+      <td>170</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Asia</td>
+      <td>4130584841</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Europe</td>
+      <td>750724554</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>North America</td>
+      <td>540204371</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Oceania</td>
+      <td>36067549</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>South America</td>
+      <td>400143568</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -3563,19 +3910,82 @@ use both column names and expressions, and also a list with any of them (e.g. <c
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [10]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">countries</span><span style="color: rgb(98,98,98)">.</span>group_by(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">continent</span><span style="color: rgb(175,0,0)">&#39;</span>)<span style="color: rgb(98,98,98)">.</span>aggregate([total_population,
-<span class="ansi-green-intense-fg ansi-bold">      2</span>                                            countries[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">area_km2</span><span style="color: rgb(175,0,0)">&#39;</span>]<span style="color: rgb(98,98,98)">.</span>mean()<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">average_area</span><span style="color: rgb(175,0,0)">&#39;</span>)])
 
-<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>continent</th>
+      <th>total_population</th>
+      <th>average_area</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AF</td>
+      <td>1021238685</td>
+      <td>5.234534e+05</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AN</td>
+      <td>170</td>
+      <td>2.802439e+06</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AS</td>
+      <td>4130584841</td>
+      <td>6.196685e+05</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>EU</td>
+      <td>750724554</td>
+      <td>4.293017e+05</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NA</td>
+      <td>540204371</td>
+      <td>5.836313e+05</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>OC</td>
+      <td>36067549</td>
+      <td>3.044157e+05</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>SA</td>
+      <td>400143568</td>
+      <td>1.272751e+06</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -3639,131 +4049,107 @@ gdp</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NoSuchTableError</span>                          Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [11]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> gdp <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">connection</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">table</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">gdp</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> gdp
 
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/sqlite/__init__.py:122</span>, in <span class="ansi-cyan-fg">Backend.table</span><span class="ansi-blue-fg">(self, name, database)</span>
-<span class="ansi-green-intense-fg ansi-bold">    107</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">table</span>(<span style="color: rgb(0,135,0)">self</span>, name: <span style="color: rgb(0,135,0)">str</span>, database: <span style="color: rgb(0,135,0)">str</span> <span style="color: rgb(98,98,98)">|</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> ir<span style="color: rgb(98,98,98)">.</span>TableExpr:
-<span class="ansi-green-intense-fg ansi-bold">    108</span>     <span style="color: rgb(175,0,0)">&#34;&#34;&#34;Create a table expression from a table in the SQLite database.</span>
-<span class="ansi-green-intense-fg ansi-bold">    109</span> 
-<span class="ansi-green-intense-fg ansi-bold">    110</span> <span style="color: rgb(175,0,0)">    Parameters</span>
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    120</span> <span style="color: rgb(175,0,0)">        Table expression</span>
-<span class="ansi-green-intense-fg ansi-bold">    121</span> <span style="color: rgb(175,0,0)">    &#34;&#34;&#34;</span>
-<span class="ansi-green-fg">--&gt; 122</span>     alch_table <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_get_sqla_table</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">name</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">schema</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">database</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    123</span>     node <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>table_class(source<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(0,135,0)">self</span>, sqla_table<span style="color: rgb(98,98,98)">=</span>alch_table)
-<span class="ansi-green-intense-fg ansi-bold">    124</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>table_expr_class(node)
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/sqlite/__init__.py:100</span>, in <span class="ansi-cyan-fg">Backend._get_sqla_table</span><span class="ansi-blue-fg">(self, name, schema, autoload)</span>
-<span class="ansi-green-intense-fg ansi-bold">     99</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">_get_sqla_table</span>(<span style="color: rgb(0,135,0)">self</span>, name, schema<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">None</span>, autoload<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">True</span>):
-<span class="ansi-green-fg">--&gt; 100</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">sa</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">Table</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-intense-fg ansi-bold">    101</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">name</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    102</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">meta</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    103</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">schema</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">schema</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(175,0,255)">or</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">current_database</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    104</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">autoload</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">autoload</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    105</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-File <span class="ansi-green-fg">&lt;string&gt;:2</span>, in <span class="ansi-cyan-fg">__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
-
-File <span class="ansi-green-fg">/nix/store/wcmj4j7bqxzvn3zm06smdjc5715qpg5w-python3-3.10.4-env/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py:309</span>, in <span class="ansi-cyan-fg">deprecated_params.&lt;locals&gt;.decorate.&lt;locals&gt;.warned</span><span class="ansi-blue-fg">(fn, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    302</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> m <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> kwargs:
-<span class="ansi-green-intense-fg ansi-bold">    303</span>         _warn_with_version(
-<span class="ansi-green-intense-fg ansi-bold">    304</span>             messages[m],
-<span class="ansi-green-intense-fg ansi-bold">    305</span>             versions[m],
-<span class="ansi-green-intense-fg ansi-bold">    306</span>             version_warnings[m],
-<span class="ansi-green-intense-fg ansi-bold">    307</span>             stacklevel<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">3</span>,
-<span class="ansi-green-intense-fg ansi-bold">    308</span>         )
-<span class="ansi-green-fg">--&gt; 309</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">fn</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
-
-File <span class="ansi-green-fg">/nix/store/wcmj4j7bqxzvn3zm06smdjc5715qpg5w-python3-3.10.4-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:615</span>, in <span class="ansi-cyan-fg">Table.__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
-<span class="ansi-green-intense-fg ansi-bold">    613</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> table
-<span class="ansi-green-intense-fg ansi-bold">    614</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> <span class="ansi-bold" style="color: rgb(215,95,95)">Exception</span>:
-<span class="ansi-green-fg">--&gt; 615</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> util<span style="color: rgb(98,98,98)">.</span>safe_reraise():
-<span class="ansi-green-intense-fg ansi-bold">    616</span>         metadata<span style="color: rgb(98,98,98)">.</span>_remove_table(name, schema)
-
-File <span class="ansi-green-fg">/nix/store/wcmj4j7bqxzvn3zm06smdjc5715qpg5w-python3-3.10.4-env/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py:70</span>, in <span class="ansi-cyan-fg">safe_reraise.__exit__</span><span class="ansi-blue-fg">(self, type_, value, traceback)</span>
-<span class="ansi-green-intense-fg ansi-bold">     68</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_exc_info <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>  <span style="color: rgb(95,135,135)"># remove potential circular references</span>
-<span class="ansi-green-intense-fg ansi-bold">     69</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>warn_only:
-<span class="ansi-green-fg">---&gt; 70</span>         <span class="ansi-yellow-bg">compat</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">raise_</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-intense-fg ansi-bold">     71</span> <span class="ansi-yellow-bg">            </span><span class="ansi-yellow-bg">exc_value</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">     72</span> <span class="ansi-yellow-bg">            </span><span class="ansi-yellow-bg">with_traceback</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">exc_tb</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">     73</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     74</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
-<span class="ansi-green-intense-fg ansi-bold">     75</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> compat<span style="color: rgb(98,98,98)">.</span>py3k <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_exc_info <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_exc_info[<span style="color: rgb(98,98,98)">1</span>]:
-<span class="ansi-green-intense-fg ansi-bold">     76</span>         <span style="color: rgb(95,135,135)"># emulate Py3K&#39;s behavior of telling us when an exception</span>
-<span class="ansi-green-intense-fg ansi-bold">     77</span>         <span style="color: rgb(95,135,135)"># occurs in an exception handler.</span>
-
-File <span class="ansi-green-fg">/nix/store/wcmj4j7bqxzvn3zm06smdjc5715qpg5w-python3-3.10.4-env/lib/python3.10/site-packages/sqlalchemy/util/compat.py:207</span>, in <span class="ansi-cyan-fg">raise_</span><span class="ansi-blue-fg">(***failed resolving arguments***)</span>
-<span class="ansi-green-intense-fg ansi-bold">    204</span>     exception<span style="color: rgb(98,98,98)">.</span>__cause__ <span style="color: rgb(98,98,98)">=</span> replace_context
-<span class="ansi-green-intense-fg ansi-bold">    206</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
-<span class="ansi-green-fg">--&gt; 207</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> exception
-<span class="ansi-green-intense-fg ansi-bold">    208</span> <span class="ansi-bold" style="color: rgb(0,135,0)">finally</span>:
-<span class="ansi-green-intense-fg ansi-bold">    209</span>     <span style="color: rgb(95,135,135)"># credit to</span>
-<span class="ansi-green-intense-fg ansi-bold">    210</span>     <span style="color: rgb(95,135,135)"># https://cosmicpercolator.com/2016/01/13/exception-leaks-in-python-2-and-3/</span>
-<span class="ansi-green-intense-fg ansi-bold">    211</span>     <span style="color: rgb(95,135,135)"># as the __traceback__ object creates a cycle</span>
-<span class="ansi-green-intense-fg ansi-bold">    212</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">del</span> exception, replace_context, from_, with_traceback
-
-File <span class="ansi-green-fg">/nix/store/wcmj4j7bqxzvn3zm06smdjc5715qpg5w-python3-3.10.4-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:611</span>, in <span class="ansi-cyan-fg">Table.__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
-<span class="ansi-green-intense-fg ansi-bold">    609</span> metadata<span style="color: rgb(98,98,98)">.</span>_add_table(name, schema, table)
-<span class="ansi-green-intense-fg ansi-bold">    610</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
-<span class="ansi-green-fg">--&gt; 611</span>     <span class="ansi-yellow-bg">table</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_init</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">name</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">metadata</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kw</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    612</span>     table<span style="color: rgb(98,98,98)">.</span>dispatch<span style="color: rgb(98,98,98)">.</span>after_parent_attach(table, metadata)
-<span class="ansi-green-intense-fg ansi-bold">    613</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> table
-
-File <span class="ansi-green-fg">/nix/store/wcmj4j7bqxzvn3zm06smdjc5715qpg5w-python3-3.10.4-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:686</span>, in <span class="ansi-cyan-fg">Table._init</span><span class="ansi-blue-fg">(self, name, metadata, *args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    682</span> <span style="color: rgb(95,135,135)"># load column definitions from the database if &#39;autoload&#39; is defined</span>
-<span class="ansi-green-intense-fg ansi-bold">    683</span> <span style="color: rgb(95,135,135)"># we do it after the table is in the singleton dictionary to support</span>
-<span class="ansi-green-intense-fg ansi-bold">    684</span> <span style="color: rgb(95,135,135)"># circular foreign keys</span>
-<span class="ansi-green-intense-fg ansi-bold">    685</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> autoload:
-<span class="ansi-green-fg">--&gt; 686</span>     <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_autoload</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-intense-fg ansi-bold">    687</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">metadata</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    688</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">autoload_with</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    689</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">include_columns</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    690</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">_extend_on</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">_extend_on</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    691</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">resolve_fks</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">resolve_fks</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    692</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    694</span> <span style="color: rgb(95,135,135)"># initialize all the column, etc. objects.  done after reflection to</span>
-<span class="ansi-green-intense-fg ansi-bold">    695</span> <span style="color: rgb(95,135,135)"># allow user-overrides</span>
-<span class="ansi-green-intense-fg ansi-bold">    697</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_init_items(
-<span class="ansi-green-intense-fg ansi-bold">    698</span>     <span style="color: rgb(98,98,98)">*</span>args,
-<span class="ansi-green-intense-fg ansi-bold">    699</span>     allow_replacements<span style="color: rgb(98,98,98)">=</span>extend_existing <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> keep_existing <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> autoload
-<span class="ansi-green-intense-fg ansi-bold">    700</span> )
-
-File <span class="ansi-green-fg">/nix/store/wcmj4j7bqxzvn3zm06smdjc5715qpg5w-python3-3.10.4-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:721</span>, in <span class="ansi-cyan-fg">Table._autoload</span><span class="ansi-blue-fg">(self, metadata, autoload_with, include_columns, exclude_columns, resolve_fks, _extend_on)</span>
-<span class="ansi-green-intense-fg ansi-bold">    719</span> insp <span style="color: rgb(98,98,98)">=</span> inspection<span style="color: rgb(98,98,98)">.</span>inspect(autoload_with)
-<span class="ansi-green-intense-fg ansi-bold">    720</span> <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> insp<span style="color: rgb(98,98,98)">.</span>_inspection_context() <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> conn_insp:
-<span class="ansi-green-fg">--&gt; 721</span>     <span class="ansi-yellow-bg">conn_insp</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">reflect_table</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-intense-fg ansi-bold">    722</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    723</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">include_columns</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    724</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">exclude_columns</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    725</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">resolve_fks</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    726</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">_extend_on</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">_extend_on</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    727</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
-
-File <span class="ansi-green-fg">/nix/store/wcmj4j7bqxzvn3zm06smdjc5715qpg5w-python3-3.10.4-env/lib/python3.10/site-packages/sqlalchemy/engine/reflection.py:789</span>, in <span class="ansi-cyan-fg">Inspector.reflect_table</span><span class="ansi-blue-fg">(self, table, include_columns, exclude_columns, resolve_fks, _extend_on)</span>
-<span class="ansi-green-intense-fg ansi-bold">    787</span> <span style="color: rgb(95,135,135)"># NOTE: support tables/views with no columns</span>
-<span class="ansi-green-intense-fg ansi-bold">    788</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> found_table <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>has_table(table_name, schema):
-<span class="ansi-green-fg">--&gt; 789</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> exc<span style="color: rgb(98,98,98)">.</span>NoSuchTableError(table_name)
-<span class="ansi-green-intense-fg ansi-bold">    791</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_reflect_pk(
-<span class="ansi-green-intense-fg ansi-bold">    792</span>     table_name, schema, table, cols_by_orig_name, exclude_columns
-<span class="ansi-green-intense-fg ansi-bold">    793</span> )
-<span class="ansi-green-intense-fg ansi-bold">    795</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_reflect_fk(
-<span class="ansi-green-intense-fg ansi-bold">    796</span>     table_name,
-<span class="ansi-green-intense-fg ansi-bold">    797</span>     schema,
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    803</span>     reflection_options,
-<span class="ansi-green-intense-fg ansi-bold">    804</span> )
-
-<span class="ansi-red-fg">NoSuchTableError</span>: gdp</pre>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country_code</th>
+      <th>year</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ABW</td>
+      <td>1986</td>
+      <td>4.054634e+08</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ABW</td>
+      <td>1987</td>
+      <td>4.876025e+08</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ABW</td>
+      <td>1988</td>
+      <td>5.964236e+08</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ABW</td>
+      <td>1989</td>
+      <td>6.953044e+08</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ABW</td>
+      <td>1990</td>
+      <td>7.648871e+08</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9995</th>
+      <td>SVK</td>
+      <td>2002</td>
+      <td>3.513034e+10</td>
+    </tr>
+    <tr>
+      <th>9996</th>
+      <td>SVK</td>
+      <td>2003</td>
+      <td>4.681659e+10</td>
+    </tr>
+    <tr>
+      <th>9997</th>
+      <td>SVK</td>
+      <td>2004</td>
+      <td>5.733202e+10</td>
+    </tr>
+    <tr>
+      <th>9998</th>
+      <td>SVK</td>
+      <td>2005</td>
+      <td>6.278531e+10</td>
+    </tr>
+    <tr>
+      <th>9999</th>
+      <td>SVK</td>
+      <td>2006</td>
+      <td>7.070810e+10</td>
+    </tr>
+  </tbody>
+</table>
+<p>10000 rows × 3 columns</p>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -3824,18 +4210,15 @@ File <span class="ansi-green-fg">/nix/store/wcmj4j7bqxzvn3zm06smdjc5715qpg5w-pyt
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [12]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">gdp</span>[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">year</span><span style="color: rgb(175,0,0)">&#39;</span>]<span style="color: rgb(98,98,98)">.</span>min(), gdp[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">year</span><span style="color: rgb(175,0,0)">&#39;</span>]<span style="color: rgb(98,98,98)">.</span>max()
 
-<span class="ansi-red-fg">NameError</span>: name &#39;gdp&#39; is not defined</pre>
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(1960, 2017)</pre>
 </div>
+
 </div>
 
 </div>
@@ -3898,18 +4281,131 @@ one matches the three letter code in the <code>gdp</code> table.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [13]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">countries</span>[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">iso_alpha2</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">iso_alpha3</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">iso_numeric</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">fips</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">name</span><span style="color: rgb(175,0,0)">&#39;</span>]
 
-<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>iso_alpha2</th>
+      <th>iso_alpha3</th>
+      <th>iso_numeric</th>
+      <th>fips</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AD</td>
+      <td>AND</td>
+      <td>20</td>
+      <td>AN</td>
+      <td>Andorra</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AE</td>
+      <td>ARE</td>
+      <td>784</td>
+      <td>AE</td>
+      <td>United Arab Emirates</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AF</td>
+      <td>AFG</td>
+      <td>4</td>
+      <td>AF</td>
+      <td>Afghanistan</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AG</td>
+      <td>ATG</td>
+      <td>28</td>
+      <td>AC</td>
+      <td>Antigua and Barbuda</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AI</td>
+      <td>AIA</td>
+      <td>660</td>
+      <td>AV</td>
+      <td>Anguilla</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>247</th>
+      <td>YE</td>
+      <td>YEM</td>
+      <td>887</td>
+      <td>YM</td>
+      <td>Yemen</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>YT</td>
+      <td>MYT</td>
+      <td>175</td>
+      <td>MF</td>
+      <td>Mayotte</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>ZA</td>
+      <td>ZAF</td>
+      <td>710</td>
+      <td>SF</td>
+      <td>South Africa</td>
+    </tr>
+    <tr>
+      <th>250</th>
+      <td>ZM</td>
+      <td>ZMB</td>
+      <td>894</td>
+      <td>ZA</td>
+      <td>Zambia</td>
+    </tr>
+    <tr>
+      <th>251</th>
+      <td>ZW</td>
+      <td>ZWE</td>
+      <td>716</td>
+      <td>ZI</td>
+      <td>Zimbabwe</td>
+    </tr>
+  </tbody>
+</table>
+<p>252 rows × 5 columns</p>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -3977,20 +4473,215 @@ countries_and_gdp[countries, gdp]</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [14]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> countries_and_gdp <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">countries</span><span style="color: rgb(98,98,98)">.</span>inner_join(gdp,
-<span class="ansi-green-intense-fg ansi-bold">      2</span>                                          predicates<span style="color: rgb(98,98,98)">=</span>countries[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">iso_alpha3</span><span style="color: rgb(175,0,0)">&#39;</span>] <span style="color: rgb(98,98,98)">==</span> gdp[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">country_code</span><span style="color: rgb(175,0,0)">&#39;</span>])
-<span class="ansi-green-intense-fg ansi-bold">      3</span> countries_and_gdp[countries, gdp]
 
-<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>iso_alpha2</th>
+      <th>iso_alpha3</th>
+      <th>iso_numeric</th>
+      <th>fips</th>
+      <th>name</th>
+      <th>capital</th>
+      <th>area_km2</th>
+      <th>population</th>
+      <th>continent</th>
+      <th>country_code</th>
+      <th>year</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AD</td>
+      <td>AND</td>
+      <td>20</td>
+      <td>AN</td>
+      <td>Andorra</td>
+      <td>Andorra la Vella</td>
+      <td>468.0</td>
+      <td>84000</td>
+      <td>EU</td>
+      <td>AND</td>
+      <td>1970</td>
+      <td>7.861921e+07</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AD</td>
+      <td>AND</td>
+      <td>20</td>
+      <td>AN</td>
+      <td>Andorra</td>
+      <td>Andorra la Vella</td>
+      <td>468.0</td>
+      <td>84000</td>
+      <td>EU</td>
+      <td>AND</td>
+      <td>1971</td>
+      <td>8.940982e+07</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AD</td>
+      <td>AND</td>
+      <td>20</td>
+      <td>AN</td>
+      <td>Andorra</td>
+      <td>Andorra la Vella</td>
+      <td>468.0</td>
+      <td>84000</td>
+      <td>EU</td>
+      <td>AND</td>
+      <td>1972</td>
+      <td>1.134082e+08</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AD</td>
+      <td>AND</td>
+      <td>20</td>
+      <td>AN</td>
+      <td>Andorra</td>
+      <td>Andorra la Vella</td>
+      <td>468.0</td>
+      <td>84000</td>
+      <td>EU</td>
+      <td>AND</td>
+      <td>1973</td>
+      <td>1.508201e+08</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AD</td>
+      <td>AND</td>
+      <td>20</td>
+      <td>AN</td>
+      <td>Andorra</td>
+      <td>Andorra la Vella</td>
+      <td>468.0</td>
+      <td>84000</td>
+      <td>EU</td>
+      <td>AND</td>
+      <td>1974</td>
+      <td>1.865587e+08</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>9482</th>
+      <td>ZW</td>
+      <td>ZWE</td>
+      <td>716</td>
+      <td>ZI</td>
+      <td>Zimbabwe</td>
+      <td>Harare</td>
+      <td>390580.0</td>
+      <td>13061000</td>
+      <td>AF</td>
+      <td>ZWE</td>
+      <td>2013</td>
+      <td>1.909102e+10</td>
+    </tr>
+    <tr>
+      <th>9483</th>
+      <td>ZW</td>
+      <td>ZWE</td>
+      <td>716</td>
+      <td>ZI</td>
+      <td>Zimbabwe</td>
+      <td>Harare</td>
+      <td>390580.0</td>
+      <td>13061000</td>
+      <td>AF</td>
+      <td>ZWE</td>
+      <td>2014</td>
+      <td>1.949552e+10</td>
+    </tr>
+    <tr>
+      <th>9484</th>
+      <td>ZW</td>
+      <td>ZWE</td>
+      <td>716</td>
+      <td>ZI</td>
+      <td>Zimbabwe</td>
+      <td>Harare</td>
+      <td>390580.0</td>
+      <td>13061000</td>
+      <td>AF</td>
+      <td>ZWE</td>
+      <td>2015</td>
+      <td>1.996312e+10</td>
+    </tr>
+    <tr>
+      <th>9485</th>
+      <td>ZW</td>
+      <td>ZWE</td>
+      <td>716</td>
+      <td>ZI</td>
+      <td>Zimbabwe</td>
+      <td>Harare</td>
+      <td>390580.0</td>
+      <td>13061000</td>
+      <td>AF</td>
+      <td>ZWE</td>
+      <td>2016</td>
+      <td>2.054868e+10</td>
+    </tr>
+    <tr>
+      <th>9486</th>
+      <td>ZW</td>
+      <td>ZWE</td>
+      <td>716</td>
+      <td>ZI</td>
+      <td>Zimbabwe</td>
+      <td>Harare</td>
+      <td>390580.0</td>
+      <td>13061000</td>
+      <td>AF</td>
+      <td>ZWE</td>
+      <td>2017</td>
+      <td>2.281301e+10</td>
+    </tr>
+  </tbody>
+</table>
+<p>9487 rows × 12 columns</p>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -4053,19 +4744,107 @@ gdp_2017</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [15]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> gdp_2017 <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">gdp</span><span style="color: rgb(98,98,98)">.</span>filter(gdp[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">year</span><span style="color: rgb(175,0,0)">&#39;</span>] <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(98,98,98)">2017</span>)
-<span class="ansi-green-intense-fg ansi-bold">      2</span> gdp_2017
 
-<span class="ansi-red-fg">NameError</span>: name &#39;gdp&#39; is not defined</pre>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country_code</th>
+      <th>year</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ABW</td>
+      <td>2017</td>
+      <td>2.700559e+09</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AFG</td>
+      <td>2017</td>
+      <td>2.019176e+10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AGO</td>
+      <td>2017</td>
+      <td>1.221238e+11</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ALB</td>
+      <td>2017</td>
+      <td>1.302506e+10</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AND</td>
+      <td>2017</td>
+      <td>3.013387e+09</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>242</th>
+      <td>XKX</td>
+      <td>2017</td>
+      <td>7.227700e+09</td>
+    </tr>
+    <tr>
+      <th>243</th>
+      <td>YEM</td>
+      <td>2017</td>
+      <td>2.681870e+10</td>
+    </tr>
+    <tr>
+      <th>244</th>
+      <td>ZAF</td>
+      <td>2017</td>
+      <td>3.495541e+11</td>
+    </tr>
+    <tr>
+      <th>245</th>
+      <td>ZMB</td>
+      <td>2017</td>
+      <td>2.586814e+10</td>
+    </tr>
+    <tr>
+      <th>246</th>
+      <td>ZWE</td>
+      <td>2017</td>
+      <td>2.281301e+10</td>
+    </tr>
+  </tbody>
+</table>
+<p>247 rows × 3 columns</p>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -4130,20 +4909,215 @@ countries_and_gdp[countries, gdp_2017]</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [16]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> countries_and_gdp <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">countries</span><span style="color: rgb(98,98,98)">.</span>inner_join(gdp_2017,
-<span class="ansi-green-intense-fg ansi-bold">      2</span>                                          predicates<span style="color: rgb(98,98,98)">=</span>countries[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">iso_alpha3</span><span style="color: rgb(175,0,0)">&#39;</span>] <span style="color: rgb(98,98,98)">==</span> gdp_2017[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">country_code</span><span style="color: rgb(175,0,0)">&#39;</span>])
-<span class="ansi-green-intense-fg ansi-bold">      3</span> countries_and_gdp[countries, gdp_2017]
 
-<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>iso_alpha2</th>
+      <th>iso_alpha3</th>
+      <th>iso_numeric</th>
+      <th>fips</th>
+      <th>name</th>
+      <th>capital</th>
+      <th>area_km2</th>
+      <th>population</th>
+      <th>continent</th>
+      <th>country_code</th>
+      <th>year</th>
+      <th>value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AW</td>
+      <td>ABW</td>
+      <td>533</td>
+      <td>AA</td>
+      <td>Aruba</td>
+      <td>Oranjestad</td>
+      <td>193.0</td>
+      <td>71566</td>
+      <td>NA</td>
+      <td>ABW</td>
+      <td>2017</td>
+      <td>2.700559e+09</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AF</td>
+      <td>AFG</td>
+      <td>4</td>
+      <td>AF</td>
+      <td>Afghanistan</td>
+      <td>Kabul</td>
+      <td>647500.0</td>
+      <td>29121286</td>
+      <td>AS</td>
+      <td>AFG</td>
+      <td>2017</td>
+      <td>2.019176e+10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AO</td>
+      <td>AGO</td>
+      <td>24</td>
+      <td>AO</td>
+      <td>Angola</td>
+      <td>Luanda</td>
+      <td>1246700.0</td>
+      <td>13068161</td>
+      <td>AF</td>
+      <td>AGO</td>
+      <td>2017</td>
+      <td>1.221238e+11</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AL</td>
+      <td>ALB</td>
+      <td>8</td>
+      <td>AL</td>
+      <td>Albania</td>
+      <td>Tirana</td>
+      <td>28748.0</td>
+      <td>2986952</td>
+      <td>EU</td>
+      <td>ALB</td>
+      <td>2017</td>
+      <td>1.302506e+10</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AD</td>
+      <td>AND</td>
+      <td>20</td>
+      <td>AN</td>
+      <td>Andorra</td>
+      <td>Andorra la Vella</td>
+      <td>468.0</td>
+      <td>84000</td>
+      <td>EU</td>
+      <td>AND</td>
+      <td>2017</td>
+      <td>3.013387e+09</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>196</th>
+      <td>XK</td>
+      <td>XKX</td>
+      <td>0</td>
+      <td>KV</td>
+      <td>Kosovo</td>
+      <td>Pristina</td>
+      <td>10908.0</td>
+      <td>1800000</td>
+      <td>EU</td>
+      <td>XKX</td>
+      <td>2017</td>
+      <td>7.227700e+09</td>
+    </tr>
+    <tr>
+      <th>197</th>
+      <td>YE</td>
+      <td>YEM</td>
+      <td>887</td>
+      <td>YM</td>
+      <td>Yemen</td>
+      <td>Sanaa</td>
+      <td>527970.0</td>
+      <td>23495361</td>
+      <td>AS</td>
+      <td>YEM</td>
+      <td>2017</td>
+      <td>2.681870e+10</td>
+    </tr>
+    <tr>
+      <th>198</th>
+      <td>ZA</td>
+      <td>ZAF</td>
+      <td>710</td>
+      <td>SF</td>
+      <td>South Africa</td>
+      <td>Pretoria</td>
+      <td>1219912.0</td>
+      <td>49000000</td>
+      <td>AF</td>
+      <td>ZAF</td>
+      <td>2017</td>
+      <td>3.495541e+11</td>
+    </tr>
+    <tr>
+      <th>199</th>
+      <td>ZM</td>
+      <td>ZMB</td>
+      <td>894</td>
+      <td>ZA</td>
+      <td>Zambia</td>
+      <td>Lusaka</td>
+      <td>752614.0</td>
+      <td>13460305</td>
+      <td>AF</td>
+      <td>ZMB</td>
+      <td>2017</td>
+      <td>2.586814e+10</td>
+    </tr>
+    <tr>
+      <th>200</th>
+      <td>ZW</td>
+      <td>ZWE</td>
+      <td>716</td>
+      <td>ZI</td>
+      <td>Zimbabwe</td>
+      <td>Harare</td>
+      <td>390580.0</td>
+      <td>13061000</td>
+      <td>AF</td>
+      <td>ZWE</td>
+      <td>2017</td>
+      <td>2.281301e+10</td>
+    </tr>
+  </tbody>
+</table>
+<p>201 rows × 12 columns</p>
 </div>
+</div>
+
 </div>
 
 </div>
