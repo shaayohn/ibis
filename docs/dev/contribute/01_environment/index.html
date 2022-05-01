@@ -1688,7 +1688,7 @@
 <p><code>conda-forge</code> is still in <a href="https://conda-forge.org/status/#python310">the process of migrating packages to Python
 3.10</a>.</p>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Nix</label><label for="__tabbed_1_2">Conda</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Nix</label><label for="__tabbed_1_2">Conda</label><label for="__tabbed_1_3">pip</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <h4 id="support-matrix">Support Matrix<a class="headerlink" href="#support-matrix" title="Anchor link to this section for reference">&para;</a></h4>
@@ -1924,6 +1924,40 @@ pip install -e .
 </div>
 </div>
 </div>
+<div class="tabbed-block">
+<div class="admonition warning">
+<p class="admonition-title"><code>pip</code> will not handle installation of system dependencies</p>
+<p><code>pip</code> will not install system dependencies needed for some packages
+such as <code>psycopg2</code> and <code>kerberos</code>.</p>
+<p>For a better development experience see the <code>conda</code> or <code>nix</code> setup
+instructions.</p>
+</div>
+<ol>
+<li>
+<p><a href="https://cli.github.com/manual/installation">Install <code>gh</code></a></p>
+</li>
+<li>
+<p>Fork and clone the ibis repository:</p>
+<div class="highlight"><pre><span></span><code>gh repo fork --clone --remote ibis-project/ibis
+</code></pre></div>
+</li>
+<li>
+<p>Change directory into <code>ibis</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ibis
+</code></pre></div>
+</li>
+<li>
+<p>Install development dependencies</p>
+<div class="highlight"><pre><span></span><code>pip install -r requirements.txt
+</code></pre></div>
+</li>
+<li>
+<p>Install ibis in development mode</p>
+<div class="highlight"><pre><span></span><code>pip install -e .
+</code></pre></div>
+</li>
+</ol>
+</div>
 </div>
 </div>
 <p>Once you've set up an environment, try building the documentation:</p>
@@ -1949,7 +1983,7 @@ pip install -e .
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 20, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 1, 2022</span>
       
     
   </small>
