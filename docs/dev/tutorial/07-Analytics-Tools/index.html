@@ -2748,8 +2748,8 @@ Licensed under the Apache License, Version 2.0.
 </div>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2789,6 +2789,38 @@ connection = ibis.sqlite.connect(os.path.join(tempfile.gettempdir(), 'geography.
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [2]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 3&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">os</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">tempfile</span>
+<span class="ansi-green-fg">----&gt; 3</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">ibis</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> ibis<span style="color: rgb(98,98,98)">.</span>options<span style="color: rgb(98,98,98)">.</span>interactive <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">True</span>
+<span class="ansi-green-intense-fg ansi-bold">      7</span> connection <span style="color: rgb(98,98,98)">=</span> ibis<span style="color: rgb(98,98,98)">.</span>sqlite<span style="color: rgb(98,98,98)">.</span>connect(os<span style="color: rgb(98,98,98)">.</span>path<span style="color: rgb(98,98,98)">.</span>join(tempfile<span style="color: rgb(98,98,98)">.</span>gettempdir(), <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">geography.db</span><span style="color: rgb(175,0,0)">&#39;</span>))
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;ibis&#39;</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -2847,74 +2879,19 @@ countries.continent.value_counts()</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [3]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> countries <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">connection</span><span style="color: rgb(98,98,98)">.</span>table(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">countries</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span> countries<span style="color: rgb(98,98,98)">.</span>continent<span style="color: rgb(98,98,98)">.</span>value_counts()
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>continent</th>
-      <th>count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>AF</td>
-      <td>58</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AN</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>AS</td>
-      <td>51</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>EU</td>
-      <td>54</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>NA</td>
-      <td>42</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>OC</td>
-      <td>28</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>SA</td>
-      <td>14</td>
-    </tr>
-  </tbody>
-</table>
+<span class="ansi-red-fg">NameError</span>: name &#39;connection&#39; is not defined</pre>
 </div>
-</div>
-
 </div>
 
 </div>
@@ -2981,82 +2958,21 @@ freq</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [4]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> freq <span style="color: rgb(98,98,98)">=</span> (<span class="ansi-yellow-bg">countries</span><span style="color: rgb(98,98,98)">.</span>group_by(countries<span style="color: rgb(98,98,98)">.</span>continent)
+<span class="ansi-green-intense-fg ansi-bold">      2</span>                  <span style="color: rgb(98,98,98)">.</span>aggregate([countries<span style="color: rgb(98,98,98)">.</span>count()<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)"># countries</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      3</span>                              countries<span style="color: rgb(98,98,98)">.</span>population<span style="color: rgb(98,98,98)">.</span>sum()<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">total population</span><span style="color: rgb(175,0,0)">&#39;</span>)]))
+<span class="ansi-green-intense-fg ansi-bold">      4</span> freq
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>continent</th>
-      <th># countries</th>
-      <th>total population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>AF</td>
-      <td>58</td>
-      <td>1021238685</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AN</td>
-      <td>5</td>
-      <td>170</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>AS</td>
-      <td>51</td>
-      <td>4130584841</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>EU</td>
-      <td>54</td>
-      <td>750724554</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>NA</td>
-      <td>42</td>
-      <td>540204371</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>OC</td>
-      <td>28</td>
-      <td>36067549</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>SA</td>
-      <td>14</td>
-      <td>400143568</td>
-    </tr>
-  </tbody>
-</table>
+<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
 </div>
-</div>
-
 </div>
 
 </div>
@@ -3134,8 +3050,8 @@ freq</div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3163,6 +3079,34 @@ freq</div>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [6]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> bucketed <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">countries</span><span style="color: rgb(98,98,98)">.</span>population<span style="color: rgb(98,98,98)">.</span>bucket(buckets)<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">bucket</span><span style="color: rgb(175,0,0)">&#39;</span>)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -3219,64 +3163,18 @@ freq</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [7]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">bucketed</span><span style="color: rgb(98,98,98)">.</span>value_counts()
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>bucket</th>
-      <th>count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>NaN</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0.0</td>
-      <td>93</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1.0</td>
-      <td>76</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>2.0</td>
-      <td>72</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>3.0</td>
-      <td>9</td>
-    </tr>
-  </tbody>
-</table>
+<span class="ansi-red-fg">NameError</span>: name &#39;bucketed&#39; is not defined</pre>
 </div>
-</div>
-
 </div>
 
 </div>
@@ -3343,64 +3241,21 @@ bucketed.value_counts()</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [8]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> bucketed <span style="color: rgb(98,98,98)">=</span> (<span class="ansi-yellow-bg">countries</span><span style="color: rgb(98,98,98)">.</span>population
+<span class="ansi-green-intense-fg ansi-bold">      2</span>             <span style="color: rgb(98,98,98)">.</span>bucket(buckets, include_over<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">True</span>)
+<span class="ansi-green-intense-fg ansi-bold">      3</span>             <span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">bucket</span><span style="color: rgb(175,0,0)">&#39;</span>))
+<span class="ansi-green-intense-fg ansi-bold">      4</span> bucketed<span style="color: rgb(98,98,98)">.</span>value_counts()
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>bucket</th>
-      <th>count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>93</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>76</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2</td>
-      <td>72</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>3</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>4</td>
-      <td>2</td>
-    </tr>
-  </tbody>
-</table>
+<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
 </div>
-</div>
-
 </div>
 
 </div>
@@ -3461,15 +3316,18 @@ bucketed.value_counts()</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [9]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">bucketed</span><span style="color: rgb(98,98,98)">.</span>type()
 
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Category(cardinality=5)</pre>
+<span class="ansi-red-fg">NameError</span>: name &#39;bucketed&#39; is not defined</pre>
 </div>
-
 </div>
 
 </div>
@@ -3547,70 +3405,23 @@ expr</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [10]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> bucket_counts <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">bucketed</span><span style="color: rgb(98,98,98)">.</span>value_counts()
+<span class="ansi-green-intense-fg ansi-bold">      3</span> labeled_bucket <span style="color: rgb(98,98,98)">=</span> (bucket_counts<span style="color: rgb(98,98,98)">.</span>bucket
+<span class="ansi-green-intense-fg ansi-bold">      4</span>                   <span style="color: rgb(98,98,98)">.</span>label([<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&lt; 1M</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&gt; 1M</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&gt; 10M</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&gt; 100M</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&gt; 1B</span><span style="color: rgb(175,0,0)">&#39;</span>])
+<span class="ansi-green-intense-fg ansi-bold">      5</span>                   <span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">bucket_name</span><span style="color: rgb(175,0,0)">&#39;</span>))
+<span class="ansi-green-intense-fg ansi-bold">      7</span> expr <span style="color: rgb(98,98,98)">=</span> (bucket_counts[labeled_bucket, bucket_counts]
+<span class="ansi-green-intense-fg ansi-bold">      8</span>         <span style="color: rgb(98,98,98)">.</span>sort_by(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">bucket</span><span style="color: rgb(175,0,0)">&#39;</span>))
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>bucket_name</th>
-      <th>bucket</th>
-      <th>count</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>&lt; 1M</td>
-      <td>0</td>
-      <td>93</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>&gt; 1M</td>
-      <td>1</td>
-      <td>76</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>&gt; 10M</td>
-      <td>2</td>
-      <td>72</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>&gt; 100M</td>
-      <td>3</td>
-      <td>9</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>&gt; 1B</td>
-      <td>4</td>
-      <td>2</td>
-    </tr>
-  </tbody>
-</table>
+<span class="ansi-red-fg">NameError</span>: name &#39;bucketed&#39; is not defined</pre>
 </div>
-</div>
-
 </div>
 
 </div>

@@ -2893,20 +2893,13 @@ class LastDate(Reduction):
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [1]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 7&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [1]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">ibis</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">expr</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">datatypes</span> <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> <span class="ansi-bold" style="color: rgb(0,0,255)">dt</span>
 <span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">ibis</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">expr</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">rules</span> <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> <span class="ansi-bold" style="color: rgb(0,0,255)">rlz</span>
 <span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">ibis</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">expr</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">operations</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> Reduction
-<span class="ansi-green-fg">----&gt; 7</span> <span class="ansi-bold" style="color: rgb(0,135,0)">class</span> <span class="ansi-bold" style="color: rgb(0,0,255)">LastDate</span>(Reduction):
-<span class="ansi-green-intense-fg ansi-bold">      8</span>     arg <span style="color: rgb(98,98,98)">=</span> rlz<span style="color: rgb(98,98,98)">.</span>column(rlz<span style="color: rgb(98,98,98)">.</span>date)
-<span class="ansi-green-intense-fg ansi-bold">      9</span>     where <span style="color: rgb(98,98,98)">=</span> rlz<span style="color: rgb(98,98,98)">.</span>optional(rlz<span style="color: rgb(98,98,98)">.</span>boolean)
 
-Input <span class="ansi-green-fg">In [1]</span>, in <span class="ansi-cyan-fg">LastDate</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      8</span> arg <span style="color: rgb(98,98,98)">=</span> rlz<span style="color: rgb(98,98,98)">.</span>column(rlz<span style="color: rgb(98,98,98)">.</span>date)
-<span class="ansi-green-intense-fg ansi-bold">      9</span> where <span style="color: rgb(98,98,98)">=</span> rlz<span style="color: rgb(98,98,98)">.</span>optional(rlz<span style="color: rgb(98,98,98)">.</span>boolean)
-<span class="ansi-green-fg">---&gt; 10</span> output_type <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">rlz</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">scalar_like</span>(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">arg</span><span style="color: rgb(175,0,0)">&#39;</span>)
-
-<span class="ansi-red-fg">AttributeError</span>: module &#39;ibis.expr.rules&#39; has no attribute &#39;scalar_like&#39;</pre>
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;ibis&#39;</pre>
 </div>
 </div>
 
@@ -2951,8 +2944,8 @@ Input <span class="ansi-green-fg">In [1]</span>, in <span class="ansi-cyan-fg">L
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2996,6 +2989,36 @@ DateColumn.last_date = last_date</div>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [2]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">ibis</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">expr</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">types</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> DateColumn  <span style="color: rgb(95,135,135)"># not DateValue! reductions are only valid on columns</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">last_date</span>(date_column, where<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">None</span>):
+<span class="ansi-green-intense-fg ansi-bold">      5</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> LastDate(date_column, where<span style="color: rgb(98,98,98)">=</span>where)<span style="color: rgb(98,98,98)">.</span>to_expr()
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;ibis&#39;</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -3008,8 +3031,8 @@ DateColumn.last_date = last_date</div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3039,9 +3062,37 @@ DateColumn.last_date = last_date</div>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [3]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">ibis</span>
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;ibis&#39;</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3069,6 +3120,34 @@ DateColumn.last_date = last_date</div>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [4]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> people <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>table([(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">name</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>), (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">country</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>), (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">date_of_birth</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">date</span><span style="color: rgb(175,0,0)">&#39;</span>)], name<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">people</span><span style="color: rgb(175,0,0)">&#39;</span>)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -3121,13 +3200,9 @@ DateColumn.last_date = last_date</div>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
 Input <span class="ansi-green-fg">In [5]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">people</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">date_of_birth</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">last_date</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">people</span><span style="color: rgb(98,98,98)">.</span>date_of_birth<span style="color: rgb(98,98,98)">.</span>last_date()
 
-Input <span class="ansi-green-fg">In [2]</span>, in <span class="ansi-cyan-fg">last_date</span><span class="ansi-blue-fg">(date_column, where)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">last_date</span>(date_column, where<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">None</span>):
-<span class="ansi-green-fg">----&gt; 5</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">LastDate</span>(date_column, where<span style="color: rgb(98,98,98)">=</span>where)<span style="color: rgb(98,98,98)">.</span>to_expr()
-
-<span class="ansi-red-fg">NameError</span>: name &#39;LastDate&#39; is not defined</pre>
+<span class="ansi-red-fg">NameError</span>: name &#39;people&#39; is not defined</pre>
 </div>
 </div>
 
@@ -3185,13 +3260,9 @@ Input <span class="ansi-green-fg">In [2]</span>, in <span class="ansi-cyan-fg">l
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
 Input <span class="ansi-green-fg">In [6]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">people</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">date_of_birth</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">last_date</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">people</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">country</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">==</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">Indonesia</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">people</span><span style="color: rgb(98,98,98)">.</span>date_of_birth<span style="color: rgb(98,98,98)">.</span>last_date(people<span style="color: rgb(98,98,98)">.</span>country <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Indonesia</span><span style="color: rgb(175,0,0)">&#39;</span>)
 
-Input <span class="ansi-green-fg">In [2]</span>, in <span class="ansi-cyan-fg">last_date</span><span class="ansi-blue-fg">(date_column, where)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">last_date</span>(date_column, where<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">None</span>):
-<span class="ansi-green-fg">----&gt; 5</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">LastDate</span>(date_column, where<span style="color: rgb(98,98,98)">=</span>where)<span style="color: rgb(98,98,98)">.</span>to_expr()
-
-<span class="ansi-red-fg">NameError</span>: name &#39;LastDate&#39; is not defined</pre>
+<span class="ansi-red-fg">NameError</span>: name &#39;people&#39; is not defined</pre>
 </div>
 </div>
 
@@ -3295,13 +3366,13 @@ def _last_date(translator, expr):
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
 Input <span class="ansi-green-fg">In [7]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 4&gt;</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">sqlalchemy</span> <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> <span class="ansi-bold" style="color: rgb(0,0,255)">sa</span>
-<span class="ansi-green-fg">----&gt; 4</span> <span style="color: rgb(175,0,255)">@ibis</span><span style="color: rgb(98,98,98)">.</span>sqlite<span style="color: rgb(98,98,98)">.</span>add_operation(<span class="ansi-yellow-bg">LastDate</span>)
+<span class="ansi-green-fg">----&gt; 4</span> <span style="color: rgb(175,0,255)">@ibis</span><span style="color: rgb(98,98,98)">.</span>sqlite<span style="color: rgb(98,98,98)">.</span>add_operation(LastDate)
 <span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">_last_date</span>(translator, expr):
 <span class="ansi-green-intense-fg ansi-bold">      6</span>     <span style="color: rgb(95,135,135)"># pull out the arguments to the expression</span>
 <span class="ansi-green-intense-fg ansi-bold">      7</span>     arg, where <span style="color: rgb(98,98,98)">=</span> expr<span style="color: rgb(98,98,98)">.</span>op()<span style="color: rgb(98,98,98)">.</span>args
 <span class="ansi-green-intense-fg ansi-bold">      9</span>     <span style="color: rgb(95,135,135)"># compile the argument</span>
 
-<span class="ansi-red-fg">NameError</span>: name &#39;LastDate&#39; is not defined</pre>
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
 </div>
 </div>
 
@@ -3353,8 +3424,8 @@ Input <span class="ansi-green-fg">In [7]</span>, in <span class="ansi-cyan-fg">&
 </div>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3394,6 +3465,38 @@ con = ibis.sqlite.connect(db_fname)</div>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [9]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 3&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">os</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">tempfile</span>
+<span class="ansi-green-fg">----&gt; 3</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">ibis</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> db_fname <span style="color: rgb(98,98,98)">=</span> os<span style="color: rgb(98,98,98)">.</span>path<span style="color: rgb(98,98,98)">.</span>join(tempfile<span style="color: rgb(98,98,98)">.</span>gettempdir(), <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">geography.db</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      7</span> con <span style="color: rgb(98,98,98)">=</span> ibis<span style="color: rgb(98,98,98)">.</span>sqlite<span style="color: rgb(98,98,98)">.</span>connect(db_fname)
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;ibis&#39;</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -3451,18 +3554,19 @@ independence</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [10]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> independence <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">con</span><span style="color: rgb(98,98,98)">.</span>table(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">independence</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span> independence
 
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>AlchemyTable: independence
-  country_code      string
-  independence_date date
-  independence_from string</pre>
+<span class="ansi-red-fg">NameError</span>: name &#39;con&#39; is not defined</pre>
 </div>
-
 </div>
 
 </div>
@@ -3533,14 +3637,10 @@ expr</div>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
 Input <span class="ansi-green-fg">In [11]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">independence</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">independence_date</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">last_date</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">independence</span><span style="color: rgb(98,98,98)">.</span>independence_date<span style="color: rgb(98,98,98)">.</span>last_date()
 <span class="ansi-green-intense-fg ansi-bold">      2</span> expr
 
-Input <span class="ansi-green-fg">In [2]</span>, in <span class="ansi-cyan-fg">last_date</span><span class="ansi-blue-fg">(date_column, where)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">last_date</span>(date_column, where<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">None</span>):
-<span class="ansi-green-fg">----&gt; 5</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">LastDate</span>(date_column, where<span style="color: rgb(98,98,98)">=</span>where)<span style="color: rgb(98,98,98)">.</span>to_expr()
-
-<span class="ansi-red-fg">NameError</span>: name &#39;LastDate&#39; is not defined</pre>
+<span class="ansi-red-fg">NameError</span>: name &#39;independence&#39; is not defined</pre>
 </div>
 </div>
 
@@ -3735,14 +3835,10 @@ expr</div>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
 Input <span class="ansi-green-fg">In [14]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">independence</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">independence_date</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">last_date</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">where</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">independence</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">independence_from</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">==</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">Spanish Empire</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">independence</span><span style="color: rgb(98,98,98)">.</span>independence_date<span style="color: rgb(98,98,98)">.</span>last_date(where<span style="color: rgb(98,98,98)">=</span>independence<span style="color: rgb(98,98,98)">.</span>independence_from <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Spanish Empire</span><span style="color: rgb(175,0,0)">&#39;</span>)
 <span class="ansi-green-intense-fg ansi-bold">      2</span> expr
 
-Input <span class="ansi-green-fg">In [2]</span>, in <span class="ansi-cyan-fg">last_date</span><span class="ansi-blue-fg">(date_column, where)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">last_date</span>(date_column, where<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">None</span>):
-<span class="ansi-green-fg">----&gt; 5</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">LastDate</span>(date_column, where<span style="color: rgb(98,98,98)">=</span>where)<span style="color: rgb(98,98,98)">.</span>to_expr()
-
-<span class="ansi-red-fg">NameError</span>: name &#39;LastDate&#39; is not defined</pre>
+<span class="ansi-red-fg">NameError</span>: name &#39;independence&#39; is not defined</pre>
 </div>
 </div>
 

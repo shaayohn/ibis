@@ -2802,119 +2802,22 @@ countries['name', 'continent', 'area_km2', 'population']</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [2]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 3&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">os</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">tempfile</span>
+<span class="ansi-green-fg">----&gt; 3</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">ibis</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span> ibis<span style="color: rgb(98,98,98)">.</span>options<span style="color: rgb(98,98,98)">.</span>interactive <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">True</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span> connection <span style="color: rgb(98,98,98)">=</span> ibis<span style="color: rgb(98,98,98)">.</span>sqlite<span style="color: rgb(98,98,98)">.</span>connect(os<span style="color: rgb(98,98,98)">.</span>path<span style="color: rgb(98,98,98)">.</span>join(tempfile<span style="color: rgb(98,98,98)">.</span>gettempdir(), <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">geography.db</span><span style="color: rgb(175,0,0)">&#39;</span>))
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>continent</th>
-      <th>area_km2</th>
-      <th>population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Andorra</td>
-      <td>EU</td>
-      <td>468.0</td>
-      <td>84000</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>United Arab Emirates</td>
-      <td>AS</td>
-      <td>82880.0</td>
-      <td>4975593</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Afghanistan</td>
-      <td>AS</td>
-      <td>647500.0</td>
-      <td>29121286</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Antigua and Barbuda</td>
-      <td>NA</td>
-      <td>443.0</td>
-      <td>86754</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Anguilla</td>
-      <td>NA</td>
-      <td>102.0</td>
-      <td>13254</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>247</th>
-      <td>Yemen</td>
-      <td>AS</td>
-      <td>527970.0</td>
-      <td>23495361</td>
-    </tr>
-    <tr>
-      <th>248</th>
-      <td>Mayotte</td>
-      <td>AF</td>
-      <td>374.0</td>
-      <td>159042</td>
-    </tr>
-    <tr>
-      <th>249</th>
-      <td>South Africa</td>
-      <td>AF</td>
-      <td>1219912.0</td>
-      <td>49000000</td>
-    </tr>
-    <tr>
-      <th>250</th>
-      <td>Zambia</td>
-      <td>AF</td>
-      <td>752614.0</td>
-      <td>13460305</td>
-    </tr>
-    <tr>
-      <th>251</th>
-      <td>Zimbabwe</td>
-      <td>AF</td>
-      <td>390580.0</td>
-      <td>13061000</td>
-    </tr>
-  </tbody>
-</table>
-<p>252 rows × 4 columns</p>
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;ibis&#39;</pre>
 </div>
-</div>
-
 </div>
 
 </div>
@@ -3006,83 +2909,29 @@ continent_name</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [3]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> continent_name <span style="color: rgb(98,98,98)">=</span> (<span class="ansi-yellow-bg">countries</span>[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">continent</span><span style="color: rgb(175,0,0)">&#39;</span>]<span style="color: rgb(98,98,98)">.</span>case()
+<span class="ansi-green-intense-fg ansi-bold">      2</span>                                         <span style="color: rgb(98,98,98)">.</span>when(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">NA</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">North America</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      3</span>                                         <span style="color: rgb(98,98,98)">.</span>when(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">SA</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">South America</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      4</span>                                         <span style="color: rgb(98,98,98)">.</span>when(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">EU</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Europe</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      5</span>                                         <span style="color: rgb(98,98,98)">.</span>when(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">AF</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Africa</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      6</span>                                         <span style="color: rgb(98,98,98)">.</span>when(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">AS</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Asia</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      7</span>                                         <span style="color: rgb(98,98,98)">.</span>when(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">OC</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Oceania</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      8</span>                                         <span style="color: rgb(98,98,98)">.</span>when(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">AN</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Anctartica</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      9</span>                                         <span style="color: rgb(98,98,98)">.</span>else_(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Unknown continent</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">     10</span>                                         <span style="color: rgb(98,98,98)">.</span>end()
+<span class="ansi-green-intense-fg ansi-bold">     11</span>                                         <span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">continent_name</span><span style="color: rgb(175,0,0)">&#39;</span>))
+<span class="ansi-green-intense-fg ansi-bold">     12</span> continent_name
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>continent_name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Europe</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Asia</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Asia</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>North America</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>North America</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>247</th>
-      <td>Asia</td>
-    </tr>
-    <tr>
-      <th>248</th>
-      <td>Africa</td>
-    </tr>
-    <tr>
-      <th>249</th>
-      <td>Africa</td>
-    </tr>
-    <tr>
-      <th>250</th>
-      <td>Africa</td>
-    </tr>
-    <tr>
-      <th>251</th>
-      <td>Africa</td>
-    </tr>
-  </tbody>
-</table>
-<p>252 rows × 1 columns</p>
+<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
 </div>
-</div>
-
 </div>
 
 </div>
@@ -3147,15 +2996,18 @@ variable, and the results are not stored. They have been computed when we printe
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [4]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="color: rgb(0,135,0)">type</span>(<span class="ansi-yellow-bg">continent_name</span>)
 
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>ibis.expr.types.strings.StringColumn</pre>
+<span class="ansi-red-fg">NameError</span>: name &#39;continent_name&#39; is not defined</pre>
 </div>
-
 </div>
 
 </div>
@@ -3223,119 +3075,18 @@ has a name when being returned.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [5]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">countries</span>[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">name</span><span style="color: rgb(175,0,0)">&#39;</span>, continent_name, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">area_km2</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">population</span><span style="color: rgb(175,0,0)">&#39;</span>]
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>continent_name</th>
-      <th>area_km2</th>
-      <th>population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Andorra</td>
-      <td>Europe</td>
-      <td>468.0</td>
-      <td>84000</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>United Arab Emirates</td>
-      <td>Asia</td>
-      <td>82880.0</td>
-      <td>4975593</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Afghanistan</td>
-      <td>Asia</td>
-      <td>647500.0</td>
-      <td>29121286</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Antigua and Barbuda</td>
-      <td>North America</td>
-      <td>443.0</td>
-      <td>86754</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Anguilla</td>
-      <td>North America</td>
-      <td>102.0</td>
-      <td>13254</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>247</th>
-      <td>Yemen</td>
-      <td>Asia</td>
-      <td>527970.0</td>
-      <td>23495361</td>
-    </tr>
-    <tr>
-      <th>248</th>
-      <td>Mayotte</td>
-      <td>Africa</td>
-      <td>374.0</td>
-      <td>159042</td>
-    </tr>
-    <tr>
-      <th>249</th>
-      <td>South Africa</td>
-      <td>Africa</td>
-      <td>1219912.0</td>
-      <td>49000000</td>
-    </tr>
-    <tr>
-      <th>250</th>
-      <td>Zambia</td>
-      <td>Africa</td>
-      <td>752614.0</td>
-      <td>13460305</td>
-    </tr>
-    <tr>
-      <th>251</th>
-      <td>Zimbabwe</td>
-      <td>Africa</td>
-      <td>390580.0</td>
-      <td>13061000</td>
-    </tr>
-  </tbody>
-</table>
-<p>252 rows × 4 columns</p>
+<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
 </div>
-</div>
-
 </div>
 
 </div>
@@ -3397,119 +3148,18 @@ when using it in the list of columns to fetch.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [6]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">countries</span>[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">name</span><span style="color: rgb(175,0,0)">&#39;</span>, continent_name<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">continent</span><span style="color: rgb(175,0,0)">&#39;</span>), <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">area_km2</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">population</span><span style="color: rgb(175,0,0)">&#39;</span>]
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>continent</th>
-      <th>area_km2</th>
-      <th>population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Andorra</td>
-      <td>Europe</td>
-      <td>468.0</td>
-      <td>84000</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>United Arab Emirates</td>
-      <td>Asia</td>
-      <td>82880.0</td>
-      <td>4975593</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Afghanistan</td>
-      <td>Asia</td>
-      <td>647500.0</td>
-      <td>29121286</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Antigua and Barbuda</td>
-      <td>North America</td>
-      <td>443.0</td>
-      <td>86754</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Anguilla</td>
-      <td>North America</td>
-      <td>102.0</td>
-      <td>13254</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>247</th>
-      <td>Yemen</td>
-      <td>Asia</td>
-      <td>527970.0</td>
-      <td>23495361</td>
-    </tr>
-    <tr>
-      <th>248</th>
-      <td>Mayotte</td>
-      <td>Africa</td>
-      <td>374.0</td>
-      <td>159042</td>
-    </tr>
-    <tr>
-      <th>249</th>
-      <td>South Africa</td>
-      <td>Africa</td>
-      <td>1219912.0</td>
-      <td>49000000</td>
-    </tr>
-    <tr>
-      <th>250</th>
-      <td>Zambia</td>
-      <td>Africa</td>
-      <td>752614.0</td>
-      <td>13460305</td>
-    </tr>
-    <tr>
-      <th>251</th>
-      <td>Zimbabwe</td>
-      <td>Africa</td>
-      <td>390580.0</td>
-      <td>13061000</td>
-    </tr>
-  </tbody>
-</table>
-<p>252 rows × 4 columns</p>
+<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
 </div>
-</div>
-
 </div>
 
 </div>
@@ -3570,74 +3220,18 @@ when using it in the list of columns to fetch.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [7]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">countries</span><span style="color: rgb(98,98,98)">.</span>group_by(continent_name)<span style="color: rgb(98,98,98)">.</span>aggregate(countries[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">population</span><span style="color: rgb(175,0,0)">&#39;</span>]<span style="color: rgb(98,98,98)">.</span>sum()<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">total_population</span><span style="color: rgb(175,0,0)">&#39;</span>))
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>continent_name</th>
-      <th>total_population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Africa</td>
-      <td>1021238685</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Anctartica</td>
-      <td>170</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Asia</td>
-      <td>4130584841</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Europe</td>
-      <td>750724554</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>North America</td>
-      <td>540204371</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Oceania</td>
-      <td>36067549</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>South America</td>
-      <td>400143568</td>
-    </tr>
-  </tbody>
-</table>
+<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
 </div>
-</div>
-
 </div>
 
 </div>
@@ -3707,15 +3301,19 @@ total_population</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [8]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> total_population <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">countries</span>[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">population</span><span style="color: rgb(175,0,0)">&#39;</span>]<span style="color: rgb(98,98,98)">.</span>sum()<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">total_population</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span> total_population
 
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>6878963738</pre>
+<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
 </div>
-
 </div>
 
 </div>
@@ -3778,74 +3376,18 @@ over every group defined by the <code>group_by</code> method.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [9]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">countries</span><span style="color: rgb(98,98,98)">.</span>group_by(continent_name)<span style="color: rgb(98,98,98)">.</span>aggregate(total_population)
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>continent_name</th>
-      <th>total_population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Africa</td>
-      <td>1021238685</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Anctartica</td>
-      <td>170</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Asia</td>
-      <td>4130584841</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Europe</td>
-      <td>750724554</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>North America</td>
-      <td>540204371</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Oceania</td>
-      <td>36067549</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>South America</td>
-      <td>400143568</td>
-    </tr>
-  </tbody>
-</table>
+<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
 </div>
-</div>
-
 </div>
 
 </div>
@@ -3910,82 +3452,19 @@ use both column names and expressions, and also a list with any of them (e.g. <c
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [10]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">countries</span><span style="color: rgb(98,98,98)">.</span>group_by(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">continent</span><span style="color: rgb(175,0,0)">&#39;</span>)<span style="color: rgb(98,98,98)">.</span>aggregate([total_population,
+<span class="ansi-green-intense-fg ansi-bold">      2</span>                                            countries[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">area_km2</span><span style="color: rgb(175,0,0)">&#39;</span>]<span style="color: rgb(98,98,98)">.</span>mean()<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">average_area</span><span style="color: rgb(175,0,0)">&#39;</span>)])
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>continent</th>
-      <th>total_population</th>
-      <th>average_area</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>AF</td>
-      <td>1021238685</td>
-      <td>5.234534e+05</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AN</td>
-      <td>170</td>
-      <td>2.802439e+06</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>AS</td>
-      <td>4130584841</td>
-      <td>6.196685e+05</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>EU</td>
-      <td>750724554</td>
-      <td>4.293017e+05</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>NA</td>
-      <td>540204371</td>
-      <td>5.836313e+05</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>OC</td>
-      <td>36067549</td>
-      <td>3.044157e+05</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>SA</td>
-      <td>400143568</td>
-      <td>1.272751e+06</td>
-    </tr>
-  </tbody>
-</table>
+<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
 </div>
-</div>
-
 </div>
 
 </div>
@@ -4049,107 +3528,19 @@ gdp</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [11]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> gdp <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">connection</span><span style="color: rgb(98,98,98)">.</span>table(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">gdp</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span> gdp
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>country_code</th>
-      <th>year</th>
-      <th>value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>ABW</td>
-      <td>1986</td>
-      <td>4.054634e+08</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>ABW</td>
-      <td>1987</td>
-      <td>4.876025e+08</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>ABW</td>
-      <td>1988</td>
-      <td>5.964236e+08</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>ABW</td>
-      <td>1989</td>
-      <td>6.953044e+08</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>ABW</td>
-      <td>1990</td>
-      <td>7.648871e+08</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>9995</th>
-      <td>SVK</td>
-      <td>2002</td>
-      <td>3.513034e+10</td>
-    </tr>
-    <tr>
-      <th>9996</th>
-      <td>SVK</td>
-      <td>2003</td>
-      <td>4.681659e+10</td>
-    </tr>
-    <tr>
-      <th>9997</th>
-      <td>SVK</td>
-      <td>2004</td>
-      <td>5.733202e+10</td>
-    </tr>
-    <tr>
-      <th>9998</th>
-      <td>SVK</td>
-      <td>2005</td>
-      <td>6.278531e+10</td>
-    </tr>
-    <tr>
-      <th>9999</th>
-      <td>SVK</td>
-      <td>2006</td>
-      <td>7.070810e+10</td>
-    </tr>
-  </tbody>
-</table>
-<p>10000 rows × 3 columns</p>
+<span class="ansi-red-fg">NameError</span>: name &#39;connection&#39; is not defined</pre>
 </div>
-</div>
-
 </div>
 
 </div>
@@ -4210,15 +3601,18 @@ gdp</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [12]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">gdp</span>[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">year</span><span style="color: rgb(175,0,0)">&#39;</span>]<span style="color: rgb(98,98,98)">.</span>min(), gdp[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">year</span><span style="color: rgb(175,0,0)">&#39;</span>]<span style="color: rgb(98,98,98)">.</span>max()
 
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(1960, 2017)</pre>
+<span class="ansi-red-fg">NameError</span>: name &#39;gdp&#39; is not defined</pre>
 </div>
-
 </div>
 
 </div>
@@ -4281,131 +3675,18 @@ one matches the three letter code in the <code>gdp</code> table.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [13]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">countries</span>[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">iso_alpha2</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">iso_alpha3</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">iso_numeric</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">fips</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">name</span><span style="color: rgb(175,0,0)">&#39;</span>]
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>iso_alpha2</th>
-      <th>iso_alpha3</th>
-      <th>iso_numeric</th>
-      <th>fips</th>
-      <th>name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>AD</td>
-      <td>AND</td>
-      <td>20</td>
-      <td>AN</td>
-      <td>Andorra</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AE</td>
-      <td>ARE</td>
-      <td>784</td>
-      <td>AE</td>
-      <td>United Arab Emirates</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>AF</td>
-      <td>AFG</td>
-      <td>4</td>
-      <td>AF</td>
-      <td>Afghanistan</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>AG</td>
-      <td>ATG</td>
-      <td>28</td>
-      <td>AC</td>
-      <td>Antigua and Barbuda</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>AI</td>
-      <td>AIA</td>
-      <td>660</td>
-      <td>AV</td>
-      <td>Anguilla</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>247</th>
-      <td>YE</td>
-      <td>YEM</td>
-      <td>887</td>
-      <td>YM</td>
-      <td>Yemen</td>
-    </tr>
-    <tr>
-      <th>248</th>
-      <td>YT</td>
-      <td>MYT</td>
-      <td>175</td>
-      <td>MF</td>
-      <td>Mayotte</td>
-    </tr>
-    <tr>
-      <th>249</th>
-      <td>ZA</td>
-      <td>ZAF</td>
-      <td>710</td>
-      <td>SF</td>
-      <td>South Africa</td>
-    </tr>
-    <tr>
-      <th>250</th>
-      <td>ZM</td>
-      <td>ZMB</td>
-      <td>894</td>
-      <td>ZA</td>
-      <td>Zambia</td>
-    </tr>
-    <tr>
-      <th>251</th>
-      <td>ZW</td>
-      <td>ZWE</td>
-      <td>716</td>
-      <td>ZI</td>
-      <td>Zimbabwe</td>
-    </tr>
-  </tbody>
-</table>
-<p>252 rows × 5 columns</p>
+<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
 </div>
-</div>
-
 </div>
 
 </div>
@@ -4473,215 +3754,20 @@ countries_and_gdp[countries, gdp]</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [14]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> countries_and_gdp <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">countries</span><span style="color: rgb(98,98,98)">.</span>inner_join(gdp,
+<span class="ansi-green-intense-fg ansi-bold">      2</span>                                          predicates<span style="color: rgb(98,98,98)">=</span>countries[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">iso_alpha3</span><span style="color: rgb(175,0,0)">&#39;</span>] <span style="color: rgb(98,98,98)">==</span> gdp[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">country_code</span><span style="color: rgb(175,0,0)">&#39;</span>])
+<span class="ansi-green-intense-fg ansi-bold">      3</span> countries_and_gdp[countries, gdp]
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>iso_alpha2</th>
-      <th>iso_alpha3</th>
-      <th>iso_numeric</th>
-      <th>fips</th>
-      <th>name</th>
-      <th>capital</th>
-      <th>area_km2</th>
-      <th>population</th>
-      <th>continent</th>
-      <th>country_code</th>
-      <th>year</th>
-      <th>value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>AD</td>
-      <td>AND</td>
-      <td>20</td>
-      <td>AN</td>
-      <td>Andorra</td>
-      <td>Andorra la Vella</td>
-      <td>468.0</td>
-      <td>84000</td>
-      <td>EU</td>
-      <td>AND</td>
-      <td>1970</td>
-      <td>7.861921e+07</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AD</td>
-      <td>AND</td>
-      <td>20</td>
-      <td>AN</td>
-      <td>Andorra</td>
-      <td>Andorra la Vella</td>
-      <td>468.0</td>
-      <td>84000</td>
-      <td>EU</td>
-      <td>AND</td>
-      <td>1971</td>
-      <td>8.940982e+07</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>AD</td>
-      <td>AND</td>
-      <td>20</td>
-      <td>AN</td>
-      <td>Andorra</td>
-      <td>Andorra la Vella</td>
-      <td>468.0</td>
-      <td>84000</td>
-      <td>EU</td>
-      <td>AND</td>
-      <td>1972</td>
-      <td>1.134082e+08</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>AD</td>
-      <td>AND</td>
-      <td>20</td>
-      <td>AN</td>
-      <td>Andorra</td>
-      <td>Andorra la Vella</td>
-      <td>468.0</td>
-      <td>84000</td>
-      <td>EU</td>
-      <td>AND</td>
-      <td>1973</td>
-      <td>1.508201e+08</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>AD</td>
-      <td>AND</td>
-      <td>20</td>
-      <td>AN</td>
-      <td>Andorra</td>
-      <td>Andorra la Vella</td>
-      <td>468.0</td>
-      <td>84000</td>
-      <td>EU</td>
-      <td>AND</td>
-      <td>1974</td>
-      <td>1.865587e+08</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>9482</th>
-      <td>ZW</td>
-      <td>ZWE</td>
-      <td>716</td>
-      <td>ZI</td>
-      <td>Zimbabwe</td>
-      <td>Harare</td>
-      <td>390580.0</td>
-      <td>13061000</td>
-      <td>AF</td>
-      <td>ZWE</td>
-      <td>2013</td>
-      <td>1.909102e+10</td>
-    </tr>
-    <tr>
-      <th>9483</th>
-      <td>ZW</td>
-      <td>ZWE</td>
-      <td>716</td>
-      <td>ZI</td>
-      <td>Zimbabwe</td>
-      <td>Harare</td>
-      <td>390580.0</td>
-      <td>13061000</td>
-      <td>AF</td>
-      <td>ZWE</td>
-      <td>2014</td>
-      <td>1.949552e+10</td>
-    </tr>
-    <tr>
-      <th>9484</th>
-      <td>ZW</td>
-      <td>ZWE</td>
-      <td>716</td>
-      <td>ZI</td>
-      <td>Zimbabwe</td>
-      <td>Harare</td>
-      <td>390580.0</td>
-      <td>13061000</td>
-      <td>AF</td>
-      <td>ZWE</td>
-      <td>2015</td>
-      <td>1.996312e+10</td>
-    </tr>
-    <tr>
-      <th>9485</th>
-      <td>ZW</td>
-      <td>ZWE</td>
-      <td>716</td>
-      <td>ZI</td>
-      <td>Zimbabwe</td>
-      <td>Harare</td>
-      <td>390580.0</td>
-      <td>13061000</td>
-      <td>AF</td>
-      <td>ZWE</td>
-      <td>2016</td>
-      <td>2.054868e+10</td>
-    </tr>
-    <tr>
-      <th>9486</th>
-      <td>ZW</td>
-      <td>ZWE</td>
-      <td>716</td>
-      <td>ZI</td>
-      <td>Zimbabwe</td>
-      <td>Harare</td>
-      <td>390580.0</td>
-      <td>13061000</td>
-      <td>AF</td>
-      <td>ZWE</td>
-      <td>2017</td>
-      <td>2.281301e+10</td>
-    </tr>
-  </tbody>
-</table>
-<p>9487 rows × 12 columns</p>
+<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
 </div>
-</div>
-
 </div>
 
 </div>
@@ -4744,107 +3830,19 @@ gdp_2017</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [15]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> gdp_2017 <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">gdp</span><span style="color: rgb(98,98,98)">.</span>filter(gdp[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">year</span><span style="color: rgb(175,0,0)">&#39;</span>] <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(98,98,98)">2017</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span> gdp_2017
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>country_code</th>
-      <th>year</th>
-      <th>value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>ABW</td>
-      <td>2017</td>
-      <td>2.700559e+09</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AFG</td>
-      <td>2017</td>
-      <td>2.019176e+10</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>AGO</td>
-      <td>2017</td>
-      <td>1.221238e+11</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>ALB</td>
-      <td>2017</td>
-      <td>1.302506e+10</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>AND</td>
-      <td>2017</td>
-      <td>3.013387e+09</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>242</th>
-      <td>XKX</td>
-      <td>2017</td>
-      <td>7.227700e+09</td>
-    </tr>
-    <tr>
-      <th>243</th>
-      <td>YEM</td>
-      <td>2017</td>
-      <td>2.681870e+10</td>
-    </tr>
-    <tr>
-      <th>244</th>
-      <td>ZAF</td>
-      <td>2017</td>
-      <td>3.495541e+11</td>
-    </tr>
-    <tr>
-      <th>245</th>
-      <td>ZMB</td>
-      <td>2017</td>
-      <td>2.586814e+10</td>
-    </tr>
-    <tr>
-      <th>246</th>
-      <td>ZWE</td>
-      <td>2017</td>
-      <td>2.281301e+10</td>
-    </tr>
-  </tbody>
-</table>
-<p>247 rows × 3 columns</p>
+<span class="ansi-red-fg">NameError</span>: name &#39;gdp&#39; is not defined</pre>
 </div>
-</div>
-
 </div>
 
 </div>
@@ -4909,215 +3907,20 @@ countries_and_gdp[countries, gdp_2017]</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [16]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> countries_and_gdp <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">countries</span><span style="color: rgb(98,98,98)">.</span>inner_join(gdp_2017,
+<span class="ansi-green-intense-fg ansi-bold">      2</span>                                          predicates<span style="color: rgb(98,98,98)">=</span>countries[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">iso_alpha3</span><span style="color: rgb(175,0,0)">&#39;</span>] <span style="color: rgb(98,98,98)">==</span> gdp_2017[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">country_code</span><span style="color: rgb(175,0,0)">&#39;</span>])
+<span class="ansi-green-intense-fg ansi-bold">      3</span> countries_and_gdp[countries, gdp_2017]
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>iso_alpha2</th>
-      <th>iso_alpha3</th>
-      <th>iso_numeric</th>
-      <th>fips</th>
-      <th>name</th>
-      <th>capital</th>
-      <th>area_km2</th>
-      <th>population</th>
-      <th>continent</th>
-      <th>country_code</th>
-      <th>year</th>
-      <th>value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>AW</td>
-      <td>ABW</td>
-      <td>533</td>
-      <td>AA</td>
-      <td>Aruba</td>
-      <td>Oranjestad</td>
-      <td>193.0</td>
-      <td>71566</td>
-      <td>NA</td>
-      <td>ABW</td>
-      <td>2017</td>
-      <td>2.700559e+09</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AF</td>
-      <td>AFG</td>
-      <td>4</td>
-      <td>AF</td>
-      <td>Afghanistan</td>
-      <td>Kabul</td>
-      <td>647500.0</td>
-      <td>29121286</td>
-      <td>AS</td>
-      <td>AFG</td>
-      <td>2017</td>
-      <td>2.019176e+10</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>AO</td>
-      <td>AGO</td>
-      <td>24</td>
-      <td>AO</td>
-      <td>Angola</td>
-      <td>Luanda</td>
-      <td>1246700.0</td>
-      <td>13068161</td>
-      <td>AF</td>
-      <td>AGO</td>
-      <td>2017</td>
-      <td>1.221238e+11</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>AL</td>
-      <td>ALB</td>
-      <td>8</td>
-      <td>AL</td>
-      <td>Albania</td>
-      <td>Tirana</td>
-      <td>28748.0</td>
-      <td>2986952</td>
-      <td>EU</td>
-      <td>ALB</td>
-      <td>2017</td>
-      <td>1.302506e+10</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>AD</td>
-      <td>AND</td>
-      <td>20</td>
-      <td>AN</td>
-      <td>Andorra</td>
-      <td>Andorra la Vella</td>
-      <td>468.0</td>
-      <td>84000</td>
-      <td>EU</td>
-      <td>AND</td>
-      <td>2017</td>
-      <td>3.013387e+09</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>196</th>
-      <td>XK</td>
-      <td>XKX</td>
-      <td>0</td>
-      <td>KV</td>
-      <td>Kosovo</td>
-      <td>Pristina</td>
-      <td>10908.0</td>
-      <td>1800000</td>
-      <td>EU</td>
-      <td>XKX</td>
-      <td>2017</td>
-      <td>7.227700e+09</td>
-    </tr>
-    <tr>
-      <th>197</th>
-      <td>YE</td>
-      <td>YEM</td>
-      <td>887</td>
-      <td>YM</td>
-      <td>Yemen</td>
-      <td>Sanaa</td>
-      <td>527970.0</td>
-      <td>23495361</td>
-      <td>AS</td>
-      <td>YEM</td>
-      <td>2017</td>
-      <td>2.681870e+10</td>
-    </tr>
-    <tr>
-      <th>198</th>
-      <td>ZA</td>
-      <td>ZAF</td>
-      <td>710</td>
-      <td>SF</td>
-      <td>South Africa</td>
-      <td>Pretoria</td>
-      <td>1219912.0</td>
-      <td>49000000</td>
-      <td>AF</td>
-      <td>ZAF</td>
-      <td>2017</td>
-      <td>3.495541e+11</td>
-    </tr>
-    <tr>
-      <th>199</th>
-      <td>ZM</td>
-      <td>ZMB</td>
-      <td>894</td>
-      <td>ZA</td>
-      <td>Zambia</td>
-      <td>Lusaka</td>
-      <td>752614.0</td>
-      <td>13460305</td>
-      <td>AF</td>
-      <td>ZMB</td>
-      <td>2017</td>
-      <td>2.586814e+10</td>
-    </tr>
-    <tr>
-      <th>200</th>
-      <td>ZW</td>
-      <td>ZWE</td>
-      <td>716</td>
-      <td>ZI</td>
-      <td>Zimbabwe</td>
-      <td>Harare</td>
-      <td>390580.0</td>
-      <td>13061000</td>
-      <td>AF</td>
-      <td>ZWE</td>
-      <td>2017</td>
-      <td>2.281301e+10</td>
-    </tr>
-  </tbody>
-</table>
-<p>201 rows × 12 columns</p>
+<span class="ansi-red-fg">NameError</span>: name &#39;countries&#39; is not defined</pre>
 </div>
-</div>
-
 </div>
 
 </div>

@@ -3397,8 +3397,8 @@ guide!</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3428,6 +3428,35 @@ ibis.options.sql.default_limit = None</div>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [1]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">ibis</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> ibis<span style="color: rgb(98,98,98)">.</span>options<span style="color: rgb(98,98,98)">.</span>sql<span style="color: rgb(98,98,98)">.</span>default_limit <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;ibis&#39;</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -3488,18 +3517,19 @@ t</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [2]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> t <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>table([(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">one</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>), (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">two</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">float</span><span style="color: rgb(175,0,0)">&#39;</span>), (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">three</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">int32</span><span style="color: rgb(175,0,0)">&#39;</span>)], <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">my_data</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span> t
 
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>UnboundTable: my_data
-  one   string
-  two   float64
-  three int32</pre>
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
 </div>
-
 </div>
 
 </div>
@@ -3522,8 +3552,8 @@ t</div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3553,6 +3583,34 @@ t</div>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [3]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> proj <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t</span>[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">two</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">one</span><span style="color: rgb(175,0,0)">&#39;</span>]
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -3566,8 +3624,8 @@ t</div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3595,6 +3653,34 @@ t</div>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [4]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> proj <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>projection([<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">two</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">one</span><span style="color: rgb(175,0,0)">&#39;</span>])
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -3654,10 +3740,14 @@ t</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT `two`, `one`
-FROM my_data
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [5]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="color: rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(proj))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
 </div>
 </div>
 
@@ -3682,8 +3772,8 @@ expressions must be <strong>named</strong>. Let's look at the SQL:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3711,6 +3801,34 @@ expressions must be <strong>named</strong>. Let's look at the SQL:</p>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [6]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> new_col <span style="color: rgb(98,98,98)">=</span> (<span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>three <span style="color: rgb(98,98,98)">*</span> <span style="color: rgb(98,98,98)">2</span>)<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">new_col</span><span style="color: rgb(175,0,0)">&#39;</span>)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -3772,10 +3890,15 @@ print(ibis.impala.compile(proj))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT `two`, `one`, `three` * 2 AS `new_col`
-FROM my_data
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [7]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> proj <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t</span>[<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">two</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">one</span><span style="color: rgb(175,0,0)">&#39;</span>, new_col]
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(proj))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -3797,8 +3920,8 @@ there is a convenience method <code>mutate</code>:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3826,6 +3949,34 @@ there is a convenience method <code>mutate</code>:</p>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [8]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> mutated <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>mutate(new_col<span style="color: rgb(98,98,98)">=</span>t<span style="color: rgb(98,98,98)">.</span>three <span style="color: rgb(98,98,98)">*</span> <span style="color: rgb(98,98,98)">2</span>)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -3886,10 +4037,14 @@ Python keywords to provide the name. Indeed:</p>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, `three` * 2 AS `new_col`
-FROM my_data
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [9]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="color: rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(mutated))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
 </div>
 </div>
 
@@ -3957,10 +4112,15 @@ print(ibis.impala.compile(mutated))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT `one`, `two` * 2 AS `two`, `three`
-FROM my_data
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [10]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> mutated <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>mutate(two<span style="color: rgb(98,98,98)">=</span>t<span style="color: rgb(98,98,98)">.</span>two <span style="color: rgb(98,98,98)">*</span> <span style="color: rgb(98,98,98)">2</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(mutated))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -4029,10 +4189,15 @@ print(ibis.impala.compile(proj))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM my_data
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [11]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> proj <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t</span>[t]
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(proj))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -4100,10 +4265,15 @@ print(ibis.impala.compile(proj))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, `three` * 2 AS `new_col`
-FROM my_data
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [12]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> proj <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t</span>[t, new_col]
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(proj))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -4124,8 +4294,8 @@ FROM my_data
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4155,6 +4325,34 @@ FROM my_data
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [13]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> t2 <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>table([(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>), (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">value</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">float</span><span style="color: rgb(175,0,0)">&#39;</span>)], <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">dim_table</span><span style="color: rgb(175,0,0)">&#39;</span>)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -4173,8 +4371,8 @@ FROM my_data
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4204,6 +4402,35 @@ joined = t.join(t2, t.one == t2.key)[t, diff]</div>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [14]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> diff <span style="color: rgb(98,98,98)">=</span> (<span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>two <span style="color: rgb(98,98,98)">-</span> t2<span style="color: rgb(98,98,98)">.</span>value)<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">diff</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span> joined <span style="color: rgb(98,98,98)">=</span> t<span style="color: rgb(98,98,98)">.</span>join(t2, t<span style="color: rgb(98,98,98)">.</span>one <span style="color: rgb(98,98,98)">==</span> t2<span style="color: rgb(98,98,98)">.</span>key)[t, diff]
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -4263,12 +4490,14 @@ joined = t.join(t2, t.one == t2.key)[t, diff]</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT t0.*, t0.`two` - t1.`value` AS `diff`
-FROM my_data t0
-  INNER JOIN dim_table t1
-    ON t0.`one` = t1.`key`
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [15]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="color: rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(joined))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
 </div>
 </div>
 
@@ -4300,8 +4529,8 @@ Consider this SQL:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4337,6 +4566,38 @@ Consider this SQL:</p>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [16]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 2&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> expr <span style="color: rgb(98,98,98)">=</span> (
+<span class="ansi-green-fg">----&gt; 2</span>     <span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>group_by([<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">one</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">three</span><span style="color: rgb(175,0,0)">&#39;</span>])
+<span class="ansi-green-intense-fg ansi-bold">      3</span>     <span style="color: rgb(98,98,98)">.</span>aggregate(the_sum<span style="color: rgb(98,98,98)">=</span>t<span style="color: rgb(98,98,98)">.</span>two<span style="color: rgb(98,98,98)">.</span>sum()) <span style="color: rgb(98,98,98)">.</span>group_by(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">one</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span style="color: rgb(98,98,98)">.</span>aggregate(mad<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">lambda</span> x: x<span style="color: rgb(98,98,98)">.</span>the_sum<span style="color: rgb(98,98,98)">.</span>abs()<span style="color: rgb(98,98,98)">.</span>mean())
+<span class="ansi-green-intense-fg ansi-bold">      5</span> )
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -4396,15 +4657,14 @@ Consider this SQL:</p>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT `one`, avg(abs(`the_sum`)) AS `mad`
-FROM (
-  SELECT `one`, `three`, sum(`two`) AS `the_sum`
-  FROM my_data
-  GROUP BY 1, 2
-) t0
-GROUP BY 1
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [17]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="color: rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
 </div>
 </div>
 
@@ -4472,11 +4732,15 @@ print(ibis.impala.compile(filtered))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM my_data
-WHERE `two` &gt; 0
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [18]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> filtered <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t</span>[t<span style="color: rgb(98,98,98)">.</span>two <span style="color: rgb(98,98,98)">&gt;</span> <span style="color: rgb(98,98,98)">0</span>]
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(filtered))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -4544,12 +4808,15 @@ print(ibis.impala.compile(filtered))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM my_data
-WHERE (`two` &gt; 0) AND
-      (`one` IN (&#39;A&#39;, &#39;B&#39;))
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [19]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> filtered <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>filter([t<span style="color: rgb(98,98,98)">.</span>two <span style="color: rgb(98,98,98)">&gt;</span> <span style="color: rgb(98,98,98)">0</span>, t<span style="color: rgb(98,98,98)">.</span>one<span style="color: rgb(98,98,98)">.</span>isin([<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">A</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">B</span><span style="color: rgb(175,0,0)">&#39;</span>])])
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(filtered))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -4619,11 +4886,16 @@ print(ibis.impala.compile(filtered))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM my_data
-WHERE (`two` &lt; 0) OR ((`two` &gt; 0) OR `one` IN (&#39;A&#39;, &#39;B&#39;))
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [20]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> cond <span style="color: rgb(98,98,98)">=</span> (<span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>two <span style="color: rgb(98,98,98)">&lt;</span> <span style="color: rgb(98,98,98)">0</span>) <span style="color: rgb(98,98,98)">|</span> ((t<span style="color: rgb(98,98,98)">.</span>two <span style="color: rgb(98,98,98)">&gt;</span> <span style="color: rgb(98,98,98)">0</span>) <span style="color: rgb(98,98,98)">|</span> t<span style="color: rgb(98,98,98)">.</span>one<span style="color: rgb(98,98,98)">.</span>isin([<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">A</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">B</span><span style="color: rgb(175,0,0)">&#39;</span>]))
+<span class="ansi-green-intense-fg ansi-bold">      2</span> filtered <span style="color: rgb(98,98,98)">=</span> t[cond]
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(filtered))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -4649,8 +4921,8 @@ WHERE (`two` &lt; 0) OR ((`two` &gt; 0) OR `one` IN (&#39;A&#39;, &#39;B&#39;))
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4682,6 +4954,36 @@ agged = t.aggregate(stats)</div>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [21]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> stats <span style="color: rgb(98,98,98)">=</span> [<span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>two<span style="color: rgb(98,98,98)">.</span>sum()<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">total_two</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      2</span>          t<span style="color: rgb(98,98,98)">.</span>three<span style="color: rgb(98,98,98)">.</span>mean()<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">avg_three</span><span style="color: rgb(175,0,0)">&#39;</span>)]
+<span class="ansi-green-intense-fg ansi-bold">      3</span> agged <span style="color: rgb(98,98,98)">=</span> t<span style="color: rgb(98,98,98)">.</span>aggregate(stats)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -4739,18 +5041,18 @@ row with your statistics of interest:</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [22]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">agged</span><span style="color: rgb(98,98,98)">.</span>schema()
 
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>ibis.Schema {
-  total_two  float64
-  avg_three  float64
-}</pre>
+<span class="ansi-red-fg">NameError</span>: name &#39;agged&#39; is not defined</pre>
 </div>
-
 </div>
 
 </div>
@@ -4802,10 +5104,14 @@ row with your statistics of interest:</p>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT sum(`two`) AS `total_two`, avg(`three`) AS `avg_three`
-FROM my_data
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [23]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="color: rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(agged))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
 </div>
 </div>
 
@@ -4875,11 +5181,16 @@ print(ibis.impala.compile(agged3))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT `one`, sum(`two`) AS `total_two`, avg(`three`) AS `avg_three`
-FROM my_data
-GROUP BY 1
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [24]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> agged2 <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>aggregate(stats, by<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">one</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span> agged3 <span style="color: rgb(98,98,98)">=</span>t<span style="color: rgb(98,98,98)">.</span>group_by(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">one</span><span style="color: rgb(175,0,0)">&#39;</span>)<span style="color: rgb(98,98,98)">.</span>aggregate(stats)
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(agged3))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -4902,8 +5213,8 @@ expressions must be named. Let's look at an example:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4937,6 +5248,36 @@ expressions must be named. Let's look at an example:</p>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [25]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> events <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>table([(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">ts</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">timestamp</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      2</span>                      (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">event_type</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">int32</span><span style="color: rgb(175,0,0)">&#39;</span>), (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">session_id</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">int64</span><span style="color: rgb(175,0,0)">&#39;</span>)],
+<span class="ansi-green-intense-fg ansi-bold">      3</span>                     name<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">web_events</span><span style="color: rgb(175,0,0)">&#39;</span>)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -4950,8 +5291,8 @@ expressions must be named. Let's look at an example:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -4989,6 +5330,38 @@ stats = (events.group_by(keys)
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [26]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> keys <span style="color: rgb(98,98,98)">=</span> [<span class="ansi-yellow-bg">events</span><span style="color: rgb(98,98,98)">.</span>ts<span style="color: rgb(98,98,98)">.</span>year()<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">year</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      2</span>         events<span style="color: rgb(98,98,98)">.</span>ts<span style="color: rgb(98,98,98)">.</span>month()<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">month</span><span style="color: rgb(175,0,0)">&#39;</span>)]
+<span class="ansi-green-intense-fg ansi-bold">      4</span> sessions <span style="color: rgb(98,98,98)">=</span> events<span style="color: rgb(98,98,98)">.</span>session_id<span style="color: rgb(98,98,98)">.</span>nunique()
+<span class="ansi-green-intense-fg ansi-bold">      5</span> stats <span style="color: rgb(98,98,98)">=</span> (events<span style="color: rgb(98,98,98)">.</span>group_by(keys)
+<span class="ansi-green-intense-fg ansi-bold">      6</span>          <span style="color: rgb(98,98,98)">.</span>aggregate(total<span style="color: rgb(98,98,98)">=</span>events<span style="color: rgb(98,98,98)">.</span>count(), sessions<span style="color: rgb(98,98,98)">=</span>sessions))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;events&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -5048,12 +5421,14 @@ stats = (events.group_by(keys)
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT extract(`ts`, &#39;year&#39;) AS `year`, extract(`ts`, &#39;month&#39;) AS `month`,
-       count(*) AS `total`, count(DISTINCT `session_id`) AS `sessions`
-FROM web_events
-GROUP BY 1, 2
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [27]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="color: rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(stats))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
 </div>
 </div>
 
@@ -5076,8 +5451,8 @@ gender, and nationality:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5109,6 +5484,36 @@ gender, and nationality:</p>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [28]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> pop <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>table([(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">name</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      2</span>                   (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">country</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>), (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">gender</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>), (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">age</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">int16</span><span style="color: rgb(175,0,0)">&#39;</span>)],
+<span class="ansi-green-intense-fg ansi-bold">      3</span>                  name<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">population</span><span style="color: rgb(175,0,0)">&#39;</span>)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -5146,8 +5551,8 @@ functions:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -5183,6 +5588,38 @@ functions:</p>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [29]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">pop</span><span style="color: rgb(98,98,98)">.</span>group_by(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">country</span><span style="color: rgb(175,0,0)">&#39;</span>)<span style="color: rgb(98,98,98)">.</span>aggregate(
+<span class="ansi-green-intense-fg ansi-bold">      2</span>     num_persons<span style="color: rgb(98,98,98)">=</span>pop<span style="color: rgb(98,98,98)">.</span>count(), avg_age<span style="color: rgb(98,98,98)">=</span>pop<span style="color: rgb(98,98,98)">.</span>age<span style="color: rgb(98,98,98)">.</span>mean(),
+<span class="ansi-green-intense-fg ansi-bold">      3</span>     avg_male<span style="color: rgb(98,98,98)">=</span>pop<span style="color: rgb(98,98,98)">.</span>age<span style="color: rgb(98,98,98)">.</span>mean(where<span style="color: rgb(98,98,98)">=</span>pop<span style="color: rgb(98,98,98)">.</span>gender <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">M</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     avg_female<span style="color: rgb(98,98,98)">=</span>pop<span style="color: rgb(98,98,98)">.</span>age<span style="color: rgb(98,98,98)">.</span>mean(where<span style="color: rgb(98,98,98)">=</span>pop<span style="color: rgb(98,98,98)">.</span>gender <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">F</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      5</span> )
+
+<span class="ansi-red-fg">NameError</span>: name &#39;pop&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -5244,13 +5681,14 @@ the SQL expression that is correct for your query engine.</p>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT `country`, count(*) AS `num_persons`, avg(`age`) AS `avg_age`,
-       avg(CASE WHEN `gender` = &#39;M&#39; THEN `age` ELSE NULL END) AS `avg_male`,
-       avg(CASE WHEN `gender` = &#39;F&#39; THEN `age` ELSE NULL END) AS `avg_female`
-FROM population
-GROUP BY 1
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [30]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="color: rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
 </div>
 </div>
 
@@ -5318,12 +5756,15 @@ print(ibis.impala.compile(freqs))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT extract(`ts`, &#39;year&#39;) AS `year`, extract(`ts`, &#39;month&#39;) AS `month`,
-       count(*) AS `count`
-FROM web_events
-GROUP BY 1, 2
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [31]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> freqs <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">events</span><span style="color: rgb(98,98,98)">.</span>group_by(keys)<span style="color: rgb(98,98,98)">.</span>size()
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(freqs))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;events&#39; is not defined</pre>
 </div>
 </div>
 
@@ -5395,11 +5836,15 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT extract(`ts`, &#39;year&#39;) AS `year`, count(*) AS `count`
-FROM web_events
-GROUP BY 1
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [32]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">events</span><span style="color: rgb(98,98,98)">.</span>ts<span style="color: rgb(98,98,98)">.</span>year()<span style="color: rgb(98,98,98)">.</span>value_counts()
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;events&#39; is not defined</pre>
 </div>
 </div>
 
@@ -5476,12 +5921,16 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT `one`, sum(`two`) AS `total`
-FROM my_data
-GROUP BY 1
-HAVING count(*) &gt;= 1000
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [33]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> (<span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>group_by(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">one</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span>          <span style="color: rgb(98,98,98)">.</span>having(t<span style="color: rgb(98,98,98)">.</span>count() <span style="color: rgb(98,98,98)">&gt;</span><span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">1000</span>) <span style="color: rgb(98,98,98)">.</span>aggregate(t<span style="color: rgb(98,98,98)">.</span>two<span style="color: rgb(98,98,98)">.</span>sum()<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">total</span><span style="color: rgb(175,0,0)">&#39;</span>)))
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -5551,11 +6000,15 @@ print(ibis.impala.compile(sorted))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM web_events
-ORDER BY extract(`ts`, &#39;year&#39;), extract(`ts`, &#39;month&#39;)
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [34]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="color: rgb(0,135,0)">sorted</span> <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">events</span><span style="color: rgb(98,98,98)">.</span>sort_by([events<span style="color: rgb(98,98,98)">.</span>ts<span style="color: rgb(98,98,98)">.</span>year(), events<span style="color: rgb(98,98,98)">.</span>ts<span style="color: rgb(98,98,98)">.</span>month()])
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(<span style="color: rgb(0,135,0)">sorted</span>))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;events&#39; is not defined</pre>
 </div>
 </div>
 
@@ -5632,12 +6085,18 @@ print(ibis.impala.compile(sorted))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM web_events
-ORDER BY `event_type` DESC, extract(`ts`, &#39;month&#39;) DESC
-LIMIT 100
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [35]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="color: rgb(0,135,0)">sorted</span> <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">events</span><span style="color: rgb(98,98,98)">.</span>sort_by([
+<span class="ansi-green-intense-fg ansi-bold">      2</span>     ibis<span style="color: rgb(98,98,98)">.</span>desc(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">event_type</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      3</span>     (events<span style="color: rgb(98,98,98)">.</span>ts<span style="color: rgb(98,98,98)">.</span>month(), <span class="ansi-bold" style="color: rgb(0,135,0)">False</span>)
+<span class="ansi-green-intense-fg ansi-bold">      4</span> ]) <span style="color: rgb(98,98,98)">.</span>limit(<span style="color: rgb(98,98,98)">100</span>)
+<span class="ansi-green-intense-fg ansi-bold">      6</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(<span style="color: rgb(0,135,0)">sorted</span>))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;events&#39; is not defined</pre>
 </div>
 </div>
 
@@ -5706,11 +6165,15 @@ print(ibis.impala.compile(limited))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM my_data
-LIMIT 1000
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [36]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> limited <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>limit(<span style="color: rgb(98,98,98)">1000</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(limited))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -5778,11 +6241,15 @@ print(ibis.impala.compile(limited))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM my_data
-LIMIT 10 OFFSET 10
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [37]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> limited <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>limit(<span style="color: rgb(98,98,98)">10</span>, offset<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">10</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(limited))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -5858,11 +6325,16 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, CAST(`one` AS timestamp) AS `date`,
-       CAST(`three` AS double) AS `four`
-FROM my_data
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [38]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>mutate(date<span style="color: rgb(98,98,98)">=</span>t<span style="color: rgb(98,98,98)">.</span>one<span style="color: rgb(98,98,98)">.</span>cast(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">timestamp</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      2</span>                 four<span style="color: rgb(98,98,98)">=</span>t<span style="color: rgb(98,98,98)">.</span>three<span style="color: rgb(98,98,98)">.</span>cast(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">float</span><span style="color: rgb(175,0,0)">&#39;</span>))
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -5954,15 +6426,22 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *,
-  CASE extract(CAST(`one` AS timestamp), &#39;year&#39;)
-    WHEN 2015 THEN &#39;This year&#39;
-    WHEN 2014 THEN &#39;Last year&#39;
-    ELSE &#39;Earlier&#39;
-  END AS `year_group`
-FROM my_data
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [39]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> case <span style="color: rgb(98,98,98)">=</span> (<span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>one<span style="color: rgb(98,98,98)">.</span>cast(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">timestamp</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span>         <span style="color: rgb(98,98,98)">.</span>year()
+<span class="ansi-green-intense-fg ansi-bold">      3</span>         <span style="color: rgb(98,98,98)">.</span>case()
+<span class="ansi-green-intense-fg ansi-bold">      4</span>         <span style="color: rgb(98,98,98)">.</span>when(<span style="color: rgb(98,98,98)">2015</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">This year</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      5</span>         <span style="color: rgb(98,98,98)">.</span>when(<span style="color: rgb(98,98,98)">2014</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Last year</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      6</span>         <span style="color: rgb(98,98,98)">.</span>else_(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Earlier</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      7</span>         <span style="color: rgb(98,98,98)">.</span>end())
+<span class="ansi-green-intense-fg ansi-bold">      9</span> expr <span style="color: rgb(98,98,98)">=</span> t<span style="color: rgb(98,98,98)">.</span>mutate(year_group<span style="color: rgb(98,98,98)">=</span>case)
+<span class="ansi-green-intense-fg ansi-bold">     10</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -6049,15 +6528,20 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *,
-  CASE
-    WHEN `two` &lt; 0 THEN `three` * 2
-    WHEN `two` &gt; 1 THEN `three`
-    ELSE `two`
-  END AS `cond_value`
-FROM my_data
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [40]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> case <span style="color: rgb(98,98,98)">=</span> (<span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>case()
+<span class="ansi-green-intense-fg ansi-bold">      2</span>         <span style="color: rgb(98,98,98)">.</span>when(t<span style="color: rgb(98,98,98)">.</span>two <span style="color: rgb(98,98,98)">&lt;</span> <span style="color: rgb(98,98,98)">0</span>, t<span style="color: rgb(98,98,98)">.</span>three <span style="color: rgb(98,98,98)">*</span> <span style="color: rgb(98,98,98)">2</span>)
+<span class="ansi-green-intense-fg ansi-bold">      3</span>         <span style="color: rgb(98,98,98)">.</span>when(t<span style="color: rgb(98,98,98)">.</span>two <span style="color: rgb(98,98,98)">&gt;</span> <span style="color: rgb(98,98,98)">1</span>, t<span style="color: rgb(98,98,98)">.</span>three)
+<span class="ansi-green-intense-fg ansi-bold">      4</span>         <span style="color: rgb(98,98,98)">.</span>else_(t<span style="color: rgb(98,98,98)">.</span>two)
+<span class="ansi-green-intense-fg ansi-bold">      5</span>         <span style="color: rgb(98,98,98)">.</span>end())
+<span class="ansi-green-intense-fg ansi-bold">      7</span> expr <span style="color: rgb(98,98,98)">=</span> t<span style="color: rgb(98,98,98)">.</span>mutate(cond_value<span style="color: rgb(98,98,98)">=</span>case)
+<span class="ansi-green-intense-fg ansi-bold">      8</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
 </div>
 </div>
 
@@ -6127,11 +6611,16 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *,
-       CASE WHEN `two` &lt; 0 THEN &#39;Negative&#39; ELSE &#39;Non-Negative&#39; END AS `group`
-FROM my_data
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [41]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> switch <span style="color: rgb(98,98,98)">=</span> (<span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>two <span style="color: rgb(98,98,98)">&lt;</span> <span style="color: rgb(98,98,98)">0</span>)<span style="color: rgb(98,98,98)">.</span>ifelse(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Negative</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Non-Negative</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span> expr <span style="color: rgb(98,98,98)">=</span> t<span style="color: rgb(98,98,98)">.</span>mutate(group<span style="color: rgb(98,98,98)">=</span>switch)
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -6201,10 +6690,16 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, CASE WHEN `two` &gt; 0 THEN `two` ELSE NULL END AS `two_positive`
-FROM my_data
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [42]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> pos_two <span style="color: rgb(98,98,98)">=</span> (<span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>two <span style="color: rgb(98,98,98)">&gt;</span> <span style="color: rgb(98,98,98)">0</span>)<span style="color: rgb(98,98,98)">.</span>ifelse(t<span style="color: rgb(98,98,98)">.</span>two, ibis<span style="color: rgb(98,98,98)">.</span>NA)
+<span class="ansi-green-intense-fg ansi-bold">      2</span> expr <span style="color: rgb(98,98,98)">=</span> t<span style="color: rgb(98,98,98)">.</span>mutate(two_positive<span style="color: rgb(98,98,98)">=</span>pos_two)
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -6287,11 +6782,18 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *,
-       CASE WHEN upper(`country`) IN (&#39;UNITED STATES&#39;, &#39;CANADA&#39;) THEN &#39;North America&#39; ELSE `country` END AS `refined_group`
-FROM population
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [43]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> refined <span style="color: rgb(98,98,98)">=</span> (<span class="ansi-yellow-bg">pop</span><span style="color: rgb(98,98,98)">.</span>country<span style="color: rgb(98,98,98)">.</span>upper()
+<span class="ansi-green-intense-fg ansi-bold">      2</span>            <span style="color: rgb(98,98,98)">.</span>isin([<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">UNITED STATES</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">CANADA</span><span style="color: rgb(175,0,0)">&#39;</span>])
+<span class="ansi-green-intense-fg ansi-bold">      3</span>            <span style="color: rgb(98,98,98)">.</span>ifelse(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">North America</span><span style="color: rgb(175,0,0)">&#39;</span>, pop<span style="color: rgb(98,98,98)">.</span>country))
+<span class="ansi-green-intense-fg ansi-bold">      5</span> expr <span style="color: rgb(98,98,98)">=</span> pop<span style="color: rgb(98,98,98)">.</span>mutate(refined_group<span style="color: rgb(98,98,98)">=</span>refined)
+<span class="ansi-green-intense-fg ansi-bold">      6</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;pop&#39; is not defined</pre>
 </div>
 </div>
 
@@ -6319,8 +6821,8 @@ value (whether a Python string or number) to an Ibis expression using
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6356,6 +6858,37 @@ value = ibis.literal('foo')</div>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [44]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> t3 <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>table([(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">column1</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      2</span>                  (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">column2</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>), (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">column3</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">float</span><span style="color: rgb(175,0,0)">&#39;</span>)],
+<span class="ansi-green-intense-fg ansi-bold">      3</span>                 <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">data</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      5</span> value <span style="color: rgb(98,98,98)">=</span> ibis<span style="color: rgb(98,98,98)">.</span>literal(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">foo</span><span style="color: rgb(175,0,0)">&#39;</span>)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -6422,10 +6955,16 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, &#39;foo&#39; IN (`column1`, `column2`) AS `has_foo`
-FROM `data`
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [45]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> has_foo <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">value</span><span style="color: rgb(98,98,98)">.</span>isin([t3<span style="color: rgb(98,98,98)">.</span>column1, t3<span style="color: rgb(98,98,98)">.</span>column2])
+<span class="ansi-green-intense-fg ansi-bold">      3</span> expr <span style="color: rgb(98,98,98)">=</span> t3<span style="color: rgb(98,98,98)">.</span>mutate(has_foo<span style="color: rgb(98,98,98)">=</span>has_foo)
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;value&#39; is not defined</pre>
 </div>
 </div>
 
@@ -6494,10 +7033,15 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, 5 AS `number5`
-FROM `data`
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [46]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t3</span><span style="color: rgb(98,98,98)">.</span>mutate(number5<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">5</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t3&#39; is not defined</pre>
 </div>
 </div>
 
@@ -6579,19 +7123,16 @@ print(ibis.impala.compile(agged))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *,
-       CASE WHEN `two` IS NULL THEN &#39;valid&#39; ELSE &#39;invalid&#39; END AS `is_valid`
-FROM my_data
-SELECT `is_valid`, sum(`three` IS NOT NULL) AS `three_count`
-FROM (
-  SELECT *,
-         CASE WHEN `two` IS NULL THEN &#39;valid&#39; ELSE &#39;invalid&#39; END AS `is_valid`
-  FROM my_data
-  WHERE `one` IS NOT NULL
-) t0
-GROUP BY 1
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [47]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> indic <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>two<span style="color: rgb(98,98,98)">.</span>isnull()<span style="color: rgb(98,98,98)">.</span>ifelse(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">valid</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">invalid</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span> expr <span style="color: rgb(98,98,98)">=</span> t<span style="color: rgb(98,98,98)">.</span>mutate(is_valid<span style="color: rgb(98,98,98)">=</span>indic)
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -6660,11 +7201,15 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM my_data
-WHERE `two` BETWEEN 10 AND 50 AND (`one` IS NOT NULL)
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [48]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t</span>[t<span style="color: rgb(98,98,98)">.</span>two<span style="color: rgb(98,98,98)">.</span>between(<span style="color: rgb(98,98,98)">10</span>, <span style="color: rgb(98,98,98)">50</span>) <span style="color: rgb(98,98,98)">&amp;</span> t<span style="color: rgb(98,98,98)">.</span>one<span style="color: rgb(98,98,98)">.</span>notnull()]
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -6698,8 +7243,8 @@ explicit join type in your query engine.</li>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6739,6 +7284,38 @@ t2 = ibis.table([('value2', 'float'), ('key3', 'string'), ('key4', 'string')],
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [49]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> t1 <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>table([(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">value1</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">float</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      2</span>                  (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key1</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>), (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key2</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>)],
+<span class="ansi-green-intense-fg ansi-bold">      3</span>                 <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">table1</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      5</span> t2 <span style="color: rgb(98,98,98)">=</span> ibis<span style="color: rgb(98,98,98)">.</span>table([(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">value2</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">float</span><span style="color: rgb(175,0,0)">&#39;</span>), (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key3</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>), (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key4</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>)],
+<span class="ansi-green-intense-fg ansi-bold">      6</span>                 <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">table2</span><span style="color: rgb(175,0,0)">&#39;</span>)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -6752,8 +7329,8 @@ t2 = ibis.table([('value2', 'float'), ('key3', 'string'), ('key4', 'string')],
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -6781,6 +7358,34 @@ t2 = ibis.table([('value2', 'float'), ('key3', 'string'), ('key4', 'string')],
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [50]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> joined <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t1</span><span style="color: rgb(98,98,98)">.</span>left_join(t2, t1<span style="color: rgb(98,98,98)">.</span>key1 <span style="color: rgb(98,98,98)">==</span> t2<span style="color: rgb(98,98,98)">.</span>key3)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t1&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -6851,12 +7456,15 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT t0.*, t1.`value2`
-FROM table1 t0
-  LEFT OUTER JOIN table2 t1
-    ON t0.`key1` = t1.`key3`
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [51]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">joined</span>[t1, t2<span style="color: rgb(98,98,98)">.</span>value2]
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;joined&#39; is not defined</pre>
 </div>
 </div>
 
@@ -6924,12 +7532,15 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT t0.`key1`, t0.`value1` - t1.`value2` AS `diff`
-FROM table1 t0
-  LEFT OUTER JOIN table2 t1
-    ON t0.`key1` = t1.`key3`
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [52]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">joined</span>[t1<span style="color: rgb(98,98,98)">.</span>key1, (t1<span style="color: rgb(98,98,98)">.</span>value1 <span style="color: rgb(98,98,98)">-</span> t2<span style="color: rgb(98,98,98)">.</span>value2)<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">diff</span><span style="color: rgb(175,0,0)">&#39;</span>)]
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;joined&#39; is not defined</pre>
 </div>
 </div>
 
@@ -7011,13 +7622,18 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT t0.`key1`, avg(t0.`value1` - t1.`value2`) AS `avg_diff`
-FROM table1 t0
-  LEFT OUTER JOIN table2 t1
-    ON t0.`key1` = t1.`key3`
-GROUP BY 1
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [53]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> avg_diff <span style="color: rgb(98,98,98)">=</span> (<span class="ansi-yellow-bg">t1</span><span style="color: rgb(98,98,98)">.</span>value1 <span style="color: rgb(98,98,98)">-</span> t2<span style="color: rgb(98,98,98)">.</span>value2)<span style="color: rgb(98,98,98)">.</span>mean()
+<span class="ansi-green-intense-fg ansi-bold">      2</span> expr <span style="color: rgb(98,98,98)">=</span> (t1<span style="color: rgb(98,98,98)">.</span>left_join(t2, t1<span style="color: rgb(98,98,98)">.</span>key1 <span style="color: rgb(98,98,98)">==</span> t2<span style="color: rgb(98,98,98)">.</span>key3)
+<span class="ansi-green-intense-fg ansi-bold">      3</span>         <span style="color: rgb(98,98,98)">.</span>group_by(t1<span style="color: rgb(98,98,98)">.</span>key1)
+<span class="ansi-green-intense-fg ansi-bold">      4</span>         <span style="color: rgb(98,98,98)">.</span>aggregate(avg_diff<span style="color: rgb(98,98,98)">=</span>avg_diff))
+<span class="ansi-green-intense-fg ansi-bold">      5</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t1&#39; is not defined</pre>
 </div>
 </div>
 
@@ -7085,12 +7701,15 @@ print(ibis.impala.compile(joined))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM table1 t0
-  LEFT OUTER JOIN table2 t1
-    ON t0.`key1` = t1.`key3`
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [54]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> joined <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t1</span><span style="color: rgb(98,98,98)">.</span>left_join(t2, t1<span style="color: rgb(98,98,98)">.</span>key1 <span style="color: rgb(98,98,98)">==</span> t2<span style="color: rgb(98,98,98)">.</span>key3)
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(joined))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t1&#39; is not defined</pre>
 </div>
 </div>
 
@@ -7172,17 +7791,20 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT t1.`key4`, t2.`key5`,
-       sum((t0.`value1` + t1.`value2`) + t2.`value3`) AS `total`
-FROM table1 t0
-  INNER JOIN table2 t1
-    ON (t0.`key1` = t1.`key3`) AND
-       (t0.`key2` = t1.`key4`)
-  INNER JOIN table3 t2
-    ON t0.`key1` = t2.`key5`
-GROUP BY 1, 2
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [55]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> t3 <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>table([(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">value3</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">float</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      2</span>                  (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key5</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>)], <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">table3</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      4</span> total <span style="color: rgb(98,98,98)">=</span> (t1<span style="color: rgb(98,98,98)">.</span>value1 <span style="color: rgb(98,98,98)">+</span> t2<span style="color: rgb(98,98,98)">.</span>value2 <span style="color: rgb(98,98,98)">+</span> t3<span style="color: rgb(98,98,98)">.</span>value3)<span style="color: rgb(98,98,98)">.</span>sum()
+<span class="ansi-green-intense-fg ansi-bold">      5</span> expr <span style="color: rgb(98,98,98)">=</span> (t1<span style="color: rgb(98,98,98)">.</span>join(t2, [t1<span style="color: rgb(98,98,98)">.</span>key1 <span style="color: rgb(98,98,98)">==</span> t2<span style="color: rgb(98,98,98)">.</span>key3, t1<span style="color: rgb(98,98,98)">.</span>key2 <span style="color: rgb(98,98,98)">==</span> t2<span style="color: rgb(98,98,98)">.</span>key4])
+<span class="ansi-green-intense-fg ansi-bold">      6</span>         <span style="color: rgb(98,98,98)">.</span>join(t3, t1<span style="color: rgb(98,98,98)">.</span>key1 <span style="color: rgb(98,98,98)">==</span> t3<span style="color: rgb(98,98,98)">.</span>key5)
+<span class="ansi-green-intense-fg ansi-bold">      7</span>         <span style="color: rgb(98,98,98)">.</span>group_by([t2<span style="color: rgb(98,98,98)">.</span>key4, t3<span style="color: rgb(98,98,98)">.</span>key5])
+<span class="ansi-green-intense-fg ansi-bold">      8</span>         <span style="color: rgb(98,98,98)">.</span>aggregate(total<span style="color: rgb(98,98,98)">=</span>total))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
 </div>
 </div>
 
@@ -7266,17 +7888,18 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT `one`, avg(`two` - `three`) AS `metric`
-FROM (
-  SELECT t1.`one` AS `one_x`, t1.`two` AS `two_x`, t1.`three` AS `three_x`,
-         t2.`one` AS `one_y`, t2.`two` AS `two_y`, t2.`three` AS `three_y`
-  FROM my_data t1
-    INNER JOIN my_data t2
-      ON CAST(t1.`three` AS string) = t2.`one`
-) t0
-GROUP BY 1
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [56]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> t_view <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>view()
+<span class="ansi-green-intense-fg ansi-bold">      3</span> stat <span style="color: rgb(98,98,98)">=</span> (t<span style="color: rgb(98,98,98)">.</span>two <span style="color: rgb(98,98,98)">-</span> t_view<span style="color: rgb(98,98,98)">.</span>three)<span style="color: rgb(98,98,98)">.</span>mean()
+<span class="ansi-green-intense-fg ansi-bold">      4</span> expr <span style="color: rgb(98,98,98)">=</span> (t<span style="color: rgb(98,98,98)">.</span>join(t_view, t<span style="color: rgb(98,98,98)">.</span>three<span style="color: rgb(98,98,98)">.</span>cast(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>) <span style="color: rgb(98,98,98)">==</span> t_view<span style="color: rgb(98,98,98)">.</span>one)
+<span class="ansi-green-intense-fg ansi-bold">      5</span>         <span style="color: rgb(98,98,98)">.</span>group_by(t<span style="color: rgb(98,98,98)">.</span>one)
+<span class="ansi-green-intense-fg ansi-bold">      6</span>         <span style="color: rgb(98,98,98)">.</span>aggregate(metric<span style="color: rgb(98,98,98)">=</span>stat))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -7298,8 +7921,8 @@ expressions have the same name. Consider this example:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7343,6 +7966,41 @@ t5 = ibis.table([('key1', 'string'),
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [57]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> t4 <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>table([(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key1</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      2</span>                  (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key2</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      3</span>                  (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key3</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      4</span>                  (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">value1</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">float</span><span style="color: rgb(175,0,0)">&#39;</span>)], <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">table4</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      6</span> t5 <span style="color: rgb(98,98,98)">=</span> ibis<span style="color: rgb(98,98,98)">.</span>table([(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key1</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      7</span>                  (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key2</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      8</span>                  (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key3</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      9</span>                  (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">value2</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">float</span><span style="color: rgb(175,0,0)">&#39;</span>)], <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">table5</span><span style="color: rgb(175,0,0)">&#39;</span>)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -7406,14 +8064,16 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT t0.*, t1.`value2`
-FROM table4 t0
-  INNER JOIN table5 t1
-    ON (t0.`key1` = t1.`key1`) AND
-       (t0.`key2` = t1.`key2`) AND
-       (t0.`key3` = t1.`key3`)
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [58]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> joined <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t4</span><span style="color: rgb(98,98,98)">.</span>join(t5, [<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key1</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key2</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key3</span><span style="color: rgb(175,0,0)">&#39;</span>])
+<span class="ansi-green-intense-fg ansi-bold">      2</span> expr <span style="color: rgb(98,98,98)">=</span> joined[t4, t5<span style="color: rgb(98,98,98)">.</span>value2]
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t4&#39; is not defined</pre>
 </div>
 </div>
 
@@ -7482,14 +8142,16 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT t0.*, t1.`value2`
-FROM table4 t0
-  INNER JOIN table5 t1
-    ON (t0.`key1` = t1.`key1`) AND
-       (t0.`key2` = t1.`key2`) AND
-       (substr(t0.`key3`, 0 + 1, 4) = substr(t0.`key3`, 0 + 1, 4))
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [59]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> joined <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t4</span><span style="color: rgb(98,98,98)">.</span>join(t5, [<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key1</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key2</span><span style="color: rgb(175,0,0)">&#39;</span>, t4<span style="color: rgb(98,98,98)">.</span>key3<span style="color: rgb(98,98,98)">.</span>left(<span style="color: rgb(98,98,98)">4</span>) <span style="color: rgb(98,98,98)">==</span> t4<span style="color: rgb(98,98,98)">.</span>key3<span style="color: rgb(98,98,98)">.</span>left(<span style="color: rgb(98,98,98)">4</span>)])
+<span class="ansi-green-intense-fg ansi-bold">      2</span> expr <span style="color: rgb(98,98,98)">=</span> joined[t4, t5<span style="color: rgb(98,98,98)">.</span>value2]
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t4&#39; is not defined</pre>
 </div>
 </div>
 
@@ -7561,13 +8223,16 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT t0.`key1`, count(*) AS `count`
-FROM table1 t0
-  INNER JOIN table2 t1
-    ON t0.`value1` &lt; t1.`value2`
-GROUP BY 1
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [60]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> (<span class="ansi-yellow-bg">t1</span><span style="color: rgb(98,98,98)">.</span>join(t2, t1<span style="color: rgb(98,98,98)">.</span>value1 <span style="color: rgb(98,98,98)">&lt;</span> t2<span style="color: rgb(98,98,98)">.</span>value2)
+<span class="ansi-green-intense-fg ansi-bold">      2</span>         <span style="color: rgb(98,98,98)">.</span>group_by(t1<span style="color: rgb(98,98,98)">.</span>key1) <span style="color: rgb(98,98,98)">.</span>size())
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t1&#39; is not defined</pre>
 </div>
 </div>
 
@@ -7589,8 +8254,8 @@ expressions:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7622,6 +8287,35 @@ expressions:</p>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [61]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> joined <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t1</span><span style="color: rgb(98,98,98)">.</span>join(t2, [(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key1</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key3</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      2</span>                       (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key2</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">key4</span><span style="color: rgb(175,0,0)">&#39;</span>)])
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t1&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -7641,8 +8335,8 @@ purchases:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7688,6 +8382,41 @@ purchases = ibis.table([('item_id', 'int64'),
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [62]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> events <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>table([(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">session_id</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">int64</span><span style="color: rgb(175,0,0)">&#39;</span>), 
+<span class="ansi-green-intense-fg ansi-bold">      2</span>                      (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">user_id</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">int64</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      3</span>                      (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">event_type</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">int32</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      4</span>                      (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">ts</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">timestamp</span><span style="color: rgb(175,0,0)">&#39;</span>)], <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">events</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      6</span> purchases <span style="color: rgb(98,98,98)">=</span> ibis<span style="color: rgb(98,98,98)">.</span>table([(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">item_id</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">int64</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      7</span>                         (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">user_id</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">int64</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      8</span>                         (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">price</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">float</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      9</span>                         (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">ts</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">timestamp</span><span style="color: rgb(175,0,0)">&#39;</span>)], <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">purchases</span><span style="color: rgb(175,0,0)">&#39;</span>)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -7713,8 +8442,8 @@ and use the <code>any</code> reduction:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7742,6 +8471,34 @@ and use the <code>any</code> reduction:</p>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [63]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> cond <span style="color: rgb(98,98,98)">=</span> (<span class="ansi-yellow-bg">events</span><span style="color: rgb(98,98,98)">.</span>user_id <span style="color: rgb(98,98,98)">==</span> purchases<span style="color: rgb(98,98,98)">.</span>user_id)<span style="color: rgb(98,98,98)">.</span>any()
+
+<span class="ansi-red-fg">NameError</span>: name &#39;events&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -7803,15 +8560,15 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT t0.*
-FROM events t0
-WHERE EXISTS (
-  SELECT 1
-  FROM purchases t1
-  WHERE t0.`user_id` = t1.`user_id`
-)
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [64]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">events</span>[cond]
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;events&#39; is not defined</pre>
 </div>
 </div>
 
@@ -7879,15 +8636,15 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT t0.*
-FROM events t0
-WHERE NOT EXISTS (
-  SELECT 1
-  FROM purchases t1
-  WHERE t0.`user_id` = t1.`user_id`
-)
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [65]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">events</span>[<span style="color: rgb(98,98,98)">-</span>cond]
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;events&#39; is not defined</pre>
 </div>
 </div>
 
@@ -7965,14 +8722,16 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM events
-WHERE `user_id` IN (
-  SELECT `user_id`
-  FROM purchases
-)
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [66]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> cond <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">events</span><span style="color: rgb(98,98,98)">.</span>user_id<span style="color: rgb(98,98,98)">.</span>isin(purchases<span style="color: rgb(98,98,98)">.</span>user_id)
+<span class="ansi-green-intense-fg ansi-bold">      2</span> expr <span style="color: rgb(98,98,98)">=</span> events[cond]
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;events&#39; is not defined</pre>
 </div>
 </div>
 
@@ -8050,14 +8809,15 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM table1
-WHERE `value1` &gt; (
-  SELECT max(`value2`) AS `max`
-  FROM table2
-)
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [67]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t1</span>[t1<span style="color: rgb(98,98,98)">.</span>value1 <span style="color: rgb(98,98,98)">&gt;</span> t2<span style="color: rgb(98,98,98)">.</span>value2<span style="color: rgb(98,98,98)">.</span>max()]
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t1&#39; is not defined</pre>
 </div>
 </div>
 
@@ -8139,15 +8899,16 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT t0.*
-FROM table1 t0
-WHERE t0.`value1` &gt; (
-  SELECT avg(t1.`value2`) AS `mean`
-  FROM table2 t1
-  WHERE t0.`key1` = t1.`key3`
-)
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [68]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> stat <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t2</span>[t1<span style="color: rgb(98,98,98)">.</span>key1 <span style="color: rgb(98,98,98)">==</span> t2<span style="color: rgb(98,98,98)">.</span>key3]<span style="color: rgb(98,98,98)">.</span>value2<span style="color: rgb(98,98,98)">.</span>mean()
+<span class="ansi-green-intense-fg ansi-bold">      2</span> expr <span style="color: rgb(98,98,98)">=</span> t1[t1<span style="color: rgb(98,98,98)">.</span>value1 <span style="color: rgb(98,98,98)">&gt;</span> stat]
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t2&#39; is not defined</pre>
 </div>
 </div>
 
@@ -8224,10 +8985,15 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT DISTINCT *
-FROM table1
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [69]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t1</span><span style="color: rgb(98,98,98)">.</span>distinct()
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t1&#39; is not defined</pre>
 </div>
 </div>
 
@@ -8305,11 +9071,17 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT `user_id`, count(DISTINCT `event_type`) AS `unique_events`
-FROM events
-GROUP BY 1
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [70]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> metric <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">events</span><span style="color: rgb(98,98,98)">.</span>event_type<span style="color: rgb(98,98,98)">.</span>nunique()
+<span class="ansi-green-intense-fg ansi-bold">      2</span> expr <span style="color: rgb(98,98,98)">=</span>(events<span style="color: rgb(98,98,98)">.</span>group_by(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">user_id</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      3</span>        <span style="color: rgb(98,98,98)">.</span>aggregate(unique_events<span style="color: rgb(98,98,98)">=</span>metric))
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;events&#39; is not defined</pre>
 </div>
 </div>
 
@@ -8393,10 +9165,15 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, `two` - avg(`two`) OVER () AS `two_demean`
-FROM my_data
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [71]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>mutate(two_demean<span style="color: rgb(98,98,98)">=</span>t<span style="color: rgb(98,98,98)">.</span>two <span style="color: rgb(98,98,98)">-</span> t<span style="color: rgb(98,98,98)">.</span>two<span style="color: rgb(98,98,98)">.</span>mean())
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -8468,10 +9245,16 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, `two` - avg(`two`) OVER (PARTITION BY `one`) AS `two_demean`
-FROM my_data
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [72]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> (<span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>group_by(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">one</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span>         <span style="color: rgb(98,98,98)">.</span>mutate(two_demean<span style="color: rgb(98,98,98)">=</span>t<span style="color: rgb(98,98,98)">.</span>two <span style="color: rgb(98,98,98)">-</span> t<span style="color: rgb(98,98,98)">.</span>two<span style="color: rgb(98,98,98)">.</span>mean()))
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -8543,11 +9326,16 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *,
-       `two` - lag(`two`) OVER (PARTITION BY `one` ORDER BY `two`) AS `two_first_diff`
-FROM my_data
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [73]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> (<span class="ansi-yellow-bg">t</span><span style="color: rgb(98,98,98)">.</span>group_by(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">one</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span>         <span style="color: rgb(98,98,98)">.</span>order_by(t<span style="color: rgb(98,98,98)">.</span>two) <span style="color: rgb(98,98,98)">.</span>mutate(two_first_diff<span style="color: rgb(98,98,98)">=</span>t<span style="color: rgb(98,98,98)">.</span>two <span style="color: rgb(98,98,98)">-</span> t<span style="color: rgb(98,98,98)">.</span>two<span style="color: rgb(98,98,98)">.</span>lag()))
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t&#39; is not defined</pre>
 </div>
 </div>
 
@@ -8617,11 +9405,16 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *,
-       `two` - avg(`two`) OVER (PARTITION BY `one` ROWS BETWEEN 5 PRECEDING AND 5 FOLLOWING) AS `group_demeaned`
-FROM my_data
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [74]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> w <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>window(group_by<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">one</span><span style="color: rgb(175,0,0)">&#39;</span>, preceding<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">5</span>, following<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">5</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span> expr <span style="color: rgb(98,98,98)">=</span> t<span style="color: rgb(98,98,98)">.</span>mutate(group_demeaned<span style="color: rgb(98,98,98)">=</span>t<span style="color: rgb(98,98,98)">.</span>two <span style="color: rgb(98,98,98)">-</span> t<span style="color: rgb(98,98,98)">.</span>two<span style="color: rgb(98,98,98)">.</span>mean()<span style="color: rgb(98,98,98)">.</span>over(w))
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
 </div>
 </div>
 
@@ -8649,8 +9442,8 @@ dimension by aggregate statistics:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8678,6 +9471,34 @@ dimension by aggregate statistics:</p>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [75]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t1</span><span style="color: rgb(98,98,98)">.</span>key1<span style="color: rgb(98,98,98)">.</span>topk(<span style="color: rgb(98,98,98)">10</span>)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t1&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -8737,16 +9558,14 @@ dimension by aggregate statistics:</p>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM (
-  SELECT `key1`, count(`key1`) AS `count`
-  FROM table1
-  GROUP BY 1
-) t0
-ORDER BY `count` DESC
-LIMIT 10
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [76]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="color: rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
 </div>
 </div>
 
@@ -8813,21 +9632,15 @@ print(ibis.impala.compile(expr2))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT t0.*
-FROM table1 t0
-  LEFT SEMI JOIN (
-    SELECT *
-    FROM (
-      SELECT `key1`, count(`key1`) AS `count`
-      FROM table1
-      GROUP BY 1
-    ) t2
-    ORDER BY `count` DESC
-    LIMIT 10
-  ) t1
-    ON t0.`key1` = t1.`key1`
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [77]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr2 <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t1</span>[expr]
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr2))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t1&#39; is not defined</pre>
 </div>
 </div>
 
@@ -8900,10 +9713,16 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, extract(`ts`, &#39;month&#39;) AS `month`, extract(`ts`, &#39;year&#39;) AS `year`
-FROM events
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [78]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">events</span><span style="color: rgb(98,98,98)">.</span>mutate(year<span style="color: rgb(98,98,98)">=</span>events<span style="color: rgb(98,98,98)">.</span>ts<span style="color: rgb(98,98,98)">.</span>year(), 
+<span class="ansi-green-intense-fg ansi-bold">      2</span>                      month<span style="color: rgb(98,98,98)">=</span>events<span style="color: rgb(98,98,98)">.</span>ts<span style="color: rgb(98,98,98)">.</span>month())
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;events&#39; is not defined</pre>
 </div>
 </div>
 
@@ -8974,11 +9793,15 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM events
-WHERE `ts` &gt; date_sub(cast(now() as timestamp), INTERVAL 1 YEAR)
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [79]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">events</span>[events<span style="color: rgb(98,98,98)">.</span>ts <span style="color: rgb(98,98,98)">&gt;</span> (ibis<span style="color: rgb(98,98,98)">.</span>now() <span style="color: rgb(98,98,98)">-</span> ibis<span style="color: rgb(98,98,98)">.</span>interval(years<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">1</span>))]
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;events&#39; is not defined</pre>
 </div>
 </div>
 
@@ -9061,15 +9884,16 @@ print(ibis.impala.compile(expr))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *
-FROM table1
-LIMIT 10
-UNION ALL
-SELECT *
-FROM table1
-LIMIT 10 OFFSET 10
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [80]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr1 <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t1</span><span style="color: rgb(98,98,98)">.</span>limit(<span style="color: rgb(98,98,98)">10</span>)
+<span class="ansi-green-intense-fg ansi-bold">      2</span> expr2 <span style="color: rgb(98,98,98)">=</span> t1<span style="color: rgb(98,98,98)">.</span>limit(<span style="color: rgb(98,98,98)">10</span>, offset<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(98,98,98)">10</span>)
+<span class="ansi-green-intense-fg ansi-bold">      4</span> expr <span style="color: rgb(98,98,98)">=</span> expr1<span style="color: rgb(98,98,98)">.</span>union(expr2)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;t1&#39; is not defined</pre>
 </div>
 </div>
 
@@ -9105,8 +9929,8 @@ involving joining an aggregated table on itself after filtering:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9160,6 +9984,40 @@ result = (left.join(right, left.region == right.region)
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [81]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> purchases <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>table([(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">region</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      2</span>                         (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">kind</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      3</span>                         (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">user</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">int64</span><span style="color: rgb(175,0,0)">&#39;</span>),
+<span class="ansi-green-intense-fg ansi-bold">      4</span>                         (<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">amount</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">float</span><span style="color: rgb(175,0,0)">&#39;</span>)], <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">purchases</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      6</span> metric <span style="color: rgb(98,98,98)">=</span> purchases<span style="color: rgb(98,98,98)">.</span>amount<span style="color: rgb(98,98,98)">.</span>sum()<span style="color: rgb(98,98,98)">.</span>name(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">total</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      7</span> agged <span style="color: rgb(98,98,98)">=</span> (purchases<span style="color: rgb(98,98,98)">.</span>group_by([<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">region</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">kind</span><span style="color: rgb(175,0,0)">&#39;</span>])
+<span class="ansi-green-intense-fg ansi-bold">      8</span>          <span style="color: rgb(98,98,98)">.</span>aggregate(metric))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -9219,25 +10077,14 @@ result = (left.join(right, left.region == right.region)
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>WITH t0 AS (
-  SELECT `region`, `kind`, sum(`amount`) AS `total`
-  FROM purchases
-  GROUP BY 1, 2
-)
-SELECT t1.`region`, t1.`total` - t2.`total` AS `diff`
-FROM (
-  SELECT *
-  FROM t0
-  WHERE `kind` = &#39;foo&#39;
-) t1
-  INNER JOIN (
-    SELECT *
-    FROM t0
-    WHERE `kind` = &#39;bar&#39;
-  ) t2
-    ON t1.`region` = t2.`region`
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [82]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="color: rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">ibis</span><span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(result))
+
+<span class="ansi-red-fg">NameError</span>: name &#39;ibis&#39; is not defined</pre>
 </div>
 </div>
 
