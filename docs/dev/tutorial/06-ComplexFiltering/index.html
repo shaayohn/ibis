@@ -2806,19 +2806,25 @@ Licensed under the Apache License, Version 2.0.
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">tempfile</span>
+
 <span class="kn">import</span> <span class="nn">ibis</span>
 
 <span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 
-<span class="n">connection</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="s1">&#39;geography.db&#39;</span><span class="p">))</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="s1">&#39;geography.db&#39;</span><span class="p">)</span>
+<span class="p">)</span>
 </pre></div>
 <div id="cell-2" class="clipboard-copy-txt">import os
 import tempfile
+
 import ibis
 
 ibis.options.interactive = True
 
-connection = ibis.sqlite.connect(os.path.join(tempfile.gettempdir(), 'geography.db'))</div>
+connection = ibis.sqlite.connect(
+    os.path.join(tempfile.gettempdir(), 'geography.db')
+)</div>
     
         </div>
     </div>
@@ -3244,10 +3250,14 @@ expr</div>
             </clipboard-copy>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">conditional_avg</span> <span class="o">=</span> <span class="n">countries</span><span class="p">[</span><span class="n">countries</span><span class="o">.</span><span class="n">continent</span> <span class="o">==</span> <span class="s1">&#39;AF&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">area_km2</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">countries</span><span class="p">[(</span><span class="n">countries</span><span class="o">.</span><span class="n">continent</span> <span class="o">==</span> <span class="s1">&#39;EU&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">area_km2</span> <span class="o">&gt;</span> <span class="n">conditional_avg</span><span class="p">)]</span>
+<span class="n">countries</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">continent</span> <span class="o">==</span> <span class="s1">&#39;EU&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">area_km2</span> <span class="o">&gt;</span> <span class="n">conditional_avg</span><span class="p">)</span>
+<span class="p">]</span>
 </pre></div>
 <div id="cell-6" class="clipboard-copy-txt">conditional_avg = countries[countries.continent == 'AF'].area_km2.mean()
-countries[(countries.continent == 'EU') & (countries.area_km2 > conditional_avg)]</div>
+countries[
+    (countries.continent == 'EU') & (countries.area_km2 > conditional_avg)
+]</div>
     
         </div>
     </div>
@@ -3533,13 +3543,11 @@ gdp</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">cond</span> <span class="o">=</span> <span class="p">((</span><span class="n">gdp</span><span class="o">.</span><span class="n">country_code</span> <span class="o">==</span> <span class="n">countries</span><span class="o">.</span><span class="n">iso_alpha3</span><span class="p">)</span> <span class="o">&amp;</span>
-        <span class="p">(</span><span class="n">gdp</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="mf">3e12</span><span class="p">))</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">cond</span> <span class="o">=</span> <span class="p">((</span><span class="n">gdp</span><span class="o">.</span><span class="n">country_code</span> <span class="o">==</span> <span class="n">countries</span><span class="o">.</span><span class="n">iso_alpha3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">gdp</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="mf">3e12</span><span class="p">))</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
 
 <span class="n">countries</span><span class="p">[</span><span class="n">cond</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt">cond = ((gdp.country_code == countries.iso_alpha3) &
-        (gdp.value > 3e12)).any()
+<div id="cell-8" class="clipboard-copy-txt">cond = ((gdp.country_code == countries.iso_alpha3) & (gdp.value > 3e12)).any()
 
 countries[cond]['name']</div>
     
@@ -3663,37 +3671,47 @@ countries[cond]['name']</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">arctic</span> <span class="o">=</span> <span class="n">countries</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;United States&#39;</span><span class="p">,</span>
-                              <span class="s1">&#39;Canada&#39;</span><span class="p">,</span>
-                              <span class="s1">&#39;Finland&#39;</span><span class="p">,</span>
-                              <span class="s1">&#39;Greenland&#39;</span><span class="p">,</span>
-                              <span class="s1">&#39;Iceland&#39;</span><span class="p">,</span>
-                              <span class="s1">&#39;Norway&#39;</span><span class="p">,</span>
-                              <span class="s1">&#39;Russia&#39;</span><span class="p">,</span>
-                              <span class="s1">&#39;Sweden&#39;</span><span class="p">])</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">arctic</span> <span class="o">=</span> <span class="n">countries</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="s1">&#39;United States&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Canada&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Finland&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Greenland&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Iceland&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Norway&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Russia&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Sweden&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
 
-<span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span><span class="n">countries</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;# countries&#39;</span><span class="p">),</span>
-           <span class="n">countries</span><span class="o">.</span><span class="n">population</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;total population&#39;</span><span class="p">),</span>
-           <span class="n">countries</span><span class="o">.</span><span class="n">population</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="n">arctic</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;population arctic countries&#39;</span><span class="p">)]</span>
+<span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">countries</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;# countries&#39;</span><span class="p">),</span>
+    <span class="n">countries</span><span class="o">.</span><span class="n">population</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;total population&#39;</span><span class="p">),</span>
+    <span class="n">countries</span><span class="o">.</span><span class="n">population</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="n">arctic</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;population arctic countries&#39;</span><span class="p">),</span>
+<span class="p">]</span>
 
-<span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">continent</span><span class="p">)</span>
-          <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">metrics</span><span class="p">))</span>
+<span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">continent</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">metrics</span><span class="p">))</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt">arctic = countries.name.isin(['United States',
-                              'Canada',
-                              'Finland',
-                              'Greenland',
-                              'Iceland',
-                              'Norway',
-                              'Russia',
-                              'Sweden'])
+<div id="cell-9" class="clipboard-copy-txt">arctic = countries.name.isin(
+    [
+        'United States',
+        'Canada',
+        'Finland',
+        'Greenland',
+        'Iceland',
+        'Norway',
+        'Russia',
+        'Sweden',
+    ]
+)
 
-metrics = [countries.count().name('# countries'),
-           countries.population.sum().name('total population'),
-           countries.population.sum(where=arctic).name('population arctic countries')]
+metrics = [
+    countries.count().name('# countries'),
+    countries.population.sum().name('total population'),
+    countries.population.sum(where=arctic).name('population arctic countries'),
+]
 
-(countries.groupby(countries.continent)
-          .aggregate(metrics))</div>
+(countries.groupby(countries.continent).aggregate(metrics))</div>
     
         </div>
     </div>
@@ -3812,7 +3830,7 @@ metrics = [countries.count().name('# countries'),
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 20, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2022</span>
       
     
   </small>

@@ -2842,19 +2842,25 @@ Licensed under the Apache License, Version 2.0.
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">tempfile</span>
+
 <span class="kn">import</span> <span class="nn">ibis</span>
 
 <span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 
-<span class="n">connection</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="s1">&#39;geography.db&#39;</span><span class="p">))</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="s1">&#39;geography.db&#39;</span><span class="p">)</span>
+<span class="p">)</span>
 </pre></div>
 <div id="cell-2" class="clipboard-copy-txt">import os
 import tempfile
+
 import ibis
 
 ibis.options.interactive = True
 
-connection = ibis.sqlite.connect(os.path.join(tempfile.gettempdir(), 'geography.db'))</div>
+connection = ibis.sqlite.connect(
+    os.path.join(tempfile.gettempdir(), 'geography.db')
+)</div>
     
         </div>
     </div>
@@ -2925,8 +2931,7 @@ connection = ibis.sqlite.connect(os.path.join(tempfile.gettempdir(), 'geography.
 <span class="n">countries</span>
 </pre></div>
 <div id="cell-3" class="clipboard-copy-txt">countries = connection.table('countries')
-countries
-</div>
+countries</div>
     
         </div>
     </div>
@@ -3273,33 +3278,35 @@ countries.population.cast('float').sum()</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">continent</span>
-        <span class="o">.</span><span class="n">case</span><span class="p">()</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AF&#39;</span><span class="p">,</span> <span class="s1">&#39;Africa&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AN&#39;</span><span class="p">,</span> <span class="s1">&#39;Antarctica&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AS&#39;</span><span class="p">,</span> <span class="s1">&#39;Asia&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;EU&#39;</span><span class="p">,</span> <span class="s1">&#39;Europe&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;NA&#39;</span><span class="p">,</span> <span class="s1">&#39;North America&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;OC&#39;</span><span class="p">,</span> <span class="s1">&#39;Oceania&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;SA&#39;</span><span class="p">,</span> <span class="s1">&#39;South America&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">else_</span><span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">continent</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">end</span><span class="p">()</span>
-        <span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;continent_name&#39;</span><span class="p">))</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">countries</span><span class="o">.</span><span class="n">continent</span><span class="o">.</span><span class="n">case</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AF&#39;</span><span class="p">,</span> <span class="s1">&#39;Africa&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AN&#39;</span><span class="p">,</span> <span class="s1">&#39;Antarctica&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AS&#39;</span><span class="p">,</span> <span class="s1">&#39;Asia&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;EU&#39;</span><span class="p">,</span> <span class="s1">&#39;Europe&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;NA&#39;</span><span class="p">,</span> <span class="s1">&#39;North America&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;OC&#39;</span><span class="p">,</span> <span class="s1">&#39;Oceania&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;SA&#39;</span><span class="p">,</span> <span class="s1">&#39;South America&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">else_</span><span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">continent</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">end</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;continent_name&#39;</span><span class="p">)</span>
+<span class="p">)</span>
 
 <span class="n">expr</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
-<div id="cell-6" class="clipboard-copy-txt">expr = (countries.continent
-        .case()
-        .when('AF', 'Africa')
-        .when('AN', 'Antarctica')
-        .when('AS', 'Asia')
-        .when('EU', 'Europe')
-        .when('NA', 'North America')
-        .when('OC', 'Oceania')
-        .when('SA', 'South America')
-        .else_(countries.continent)
-        .end()
-        .name('continent_name'))
+<div id="cell-6" class="clipboard-copy-txt">expr = (
+    countries.continent.case()
+    .when('AF', 'Africa')
+    .when('AN', 'Antarctica')
+    .when('AS', 'Asia')
+    .when('EU', 'Europe')
+    .when('NA', 'North America')
+    .when('OC', 'Oceania')
+    .when('SA', 'South America')
+    .else_(countries.continent)
+    .end()
+    .name('continent_name')
+)
 
 expr.value_counts()</div>
     
@@ -3427,29 +3434,31 @@ expr.value_counts()</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">continent</span>
-        <span class="o">.</span><span class="n">case</span><span class="p">()</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AF&#39;</span><span class="p">,</span> <span class="s1">&#39;Africa&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AS&#39;</span><span class="p">,</span> <span class="s1">&#39;Asia&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;EU&#39;</span><span class="p">,</span> <span class="s1">&#39;Europe&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;NA&#39;</span><span class="p">,</span> <span class="s1">&#39;North America&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;OC&#39;</span><span class="p">,</span> <span class="s1">&#39;Oceania&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;SA&#39;</span><span class="p">,</span> <span class="s1">&#39;South America&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">end</span><span class="p">()</span>
-        <span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;continent_name_with_nulls&#39;</span><span class="p">))</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">countries</span><span class="o">.</span><span class="n">continent</span><span class="o">.</span><span class="n">case</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AF&#39;</span><span class="p">,</span> <span class="s1">&#39;Africa&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AS&#39;</span><span class="p">,</span> <span class="s1">&#39;Asia&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;EU&#39;</span><span class="p">,</span> <span class="s1">&#39;Europe&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;NA&#39;</span><span class="p">,</span> <span class="s1">&#39;North America&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;OC&#39;</span><span class="p">,</span> <span class="s1">&#39;Oceania&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;SA&#39;</span><span class="p">,</span> <span class="s1">&#39;South America&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">end</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;continent_name_with_nulls&#39;</span><span class="p">)</span>
+<span class="p">)</span>
 
 <span class="n">expr</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt">expr = (countries.continent
-        .case()
-        .when('AF', 'Africa')
-        .when('AS', 'Asia')
-        .when('EU', 'Europe')
-        .when('NA', 'North America')
-        .when('OC', 'Oceania')
-        .when('SA', 'South America')
-        .end()
-        .name('continent_name_with_nulls'))
+<div id="cell-7" class="clipboard-copy-txt">expr = (
+    countries.continent.case()
+    .when('AF', 'Africa')
+    .when('AS', 'Asia')
+    .when('EU', 'Europe')
+    .when('NA', 'North America')
+    .when('OC', 'Oceania')
+    .when('SA', 'South America')
+    .end()
+    .name('continent_name_with_nulls')
+)
 
 expr.value_counts()</div>
     
@@ -3577,21 +3586,25 @@ expr.value_counts()</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">case</span><span class="p">()</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">population</span> <span class="o">&gt;</span> <span class="mi">25_000_000</span><span class="p">,</span> <span class="s1">&#39;big&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">population</span> <span class="o">&lt;</span> <span class="mi">5_000_000</span><span class="p">,</span> <span class="s1">&#39;small&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">else_</span><span class="p">(</span><span class="s1">&#39;medium&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">end</span><span class="p">()</span>
-        <span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">))</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">ibis</span><span class="o">.</span><span class="n">case</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">population</span> <span class="o">&gt;</span> <span class="mi">25_000_000</span><span class="p">,</span> <span class="s1">&#39;big&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">population</span> <span class="o">&lt;</span> <span class="mi">5_000_000</span><span class="p">,</span> <span class="s1">&#39;small&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">else_</span><span class="p">(</span><span class="s1">&#39;medium&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">end</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;size&#39;</span><span class="p">)</span>
+<span class="p">)</span>
 
 <span class="n">countries</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;population&#39;</span><span class="p">,</span> <span class="n">expr</span><span class="p">]</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
-<div id="cell-8" class="clipboard-copy-txt">expr = (ibis.case()
-        .when(countries.population > 25_000_000, 'big')
-        .when(countries.population < 5_000_000, 'small')
-        .else_('medium')
-        .end()
-        .name('size'))
+<div id="cell-8" class="clipboard-copy-txt">expr = (
+    ibis.case()
+    .when(countries.population > 25_000_000, 'big')
+    .when(countries.population < 5_000_000, 'small')
+    .else_('medium')
+    .end()
+    .name('size')
+)
 
 countries['name', 'population', expr].limit(10)</div>
     
@@ -3745,15 +3758,11 @@ countries['name', 'population', expr].limit(10)</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="p">((</span><span class="n">countries</span><span class="o">.</span><span class="n">continent</span> <span class="o">==</span> <span class="s1">&#39;AS&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">ifelse</span><span class="p">(</span><span class="s1">&#39;Asia&#39;</span><span class="p">,</span> <span class="s1">&#39;Not Asia&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;is_asia&#39;</span><span class="p">))</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">continent</span> <span class="o">==</span> <span class="s1">&#39;AS&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">ifelse</span><span class="p">(</span><span class="s1">&#39;Asia&#39;</span><span class="p">,</span> <span class="s1">&#39;Not Asia&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;is_asia&#39;</span><span class="p">)</span>
 
 <span class="n">countries</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="n">expr</span><span class="p">]</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt">expr = ((countries.continent == 'AS')
-        .ifelse('Asia', 'Not Asia')
-        .name('is_asia'))
+<div id="cell-9" class="clipboard-copy-txt">expr = (countries.continent == 'AS').ifelse('Asia', 'Not Asia').name('is_asia')
 
 countries['name', 'continent', expr].limit(10)</div>
     
@@ -4177,23 +4186,25 @@ expr.count()</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">continent</span>
-        <span class="o">.</span><span class="n">case</span><span class="p">()</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AF&#39;</span><span class="p">,</span> <span class="s1">&#39;Africa&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;EU&#39;</span><span class="p">,</span> <span class="s1">&#39;Europe&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AS&#39;</span><span class="p">,</span> <span class="s1">&#39;Asia&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">end</span><span class="p">()</span>
-        <span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;top_continent_name&#39;</span><span class="p">))</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">countries</span><span class="o">.</span><span class="n">continent</span><span class="o">.</span><span class="n">case</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AF&#39;</span><span class="p">,</span> <span class="s1">&#39;Africa&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;EU&#39;</span><span class="p">,</span> <span class="s1">&#39;Europe&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AS&#39;</span><span class="p">,</span> <span class="s1">&#39;Asia&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">end</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;top_continent_name&#39;</span><span class="p">)</span>
+<span class="p">)</span>
 
 <span class="n">expr</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt">expr = (countries.continent
-        .case()
-        .when('AF', 'Africa')
-        .when('EU', 'Europe')
-        .when('AS', 'Asia')
-        .end()
-        .name('top_continent_name'))
+<div id="cell-13" class="clipboard-copy-txt">expr = (
+    countries.continent.case()
+    .when('AF', 'Africa')
+    .when('EU', 'Europe')
+    .when('AS', 'Asia')
+    .end()
+    .name('top_continent_name')
+)
 
 expr.isnull().value_counts()</div>
     
@@ -4531,14 +4542,10 @@ expr2.value_counts()</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">metric</span> <span class="o">=</span> <span class="p">(</span><span class="n">countries</span><span class="p">[[</span><span class="s1">&#39;continent&#39;</span><span class="p">]]</span>
-          <span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-          <span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;num_continents&#39;</span><span class="p">))</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">metric</span> <span class="o">=</span> <span class="n">countries</span><span class="p">[[</span><span class="s1">&#39;continent&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;num_continents&#39;</span><span class="p">)</span>
 <span class="n">metric</span>
 </pre></div>
-<div id="cell-16" class="clipboard-copy-txt">metric = (countries[['continent']]
-          .distinct().count()
-          .name('num_continents'))
+<div id="cell-16" class="clipboard-copy-txt">metric = countries[['continent']].distinct().count().name('num_continents')
 metric</div>
     
         </div>
@@ -5211,11 +5218,17 @@ expr.value_counts().sort_by(('count', False)).limit(10)</div>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">independence</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;independence&#39;</span><span class="p">)</span>
 
-<span class="n">independence</span><span class="p">[</span><span class="n">independence</span><span class="o">.</span><span class="n">independence_date</span><span class="p">,</span> <span class="n">independence</span><span class="o">.</span><span class="n">independence_date</span><span class="o">.</span><span class="n">month</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">independence</span><span class="p">[</span>
+    <span class="n">independence</span><span class="o">.</span><span class="n">independence_date</span><span class="p">,</span>
+    <span class="n">independence</span><span class="o">.</span><span class="n">independence_date</span><span class="o">.</span><span class="n">month</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">),</span>
+<span class="p">]</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 <div id="cell-22" class="clipboard-copy-txt">independence = connection.table('independence')
 
-independence[independence.independence_date, independence.independence_date.month().name('month')].limit(10)</div>
+independence[
+    independence.independence_date,
+    independence.independence_date.month().name('month'),
+].limit(10)</div>
     
         </div>
     </div>
@@ -5359,14 +5372,24 @@ independence[independence.independence_date, independence.independence_date.mont
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">get_field</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">independence</span><span class="o">.</span><span class="n">independence_date</span><span class="p">,</span> <span class="n">f</span><span class="p">)()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
-<span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="s1">&#39;day&#39;</span><span class="p">]</span>  <span class="c1"># datetime fields can also use: &#39;hour&#39;, &#39;minute&#39;, &#39;second&#39;, &#39;millisecond&#39;</span>
+
+<span class="n">fields</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;year&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;month&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;day&#39;</span><span class="p">,</span>
+<span class="p">]</span>  <span class="c1"># datetime fields can also use: &#39;hour&#39;, &#39;minute&#39;, &#39;second&#39;, &#39;millisecond&#39;</span>
 <span class="n">projection</span> <span class="o">=</span> <span class="p">[</span><span class="n">independence</span><span class="o">.</span><span class="n">independence_date</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">get_field</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">]</span>
 <span class="n">independence</span><span class="p">[</span><span class="n">projection</span><span class="p">]</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 <div id="cell-23" class="clipboard-copy-txt">def get_field(f):
     return getattr(independence.independence_date, f)().name(f)
 
-fields = ['year', 'month', 'day']  # datetime fields can also use: 'hour', 'minute', 'second', 'millisecond'
+
+fields = [
+    'year',
+    'month',
+    'day',
+]  # datetime fields can also use: 'hour', 'minute', 'second', 'millisecond'
 projection = [independence.independence_date] + [get_field(x) for x in fields]
 independence[projection].limit(10)</div>
     
@@ -5531,13 +5554,17 @@ independence[projection].limit(10)</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">independence</span><span class="p">[</span><span class="n">independence</span><span class="o">.</span><span class="n">independence_date</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
-             <span class="n">independence</span><span class="o">.</span><span class="n">independence_date</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
-             <span class="n">independence</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;nrows&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">independence</span><span class="p">[</span>
+    <span class="n">independence</span><span class="o">.</span><span class="n">independence_date</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+    <span class="n">independence</span><span class="o">.</span><span class="n">independence_date</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+    <span class="n">independence</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;nrows&#39;</span><span class="p">),</span>
+<span class="p">]</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
 </pre></div>
-<div id="cell-24" class="clipboard-copy-txt">independence[independence.independence_date.min(),
-             independence.independence_date.max(),
-             independence.count().name('nrows')].distinct()</div>
+<div id="cell-24" class="clipboard-copy-txt">independence[
+    independence.independence_date.min(),
+    independence.independence_date.max(),
+    independence.count().name('nrows'),
+].distinct()</div>
     
         </div>
     </div>
@@ -5683,7 +5710,7 @@ independence[projection].limit(10)</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 17, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2022</span>
       
     
   </small>

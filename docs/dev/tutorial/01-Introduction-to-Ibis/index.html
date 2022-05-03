@@ -2871,14 +2871,16 @@ Licensed under the Apache License, Version 2.0.
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">tempfile</span>
 
-
-<span class="n">connection</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="s1">&#39;geography.db&#39;</span><span class="p">))</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="s1">&#39;geography.db&#39;</span><span class="p">)</span>
+<span class="p">)</span>
 </pre></div>
 <div id="cell-4" class="clipboard-copy-txt">import os
 import tempfile
 
-
-connection = ibis.sqlite.connect(os.path.join(tempfile.gettempdir(), 'geography.db'))</div>
+connection = ibis.sqlite.connect(
+    os.path.join(tempfile.gettempdir(), 'geography.db')
+)</div>
     
         </div>
     </div>
@@ -3694,10 +3696,14 @@ Input <span class="ansi-green-fg">In [11]</span>, in <span class="ansi-cyan-fg">
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">asian_countries</span> <span class="o">=</span> <span class="n">countries</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="s1">&#39;population&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;AS&#39;</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">asian_countries</span> <span class="o">=</span> <span class="n">countries</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="s1">&#39;population&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+    <span class="n">countries</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;AS&#39;</span>
+<span class="p">)</span>
 <span class="n">asian_countries</span>
 </pre></div>
-<div id="cell-13" class="clipboard-copy-txt">asian_countries = countries['name', 'continent', 'population'].filter(countries['continent'] == 'AS')
+<div id="cell-13" class="clipboard-copy-txt">asian_countries = countries['name', 'continent', 'population'].filter(
+    countries['continent'] == 'AS'
+)
 asian_countries</div>
     
         </div>
@@ -4464,7 +4470,7 @@ asian_countries</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 6, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2022</span>
       
     
   </small>

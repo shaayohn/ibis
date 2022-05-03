@@ -2800,8 +2800,8 @@ Licensed under the Apache License, Version 2.0.
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2823,65 +2823,30 @@ Licensed under the Apache License, Version 2.0.
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
 <span class="kn">import</span> <span class="nn">ibis.expr.rules</span> <span class="k">as</span> <span class="nn">rlz</span>
-
 <span class="kn">from</span> <span class="nn">ibis.expr.operations</span> <span class="kn">import</span> <span class="n">ValueOp</span>
 
 
 <span class="k">class</span> <span class="nc">JulianDay</span><span class="p">(</span><span class="n">ValueOp</span><span class="p">):</span>
     <span class="n">arg</span> <span class="o">=</span> <span class="n">rlz</span><span class="o">.</span><span class="n">string</span>
-    <span class="n">output_type</span> <span class="o">=</span> <span class="n">rlz</span><span class="o">.</span><span class="n">shape_like</span><span class="p">(</span><span class="s1">&#39;arg&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">)</span>
+
+    <span class="n">output_dtype</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">float32</span>
+    <span class="n">output_shape</span> <span class="o">=</span> <span class="n">rlz</span><span class="o">.</span><span class="n">shape_like</span><span class="p">(</span><span class="s1">&#39;arg&#39;</span><span class="p">)</span>
 </pre></div>
 <div id="cell-1" class="clipboard-copy-txt">import ibis.expr.datatypes as dt
 import ibis.expr.rules as rlz
-
 from ibis.expr.operations import ValueOp
 
 
 class JulianDay(ValueOp):
     arg = rlz.string
-    output_type = rlz.shape_like('arg', 'float')</div>
+
+    output_dtype = dt.float32
+    output_shape = rlz.shape_like('arg')</div>
     
         </div>
     </div>
 
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [1]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 7&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">ibis</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">expr</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">rules</span> <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> <span class="ansi-bold" style="color: rgb(0,0,255)">rlz</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">ibis</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">expr</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">operations</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> ValueOp
-<span class="ansi-green-fg">----&gt; 7</span> <span class="ansi-bold" style="color: rgb(0,135,0)">class</span> <span class="ansi-bold" style="color: rgb(0,0,255)">JulianDay</span>(ValueOp):
-<span class="ansi-green-intense-fg ansi-bold">      8</span>     arg <span style="color: rgb(98,98,98)">=</span> rlz<span style="color: rgb(98,98,98)">.</span>string
-<span class="ansi-green-intense-fg ansi-bold">      9</span>     output_type <span style="color: rgb(98,98,98)">=</span> rlz<span style="color: rgb(98,98,98)">.</span>shape_like(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">arg</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">float</span><span style="color: rgb(175,0,0)">&#39;</span>)
-
-Input <span class="ansi-green-fg">In [1]</span>, in <span class="ansi-cyan-fg">JulianDay</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span> <span class="ansi-bold" style="color: rgb(0,135,0)">class</span> <span class="ansi-bold" style="color: rgb(0,0,255)">JulianDay</span>(ValueOp):
-<span class="ansi-green-intense-fg ansi-bold">      8</span>     arg <span style="color: rgb(98,98,98)">=</span> rlz<span style="color: rgb(98,98,98)">.</span>string
-<span class="ansi-green-fg">----&gt; 9</span>     output_type <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">rlz</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">shape_like</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">arg</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">float</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg">)</span>
-
-<span class="ansi-red-fg">TypeError</span>: shape_like() takes 1 positional argument but 2 were given</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div>
@@ -2945,7 +2910,7 @@ of expressions.</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ibis.expr.types</span> <span class="kn">import</span> <span class="n">StringValue</span><span class="p">,</span> <span class="n">BinaryValue</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">ibis.expr.types</span> <span class="kn">import</span> <span class="n">BinaryValue</span><span class="p">,</span> <span class="n">StringValue</span>
 
 
 <span class="k">def</span> <span class="nf">julianday</span><span class="p">(</span><span class="n">string_value</span><span class="p">):</span>
@@ -2954,7 +2919,7 @@ of expressions.</p>
 
 <span class="n">StringValue</span><span class="o">.</span><span class="n">julianday</span> <span class="o">=</span> <span class="n">julianday</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt">from ibis.expr.types import StringValue, BinaryValue
+<div id="cell-2" class="clipboard-copy-txt">from ibis.expr.types import BinaryValue, StringValue
 
 
 def julianday(string_value):
@@ -3030,24 +2995,18 @@ t.string_col.julianday()</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [3]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 5&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">ibis</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> t <span style="color: rgb(98,98,98)">=</span> ibis<span style="color: rgb(98,98,98)">.</span>table([(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string_col</span><span style="color: rgb(175,0,0)">&#39;</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">string</span><span style="color: rgb(175,0,0)">&#39;</span>)], name<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">t</span><span style="color: rgb(175,0,0)">&#39;</span>)
-<span class="ansi-green-fg">----&gt; 5</span> <span class="ansi-yellow-bg">t</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">string_col</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">julianday</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
 
-Input <span class="ansi-green-fg">In [2]</span>, in <span class="ansi-cyan-fg">julianday</span><span class="ansi-blue-fg">(string_value)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">julianday</span>(string_value):
-<span class="ansi-green-fg">----&gt; 5</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">JulianDay</span>(string_value)<span style="color: rgb(98,98,98)">.</span>to_expr()
 
-<span class="ansi-red-fg">NameError</span>: name &#39;JulianDay&#39; is not defined</pre>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>r0 := UnboundTable: t
+  string_col string
+
+JulianDay(r0.string_col)</pre>
 </div>
+
 </div>
 
 </div>
@@ -3093,11 +3052,11 @@ Input <span class="ansi-green-fg">In [2]</span>, in <span class="ansi-cyan-fg">j
 <span class="nd">@ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">add_operation</span><span class="p">(</span><span class="n">JulianDay</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">_julianday</span><span class="p">(</span><span class="n">translator</span><span class="p">,</span> <span class="n">expr</span><span class="p">):</span>
     <span class="c1"># pull out the arguments to the expression</span>
-    <span class="n">arg</span><span class="p">,</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">op</span><span class="p">()</span><span class="o">.</span><span class="n">args</span>
-    
+    <span class="p">(</span><span class="n">arg</span><span class="p">,)</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">op</span><span class="p">()</span><span class="o">.</span><span class="n">args</span>
+
     <span class="c1"># compile the argument</span>
     <span class="n">compiled_arg</span> <span class="o">=</span> <span class="n">translator</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
-    
+
     <span class="c1"># return a SQLAlchemy expression that calls into the SQLite julianday function</span>
     <span class="k">return</span> <span class="n">sa</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="n">julianday</span><span class="p">(</span><span class="n">compiled_arg</span><span class="p">)</span>
 </pre></div>
@@ -3107,11 +3066,11 @@ Input <span class="ansi-green-fg">In [2]</span>, in <span class="ansi-cyan-fg">j
 @ibis.sqlite.add_operation(JulianDay)
 def _julianday(translator, expr):
     # pull out the arguments to the expression
-    arg, = expr.op().args
-    
+    (arg,) = expr.op().args
+
     # compile the argument
     compiled_arg = translator.translate(arg)
-    
+
     # return a SQLAlchemy expression that calls into the SQLite julianday function
     return sa.func.julianday(compiled_arg)</div>
     
@@ -3138,28 +3097,6 @@ def _julianday(translator, expr):
 <pre>/nix/store/4a85qpif6vkhd7gfajigq6nlsm976k54-python3-3.10.4-env/lib/python3.10/site-packages/pyproj/__init__.py:91: UserWarning: Valid PROJ data directory not found. Either set the path using the environmental variable PROJ_LIB or with `pyproj.datadir.set_data_dir`.
   warnings.warn(str(err))
 </pre>
-</div>
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [4]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 4&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">sqlalchemy</span> <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> <span class="ansi-bold" style="color: rgb(0,0,255)">sa</span>
-<span class="ansi-green-fg">----&gt; 4</span> <span style="color: rgb(175,0,255)">@ibis</span><span style="color: rgb(98,98,98)">.</span>sqlite<span style="color: rgb(98,98,98)">.</span>add_operation(<span class="ansi-yellow-bg">JulianDay</span>)
-<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">_julianday</span>(translator, expr):
-<span class="ansi-green-intense-fg ansi-bold">      6</span>     <span style="color: rgb(95,135,135)"># pull out the arguments to the expression</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span>     arg, <span style="color: rgb(98,98,98)">=</span> expr<span style="color: rgb(98,98,98)">.</span>op()<span style="color: rgb(98,98,98)">.</span>args
-<span class="ansi-green-intense-fg ansi-bold">      9</span>     <span style="color: rgb(95,135,135)"># compile the argument</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;JulianDay&#39; is not defined</pre>
 </div>
 </div>
 
@@ -3234,6 +3171,7 @@ Input <span class="ansi-green-fg">In [4]</span>, in <span class="ansi-cyan-fg">&
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">tempfile</span>
+
 <span class="kn">import</span> <span class="nn">ibis</span>
 
 <span class="n">db_fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="s1">&#39;geography.db&#39;</span><span class="p">)</span>
@@ -3242,6 +3180,7 @@ Input <span class="ansi-green-fg">In [4]</span>, in <span class="ansi-cyan-fg">&
 </pre></div>
 <div id="cell-6" class="clipboard-copy-txt">import os
 import tempfile
+
 import ibis
 
 db_fname = os.path.join(tempfile.gettempdir(), 'geography.db')
@@ -3413,10 +3352,10 @@ cast(independence_date, string): Cast(r0.independence_date, to=string)</pre>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">julianday_expr</span> <span class="o">=</span> <span class="n">day</span><span class="o">.</span><span class="n">julianday</span><span class="p">()</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">julianday_expr</span> <span class="o">=</span> <span class="n">day</span><span class="o">.</span><span class="n">julianday</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s2">&quot;jday&quot;</span><span class="p">)</span>
 <span class="n">julianday_expr</span>
 </pre></div>
-<div id="cell-9" class="clipboard-copy-txt">julianday_expr = day.julianday()
+<div id="cell-9" class="clipboard-copy-txt">julianday_expr = day.julianday().name("jday")
 julianday_expr</div>
     
         </div>
@@ -3435,23 +3374,20 @@ julianday_expr</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [9]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> julianday_expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">day</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">julianday</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> julianday_expr
 
-Input <span class="ansi-green-fg">In [2]</span>, in <span class="ansi-cyan-fg">julianday</span><span class="ansi-blue-fg">(string_value)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">julianday</span>(string_value):
-<span class="ansi-green-fg">----&gt; 5</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">JulianDay</span>(string_value)<span style="color: rgb(98,98,98)">.</span>to_expr()
 
-<span class="ansi-red-fg">NameError</span>: name &#39;JulianDay&#39; is not defined</pre>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>r0 := AlchemyTable: independence
+  country_code      string
+  independence_date date
+  independence_from string
+
+jday: JulianDay(Cast(r0.independence_date, to=string))</pre>
 </div>
+
 </div>
 
 </div>
@@ -3505,15 +3441,10 @@ print(sql_expr)</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [10]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> sql_expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">julianday_expr</span><span style="color: rgb(98,98,98)">.</span>compile()
-<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(sql_expr)
-
-<span class="ansi-red-fg">NameError</span>: name &#39;julianday_expr&#39; is not defined</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>SELECT julianday(CAST(t0.independence_date AS TEXT)) AS jday 
+FROM main.independence AS t0
+</pre>
 </div>
 </div>
 
@@ -3565,19 +3496,20 @@ result.head()</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [11]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> result <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">julianday_expr</span><span style="color: rgb(98,98,98)">.</span>execute()
-<span class="ansi-green-intense-fg ansi-bold">      2</span> result<span style="color: rgb(98,98,98)">.</span>head()
 
-<span class="ansi-red-fg">NameError</span>: name &#39;julianday_expr&#39; is not defined</pre>
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>0    2422189.5
+1    2419734.5
+2    2437850.5
+3    2442727.5
+4    2444909.5
+Name: jday, dtype: float32</pre>
 </div>
+
 </div>
 
 </div>
@@ -3656,8 +3588,8 @@ scalar</div>
 </div>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -3685,38 +3617,6 @@ scalar</div>
     </div>
 
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [13]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> julianday_scalar <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">scalar</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">julianday</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-
-Input <span class="ansi-green-fg">In [2]</span>, in <span class="ansi-cyan-fg">julianday</span><span class="ansi-blue-fg">(string_value)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">julianday</span>(string_value):
-<span class="ansi-green-fg">----&gt; 5</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">JulianDay</span>(string_value)<span style="color: rgb(98,98,98)">.</span>to_expr()
-
-<span class="ansi-red-fg">NameError</span>: name &#39;JulianDay&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div>
@@ -3761,18 +3661,15 @@ Input <span class="ansi-green-fg">In [2]</span>, in <span class="ansi-cyan-fg">j
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [14]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> con<span style="color: rgb(98,98,98)">.</span>execute(<span class="ansi-yellow-bg">julianday_scalar</span>)
 
-<span class="ansi-red-fg">NameError</span>: name &#39;julianday_scalar&#39; is not defined</pre>
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>2455269.5</pre>
 </div>
+
 </div>
 
 </div>
@@ -3790,7 +3687,7 @@ Input <span class="ansi-green-fg">In [14]</span>, in <span class="ansi-cyan-fg">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 20, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2022</span>
       
     
   </small>

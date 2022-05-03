@@ -2764,24 +2764,28 @@ the <code>countries</code> table as we did previously.</p>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">tempfile</span>
-<span class="kn">import</span> <span class="nn">ibis</span>
 
+<span class="kn">import</span> <span class="nn">ibis</span>
 
 <span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 
-<span class="n">connection</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="s1">&#39;geography.db&#39;</span><span class="p">))</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="s1">&#39;geography.db&#39;</span><span class="p">)</span>
+<span class="p">)</span>
 <span class="n">countries</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;countries&#39;</span><span class="p">)</span>
 
 <span class="n">countries</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="s1">&#39;area_km2&#39;</span><span class="p">,</span> <span class="s1">&#39;population&#39;</span><span class="p">]</span>
 </pre></div>
 <div id="cell-2" class="clipboard-copy-txt">import os
 import tempfile
-import ibis
 
+import ibis
 
 ibis.options.interactive = True
 
-connection = ibis.sqlite.connect(os.path.join(tempfile.gettempdir(), 'geography.db'))
+connection = ibis.sqlite.connect(
+    os.path.join(tempfile.gettempdir(), 'geography.db')
+)
 countries = connection.table('countries')
 
 countries['name', 'continent', 'area_km2', 'population']</div>
@@ -2977,30 +2981,36 @@ argument is returned. If the value does not match any of the <code>when</code> v
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">continent_name</span> <span class="o">=</span> <span class="p">(</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">case</span><span class="p">()</span>
-                                        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;NA&#39;</span><span class="p">,</span> <span class="s1">&#39;North America&#39;</span><span class="p">)</span>
-                                        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;SA&#39;</span><span class="p">,</span> <span class="s1">&#39;South America&#39;</span><span class="p">)</span>
-                                        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;EU&#39;</span><span class="p">,</span> <span class="s1">&#39;Europe&#39;</span><span class="p">)</span>
-                                        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AF&#39;</span><span class="p">,</span> <span class="s1">&#39;Africa&#39;</span><span class="p">)</span>
-                                        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AS&#39;</span><span class="p">,</span> <span class="s1">&#39;Asia&#39;</span><span class="p">)</span>
-                                        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;OC&#39;</span><span class="p">,</span> <span class="s1">&#39;Oceania&#39;</span><span class="p">)</span>
-                                        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AN&#39;</span><span class="p">,</span> <span class="s1">&#39;Anctartica&#39;</span><span class="p">)</span>
-                                        <span class="o">.</span><span class="n">else_</span><span class="p">(</span><span class="s1">&#39;Unknown continent&#39;</span><span class="p">)</span>
-                                        <span class="o">.</span><span class="n">end</span><span class="p">()</span>
-                                        <span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;continent_name&#39;</span><span class="p">))</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">continent_name</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">countries</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">case</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;NA&#39;</span><span class="p">,</span> <span class="s1">&#39;North America&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;SA&#39;</span><span class="p">,</span> <span class="s1">&#39;South America&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;EU&#39;</span><span class="p">,</span> <span class="s1">&#39;Europe&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AF&#39;</span><span class="p">,</span> <span class="s1">&#39;Africa&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AS&#39;</span><span class="p">,</span> <span class="s1">&#39;Asia&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;OC&#39;</span><span class="p">,</span> <span class="s1">&#39;Oceania&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="s1">&#39;AN&#39;</span><span class="p">,</span> <span class="s1">&#39;Anctartica&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">else_</span><span class="p">(</span><span class="s1">&#39;Unknown continent&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">end</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;continent_name&#39;</span><span class="p">)</span>
+<span class="p">)</span>
 <span class="n">continent_name</span>
 </pre></div>
-<div id="cell-3" class="clipboard-copy-txt">continent_name = (countries['continent'].case()
-                                        .when('NA', 'North America')
-                                        .when('SA', 'South America')
-                                        .when('EU', 'Europe')
-                                        .when('AF', 'Africa')
-                                        .when('AS', 'Asia')
-                                        .when('OC', 'Oceania')
-                                        .when('AN', 'Anctartica')
-                                        .else_('Unknown continent')
-                                        .end()
-                                        .name('continent_name'))
+<div id="cell-3" class="clipboard-copy-txt">continent_name = (
+    countries['continent']
+    .case()
+    .when('NA', 'North America')
+    .when('SA', 'South America')
+    .when('EU', 'Europe')
+    .when('AF', 'Africa')
+    .when('AS', 'Asia')
+    .when('OC', 'Oceania')
+    .when('AN', 'Anctartica')
+    .else_('Unknown continent')
+    .end()
+    .name('continent_name')
+)
 continent_name</div>
     
         </div>
@@ -3563,9 +3573,13 @@ when using it in the list of columns to fetch.</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">countries</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">continent_name</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;total_population&#39;</span><span class="p">))</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">countries</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">continent_name</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
+    <span class="n">countries</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;total_population&#39;</span><span class="p">)</span>
+<span class="p">)</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt">countries.group_by(continent_name).aggregate(countries['population'].sum().name('total_population'))</div>
+<div id="cell-7" class="clipboard-copy-txt">countries.group_by(continent_name).aggregate(
+    countries['population'].sum().name('total_population')
+)</div>
     
         </div>
     </div>
@@ -3901,11 +3915,13 @@ use both column names and expressions, and also a list with any of them (e.g. <c
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">countries</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">([</span><span class="n">total_population</span><span class="p">,</span>
-                                           <span class="n">countries</span><span class="p">[</span><span class="s1">&#39;area_km2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;average_area&#39;</span><span class="p">)])</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">countries</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;continent&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">total_population</span><span class="p">,</span> <span class="n">countries</span><span class="p">[</span><span class="s1">&#39;area_km2&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;average_area&#39;</span><span class="p">)]</span>
+<span class="p">)</span>
 </pre></div>
-<div id="cell-10" class="clipboard-copy-txt">countries.group_by('continent').aggregate([total_population,
-                                           countries['area_km2'].mean().name('average_area')])</div>
+<div id="cell-10" class="clipboard-copy-txt">countries.group_by('continent').aggregate(
+    [total_population, countries['area_km2'].mean().name('average_area')]
+)</div>
     
         </div>
     </div>
@@ -4462,12 +4478,14 @@ This is called an inner join.</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">countries_and_gdp</span> <span class="o">=</span> <span class="n">countries</span><span class="o">.</span><span class="n">inner_join</span><span class="p">(</span><span class="n">gdp</span><span class="p">,</span>
-                                         <span class="n">predicates</span><span class="o">=</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;iso_alpha3&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">gdp</span><span class="p">[</span><span class="s1">&#39;country_code&#39;</span><span class="p">])</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">countries_and_gdp</span> <span class="o">=</span> <span class="n">countries</span><span class="o">.</span><span class="n">inner_join</span><span class="p">(</span>
+    <span class="n">gdp</span><span class="p">,</span> <span class="n">predicates</span><span class="o">=</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;iso_alpha3&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">gdp</span><span class="p">[</span><span class="s1">&#39;country_code&#39;</span><span class="p">]</span>
+<span class="p">)</span>
 <span class="n">countries_and_gdp</span><span class="p">[</span><span class="n">countries</span><span class="p">,</span> <span class="n">gdp</span><span class="p">]</span>
 </pre></div>
-<div id="cell-14" class="clipboard-copy-txt">countries_and_gdp = countries.inner_join(gdp,
-                                         predicates=countries['iso_alpha3'] == gdp['country_code'])
+<div id="cell-14" class="clipboard-copy-txt">countries_and_gdp = countries.inner_join(
+    gdp, predicates=countries['iso_alpha3'] == gdp['country_code']
+)
 countries_and_gdp[countries, gdp]</div>
     
         </div>
@@ -4898,12 +4916,14 @@ gdp_2017</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">countries_and_gdp</span> <span class="o">=</span> <span class="n">countries</span><span class="o">.</span><span class="n">inner_join</span><span class="p">(</span><span class="n">gdp_2017</span><span class="p">,</span>
-                                         <span class="n">predicates</span><span class="o">=</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;iso_alpha3&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">gdp_2017</span><span class="p">[</span><span class="s1">&#39;country_code&#39;</span><span class="p">])</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">countries_and_gdp</span> <span class="o">=</span> <span class="n">countries</span><span class="o">.</span><span class="n">inner_join</span><span class="p">(</span>
+    <span class="n">gdp_2017</span><span class="p">,</span> <span class="n">predicates</span><span class="o">=</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;iso_alpha3&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">gdp_2017</span><span class="p">[</span><span class="s1">&#39;country_code&#39;</span><span class="p">]</span>
+<span class="p">)</span>
 <span class="n">countries_and_gdp</span><span class="p">[</span><span class="n">countries</span><span class="p">,</span> <span class="n">gdp_2017</span><span class="p">]</span>
 </pre></div>
-<div id="cell-16" class="clipboard-copy-txt">countries_and_gdp = countries.inner_join(gdp_2017,
-                                         predicates=countries['iso_alpha3'] == gdp_2017['country_code'])
+<div id="cell-16" class="clipboard-copy-txt">countries_and_gdp = countries.inner_join(
+    gdp_2017, predicates=countries['iso_alpha3'] == gdp_2017['country_code']
+)
 countries_and_gdp[countries, gdp_2017]</div>
     
         </div>
@@ -5164,7 +5184,7 @@ match the <code>country_code</code> column in <code>gdp</code>. This is specifie
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2022</span>
       
     
   </small>

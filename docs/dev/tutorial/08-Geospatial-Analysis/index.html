@@ -2969,13 +2969,17 @@ If you have Docker installed, you can download and launch a PostGIS database wit
             </clipboard-copy>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
 <span class="kn">import</span> <span class="nn">geopandas</span>
+
 <span class="kn">import</span> <span class="nn">ibis</span>
 
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 </pre></div>
 <div id="cell-4" class="clipboard-copy-txt">import os
+
 import geopandas
+
 import ibis
 
 %matplotlib inline</div>
@@ -3186,15 +3190,13 @@ which corresponds to municipalities.</p>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">cities</span> <span class="o">=</span> <span class="n">polygons</span><span class="p">[</span><span class="n">polygons</span><span class="o">.</span><span class="n">admin_level</span> <span class="o">==</span> <span class="s1">&#39;8&#39;</span><span class="p">]</span>
 
 <span class="n">cities</span> <span class="o">=</span> <span class="n">cities</span><span class="p">[</span>
-    <span class="n">cities</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;city_name&#39;</span><span class="p">),</span>
-    <span class="n">cities</span><span class="o">.</span><span class="n">wkb_geometry</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;city_geometry&#39;</span><span class="p">)</span>
+    <span class="n">cities</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;city_name&#39;</span><span class="p">),</span> <span class="n">cities</span><span class="o">.</span><span class="n">wkb_geometry</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;city_geometry&#39;</span><span class="p">)</span>
 <span class="p">]</span>
 </pre></div>
 <div id="cell-8" class="clipboard-copy-txt">cities = polygons[polygons.admin_level == '8']
 
 cities = cities[
-    cities.name.name('city_name'),
-    cities.wkb_geometry.name('city_geometry')
+    cities.name.name('city_name'), cities.wkb_geometry.name('city_geometry')
 ]</div>
     
         </div>
@@ -3317,13 +3319,13 @@ which are indicated by the value <code>'motorway'</code> in the highway column:<
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">highways</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[(</span><span class="n">lines</span><span class="o">.</span><span class="n">highway</span> <span class="o">==</span> <span class="s1">&#39;motorway&#39;</span><span class="p">)]</span>
 <span class="n">highways</span> <span class="o">=</span> <span class="n">highways</span><span class="p">[</span>
     <span class="n">highways</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;highway_name&#39;</span><span class="p">),</span>
-    <span class="n">highways</span><span class="o">.</span><span class="n">wkb_geometry</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;highway_geometry&#39;</span><span class="p">)</span>
+    <span class="n">highways</span><span class="o">.</span><span class="n">wkb_geometry</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;highway_geometry&#39;</span><span class="p">),</span>
 <span class="p">]</span>
 </pre></div>
 <div id="cell-10" class="clipboard-copy-txt">highways = lines[(lines.highway == 'motorway')]
 highways = highways[
     highways.name.name('highway_name'),
-    highways.wkb_geometry.name('highway_geometry')
+    highways.wkb_geometry.name('highway_geometry'),
 ]</div>
     
         </div>
@@ -3654,12 +3656,12 @@ on the condition that the highways intersect any of the city geometries:</p>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">la_highways_expr</span> <span class="o">=</span> <span class="n">highways</span><span class="o">.</span><span class="n">inner_join</span><span class="p">(</span>
     <span class="n">la_neighbors_expr</span><span class="p">,</span>
-    <span class="n">highways</span><span class="o">.</span><span class="n">highway_geometry</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">la_neighbors_expr</span><span class="o">.</span><span class="n">city_geometry</span><span class="p">)</span>
+    <span class="n">highways</span><span class="o">.</span><span class="n">highway_geometry</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">la_neighbors_expr</span><span class="o">.</span><span class="n">city_geometry</span><span class="p">),</span>
 <span class="p">)</span>
 </pre></div>
 <div id="cell-13" class="clipboard-copy-txt">la_highways_expr = highways.inner_join(
     la_neighbors_expr,
-    highways.highway_geometry.intersects(la_neighbors_expr.city_geometry)
+    highways.highway_geometry.intersects(la_neighbors_expr.city_geometry),
 )</div>
     
         </div>
@@ -3781,11 +3783,19 @@ To make the plot a bit nicer, we can also load some shapefiles for the coast and
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ocean</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/physical/ne_10m_ocean.zip&#39;</span><span class="p">)</span>
-<span class="n">land</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/physical/ne_10m_land.zip&#39;</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ocean</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
+    <span class="s1">&#39;https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/physical/ne_10m_ocean.zip&#39;</span>
+<span class="p">)</span>
+<span class="n">land</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
+    <span class="s1">&#39;https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/physical/ne_10m_land.zip&#39;</span>
+<span class="p">)</span>
 </pre></div>
-<div id="cell-15" class="clipboard-copy-txt">ocean = geopandas.read_file('https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/physical/ne_10m_ocean.zip')
-land = geopandas.read_file('https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/physical/ne_10m_land.zip')</div>
+<div id="cell-15" class="clipboard-copy-txt">ocean = geopandas.read_file(
+    'https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/physical/ne_10m_ocean.zip'
+)
+land = geopandas.read_file(
+    'https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/physical/ne_10m_land.zip'
+)</div>
     
         </div>
     </div>
@@ -3815,7 +3825,7 @@ land = geopandas.read_file('https://www.naturalearthdata.com/http//www.naturalea
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">la_neighbors</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;rainbow&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">la_neighbors</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;rainbow&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_autoscale_on</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
 <span class="n">land</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tan&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
@@ -3823,7 +3833,7 @@ land = geopandas.read_file('https://www.naturalearthdata.com/http//www.naturalea
 <span class="n">ax</span> <span class="o">=</span> <span class="n">ocean</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;navy&#39;</span><span class="p">)</span>
 <span class="n">la_highways</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;maroon&#39;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-16" class="clipboard-copy-txt">ax = la_neighbors.dropna().plot(figsize=(16,16), cmap='rainbow', alpha=0.9)
+<div id="cell-16" class="clipboard-copy-txt">ax = la_neighbors.dropna().plot(figsize=(16, 16), cmap='rainbow', alpha=0.9)
 ax.set_autoscale_on(False)
 ax.set_axis_off()
 land.plot(ax=ax, color='tan', alpha=0.4)
@@ -3892,7 +3902,7 @@ jp-needs-light-background
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 20, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2022</span>
       
     
   </small>

@@ -2738,18 +2738,22 @@ expression to be executed at a later time.</p>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">tempfile</span>
+
 <span class="kn">import</span> <span class="nn">ibis</span>
 
-
-<span class="n">connection</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="s1">&#39;geography.db&#39;</span><span class="p">))</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="s1">&#39;geography.db&#39;</span><span class="p">)</span>
+<span class="p">)</span>
 <span class="n">countries</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;countries&#39;</span><span class="p">)</span>
 </pre></div>
 <div id="cell-2" class="clipboard-copy-txt">import os
 import tempfile
+
 import ibis
 
-
-connection = ibis.sqlite.connect(os.path.join(tempfile.gettempdir(), 'geography.db'))
+connection = ibis.sqlite.connect(
+    os.path.join(tempfile.gettempdir(), 'geography.db')
+)
 countries = connection.table('countries')</div>
     
         </div>
@@ -3236,10 +3240,14 @@ returns a columns.</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">population_in_millions</span> <span class="o">=</span> <span class="p">(</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1_000_000</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;population_in_millions&#39;</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">population_in_millions</span> <span class="o">=</span> <span class="p">(</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">1_000_000</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span>
+    <span class="s1">&#39;population_in_millions&#39;</span>
+<span class="p">)</span>
 <span class="n">population_in_millions</span>
 </pre></div>
-<div id="cell-7" class="clipboard-copy-txt">population_in_millions = (countries['population'] / 1_000_000).name('population_in_millions')
+<div id="cell-7" class="clipboard-copy-txt">population_in_millions = (countries['population'] / 1_000_000).name(
+    'population_in_millions'
+)
 population_in_millions</div>
     
         </div>
@@ -3609,8 +3617,8 @@ log file.</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">tempfile</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
@@ -3618,10 +3626,10 @@ log file.</p>
 <span class="k">def</span> <span class="nf">log_query_to_file</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Log queries to `data/tutorial_queries.log`.</span>
-<span class="sd">    </span>
-<span class="sd">    Each file is a query. Line breaks in the query are </span>
+
+<span class="sd">    Each file is a query. Line breaks in the query are</span>
 <span class="sd">    represented with the string &#39;\n&#39;.</span>
-<span class="sd">    </span>
+
 <span class="sd">    A timestamp of when the query is executed is added.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">dirname</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">())</span>
@@ -3630,8 +3638,8 @@ log file.</p>
     <span class="k">with</span> <span class="n">fname</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">query_in_a_single_line</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt">import os
-import datetime
+<div id="cell-11" class="clipboard-copy-txt">import datetime
+import os
 import tempfile
 from pathlib import Path
 
@@ -3639,10 +3647,10 @@ from pathlib import Path
 def log_query_to_file(query: str) -> None:
     """
     Log queries to `data/tutorial_queries.log`.
-    
-    Each file is a query. Line breaks in the query are 
+
+    Each file is a query. Line breaks in the query are
     represented with the string '\n'.
-    
+
     A timestamp of when the query is executed is added.
     """
     dirname = Path(tempfile.gettempdir())
@@ -3697,7 +3705,7 @@ wait one second, and execute another query.</p>
 <span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">verbose_log</span> <span class="o">=</span> <span class="n">log_query_to_file</span>
 
 <span class="n">countries</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
-<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="n">countries</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;continent&#39;</span><span class="p">,</span> <span class="n">population_in_millions</span><span class="p">]</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
 </pre></div>
 <div id="cell-12" class="clipboard-copy-txt">import time
@@ -3705,7 +3713,7 @@ wait one second, and execute another query.</p>
 ibis.options.verbose_log = log_query_to_file
 
 countries.execute()
-time.sleep(1.)
+time.sleep(1.0)
 countries['name', 'continent', population_in_millions].limit(3).execute()</div>
     
         </div>
@@ -3860,7 +3868,7 @@ countries['name', 'continent', population_in_millions].limit(3).execute()</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 20, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2022</span>
       
     
   </small>

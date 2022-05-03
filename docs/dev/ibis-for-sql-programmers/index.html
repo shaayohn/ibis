@@ -3419,9 +3419,11 @@ guide!</p>
             </clipboard-copy>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ibis</span>
+
 <span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">sql</span><span class="o">.</span><span class="n">default_limit</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 <div id="cell-1" class="clipboard-copy-txt">import ibis
+
 ibis.options.sql.default_limit = None</div>
     
         </div>
@@ -3466,10 +3468,14 @@ a <em>projection</em>.</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">)],</span> <span class="s1">&#39;my_data&#39;</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span>
+    <span class="p">[(</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">)],</span> <span class="s1">&#39;my_data&#39;</span>
+<span class="p">)</span>
 <span class="n">t</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt">t = ibis.table([('one', 'string'), ('two', 'float'), ('three', 'int32')], 'my_data')
+<div id="cell-2" class="clipboard-copy-txt">t = ibis.table(
+    [('one', 'string'), ('two', 'float'), ('three', 'int32')], 'my_data'
+)
 t</div>
     
         </div>
@@ -4323,13 +4329,15 @@ Consider this SQL:</p>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">t</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">])</span>
-    <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">the_sum</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">two</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">the_sum</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">two</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+    <span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">)</span>
     <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">mad</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">the_sum</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 <span class="p">)</span>
 </pre></div>
 <div id="cell-16" class="clipboard-copy-txt">expr = (
     t.group_by(['one', 'three'])
-    .aggregate(the_sum=t.two.sum()) .group_by('one')
+    .aggregate(the_sum=t.two.sum())
+    .group_by('one')
     .aggregate(mad=lambda x: x.the_sum.abs().mean())
 )</div>
     
@@ -4670,12 +4678,10 @@ WHERE (`two` &lt; 0) OR ((`two` &gt; 0) OR `one` IN (&#39;A&#39;, &#39;B&#39;))
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">stats</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">two</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;total_two&#39;</span><span class="p">),</span>
-         <span class="n">t</span><span class="o">.</span><span class="n">three</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;avg_three&#39;</span><span class="p">)]</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">stats</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">two</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;total_two&#39;</span><span class="p">),</span> <span class="n">t</span><span class="o">.</span><span class="n">three</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;avg_three&#39;</span><span class="p">)]</span>
 <span class="n">agged</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">stats</span><span class="p">)</span>
 </pre></div>
-<div id="cell-21" class="clipboard-copy-txt">stats = [t.two.sum().name('total_two'),
-         t.three.mean().name('avg_three')]
+<div id="cell-21" class="clipboard-copy-txt">stats = [t.two.sum().name('total_two'), t.three.mean().name('avg_three')]
 agged = t.aggregate(stats)</div>
     
         </div>
@@ -4849,11 +4855,11 @@ FROM my_data
             </clipboard-copy>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">agged2</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">stats</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;one&#39;</span><span class="p">)</span>
-<span class="n">agged3</span> <span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">stats</span><span class="p">)</span>
+<span class="n">agged3</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">stats</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">agged3</span><span class="p">))</span>
 </pre></div>
 <div id="cell-24" class="clipboard-copy-txt">agged2 = t.aggregate(stats, by='one')
-agged3 =t.group_by('one').aggregate(stats)
+agged3 = t.group_by('one').aggregate(stats)
 print(ibis.impala.compile(agged3))</div>
     
         </div>
@@ -4923,13 +4929,15 @@ expressions must be named. Let's look at an example:</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">events</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s1">&#39;ts&#39;</span><span class="p">,</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">),</span>
-                     <span class="p">(</span><span class="s1">&#39;event_type&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;session_id&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">)],</span>
-                    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;web_events&#39;</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">events</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span>
+    <span class="p">[(</span><span class="s1">&#39;ts&#39;</span><span class="p">,</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;event_type&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;session_id&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">)],</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;web_events&#39;</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
-<div id="cell-25" class="clipboard-copy-txt">events = ibis.table([('ts', 'timestamp'),
-                     ('event_type', 'int32'), ('session_id', 'int64')],
-                    name='web_events')</div>
+<div id="cell-25" class="clipboard-copy-txt">events = ibis.table(
+    [('ts', 'timestamp'), ('event_type', 'int32'), ('session_id', 'int64')],
+    name='web_events',
+)</div>
     
         </div>
     </div>
@@ -4971,19 +4979,19 @@ expressions must be named. Let's look at an example:</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="n">events</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">year</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">),</span>
-        <span class="n">events</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">month</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">)]</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="n">events</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">year</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">),</span> <span class="n">events</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">month</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">)]</span>
 
 <span class="n">sessions</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">session_id</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
-<span class="n">stats</span> <span class="o">=</span> <span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span>
-         <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="n">events</span><span class="o">.</span><span class="n">count</span><span class="p">(),</span> <span class="n">sessions</span><span class="o">=</span><span class="n">sessions</span><span class="p">))</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
+    <span class="n">total</span><span class="o">=</span><span class="n">events</span><span class="o">.</span><span class="n">count</span><span class="p">(),</span> <span class="n">sessions</span><span class="o">=</span><span class="n">sessions</span>
+<span class="p">)</span>
 </pre></div>
-<div id="cell-26" class="clipboard-copy-txt">keys = [events.ts.year().name('year'),
-        events.ts.month().name('month')]
+<div id="cell-26" class="clipboard-copy-txt">keys = [events.ts.year().name('year'), events.ts.month().name('month')]
 
 sessions = events.session_id.nunique()
-stats = (events.group_by(keys)
-         .aggregate(total=events.count(), sessions=sessions))</div>
+stats = events.group_by(keys).aggregate(
+    total=events.count(), sessions=sessions
+)</div>
     
         </div>
     </div>
@@ -5097,13 +5105,25 @@ gender, and nationality:</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">pop</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
-                  <span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;int16&#39;</span><span class="p">)],</span>
-                 <span class="n">name</span><span class="o">=</span><span class="s1">&#39;population&#39;</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">pop</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;int16&#39;</span><span class="p">),</span>
+    <span class="p">],</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;population&#39;</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
-<div id="cell-28" class="clipboard-copy-txt">pop = ibis.table([('name', 'string'),
-                  ('country', 'string'), ('gender', 'string'), ('age', 'int16')],
-                 name='population')</div>
+<div id="cell-28" class="clipboard-copy-txt">pop = ibis.table(
+    [
+        ('name', 'string'),
+        ('country', 'string'),
+        ('gender', 'string'),
+        ('age', 'int16'),
+    ],
+    name='population',
+)</div>
     
         </div>
     </div>
@@ -5168,15 +5188,17 @@ functions:</p>
             </clipboard-copy>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">pop</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
-    <span class="n">num_persons</span><span class="o">=</span><span class="n">pop</span><span class="o">.</span><span class="n">count</span><span class="p">(),</span> <span class="n">avg_age</span><span class="o">=</span><span class="n">pop</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+    <span class="n">num_persons</span><span class="o">=</span><span class="n">pop</span><span class="o">.</span><span class="n">count</span><span class="p">(),</span>
+    <span class="n">avg_age</span><span class="o">=</span><span class="n">pop</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
     <span class="n">avg_male</span><span class="o">=</span><span class="n">pop</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="n">pop</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="s1">&#39;M&#39;</span><span class="p">),</span>
-    <span class="n">avg_female</span><span class="o">=</span><span class="n">pop</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="n">pop</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="s1">&#39;F&#39;</span><span class="p">)</span>
+    <span class="n">avg_female</span><span class="o">=</span><span class="n">pop</span><span class="o">.</span><span class="n">age</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="n">pop</span><span class="o">.</span><span class="n">gender</span> <span class="o">==</span> <span class="s1">&#39;F&#39;</span><span class="p">),</span>
 <span class="p">)</span>
 </pre></div>
 <div id="cell-29" class="clipboard-copy-txt">expr = pop.group_by('country').aggregate(
-    num_persons=pop.count(), avg_age=pop.age.mean(),
+    num_persons=pop.count(),
+    avg_age=pop.age.mean(),
     avg_male=pop.age.mean(where=pop.gender == 'M'),
-    avg_female=pop.age.mean(where=pop.gender == 'F')
+    avg_female=pop.age.mean(where=pop.gender == 'F'),
 )</div>
     
         </div>
@@ -5449,12 +5471,18 @@ least 1000 observations:</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">)</span>
-         <span class="o">.</span><span class="n">having</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">two</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;total&#39;</span><span class="p">)))</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">having</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">1000</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">two</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;total&#39;</span><span class="p">))</span>
+<span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expr</span><span class="p">))</span>
 </pre></div>
-<div id="cell-33" class="clipboard-copy-txt">expr = (t.group_by('one')
-         .having(t.count() >= 1000) .aggregate(t.two.sum().name('total')))
+<div id="cell-33" class="clipboard-copy-txt">expr = (
+    t.group_by('one')
+    .having(t.count() >= 1000)
+    .aggregate(t.two.sum().name('total'))
+)
 print(ibis.impala.compile(expr))</div>
     
         </div>
@@ -5599,17 +5627,15 @@ direction of any key, either wrap it in <code>ibis.desc</code> or pass a tuple w
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">sorted</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">sort_by</span><span class="p">([</span>
-    <span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="s1">&#39;event_type&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">month</span><span class="p">(),</span> <span class="kc">False</span><span class="p">)</span>
-<span class="p">])</span> <span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">sorted</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="s1">&#39;event_type&#39;</span><span class="p">),</span> <span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">month</span><span class="p">(),</span> <span class="kc">False</span><span class="p">)]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="nb">sorted</span><span class="p">))</span>
 </pre></div>
-<div id="cell-35" class="clipboard-copy-txt">sorted = events.sort_by([
-    ibis.desc('event_type'),
-    (events.ts.month(), False)
-]) .limit(100)
+<div id="cell-35" class="clipboard-copy-txt">sorted = events.sort_by(
+    [ibis.desc('event_type'), (events.ts.month(), False)]
+).limit(100)
 
 print(ibis.impala.compile(sorted))</div>
     
@@ -5829,13 +5855,11 @@ expressions from one Ibis type to another. For example:</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">one</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s1">&#39;timestamp&#39;</span><span class="p">),</span>
-                <span class="n">four</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">three</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">))</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">one</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s1">&#39;timestamp&#39;</span><span class="p">),</span> <span class="n">four</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">three</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expr</span><span class="p">))</span>
 </pre></div>
-<div id="cell-38" class="clipboard-copy-txt">expr = t.mutate(date=t.one.cast('timestamp'),
-                four=t.three.cast('float'))
+<div id="cell-38" class="clipboard-copy-txt">expr = t.mutate(date=t.one.cast('timestamp'), four=t.three.cast('float'))
 
 print(ibis.impala.compile(expr))</div>
     
@@ -5913,24 +5937,28 @@ these semantics:</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">case</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">one</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s1">&#39;timestamp&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">year</span><span class="p">()</span>
-        <span class="o">.</span><span class="n">case</span><span class="p">()</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="s1">&#39;This year&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="s1">&#39;Last year&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">else_</span><span class="p">(</span><span class="s1">&#39;Earlier&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">end</span><span class="p">())</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">case</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">one</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s1">&#39;timestamp&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">year</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">case</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="s1">&#39;This year&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="mi">2014</span><span class="p">,</span> <span class="s1">&#39;Last year&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">else_</span><span class="p">(</span><span class="s1">&#39;Earlier&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">end</span><span class="p">()</span>
+<span class="p">)</span>
 
 <span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">year_group</span><span class="o">=</span><span class="n">case</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expr</span><span class="p">))</span>
 </pre></div>
-<div id="cell-39" class="clipboard-copy-txt">case = (t.one.cast('timestamp')
-        .year()
-        .case()
-        .when(2015, 'This year')
-        .when(2014, 'Last year')
-        .else_('Earlier')
-        .end())
+<div id="cell-39" class="clipboard-copy-txt">case = (
+    t.one.cast('timestamp')
+    .year()
+    .case()
+    .when(2015, 'This year')
+    .when(2014, 'Last year')
+    .else_('Earlier')
+    .end()
+)
 
 expr = t.mutate(year_group=case)
 print(ibis.impala.compile(expr))</div>
@@ -6012,20 +6040,24 @@ expressions and result values:</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">case</span> <span class="o">=</span> <span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">case</span><span class="p">()</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">two</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">three</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">two</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">three</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">else_</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">two</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">end</span><span class="p">())</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">case</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">ibis</span><span class="o">.</span><span class="n">case</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">two</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">three</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">when</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">two</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">three</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">else_</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">two</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">end</span><span class="p">()</span>
+<span class="p">)</span>
 
 <span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">cond_value</span><span class="o">=</span><span class="n">case</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expr</span><span class="p">))</span>
 </pre></div>
-<div id="cell-40" class="clipboard-copy-txt">case = (ibis.case()
-        .when(t.two < 0, t.three * 2)
-        .when(t.two > 1, t.three)
-        .else_(t.two)
-        .end())
+<div id="cell-40" class="clipboard-copy-txt">case = (
+    ibis.case()
+    .when(t.two < 0, t.three * 2)
+    .when(t.two > 1, t.three)
+    .else_(t.two)
+    .end()
+)
 
 expr = t.mutate(cond_value=case)
 print(ibis.impala.compile(expr))</div>
@@ -6254,16 +6286,20 @@ category. Here would be some SQL to do it:</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">refined</span> <span class="o">=</span> <span class="p">(</span><span class="n">pop</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-           <span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;UNITED STATES&#39;</span><span class="p">,</span> <span class="s1">&#39;CANADA&#39;</span><span class="p">])</span>
-           <span class="o">.</span><span class="n">ifelse</span><span class="p">(</span><span class="s1">&#39;North America&#39;</span><span class="p">,</span> <span class="n">pop</span><span class="o">.</span><span class="n">country</span><span class="p">))</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">refined</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pop</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;UNITED STATES&#39;</span><span class="p">,</span> <span class="s1">&#39;CANADA&#39;</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">ifelse</span><span class="p">(</span><span class="s1">&#39;North America&#39;</span><span class="p">,</span> <span class="n">pop</span><span class="o">.</span><span class="n">country</span><span class="p">)</span>
+<span class="p">)</span>
 
 <span class="n">expr</span> <span class="o">=</span> <span class="n">pop</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">refined_group</span><span class="o">=</span><span class="n">refined</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expr</span><span class="p">))</span>
 </pre></div>
-<div id="cell-43" class="clipboard-copy-txt">refined = (pop.country.upper()
-           .isin(['UNITED STATES', 'CANADA'])
-           .ifelse('North America', pop.country))
+<div id="cell-43" class="clipboard-copy-txt">refined = (
+    pop.country.upper()
+    .isin(['UNITED STATES', 'CANADA'])
+    .ifelse('North America', pop.country)
+)
 
 expr = pop.mutate(refined_group=refined)
 print(ibis.impala.compile(expr))</div>
@@ -6340,15 +6376,17 @@ value (whether a Python string or number) to an Ibis expression using
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">t3</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s1">&#39;column1&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
-                 <span class="p">(</span><span class="s1">&#39;column2&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;column3&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">)],</span>
-                <span class="s1">&#39;data&#39;</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">t3</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span>
+    <span class="p">[(</span><span class="s1">&#39;column1&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;column2&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;column3&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">)],</span>
+    <span class="s1">&#39;data&#39;</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="n">value</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span>
 </pre></div>
-<div id="cell-44" class="clipboard-copy-txt">t3 = ibis.table([('column1', 'string'),
-                 ('column2', 'string'), ('column3', 'float')],
-                'data')
+<div id="cell-44" class="clipboard-copy-txt">t3 = ibis.table(
+    [('column1', 'string'), ('column2', 'string'), ('column3', 'float')],
+    'data',
+)
 
 value = ibis.literal('foo')</div>
     
@@ -6544,9 +6582,11 @@ which yield boolean arrays:</p>
 <span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">is_valid</span><span class="o">=</span><span class="n">indic</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expr</span><span class="p">))</span>
 
-<span class="n">agged</span> <span class="o">=</span> <span class="p">(</span><span class="n">expr</span><span class="p">[</span><span class="n">expr</span><span class="o">.</span><span class="n">one</span><span class="o">.</span><span class="n">notnull</span><span class="p">()]</span>
-         <span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;is_valid&#39;</span><span class="p">)</span>
-         <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">three_count</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">three</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()))</span>
+<span class="n">agged</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">expr</span><span class="p">[</span><span class="n">expr</span><span class="o">.</span><span class="n">one</span><span class="o">.</span><span class="n">notnull</span><span class="p">()]</span>
+    <span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;is_valid&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">three_count</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">three</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">agged</span><span class="p">))</span>
 </pre></div>
@@ -6554,9 +6594,11 @@ which yield boolean arrays:</p>
 expr = t.mutate(is_valid=indic)
 print(ibis.impala.compile(expr))
 
-agged = (expr[expr.one.notnull()]
-         .group_by('is_valid')
-         .aggregate(three_count=lambda t: t.three.notnull().sum()))
+agged = (
+    expr[expr.one.notnull()]
+    .group_by('is_valid')
+    .aggregate(three_count=lambda t: t.three.notnull().sum())
+)
 
 print(ibis.impala.compile(agged))</div>
     
@@ -6719,19 +6761,21 @@ explicit join type in your query engine.</li>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">t1</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s1">&#39;value1&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">),</span>
-                 <span class="p">(</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;key2&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">)],</span>
-                <span class="s1">&#39;table1&#39;</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">t1</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span>
+    <span class="p">[(</span><span class="s1">&#39;value1&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;key2&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">)],</span> <span class="s1">&#39;table1&#39;</span>
+<span class="p">)</span>
 
-<span class="n">t2</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s1">&#39;value2&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;key3&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;key4&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">)],</span>
-                <span class="s1">&#39;table2&#39;</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span>
+    <span class="p">[(</span><span class="s1">&#39;value2&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;key3&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;key4&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">)],</span> <span class="s1">&#39;table2&#39;</span>
+<span class="p">)</span>
 </pre></div>
-<div id="cell-49" class="clipboard-copy-txt">t1 = ibis.table([('value1', 'float'),
-                 ('key1', 'string'), ('key2', 'string')],
-                'table1')
+<div id="cell-49" class="clipboard-copy-txt">t1 = ibis.table(
+    [('value1', 'float'), ('key1', 'string'), ('key2', 'string')], 'table1'
+)
 
-t2 = ibis.table([('value2', 'float'), ('key3', 'string'), ('key4', 'string')],
-                'table2')</div>
+t2 = ibis.table(
+    [('value2', 'float'), ('key3', 'string'), ('key4', 'string')], 'table2'
+)</div>
     
         </div>
     </div>
@@ -6981,15 +7025,19 @@ tables.</p>
             </clipboard-copy>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">avg_diff</span> <span class="o">=</span> <span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">value1</span> <span class="o">-</span> <span class="n">t2</span><span class="o">.</span><span class="n">value2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">expr</span> <span class="o">=</span> <span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">left_join</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">key1</span> <span class="o">==</span> <span class="n">t2</span><span class="o">.</span><span class="n">key3</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">key1</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">avg_diff</span><span class="o">=</span><span class="n">avg_diff</span><span class="p">))</span>
+<span class="n">expr</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">t1</span><span class="o">.</span><span class="n">left_join</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">key1</span> <span class="o">==</span> <span class="n">t2</span><span class="o">.</span><span class="n">key3</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">key1</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">avg_diff</span><span class="o">=</span><span class="n">avg_diff</span><span class="p">)</span>
+<span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expr</span><span class="p">))</span>
 </pre></div>
 <div id="cell-53" class="clipboard-copy-txt">avg_diff = (t1.value1 - t2.value2).mean()
-expr = (t1.left_join(t2, t1.key1 == t2.key3)
-        .group_by(t1.key1)
-        .aggregate(avg_diff=avg_diff))
+expr = (
+    t1.left_join(t2, t1.key1 == t2.key3)
+    .group_by(t1.key1)
+    .aggregate(avg_diff=avg_diff)
+)
 print(ibis.impala.compile(expr))</div>
     
         </div>
@@ -7133,24 +7181,26 @@ address any of the above concerns.</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">t3</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s1">&#39;value3&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">),</span>
-                 <span class="p">(</span><span class="s1">&#39;key5&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">)],</span> <span class="s1">&#39;table3&#39;</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">t3</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s1">&#39;value3&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;key5&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">)],</span> <span class="s1">&#39;table3&#39;</span><span class="p">)</span>
 
 <span class="n">total</span> <span class="o">=</span> <span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">value1</span> <span class="o">+</span> <span class="n">t2</span><span class="o">.</span><span class="n">value2</span> <span class="o">+</span> <span class="n">t3</span><span class="o">.</span><span class="n">value3</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="n">expr</span> <span class="o">=</span> <span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="p">[</span><span class="n">t1</span><span class="o">.</span><span class="n">key1</span> <span class="o">==</span> <span class="n">t2</span><span class="o">.</span><span class="n">key3</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">key2</span> <span class="o">==</span> <span class="n">t2</span><span class="o">.</span><span class="n">key4</span><span class="p">])</span>
-        <span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t3</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">key1</span> <span class="o">==</span> <span class="n">t3</span><span class="o">.</span><span class="n">key5</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="n">t2</span><span class="o">.</span><span class="n">key4</span><span class="p">,</span> <span class="n">t3</span><span class="o">.</span><span class="n">key5</span><span class="p">])</span>
-        <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="n">total</span><span class="p">))</span>
+<span class="n">expr</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">t1</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="p">[</span><span class="n">t1</span><span class="o">.</span><span class="n">key1</span> <span class="o">==</span> <span class="n">t2</span><span class="o">.</span><span class="n">key3</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">key2</span> <span class="o">==</span> <span class="n">t2</span><span class="o">.</span><span class="n">key4</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t3</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">key1</span> <span class="o">==</span> <span class="n">t3</span><span class="o">.</span><span class="n">key5</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="n">t2</span><span class="o">.</span><span class="n">key4</span><span class="p">,</span> <span class="n">t3</span><span class="o">.</span><span class="n">key5</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">total</span><span class="o">=</span><span class="n">total</span><span class="p">)</span>
+<span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expr</span><span class="p">))</span>
 </pre></div>
-<div id="cell-55" class="clipboard-copy-txt">t3 = ibis.table([('value3', 'float'),
-                 ('key5', 'string')], 'table3')
+<div id="cell-55" class="clipboard-copy-txt">t3 = ibis.table([('value3', 'float'), ('key5', 'string')], 'table3')
 
 total = (t1.value1 + t2.value2 + t3.value3).sum()
-expr = (t1.join(t2, [t1.key1 == t2.key3, t1.key2 == t2.key4])
-        .join(t3, t1.key1 == t3.key5)
-        .group_by([t2.key4, t3.key5])
-        .aggregate(total=total))
+expr = (
+    t1.join(t2, [t1.key1 == t2.key3, t1.key2 == t2.key4])
+    .join(t3, t1.key1 == t3.key5)
+    .group_by([t2.key4, t3.key5])
+    .aggregate(total=total)
+)
 print(ibis.impala.compile(expr))</div>
     
         </div>
@@ -7234,17 +7284,21 @@ referentially distinct in expressions. Now you can proceed normally:</p>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">t_view</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">view</span><span class="p">()</span>
 
 <span class="n">stat</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">two</span> <span class="o">-</span> <span class="n">t_view</span><span class="o">.</span><span class="n">three</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">expr</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t_view</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">three</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">t_view</span><span class="o">.</span><span class="n">one</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">one</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">stat</span><span class="p">))</span>
+<span class="n">expr</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t_view</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">three</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">t_view</span><span class="o">.</span><span class="n">one</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">one</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">stat</span><span class="p">)</span>
+<span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expr</span><span class="p">))</span>
 </pre></div>
 <div id="cell-56" class="clipboard-copy-txt">t_view = t.view()
 
 stat = (t.two - t_view.three).mean()
-expr = (t.join(t_view, t.three.cast('string') == t_view.one)
-        .group_by(t.one)
-        .aggregate(metric=stat))
+expr = (
+    t.join(t_view, t.three.cast('string') == t_view.one)
+    .group_by(t.one)
+    .aggregate(metric=stat)
+)
 print(ibis.impala.compile(expr))</div>
     
         </div>
@@ -7319,25 +7373,45 @@ expressions have the same name. Consider this example:</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">t4</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
-                 <span class="p">(</span><span class="s1">&#39;key2&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
-                 <span class="p">(</span><span class="s1">&#39;key3&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
-                 <span class="p">(</span><span class="s1">&#39;value1&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">)],</span> <span class="s1">&#39;table4&#39;</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">t4</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;key2&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;key3&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;value1&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">),</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;table4&#39;</span><span class="p">,</span>
+<span class="p">)</span>
 
-<span class="n">t5</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
-                 <span class="p">(</span><span class="s1">&#39;key2&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
-                 <span class="p">(</span><span class="s1">&#39;key3&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
-                 <span class="p">(</span><span class="s1">&#39;value2&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">)],</span> <span class="s1">&#39;table5&#39;</span><span class="p">)</span>
+<span class="n">t5</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;key2&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;key3&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;value2&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">),</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;table5&#39;</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
-<div id="cell-57" class="clipboard-copy-txt">t4 = ibis.table([('key1', 'string'),
-                 ('key2', 'string'),
-                 ('key3', 'string'),
-                 ('value1', 'float')], 'table4')
+<div id="cell-57" class="clipboard-copy-txt">t4 = ibis.table(
+    [
+        ('key1', 'string'),
+        ('key2', 'string'),
+        ('key3', 'string'),
+        ('value1', 'float'),
+    ],
+    'table4',
+)
 
-t5 = ibis.table([('key1', 'string'),
-                 ('key2', 'string'),
-                 ('key3', 'string'),
-                 ('value2', 'float')], 'table5')</div>
+t5 = ibis.table(
+    [
+        ('key1', 'string'),
+        ('key2', 'string'),
+        ('key3', 'string'),
+        ('value2', 'float'),
+    ],
+    'table5',
+)</div>
     
         </div>
     </div>
@@ -7534,12 +7608,10 @@ at all. In the latter case, these conditions get moved by Ibis into the
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">value1</span> <span class="o">&lt;</span> <span class="n">t2</span><span class="o">.</span><span class="n">value2</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">key1</span><span class="p">)</span> <span class="o">.</span><span class="n">size</span><span class="p">())</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">t1</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">value1</span> <span class="o">&lt;</span> <span class="n">t2</span><span class="o">.</span><span class="n">value2</span><span class="p">)</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">key1</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expr</span><span class="p">))</span>
 </pre></div>
-<div id="cell-60" class="clipboard-copy-txt">expr = (t1.join(t2, t1.value1 < t2.value2)
-        .group_by(t1.key1) .size())
+<div id="cell-60" class="clipboard-copy-txt">expr = t1.join(t2, t1.value1 < t2.value2).group_by(t1.key1).size()
 print(ibis.impala.compile(expr))</div>
     
         </div>
@@ -7610,11 +7682,9 @@ expressions:</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">joined</span> <span class="o">=</span> <span class="n">t1</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="p">[(</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;key3&#39;</span><span class="p">),</span>
-                      <span class="p">(</span><span class="s1">&#39;key2&#39;</span><span class="p">,</span> <span class="s1">&#39;key4&#39;</span><span class="p">)])</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">joined</span> <span class="o">=</span> <span class="n">t1</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t2</span><span class="p">,</span> <span class="p">[(</span><span class="s1">&#39;key1&#39;</span><span class="p">,</span> <span class="s1">&#39;key3&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;key2&#39;</span><span class="p">,</span> <span class="s1">&#39;key4&#39;</span><span class="p">)])</span>
 </pre></div>
-<div id="cell-61" class="clipboard-copy-txt">joined = t1.join(t2, [('key1', 'key3'),
-                      ('key2', 'key4')])</div>
+<div id="cell-61" class="clipboard-copy-txt">joined = t1.join(t2, [('key1', 'key3'), ('key2', 'key4')])</div>
     
         </div>
     </div>
@@ -7662,25 +7732,45 @@ purchases:</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">events</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s1">&#39;session_id&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">),</span> 
-                     <span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">),</span>
-                     <span class="p">(</span><span class="s1">&#39;event_type&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">),</span>
-                     <span class="p">(</span><span class="s1">&#39;ts&#39;</span><span class="p">,</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">)],</span> <span class="s1">&#39;events&#39;</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">events</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;session_id&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;event_type&#39;</span><span class="p">,</span> <span class="s1">&#39;int32&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;ts&#39;</span><span class="p">,</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">),</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;events&#39;</span><span class="p">,</span>
+<span class="p">)</span>
 
-<span class="n">purchases</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s1">&#39;item_id&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">),</span>
-                        <span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">),</span>
-                        <span class="p">(</span><span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">),</span>
-                        <span class="p">(</span><span class="s1">&#39;ts&#39;</span><span class="p">,</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">)],</span> <span class="s1">&#39;purchases&#39;</span><span class="p">)</span>
+<span class="n">purchases</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;item_id&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;ts&#39;</span><span class="p">,</span> <span class="s1">&#39;timestamp&#39;</span><span class="p">),</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;purchases&#39;</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
-<div id="cell-62" class="clipboard-copy-txt">events = ibis.table([('session_id', 'int64'), 
-                     ('user_id', 'int64'),
-                     ('event_type', 'int32'),
-                     ('ts', 'timestamp')], 'events')
+<div id="cell-62" class="clipboard-copy-txt">events = ibis.table(
+    [
+        ('session_id', 'int64'),
+        ('user_id', 'int64'),
+        ('event_type', 'int32'),
+        ('ts', 'timestamp'),
+    ],
+    'events',
+)
 
-purchases = ibis.table([('item_id', 'int64'),
-                        ('user_id', 'int64'),
-                        ('price', 'float'),
-                        ('ts', 'timestamp')], 'purchases')</div>
+purchases = ibis.table(
+    [
+        ('item_id', 'int64'),
+        ('user_id', 'int64'),
+        ('price', 'float'),
+        ('ts', 'timestamp'),
+    ],
+    'purchases',
+)</div>
     
         </div>
     </div>
@@ -8277,13 +8367,11 @@ distinct <code>event_type</code> values for each <code>user_id</code>. First, th
             </clipboard-copy>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">metric</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">event_type</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
-<span class="n">expr</span> <span class="o">=</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">)</span>
-       <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">unique_events</span><span class="o">=</span><span class="n">metric</span><span class="p">))</span>
+<span class="n">expr</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">unique_events</span><span class="o">=</span><span class="n">metric</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expr</span><span class="p">))</span>
 </pre></div>
 <div id="cell-70" class="clipboard-copy-txt">metric = events.event_type.nunique()
-expr =(events.group_by('user_id')
-       .aggregate(unique_events=metric))
+expr = events.group_by('user_id').aggregate(unique_events=metric)
 print(ibis.impala.compile(expr))</div>
     
         </div>
@@ -8439,13 +8527,11 @@ FROM my_data
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">two_demean</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">two</span> <span class="o">-</span> <span class="n">t</span><span class="o">.</span><span class="n">two</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">two_demean</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">two</span> <span class="o">-</span> <span class="n">t</span><span class="o">.</span><span class="n">two</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expr</span><span class="p">))</span>
 </pre></div>
-<div id="cell-72" class="clipboard-copy-txt">expr = (t.group_by('one')
-        .mutate(two_demean=t.two - t.two.mean()))
+<div id="cell-72" class="clipboard-copy-txt">expr = t.group_by('one').mutate(two_demean=t.two - t.two.mean())
 
 print(ibis.impala.compile(expr))</div>
     
@@ -8514,13 +8600,19 @@ FROM my_data
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">two</span><span class="p">)</span> <span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">two_first_diff</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">two</span> <span class="o">-</span> <span class="n">t</span><span class="o">.</span><span class="n">two</span><span class="o">.</span><span class="n">lag</span><span class="p">()))</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">two</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">two_first_diff</span><span class="o">=</span><span class="n">t</span><span class="o">.</span><span class="n">two</span> <span class="o">-</span> <span class="n">t</span><span class="o">.</span><span class="n">two</span><span class="o">.</span><span class="n">lag</span><span class="p">())</span>
+<span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expr</span><span class="p">))</span>
 </pre></div>
-<div id="cell-73" class="clipboard-copy-txt">expr = (t.group_by('one')
-        .order_by(t.two) .mutate(two_first_diff=t.two - t.two.lag()))
+<div id="cell-73" class="clipboard-copy-txt">expr = (
+    t.group_by('one')
+    .order_by(t.two)
+    .mutate(two_first_diff=t.two - t.two.lag())
+)
 
 print(ibis.impala.compile(expr))</div>
     
@@ -8871,13 +8963,11 @@ for a table of available date/time methods.</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">events</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">year</span><span class="p">(),</span> 
-                     <span class="n">month</span><span class="o">=</span><span class="n">events</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">month</span><span class="p">())</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="n">events</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">year</span><span class="p">(),</span> <span class="n">month</span><span class="o">=</span><span class="n">events</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">month</span><span class="p">())</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expr</span><span class="p">))</span>
 </pre></div>
-<div id="cell-78" class="clipboard-copy-txt">expr = events.mutate(year=events.ts.year(), 
-                     month=events.ts.month())
+<div id="cell-78" class="clipboard-copy-txt">expr = events.mutate(year=events.ts.year(), month=events.ts.month())
 
 print(ibis.impala.compile(expr))</div>
     
@@ -9126,35 +9216,45 @@ involving joining an aggregated table on itself after filtering:</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">purchases</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
-                        <span class="p">(</span><span class="s1">&#39;kind&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
-                        <span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">),</span>
-                        <span class="p">(</span><span class="s1">&#39;amount&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">)],</span> <span class="s1">&#39;purchases&#39;</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">purchases</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;kind&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;amount&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">),</span>
+    <span class="p">],</span>
+    <span class="s1">&#39;purchases&#39;</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="n">metric</span> <span class="o">=</span> <span class="n">purchases</span><span class="o">.</span><span class="n">amount</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;total&#39;</span><span class="p">)</span>
-<span class="n">agged</span> <span class="o">=</span> <span class="p">(</span><span class="n">purchases</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="s1">&#39;kind&#39;</span><span class="p">])</span>
-         <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">metric</span><span class="p">))</span>
+<span class="n">agged</span> <span class="o">=</span> <span class="n">purchases</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="s1">&#39;kind&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">metric</span><span class="p">)</span>
 
 <span class="n">left</span> <span class="o">=</span> <span class="n">agged</span><span class="p">[</span><span class="n">agged</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;foo&#39;</span><span class="p">]</span>
 <span class="n">right</span> <span class="o">=</span> <span class="n">agged</span><span class="p">[</span><span class="n">agged</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s1">&#39;bar&#39;</span><span class="p">]</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">left</span><span class="o">.</span><span class="n">region</span> <span class="o">==</span> <span class="n">right</span><span class="o">.</span><span class="n">region</span><span class="p">)</span>
-          <span class="p">[</span><span class="n">left</span><span class="o">.</span><span class="n">region</span><span class="p">,</span> <span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">total</span> <span class="o">-</span> <span class="n">right</span><span class="o">.</span><span class="n">total</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;diff&#39;</span><span class="p">)])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">left</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">left</span><span class="o">.</span><span class="n">region</span> <span class="o">==</span> <span class="n">right</span><span class="o">.</span><span class="n">region</span><span class="p">)[</span>
+    <span class="n">left</span><span class="o">.</span><span class="n">region</span><span class="p">,</span> <span class="p">(</span><span class="n">left</span><span class="o">.</span><span class="n">total</span> <span class="o">-</span> <span class="n">right</span><span class="o">.</span><span class="n">total</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;diff&#39;</span><span class="p">)</span>
+<span class="p">]</span>
 </pre></div>
-<div id="cell-81" class="clipboard-copy-txt">purchases = ibis.table([('region', 'string'),
-                        ('kind', 'string'),
-                        ('user', 'int64'),
-                        ('amount', 'float')], 'purchases')
+<div id="cell-81" class="clipboard-copy-txt">purchases = ibis.table(
+    [
+        ('region', 'string'),
+        ('kind', 'string'),
+        ('user', 'int64'),
+        ('amount', 'float'),
+    ],
+    'purchases',
+)
 
 metric = purchases.amount.sum().name('total')
-agged = (purchases.group_by(['region', 'kind'])
-         .aggregate(metric))
+agged = purchases.group_by(['region', 'kind']).aggregate(metric)
 
 left = agged[agged.kind == 'foo']
 right = agged[agged.kind == 'bar']
 
-result = (left.join(right, left.region == right.region)
-          [left.region, (left.total - right.total).name('diff')])</div>
+result = left.join(right, left.region == right.region)[
+    left.region, (left.total - right.total).name('diff')
+]</div>
     
         </div>
     </div>
@@ -9256,7 +9356,7 @@ FROM (
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2022</span>
       
     
   </small>
