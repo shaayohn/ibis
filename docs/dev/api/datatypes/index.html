@@ -1833,6 +1833,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.datatypes.core.parse" class="md-nav__link">
+    parse()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.datatypes.core.parse_type" class="md-nav__link">
     parse_type()
   </a>
@@ -2402,6 +2409,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.datatypes.core.parse" class="md-nav__link">
+    parse()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.datatypes.core.parse_type" class="md-nav__link">
     parse_type()
   </a>
@@ -2513,6 +2527,22 @@ value is <a class="autorefs autorefs-external" href="https://docs.python.org/3/l
 
 
   <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4578,11 +4608,11 @@ Variadic            (<a class="autorefs autorefs-internal" title="ibis.expr.data
 
 
 
-<h6 id="ibis.expr.datatypes.core.parse_type" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">parse_type</span><span class="p">(</span><span class="n">text</span><span class="p">)</span></code>
+<h6 id="ibis.expr.datatypes.core.parse" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">parse</span><span class="p">(</span><span class="n">text</span><span class="p">)</span></code>
 
 
-<a href="#ibis.expr.datatypes.core.parse_type" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
+<a href="#ibis.expr.datatypes.core.parse" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
 
     <div class="doc doc-contents ">
 
@@ -4614,16 +4644,38 @@ common but repeatedly-used complex types.</p>
     <p>Parse an array type from a string</p>
     <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">dt</span><span class="o">.</span><span class="n">parse_type</span><span class="p">(</span><span class="s2">&quot;array&lt;int64&gt;&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">dt</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;array&lt;int64&gt;&quot;</span><span class="p">)</span>
 <span class="n">Array</span><span class="p">(</span><span class="n">value_type</span><span class="o">=</span><span class="n">Int64</span><span class="p">(</span><span class="n">nullable</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
     <p>You can avoid parsing altogether by constructing objects directly</p>
     <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis.expr.datatypes</span> <span class="k">as</span> <span class="nn">dt</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">ty</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">parse_type</span><span class="p">(</span><span class="s2">&quot;array&lt;int64&gt;&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ty</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;array&lt;int64&gt;&quot;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ty</span> <span class="o">==</span> <span class="n">dt</span><span class="o">.</span><span class="n">Array</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
 <span class="kc">True</span>
 </code></pre></div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h6 id="ibis.expr.datatypes.core.parse_type" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">parse_type</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.datatypes.core.parse_type" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
+
+    <div class="doc doc-contents ">
+
+      <div class="admonition warning">
+<p class="admonition-title">DEPRECATED: <code>parse_type</code> is deprecated as of v4.0; use ibis.expr.datatypes.core.parse</p>
+</div>
 
     </div>
 
