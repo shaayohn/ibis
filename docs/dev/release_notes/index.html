@@ -3147,7 +3147,7 @@
     are the only way to retrieve the expression's name and datatype.</li>
 <li><code>ibis.expr.operations.Node.output_type</code> is a property now not a method,
     decorate those methods with <code>@property</code></li>
-<li><code>ibis.expr.operations.ValueOp</code> subclasses must define <code>output_shape</code> and
+<li><code>ibis.expr.operations.Value</code> subclasses must define <code>output_shape</code> and
     <code>output_dtype</code> properties from now on (note the datatype abbreviation <code>dtype</code>
     in the property name)</li>
 <li><code>ibis.expr.rules.cast()</code>, <code>scalar_like()</code> and <code>array_like()</code> rules have been
@@ -4398,7 +4398,7 @@ improvements, bug fixes, and other new features.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 28, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 16, 2022</span>
       
     
   </small>

@@ -3504,7 +3504,7 @@ IntegerValue            (<a class="autorefs autorefs-internal" title="ibis.expr.
 
 <h4 id="ibis.expr.types.numeric.NumericColumn" class="doc doc-heading">
         <code>
-NumericColumn            (<a class="autorefs autorefs-internal" title="ibis.expr.types.generic.AnyColumn" href="../generic/#ibis.expr.types.generic.AnyColumn">AnyColumn</a>, <a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.NumericValue" href="#ibis.expr.types.numeric.NumericValue">NumericValue</a>)
+NumericColumn            (<a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a>, <a class="autorefs autorefs-internal" title="ibis.expr.types.numeric.NumericValue" href="#ibis.expr.types.numeric.NumericValue">NumericValue</a>)
         </code>
 
 
@@ -4202,7 +4202,7 @@ when the desired quantile lies between two data points <code>i</code> and <code>
 
 <h4 id="ibis.expr.types.numeric.NumericValue" class="doc doc-heading">
         <code>
-NumericValue            (<a class="autorefs autorefs-internal" title="ibis.expr.types.generic.AnyValue" href="../generic/#ibis.expr.types.generic.AnyValue">AnyValue</a>)
+NumericValue            (<a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>)
         </code>
 
 
@@ -5376,13 +5376,13 @@ BooleanValue            (<a class="autorefs autorefs-internal" title="ibis.expr.
   <tbody>
       <tr>
         <td><code>true_expr</code></td>
-        <td><code>ir.ValueExpr</code></td>
+        <td><code>ir.Value</code></td>
         <td><p>Expression to return if <code>self</code> evaluates to <code>True</code></p></td>
         <td><em>required</em></td>
       </tr>
       <tr>
         <td><code>false_expr</code></td>
-        <td><code>ir.ValueExpr</code></td>
+        <td><code>ir.Value</code></td>
         <td><p>Expression to return if <code>self</code> evaluates to <code>False</code></p></td>
         <td><em>required</em></td>
       </tr>
@@ -5407,7 +5407,7 @@ BooleanValue            (<a class="autorefs autorefs-internal" title="ibis.expr.
   </thead>
   <tbody>
     <tr>
-      <td><code>ir.ValueExpr</code></td>
+      <td><code>ir.Value</code></td>
       <td><p>The value of <code>true_expr</code> if <code>arg</code> is <code>True</code> else <code>false_expr</code></p></td>
     </tr>
   </tbody>

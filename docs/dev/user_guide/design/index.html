@@ -1799,7 +1799,7 @@ columns, or scalars.</p>
 <!-- prettier-ignore-start -->
 <p>Examples of expression types include
 <a class="autorefs autorefs-internal" href="../../api/expressions/strings/#ibis.expr.types.strings.StringValue"><code>StringValue</code></a> and
-<a class="autorefs autorefs-internal" href="../../api/expressions/tables/#ibis.expr.types.relations.TableExpr"><code>TableExpr</code></a>.</p>
+<a class="autorefs autorefs-internal" href="../../api/expressions/tables/#ibis.expr.types.relations.Table"><code>Table</code></a>.</p>
 <!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
@@ -1817,9 +1817,9 @@ their node's input arguments directly in the class body.</p>
 defines the shape (scalar or column) and element type of the operation.</p>
 <p>An example of usage is a node that representats a logarithm operation:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis.expr.rules</span> <span class="k">as</span> <span class="nn">rlz</span>
-<span class="kn">from</span> <span class="nn">ibis.expr.operations</span> <span class="kn">import</span> <span class="n">ValueOp</span>
+<span class="kn">from</span> <span class="nn">ibis.expr.operations</span> <span class="kn">import</span> <span class="n">Value</span>
 
-<span class="k">class</span> <span class="nc">Log</span><span class="p">(</span><span class="n">ValueOp</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">Log</span><span class="p">(</span><span class="n">Value</span><span class="p">):</span>
    <span class="c1"># A double scalar or column</span>
    <span class="n">arg</span> <span class="o">=</span> <span class="n">rlz</span><span class="o">.</span><span class="n">double</span>
    <span class="c1"># Optional argument, defaults to None</span>
@@ -1900,7 +1900,7 @@ necessary after the database returns results to the client.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 10, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 16, 2022</span>
       
     
   </small>

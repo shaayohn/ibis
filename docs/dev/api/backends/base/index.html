@@ -2287,7 +2287,7 @@ string <code>"NULL"</code>.</p>
       </tr>
       <tr>
         <td><code>obj</code></td>
-        <td><code>pd.DataFrame | ir.TableExpr | None</code></td>
+        <td><code>pd.DataFrame | ir.Table | None</code></td>
         <td><p>An Ibis table expression or pandas table that will be used to
 extract the schema and the data of the new table. If not provided,
 <code>schema</code> must be given.</p></td>
@@ -2348,7 +2348,7 @@ default.</p></td>
       </tr>
       <tr>
         <td><code>expr</code></td>
-        <td><code>ir.TableExpr</code></td>
+        <td><code>ir.Table</code></td>
         <td><p>An Ibis table expression that will be used to extract the query
 of the view.</p></td>
         <td><em>required</em></td>
@@ -2697,7 +2697,7 @@ default.</p></td>
   <tbody>
       <tr>
         <td><code>operation</code></td>
-        <td><code>type[ops.ValueOp]</code></td>
+        <td><code>type[ops.Value]</code></td>
         <td><p>A class corresponding to an operation.</p></td>
         <td><em>required</em></td>
       </tr>

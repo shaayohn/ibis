@@ -4872,7 +4872,7 @@ or other equivalent entities in a SQL database.</p>
 
 <h3 id="ibis.backends.impala.client.ImpalaTable" class="doc doc-heading">
         <code>
-ImpalaTable            (<a class="autorefs autorefs-internal" title="ibis.expr.types.relations.TableExpr" href="../../api/expressions/tables/#ibis.expr.types.relations.TableExpr">TableExpr</a>)
+ImpalaTable            (<a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a>)
         </code>
 
 
@@ -5514,7 +5514,7 @@ Backend            (<a class="autorefs autorefs-internal" title="ibis.backends.b
       </tr>
       <tr>
         <td><code>expr</code></td>
-        <td><code>ibis TableExpr</code></td>
+        <td><code>ibis Table</code></td>
         <td><p>Ibis table expression</p></td>
         <td><em>required</em></td>
       </tr>
@@ -6006,7 +6006,7 @@ table or database.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code>ir.TableExpr</code></td>
+      <td><code>ir.Table</code></td>
       <td><p>Table expression</p></td>
     </tr>
   </tbody>
@@ -6021,9 +6021,9 @@ table or database.</p>
 expression referencing a physical Impala table:</p>
 <div class="highlight"><pre><span></span><code><span class="n">table</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;functional_alltypes&#39;</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s1">&#39;ibis_testing&#39;</span><span class="p">)</span>
 </code></pre></div>
-<p><code>ImpalaTable</code> is a Python subclass of the more general Ibis <code>TableExpr</code>
+<p><code>ImpalaTable</code> is a Python subclass of the more general Ibis <code>Table</code>
 that has additional Impala-specific methods. So you can use it
-interchangeably with any code expecting a <code>TableExpr</code>.</p>
+interchangeably with any code expecting a <code>Table</code>.</p>
 <p>Like all table expressions in Ibis, <code>ImpalaTable</code> has a <code>schema</code> method
 you can use to examine its schema:</p>
 <!-- prettier-ignore-start -->
@@ -6035,7 +6035,7 @@ you can use to examine its schema:</p>
 
 <h3 id="ibis.backends.impala.client.ImpalaTable" class="doc doc-heading">
         <code>
-ImpalaTable            (<a class="autorefs autorefs-internal" title="ibis.expr.types.relations.TableExpr" href="../../api/expressions/tables/#ibis.expr.types.relations.TableExpr">TableExpr</a>)
+ImpalaTable            (<a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a>)
         </code>
 
 
@@ -6282,7 +6282,7 @@ partition data:</p>
 
 <h3 id="ibis.backends.impala.client.ImpalaTable" class="doc doc-heading">
         <code>
-ImpalaTable            (<a class="autorefs autorefs-internal" title="ibis.expr.types.relations.TableExpr" href="../../api/expressions/tables/#ibis.expr.types.relations.TableExpr">TableExpr</a>)
+ImpalaTable            (<a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a>)
         </code>
 
 
@@ -6560,7 +6560,7 @@ data files backing a table:</p>
 
 <h3 id="ibis.backends.impala.client.ImpalaTable" class="doc doc-heading">
         <code>
-ImpalaTable            (<a class="autorefs autorefs-internal" title="ibis.expr.types.relations.TableExpr" href="../../api/expressions/tables/#ibis.expr.types.relations.TableExpr">TableExpr</a>)
+ImpalaTable            (<a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a>)
         </code>
 
 
@@ -6644,7 +6644,7 @@ change partition-specific metadata use <code>alter_partition</code>.</p>
 
 <h3 id="ibis.backends.impala.client.ImpalaTable" class="doc doc-heading">
         <code>
-ImpalaTable            (<a class="autorefs autorefs-internal" title="ibis.expr.types.relations.TableExpr" href="../../api/expressions/tables/#ibis.expr.types.relations.TableExpr">TableExpr</a>)
+ImpalaTable            (<a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a>)
         </code>
 
 
@@ -6830,7 +6830,7 @@ particular partition:</p>
 
 <h3 id="ibis.backends.impala.client.ImpalaTable" class="doc doc-heading">
         <code>
-ImpalaTable            (<a class="autorefs autorefs-internal" title="ibis.expr.types.relations.TableExpr" href="../../api/expressions/tables/#ibis.expr.types.relations.TableExpr">TableExpr</a>)
+ImpalaTable            (<a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a>)
         </code>
 
 
@@ -6904,7 +6904,7 @@ after creating a table or loading new data:</p>
 
 <h3 id="ibis.backends.impala.client.ImpalaTable" class="doc doc-heading">
         <code>
-ImpalaTable            (<a class="autorefs autorefs-internal" title="ibis.expr.types.relations.TableExpr" href="../../api/expressions/tables/#ibis.expr.types.relations.TableExpr">TableExpr</a>)
+ImpalaTable            (<a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a>)
         </code>
 
 
@@ -7164,7 +7164,7 @@ Backend            (<a class="autorefs autorefs-internal" title="ibis.backends.b
 
 <h3 id="ibis.backends.impala.client.ImpalaTable" class="doc doc-heading">
         <code>
-ImpalaTable            (<a class="autorefs autorefs-internal" title="ibis.expr.types.relations.TableExpr" href="../../api/expressions/tables/#ibis.expr.types.relations.TableExpr">TableExpr</a>)
+ImpalaTable            (<a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a>)
         </code>
 
 
@@ -7291,7 +7291,7 @@ Backend            (<a class="autorefs autorefs-internal" title="ibis.backends.b
 
 <h3 id="ibis.backends.impala.client.ImpalaTable" class="doc doc-heading">
         <code>
-ImpalaTable            (<a class="autorefs autorefs-internal" title="ibis.expr.types.relations.TableExpr" href="../../api/expressions/tables/#ibis.expr.types.relations.TableExpr">TableExpr</a>)
+ImpalaTable            (<a class="autorefs autorefs-internal" title="ibis.expr.types.relations.Table" href="../../api/expressions/tables/#ibis.expr.types.relations.Table">Table</a>)
         </code>
 
 
@@ -7982,7 +7982,7 @@ to see the default configuration values for every component of CDH.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 22, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 16, 2022</span>
       
     
   </small>

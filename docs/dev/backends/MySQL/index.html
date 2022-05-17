@@ -2680,7 +2680,7 @@ backend.</p></td>
       </tr>
       <tr>
         <td><code>expr</code></td>
-        <td><code>pd.DataFrame | ir.TableExpr | None</code></td>
+        <td><code>pd.DataFrame | ir.Table | None</code></td>
         <td><p>DataFrame or table expression to use as the data source</p></td>
         <td><code>None</code></td>
       </tr>
@@ -2746,7 +2746,7 @@ backend.</p></td>
       </tr>
       <tr>
         <td><code>expr</code></td>
-        <td><code>ir.TableExpr</code></td>
+        <td><code>ir.Table</code></td>
         <td><p>An Ibis table expression that will be used to extract the query
 of the view.</p></td>
         <td><em>required</em></td>
@@ -2979,7 +2979,7 @@ of values/rows. Overrides any limit already set on the expression.</p></td>
       </tr>
       <tr>
         <td><code>params</code></td>
-        <td><code>Mapping[ir.ScalarExpr, Any] | None</code></td>
+        <td><code>Mapping[ir.Scalar, Any] | None</code></td>
         <td><p>Named unbound parameters</p></td>
         <td><code>None</code></td>
       </tr>
@@ -3005,9 +3005,9 @@ DataFrames.</p></td>
     <tr>
       <td><code>DataFrame | Series | Scalar</code></td>
       <td><ul>
-<li><code>TableExpr</code>: pandas.DataFrame</li>
-<li><code>ColumnExpr</code>: pandas.Series</li>
-<li><code>ScalarExpr</code>: Python scalar value</li>
+<li><code>Table</code>: pandas.DataFrame</li>
+<li><code>Column</code>: pandas.Series</li>
+<li><code>Scalar</code>: Python scalar value</li>
 </ul></td>
     </tr>
   </tbody>
@@ -3220,7 +3220,7 @@ query.</p>
       </tr>
       <tr>
         <td><code>obj</code></td>
-        <td><code>pd.DataFrame | ir.TableExpr</code></td>
+        <td><code>pd.DataFrame | ir.Table</code></td>
         <td><p>The source data or expression to insert</p></td>
         <td><em>required</em></td>
       </tr>
@@ -3614,7 +3614,7 @@ the session in a way unknown to Ibis; be careful.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code>ir.TableExpr</code></td>
+      <td><code>ir.Table</code></td>
       <td><p>Table expression</p></td>
     </tr>
   </tbody>
@@ -3688,7 +3688,7 @@ and types of <code>table</code>.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code>ir.TableExpr</code></td>
+      <td><code>ir.Table</code></td>
       <td><p>Table expression</p></td>
     </tr>
   </tbody>

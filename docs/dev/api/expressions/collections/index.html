@@ -2334,7 +2334,7 @@ structs.</p>
 
 <h4 id="ibis.expr.types.arrays.ArrayValue" class="doc doc-heading">
         <code>
-ArrayValue            (<a class="autorefs autorefs-internal" title="ibis.expr.types.generic.AnyValue" href="../generic/#ibis.expr.types.generic.AnyValue">AnyValue</a>)
+ArrayValue            (<a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>)
         </code>
 
 
@@ -2423,7 +2423,7 @@ ArrayValue            (<a class="autorefs autorefs-internal" title="ibis.expr.ty
   </thead>
   <tbody>
     <tr>
-      <td><code>ir.ValueExpr</code></td>
+      <td><code>ir.Value</code></td>
       <td><p>Unnested array</p></td>
     </tr>
   </tbody>
@@ -2572,7 +2572,7 @@ scalar (if the inputs are Python literals)</p></td>
 
 <h4 id="ibis.expr.types.maps.MapValue" class="doc doc-heading">
         <code>
-MapValue            (<a class="autorefs autorefs-internal" title="ibis.expr.types.generic.AnyValue" href="../generic/#ibis.expr.types.generic.AnyValue">AnyValue</a>)
+MapValue            (<a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>)
         </code>
 
 
@@ -2622,13 +2622,13 @@ MapValue            (<a class="autorefs autorefs-internal" title="ibis.expr.type
   <tbody>
       <tr>
         <td><code>key</code></td>
-        <td><code>ir.ValueExpr</code></td>
+        <td><code>ir.Value</code></td>
         <td><p>Expression to use for key</p></td>
         <td><em>required</em></td>
       </tr>
       <tr>
         <td><code>default</code></td>
-        <td><code>ir.ValueExpr | None</code></td>
+        <td><code>ir.Value | None</code></td>
         <td><p>Expression to return if <code>key</code> is not a key in <code>expr</code></p></td>
         <td><code>None</code></td>
       </tr>
@@ -2655,7 +2655,7 @@ MapValue            (<a class="autorefs autorefs-internal" title="ibis.expr.type
   </thead>
   <tbody>
     <tr>
-      <td><code>ir.ValueExpr</code></td>
+      <td><code>ir.Value</code></td>
       <td><p>The element type of <code>self</code></p></td>
     </tr>
   </tbody>
@@ -2917,7 +2917,7 @@ key/value pairs of fixed types)</p></td>
 
 <h4 id="ibis.expr.types.structs.StructColumn" class="doc doc-heading">
         <code>
-StructColumn            (<a class="autorefs autorefs-internal" title="ibis.expr.types.generic.AnyColumn" href="../generic/#ibis.expr.types.generic.AnyColumn">AnyColumn</a>, <a class="autorefs autorefs-internal" title="ibis.expr.types.structs.StructValue" href="#ibis.expr.types.structs.StructValue">StructValue</a>)
+StructColumn            (<a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Column" href="../generic/#ibis.expr.types.generic.Column">Column</a>, <a class="autorefs autorefs-internal" title="ibis.expr.types.structs.StructValue" href="#ibis.expr.types.structs.StructValue">StructValue</a>)
         </code>
 
 
@@ -2993,7 +2993,7 @@ multiple columns.</p>
 
 <h4 id="ibis.expr.types.structs.StructScalar" class="doc doc-heading">
         <code>
-StructScalar            (<span title="ibis.expr.types.generic.AnyScalar">AnyScalar</span>, <a class="autorefs autorefs-internal" title="ibis.expr.types.structs.StructValue" href="#ibis.expr.types.structs.StructValue">StructValue</a>)
+StructScalar            (<a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Scalar" href="../generic/#ibis.expr.types.generic.Scalar">Scalar</a>, <a class="autorefs autorefs-internal" title="ibis.expr.types.structs.StructValue" href="#ibis.expr.types.structs.StructValue">StructValue</a>)
         </code>
 
 
@@ -3069,7 +3069,7 @@ multiple columns.</p>
 
 <h4 id="ibis.expr.types.structs.StructValue" class="doc doc-heading">
         <code>
-StructValue            (<a class="autorefs autorefs-internal" title="ibis.expr.types.generic.AnyValue" href="../generic/#ibis.expr.types.generic.AnyValue">AnyValue</a>)
+StructValue            (<a class="autorefs autorefs-internal" title="ibis.expr.types.generic.Value" href="../generic/#ibis.expr.types.generic.Value">Value</a>)
         </code>
 
 
@@ -3146,7 +3146,7 @@ StructValue            (<a class="autorefs autorefs-internal" title="ibis.expr.t
   </thead>
   <tbody>
     <tr>
-      <td><code>ir.ValueExpr</code></td>
+      <td><code>ir.Value</code></td>
       <td><p>An expression with the type of the field being accessed.</p></td>
     </tr>
   </tbody>

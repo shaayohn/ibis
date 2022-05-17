@@ -2190,7 +2190,7 @@ scalar (if the inputs are Python literals)</p></td>
   <tbody>
       <tr>
         <td><code>args</code></td>
-        <td><code>ValueExpr</code></td>
+        <td><code>Value</code></td>
         <td><p>Arguments from which to choose the first non-null value</p></td>
         <td><code>()</code></td>
       </tr>
@@ -2213,7 +2213,7 @@ scalar (if the inputs are Python literals)</p></td>
   </thead>
   <tbody>
     <tr>
-      <td><code>ValueExpr</code></td>
+      <td><code>Value</code></td>
       <td><p>Coalesced expression</p></td>
     </tr>
   </tbody>
@@ -2366,7 +2366,7 @@ scalar (if the inputs are Python literals)</p></td>
   <tbody>
       <tr>
         <td><code>expr</code></td>
-        <td><code>ir.ColumnExpr | str</code></td>
+        <td><code>ir.Column | str</code></td>
         <td><p>The expression or column name to use for sorting</p></td>
         <td><em>required</em></td>
       </tr>
@@ -2426,7 +2426,7 @@ scalar (if the inputs are Python literals)</p></td>
   <tbody>
       <tr>
         <td><code>args</code></td>
-        <td><code>ir.ValueExpr</code></td>
+        <td><code>ir.Value</code></td>
         <td><p>Arguments to choose from</p></td>
         <td><code>()</code></td>
       </tr>
@@ -2442,7 +2442,7 @@ scalar (if the inputs are Python literals)</p></td>
   </thead>
   <tbody>
     <tr>
-      <td><code>ir.ValueExpr</code></td>
+      <td><code>ir.Value</code></td>
       <td><p>Maximum of the passed arguments</p></td>
     </tr>
   </tbody>
@@ -2480,13 +2480,13 @@ scalar (if the inputs are Python literals)</p></td>
   <tbody>
       <tr>
         <td><code>true_expr</code></td>
-        <td><code>ir.ValueExpr</code></td>
+        <td><code>ir.Value</code></td>
         <td><p>Expression to return if <code>self</code> evaluates to <code>True</code></p></td>
         <td><em>required</em></td>
       </tr>
       <tr>
         <td><code>false_expr</code></td>
-        <td><code>ir.ValueExpr</code></td>
+        <td><code>ir.Value</code></td>
         <td><p>Expression to return if <code>self</code> evaluates to <code>False</code></p></td>
         <td><em>required</em></td>
       </tr>
@@ -2511,7 +2511,7 @@ scalar (if the inputs are Python literals)</p></td>
   </thead>
   <tbody>
     <tr>
-      <td><code>ir.ValueExpr</code></td>
+      <td><code>ir.Value</code></td>
       <td><p>The value of <code>true_expr</code> if <code>arg</code> is <code>True</code> else <code>false_expr</code></p></td>
     </tr>
   </tbody>
@@ -2675,7 +2675,7 @@ scalar (if the inputs are Python literals)</p></td>
   <tbody>
       <tr>
         <td><code>args</code></td>
-        <td><code>ir.ValueExpr</code></td>
+        <td><code>ir.Value</code></td>
         <td><p>Arguments to choose from</p></td>
         <td><code>()</code></td>
       </tr>
@@ -2691,7 +2691,7 @@ scalar (if the inputs are Python literals)</p></td>
   </thead>
   <tbody>
     <tr>
-      <td><code>ir.ValueExpr</code></td>
+      <td><code>ir.Value</code></td>
       <td><p>Minimum of the passed arguments</p></td>
     </tr>
   </tbody>
@@ -2785,7 +2785,7 @@ the type of <code>value</code>.</p></td>
   </thead>
   <tbody>
     <tr>
-      <td><code>ScalarExpr</code></td>
+      <td><code>Scalar</code></td>
       <td><p>An expression representing a literal value</p></td>
     </tr>
   </tbody>
@@ -3012,7 +3012,7 @@ key/value pairs of fixed types)</p></td>
   </thead>
   <tbody>
     <tr>
-      <td><code>ir.ScalarExpr</code></td>
+      <td><code>ir.Scalar</code></td>
       <td><p>A scalar expression backend by a parameter</p></td>
     </tr>
   </tbody>
@@ -3365,7 +3365,7 @@ of fixed types)</p></td>
   </thead>
   <tbody>
     <tr>
-      <td><code>ir.TableExpr</code></td>
+      <td><code>ir.Table</code></td>
       <td><p>An unbound table expression</p></td>
     </tr>
   </tbody>
@@ -3620,13 +3620,13 @@ of fixed types)</p></td>
       </tr>
       <tr>
         <td><code>true_expr</code></td>
-        <td><code>ir.ValueExpr</code></td>
+        <td><code>ir.Value</code></td>
         <td><p>Value returned if <code>boolean_expr</code> is <code>True</code></p></td>
         <td><em>required</em></td>
       </tr>
       <tr>
         <td><code>false_null_expr</code></td>
-        <td><code>ir.ValueExpr</code></td>
+        <td><code>ir.Value</code></td>
         <td><p>Value returned if <code>boolean_expr</code> is <code>False</code> or <code>NULL</code></p></td>
         <td><em>required</em></td>
       </tr>
@@ -3642,7 +3642,7 @@ of fixed types)</p></td>
   </thead>
   <tbody>
     <tr>
-      <td><code>ir.ValueExpr</code></td>
+      <td><code>ir.Value</code></td>
       <td><p>An expression</p></td>
     </tr>
   </tbody>

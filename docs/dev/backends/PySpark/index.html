@@ -2700,7 +2700,7 @@ rows, size in bytes).</p></td>
       </tr>
       <tr>
         <td><code>obj</code></td>
-        <td><code>ir.TableExpr | pd.DataFrame | None</code></td>
+        <td><code>ir.Table | pd.DataFrame | None</code></td>
         <td><p>If passed, creates table from select statement results</p></td>
         <td><code>None</code></td>
       </tr>
@@ -2774,7 +2774,7 @@ schema</p></td>
       </tr>
       <tr>
         <td><code>expr</code></td>
-        <td><code>ir.TableExpr</code></td>
+        <td><code>ir.Table</code></td>
         <td><p>Expression to use for the view</p></td>
         <td><em>required</em></td>
       </tr>
@@ -3463,7 +3463,7 @@ the session in a way unknown to Ibis; be careful.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code>ir.TableExpr</code></td>
+      <td><code>ir.Table</code></td>
       <td><p>Table expression</p></td>
     </tr>
   </tbody>
@@ -3523,7 +3523,7 @@ the session in a way unknown to Ibis; be careful.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code>ir.TableExpr</code></td>
+      <td><code>ir.Table</code></td>
       <td><p>Table named <code>name</code> from <code>database</code></p></td>
     </tr>
   </tbody>
