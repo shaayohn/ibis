@@ -1032,6 +1032,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.backends.pyspark.Backend.has_operation" class="md-nav__link">
+    has_operation()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.backends.pyspark.Backend.insert" class="md-nav__link">
     insert()
   </a>
@@ -2124,6 +2131,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.backends.pyspark.Backend.has_operation" class="md-nav__link">
+    has_operation()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.backends.pyspark.Backend.insert" class="md-nav__link">
     insert()
   </a>
@@ -3184,6 +3198,69 @@ query.</p>
     <tr>
       <td><code>str</code></td>
       <td><p>Query plan</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h5 id="ibis.backends.pyspark.Backend.has_operation" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">has_operation</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">operation</span><span class="p">)</span></code>
+
+
+<a href="#ibis.backends.pyspark.Backend.has_operation" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+
+    <div class="doc doc-contents ">
+
+      <p>Return whether the backend implements support for <code>operation</code>.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>operation</code></td>
+        <td><code>type[ops.Value]</code></td>
+        <td><p>A class corresponding to an operation.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis.expr.operations</span> <span class="k">as</span> <span class="nn">ops</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">has_operation</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">ArrayIndex</span><span class="p">)</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">postgres</span><span class="o">.</span><span class="n">has_operation</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">ArrayIndex</span><span class="p">)</span>
+<span class="kc">True</span>
+</code></pre></div>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>bool</code></td>
+      <td><p>Whether the backend implements the operation.</p></td>
     </tr>
   </tbody>
 </table>
