@@ -1388,6 +1388,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.AnyColumn.approx_median" class="md-nav__link">
+    approx_median()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.AnyColumn.approx_nunique" class="md-nav__link">
+    approx_nunique()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.generic.AnyColumn.arbitrary" class="md-nav__link">
     arbitrary()
   </a>
@@ -1662,6 +1676,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.Column.approx_median" class="md-nav__link">
+    approx_median()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.Column.approx_nunique" class="md-nav__link">
+    approx_nunique()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.generic.Column.arbitrary" class="md-nav__link">
     arbitrary()
   </a>
@@ -1735,6 +1763,20 @@
   
     <nav class="md-nav" aria-label="Methods">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.ColumnExpr.approx_median" class="md-nav__link">
+    approx_median()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.ColumnExpr.approx_nunique" class="md-nav__link">
+    approx_nunique()
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#ibis.expr.types.generic.ColumnExpr.arbitrary" class="md-nav__link">
@@ -2481,6 +2523,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.AnyColumn.approx_median" class="md-nav__link">
+    approx_median()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.AnyColumn.approx_nunique" class="md-nav__link">
+    approx_nunique()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.generic.AnyColumn.arbitrary" class="md-nav__link">
     arbitrary()
   </a>
@@ -2755,6 +2811,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.Column.approx_median" class="md-nav__link">
+    approx_median()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.Column.approx_nunique" class="md-nav__link">
+    approx_nunique()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.generic.Column.arbitrary" class="md-nav__link">
     arbitrary()
   </a>
@@ -2828,6 +2898,20 @@
   
     <nav class="md-nav" aria-label="Methods">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.ColumnExpr.approx_median" class="md-nav__link">
+    approx_median()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.ColumnExpr.approx_nunique" class="md-nav__link">
+    approx_nunique()
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#ibis.expr.types.generic.ColumnExpr.arbitrary" class="md-nav__link">
@@ -3377,6 +3461,126 @@ AnyColumn            (<a class="autorefs autorefs-internal" title="ibis.expr.typ
 <h5 id="ibis.expr.types.generic.AnyColumn-methods">Methods<a href="#ibis.expr.types.generic.AnyColumn-methods" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
 
+  <div class="doc doc-object doc-method">
+
+
+
+<h6 id="ibis.expr.types.generic.AnyColumn.approx_median" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">approx_median</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.generic.AnyColumn.approx_median" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
+
+    <div class="doc doc-contents ">
+
+      <p>Return an approximate of the median of <code>self</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">The result may or may not be exact</p>
+<p>Whether the result is an approximation depends on the backend.</p>
+<div class="admonition warning">
+<p class="admonition-title">Do not depend on the results being exact</p>
+</div>
+</div>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>where</code></td>
+        <td><code>ir.BooleanValue | None</code></td>
+        <td><p>Filter in values when <code>where</code> is <code>True</code></p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Scalar</code></td>
+      <td><p>An approximation of the median of <code>self</code></p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h6 id="ibis.expr.types.generic.AnyColumn.approx_nunique" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">approx_nunique</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.generic.AnyColumn.approx_nunique" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
+
+    <div class="doc doc-contents ">
+
+      <p>Return the approximate number of distinct elements in <code>self</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">The result may or may not be exact</p>
+<p>Whether the result is an approximation depends on the backend.</p>
+<div class="admonition warning">
+<p class="admonition-title">Do not depend on the results being exact</p>
+</div>
+</div>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>where</code></td>
+        <td><code>ir.BooleanValue | None</code></td>
+        <td><p>Filter in values when <code>where</code> is <code>True</code></p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ir.IntegerScalar</code></td>
+      <td><p>An approximate count of the distinct elements of <code>self</code></p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
 
 
   <div class="doc doc-object doc-method">
@@ -3412,9 +3616,15 @@ AnyColumn            (<a class="autorefs autorefs-internal" title="ibis.expr.typ
       </tr>
       <tr>
         <td><code>how</code></td>
-        <td><code>str | None</code></td>
-        <td><p>Heavy selects a frequently occurring value using the heavy hitters
-algorithm. Heavy is only supported by Clickhouse backend.</p></td>
+        <td><code>Literal[&#39;first&#39;, &#39;last&#39;, &#39;heavy&#39;] | None</code></td>
+        <td><p>The method to use for selecting the element.</p>
+<ul>
+<li><code>"first"</code>: Select the first non-<code>NULL</code> element</li>
+<li><code>"last"</code>: Select the last non-<code>NULL</code> element</li>
+<li><code>"heavy"</code>: Select a frequently occurring value using the heavy
+  hitters algorithm. <code>"heavy"</code> is only supported by Clickhouse
+  backend.</li>
+</ul></td>
         <td><code>None</code></td>
       </tr>
   </tbody>
@@ -3642,7 +3852,7 @@ algorithm. Heavy is only supported by Clickhouse backend.</p></td>
 
     <div class="doc doc-contents ">
 
-      <p>Promote this column expression to a table projection</p>
+      <p>Promote this column expression to a projection.</p>
 
     </div>
 
@@ -3797,7 +4007,7 @@ AnyScalar            (<a class="autorefs autorefs-internal" title="ibis.expr.typ
 
     <div class="doc doc-contents ">
 
-      <p>Promote this column expression to a table projection</p>
+      <p>Promote this scalar expression to a projection.</p>
 
     </div>
 
@@ -4915,6 +5125,126 @@ Column            (<a class="autorefs autorefs-internal" title="ibis.expr.types.
 <h5 id="ibis.expr.types.generic.Column-methods">Methods<a href="#ibis.expr.types.generic.Column-methods" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
 
+  <div class="doc doc-object doc-method">
+
+
+
+<h6 id="ibis.expr.types.generic.Column.approx_median" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">approx_median</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.generic.Column.approx_median" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
+
+    <div class="doc doc-contents ">
+
+      <p>Return an approximate of the median of <code>self</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">The result may or may not be exact</p>
+<p>Whether the result is an approximation depends on the backend.</p>
+<div class="admonition warning">
+<p class="admonition-title">Do not depend on the results being exact</p>
+</div>
+</div>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>where</code></td>
+        <td><code>ir.BooleanValue | None</code></td>
+        <td><p>Filter in values when <code>where</code> is <code>True</code></p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Scalar</code></td>
+      <td><p>An approximation of the median of <code>self</code></p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h6 id="ibis.expr.types.generic.Column.approx_nunique" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">approx_nunique</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.generic.Column.approx_nunique" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
+
+    <div class="doc doc-contents ">
+
+      <p>Return the approximate number of distinct elements in <code>self</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">The result may or may not be exact</p>
+<p>Whether the result is an approximation depends on the backend.</p>
+<div class="admonition warning">
+<p class="admonition-title">Do not depend on the results being exact</p>
+</div>
+</div>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>where</code></td>
+        <td><code>ir.BooleanValue | None</code></td>
+        <td><p>Filter in values when <code>where</code> is <code>True</code></p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ir.IntegerScalar</code></td>
+      <td><p>An approximate count of the distinct elements of <code>self</code></p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
 
 
   <div class="doc doc-object doc-method">
@@ -4950,9 +5280,15 @@ Column            (<a class="autorefs autorefs-internal" title="ibis.expr.types.
       </tr>
       <tr>
         <td><code>how</code></td>
-        <td><code>str | None</code></td>
-        <td><p>Heavy selects a frequently occurring value using the heavy hitters
-algorithm. Heavy is only supported by Clickhouse backend.</p></td>
+        <td><code>Literal[&#39;first&#39;, &#39;last&#39;, &#39;heavy&#39;] | None</code></td>
+        <td><p>The method to use for selecting the element.</p>
+<ul>
+<li><code>"first"</code>: Select the first non-<code>NULL</code> element</li>
+<li><code>"last"</code>: Select the last non-<code>NULL</code> element</li>
+<li><code>"heavy"</code>: Select a frequently occurring value using the heavy
+  hitters algorithm. <code>"heavy"</code> is only supported by Clickhouse
+  backend.</li>
+</ul></td>
         <td><code>None</code></td>
       </tr>
   </tbody>
@@ -5180,7 +5516,7 @@ algorithm. Heavy is only supported by Clickhouse backend.</p></td>
 
     <div class="doc doc-contents ">
 
-      <p>Promote this column expression to a table projection</p>
+      <p>Promote this column expression to a projection.</p>
 
     </div>
 
@@ -5323,6 +5659,126 @@ ColumnExpr            (<a class="autorefs autorefs-internal" title="ibis.expr.ty
 <h5 id="ibis.expr.types.generic.ColumnExpr-methods">Methods<a href="#ibis.expr.types.generic.ColumnExpr-methods" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
 
+  <div class="doc doc-object doc-method">
+
+
+
+<h6 id="ibis.expr.types.generic.ColumnExpr.approx_median" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">approx_median</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.generic.ColumnExpr.approx_median" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
+
+    <div class="doc doc-contents ">
+
+      <p>Return an approximate of the median of <code>self</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">The result may or may not be exact</p>
+<p>Whether the result is an approximation depends on the backend.</p>
+<div class="admonition warning">
+<p class="admonition-title">Do not depend on the results being exact</p>
+</div>
+</div>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>where</code></td>
+        <td><code>ir.BooleanValue | None</code></td>
+        <td><p>Filter in values when <code>where</code> is <code>True</code></p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Scalar</code></td>
+      <td><p>An approximation of the median of <code>self</code></p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h6 id="ibis.expr.types.generic.ColumnExpr.approx_nunique" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">approx_nunique</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.generic.ColumnExpr.approx_nunique" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
+
+    <div class="doc doc-contents ">
+
+      <p>Return the approximate number of distinct elements in <code>self</code>.</p>
+<div class="admonition info">
+<p class="admonition-title">The result may or may not be exact</p>
+<p>Whether the result is an approximation depends on the backend.</p>
+<div class="admonition warning">
+<p class="admonition-title">Do not depend on the results being exact</p>
+</div>
+</div>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>where</code></td>
+        <td><code>ir.BooleanValue | None</code></td>
+        <td><p>Filter in values when <code>where</code> is <code>True</code></p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ir.IntegerScalar</code></td>
+      <td><p>An approximate count of the distinct elements of <code>self</code></p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
 
 
   <div class="doc doc-object doc-method">
@@ -5358,9 +5814,15 @@ ColumnExpr            (<a class="autorefs autorefs-internal" title="ibis.expr.ty
       </tr>
       <tr>
         <td><code>how</code></td>
-        <td><code>str | None</code></td>
-        <td><p>Heavy selects a frequently occurring value using the heavy hitters
-algorithm. Heavy is only supported by Clickhouse backend.</p></td>
+        <td><code>Literal[&#39;first&#39;, &#39;last&#39;, &#39;heavy&#39;] | None</code></td>
+        <td><p>The method to use for selecting the element.</p>
+<ul>
+<li><code>"first"</code>: Select the first non-<code>NULL</code> element</li>
+<li><code>"last"</code>: Select the last non-<code>NULL</code> element</li>
+<li><code>"heavy"</code>: Select a frequently occurring value using the heavy
+  hitters algorithm. <code>"heavy"</code> is only supported by Clickhouse
+  backend.</li>
+</ul></td>
         <td><code>None</code></td>
       </tr>
   </tbody>
@@ -5588,7 +6050,7 @@ algorithm. Heavy is only supported by Clickhouse backend.</p></td>
 
     <div class="doc doc-contents ">
 
-      <p>Promote this column expression to a table projection</p>
+      <p>Promote this column expression to a projection.</p>
 
     </div>
 
@@ -5747,7 +6209,7 @@ Scalar            (<a class="autorefs autorefs-internal" title="ibis.expr.types.
 
     <div class="doc doc-contents ">
 
-      <p>Promote this column expression to a table projection</p>
+      <p>Promote this scalar expression to a projection.</p>
 
     </div>
 
@@ -5807,7 +6269,7 @@ ScalarExpr            (<a class="autorefs autorefs-internal" title="ibis.expr.ty
 
     <div class="doc doc-contents ">
 
-      <p>Promote this column expression to a table projection</p>
+      <p>Promote this scalar expression to a projection.</p>
 
     </div>
 
