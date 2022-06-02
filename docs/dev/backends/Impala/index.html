@@ -1257,19 +1257,6 @@
     HDFS Interaction
   </a>
   
-    <nav class="md-nav" aria-label="HDFS Interaction">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.impala.hdfs.hdfs_connect" class="md-nav__link">
-    hdfs_connect()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -3241,19 +3228,6 @@
   <a href="#hdfs-interaction" class="md-nav__link">
     HDFS Interaction
   </a>
-  
-    <nav class="md-nav" aria-label="HDFS Interaction">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.impala.hdfs.hdfs_connect" class="md-nav__link">
-    hdfs_connect()
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5907,34 +5881,6 @@ Impala takes ownership of the Parquet file.</p></td>
 <h2 id="hdfs-interaction">HDFS Interaction<a class="headerlink" href="#hdfs-interaction" title="Anchor link to this section for reference">&para;</a></h2>
 <p>Ibis delegates all HDFS interaction to the
 <a href="https://filesystem-spec.readthedocs.io/en/latest/"><code>fsspec</code></a> library.</p>
-<!-- prettier-ignore-start -->
-
-
-  <div class="doc doc-object doc-function">
-
-
-
-<h3 id="ibis.backends.impala.hdfs.hdfs_connect" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">hdfs_connect</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;webhdfs&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-
-<a href="#ibis.backends.impala.hdfs.hdfs_connect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
-
-    <div class="doc doc-contents first">
-
-      <p>Connect to HDFS using <code>fsspec</code>.</p>
-<div class="admonition warning">
-<p class="admonition-title">DEPRECATED: <code>hdfs_connect</code> is deprecated as of v3.0.0; Use fsspec.filesystem("webhdfs", ...) directly</p>
-</div>
-<p>This function is a thing wrapper around <code>fsspec.filesystem</code>. All arguments
-are forwarded to that API.</p>
-
-    </div>
-
-  </div>
-
-<!-- prettier-ignore-end -->
-
 <h2 id="the-impala-client-object">The Impala client object<a class="headerlink" href="#the-impala-client-object" title="Anchor link to this section for reference">&para;</a></h2>
 <p>To use Ibis with Impala, you first must connect to a cluster using the
 <code>ibis.impala.connect</code> function, optionally supplying an HDFS connection:</p>
@@ -7982,7 +7928,7 @@ to see the default configuration values for every component of CDH.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 16, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 2, 2022</span>
       
     
   </small>
