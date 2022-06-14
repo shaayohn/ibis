@@ -975,8 +975,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#load-data" class="md-nav__link">
-    Load Data
+  <a href="#download-data" class="md-nav__link">
+    Download Data
   </a>
   
 </li>
@@ -1683,8 +1683,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#load-data" class="md-nav__link">
-    Load Data
+  <a href="#download-data" class="md-nav__link">
+    Download Data
   </a>
   
 </li>
@@ -1801,21 +1801,12 @@ psql -t -A -h localhost -U postgres -d ibis_testing -c <span class="s2">&quot;se
 command fails wait a few seconds and try again</p>
 </div>
 <p>Congrats, you now have a PostgreSQL server running and are ready to run tests!</p>
-<h4 id="load-data">Load Data<a class="headerlink" href="#load-data" title="Anchor link to this section for reference">&para;</a></h4>
-<p>The backend needs to be populated with test data:</p>
-<ol>
-<li>
-<p>Download the data</p>
+<h4 id="download-data">Download Data<a class="headerlink" href="#download-data" title="Anchor link to this section for reference">&para;</a></h4>
+<p>The backend needs to be populated with test data.
+The data will be loaded automatically, when the test is run, but it needs to be downloaded first.</p>
+<p>To download the data</p>
 <div class="highlight"><pre><span></span><code>python ci/datamgr.py download
 </code></pre></div>
-</li>
-<li>
-<p>In the original terminal, run</p>
-<div class="highlight"><pre><span></span><code>python ci/datamgr.py load postgres
-</code></pre></div>
-<p>You should see a bit of logging, and the command should complete shortly thereafter.</p>
-</li>
-</ol>
 <h4 id="run-the-test-suite">Run the test suite<a class="headerlink" href="#run-the-test-suite" title="Anchor link to this section for reference">&para;</a></h4>
 <p>You're now ready to run the test suite for the postgres backend:</p>
 <div class="highlight"><pre><span></span><code>pytest -m postgres
@@ -1828,7 +1819,7 @@ test suite fails for any reason.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 20, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 25, 2022</span>
       
     
   </small>
