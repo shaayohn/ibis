@@ -3486,9 +3486,9 @@ The GDP table will be used in the next tutorial, and the data has been obtained 
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;continent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">countries</span><span class="p">[[</span><span class="s1">&#39;continent&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
 </pre></div>
-<div id="cell-11" class="clipboard-copy-txt">countries['continent'].distinct()</div>
+<div id="cell-11" class="clipboard-copy-txt">countries[['continent']].distinct()</div>
     
         </div>
     </div>
@@ -3506,18 +3506,66 @@ The GDP table will be used in the next tutorial, and the data has been obtained 
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-Input <span class="ansi-green-fg">In [11]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">countries</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">continent</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg">]</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">distinct</span>()
 
-<span class="ansi-red-fg">AttributeError</span>: &#39;StringColumn&#39; object has no attribute &#39;distinct&#39;</pre>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>continent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>EU</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AS</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NA</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AF</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>SA</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>OC</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -4470,7 +4518,7 @@ asian_countries</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 20, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 16, 2022</span>
       
     
   </small>
