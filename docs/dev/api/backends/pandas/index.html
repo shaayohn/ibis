@@ -1534,6 +1534,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.backends.pandas.BasePandasBackend.db_identity" class="md-nav__link">
+    db_identity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.backends.pandas.BasePandasBackend.version" class="md-nav__link">
     version
   </a>
@@ -1849,6 +1856,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.backends.pandas.BasePandasBackend.db_identity" class="md-nav__link">
+    db_identity
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.backends.pandas.BasePandasBackend.version" class="md-nav__link">
     version
   </a>
@@ -2134,6 +2148,50 @@ BasePandasBackend            (<a class="autorefs autorefs-internal" title="ibis.
     <tr>
       <td><code>str | None</code></td>
       <td><p>Name of the current database.</p></td>
+    </tr>
+  </tbody>
+</table>    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="ibis.backends.pandas.BasePandasBackend.db_identity" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">db_identity</span><span class="p">:</span> <span class="nb">str</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-cached"><code>cached</code></small>
+      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
+      <small class="doc doc-property doc-property-property"><code>property</code></small>
+      <small class="doc doc-property doc-property-writable"><code>writable</code></small>
+  </span>
+
+<a href="#ibis.backends.pandas.BasePandasBackend.db_identity" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Return the identity of the database.</p>
+<p>Multiple connections to the same
+database will return the same value for <code>db_identity</code>.</p>
+<p>The default implementation assumes connection parameters uniquely
+specify the database.</p>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>str</code></td>
+      <td><p>Database identity</p></td>
     </tr>
   </tbody>
 </table>    </div>
