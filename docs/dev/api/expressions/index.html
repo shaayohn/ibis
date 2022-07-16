@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://ibis-project.org/dev/api/expressions/">
       
       <link rel="icon" href="../../static/icons/ibis/logo.svg">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
     
     
       
@@ -19,15 +19,16 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8c5ef100.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
           
           
           <meta name="theme-color" content="#009485">
         
+      
       
     
     
@@ -1587,6 +1588,19 @@
     compile()
   </a>
   
+    <nav class="md-nav" aria-label="compile()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.core.Expr.compile--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1594,12 +1608,52 @@
     execute()
   </a>
   
+    <nav class="md-nav" aria-label="execute()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.core.Expr.execute--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
   <a href="#ibis.expr.types.core.Expr.pipe" class="md-nav__link">
     pipe()
   </a>
+  
+    <nav class="md-nav" aria-label="pipe()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.core.Expr.pipe--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.core.Expr.pipe--examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.core.Expr.pipe--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1614,6 +1668,33 @@
   <a href="#ibis.expr.types.core.Expr.visualize" class="md-nav__link">
     visualize()
   </a>
+  
+    <nav class="md-nav" aria-label="visualize()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.core.Expr.visualize--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.core.Expr.visualize--notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.core.Expr.visualize--raises" class="md-nav__link">
+    Raises
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1695,45 +1776,21 @@ Expr        </code>
     <div class="doc doc-contents ">
 
       <p>Compile to an execution target.</p>
+<h6 id="ibis.expr.types.core.Expr.compile--parameters">Parameters<a class="headerlink" href="#ibis.expr.types.core.Expr.compile--parameters" title="Anchor link to this section for reference">&para;</a></h6>
+<p>limit
+    An integer to effect a specific row limit. A value of <code>None</code> means
+    "no limit". The default is in <code>ibis/config.py</code>.
+timecontext
+    Defines a time range of <code>(begin, end)</code>. When defined, the execution
+    will only compute result for data inside the time range. The time
+    range is inclusive of both endpoints. This is conceptually same as
+    a time filter.
+    The time column must be named <code>'time'</code> and should preserve
+    across the expression. For example, if that column is dropped then
+    execute will result in an error.
+params
+    Mapping of scalar parameter expressions to value</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>limit</code></td>
-        <td><code>int | None</code></td>
-        <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
-"no limit". The default is in <code>ibis/config.py</code>.</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>timecontext</code></td>
-        <td><code>TimeContext | None</code></td>
-        <td><p>Defines a time range of <code>(begin, end)</code>. When defined, the execution
-will only compute result for data inside the time range. The time
-range is inclusive of both endpoints. This is conceptually same as
-a time filter.
-The time column must be named <code>'time'</code> and should preserve
-across the expression. For example, if that column is dropped then
-execute will result in an error.</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>params</code></td>
-        <td><code>Mapping[Value, Any] | None</code></td>
-        <td><p>Mapping of scalar parameter expressions to value</p></td>
-        <td><code>None</code></td>
-      </tr>
-  </tbody>
-</table>
     </div>
 
   </div>
@@ -1754,45 +1811,21 @@ execute will result in an error.</p></td>
     <div class="doc doc-contents ">
 
       <p>Execute an expression against its backend if one exists.</p>
+<h6 id="ibis.expr.types.core.Expr.execute--parameters">Parameters<a class="headerlink" href="#ibis.expr.types.core.Expr.execute--parameters" title="Anchor link to this section for reference">&para;</a></h6>
+<p>limit
+    An integer to effect a specific row limit. A value of <code>None</code> means
+    "no limit". The default is in <code>ibis/config.py</code>.
+timecontext
+    Defines a time range of <code>(begin, end)</code>. When defined, the execution
+    will only compute result for data inside the time range. The time
+    range is inclusive of both endpoints. This is conceptually same as
+    a time filter.
+    The time column must be named <code>'time'</code> and should preserve
+    across the expression. For example, if that column is dropped then
+    execute will result in an error.
+params
+    Mapping of scalar parameter expressions to value</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>limit</code></td>
-        <td><code>int | str | None</code></td>
-        <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
-"no limit". The default is in <code>ibis/config.py</code>.</p></td>
-        <td><code>&#39;default&#39;</code></td>
-      </tr>
-      <tr>
-        <td><code>timecontext</code></td>
-        <td><code>TimeContext | None</code></td>
-        <td><p>Defines a time range of <code>(begin, end)</code>. When defined, the execution
-will only compute result for data inside the time range. The time
-range is inclusive of both endpoints. This is conceptually same as
-a time filter.
-The time column must be named <code>'time'</code> and should preserve
-across the expression. For example, if that column is dropped then
-execute will result in an error.</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>params</code></td>
-        <td><code>Mapping[Value, Any] | None</code></td>
-        <td><p>Mapping of scalar parameter expressions to value</p></td>
-        <td><code>None</code></td>
-      </tr>
-  </tbody>
-</table>
     </div>
 
   </div>
@@ -1815,73 +1848,40 @@ execute will result in an error.</p></td>
     <div class="doc doc-contents ">
 
       <p>Compose <code>f</code> with <code>self</code>.</p>
+<h6 id="ibis.expr.types.core.Expr.pipe--parameters">Parameters<a class="headerlink" href="#ibis.expr.types.core.Expr.pipe--parameters" title="Anchor link to this section for reference">&para;</a></h6>
+<p>f
+    If the expression needs to be passed as anything other than the
+    first argument to the function, pass a tuple with the argument
+    name. For example, (f, 'data') if the function f expects a 'data'
+    keyword
+args
+    Positional arguments to <code>f</code>
+kwargs
+    Keyword arguments to <code>f</code></p>
+<h6 id="ibis.expr.types.core.Expr.pipe--examples">Examples<a class="headerlink" href="#ibis.expr.types.core.Expr.pipe--examples" title="Anchor link to this section for reference">&para;</a></h6>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import ibis
+t = ibis.table([('a', 'int64'), ('b', 'string')], name='t')
+f = lambda a: (a + 1).name('a')
+g = lambda a: (a * 2).name('a')
+result1 = t.a.pipe(f).pipe(g)
+result1
+r0 := UnboundTable[t]
+  a int64
+  b string
+a: r0.a + 1 * 2</p>
+<p>result2 = g(f(t.a))  # equivalent to the above
+result1.equals(result2)
+True</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h6 id="ibis.expr.types.core.Expr.pipe--returns">Returns<a class="headerlink" href="#ibis.expr.types.core.Expr.pipe--returns" title="Anchor link to this section for reference">&para;</a></h6>
+<p>Expr
+    Result type of passed function</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>f</code></td>
-        <td><code>None</code></td>
-        <td><p>If the expression needs to be passed as anything other than the
-first argument to the function, pass a tuple with the argument
-name. For example, (f, 'data') if the function f expects a 'data'
-keyword</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
-        <td><code>args</code></td>
-        <td><code>Any</code></td>
-        <td><p>Positional arguments to <code>f</code></p></td>
-        <td><code>()</code></td>
-      </tr>
-      <tr>
-        <td><code>kwargs</code></td>
-        <td><code>Any</code></td>
-        <td><p>Keyword arguments to <code>f</code></p></td>
-        <td><code>{}</code></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">g</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result1</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result1</span>
-<span class="n">r0</span> <span class="o">:=</span> <span class="n">UnboundTable</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
-  <span class="n">a</span> <span class="n">int64</span>
-  <span class="n">b</span> <span class="n">string</span>
-<span class="n">a</span><span class="p">:</span> <span class="n">r0</span><span class="o">.</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">2</span>
-</code></pre></div>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">result2</span> <span class="o">=</span> <span class="n">g</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="p">))</span>  <span class="c1"># equivalent to the above</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result1</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">result2</span><span class="p">)</span>
-<span class="kc">True</span>
-</code></pre></div>
-
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>Expr</code></td>
-      <td><p>Result type of passed function</p></td>
-    </tr>
-  </tbody>
-</table>
     </div>
 
   </div>
@@ -1924,42 +1924,17 @@ keyword</p></td>
     <div class="doc doc-contents ">
 
       <p>Visualize an expression in the browser as an SVG image.</p>
+<h6 id="ibis.expr.types.core.Expr.visualize--parameters">Parameters<a class="headerlink" href="#ibis.expr.types.core.Expr.visualize--parameters" title="Anchor link to this section for reference">&para;</a></h6>
+<p>format
+    Image output format. These are specified by the <code>graphviz</code> Python
+    library.</p>
+<h6 id="ibis.expr.types.core.Expr.visualize--notes">Notes<a class="headerlink" href="#ibis.expr.types.core.Expr.visualize--notes" title="Anchor link to this section for reference">&para;</a></h6>
+<p>This method opens a web browser tab showing the image of the expression
+graph created by the code in the <code>ibis.expr.visualize</code> module.</p>
+<h6 id="ibis.expr.types.core.Expr.visualize--raises">Raises<a class="headerlink" href="#ibis.expr.types.core.Expr.visualize--raises" title="Anchor link to this section for reference">&para;</a></h6>
+<p>ImportError
+    If <code>graphviz</code> is not installed.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>format</code></td>
-        <td><code>str</code></td>
-        <td><p>Image output format. These are specified by the <code>graphviz</code> Python
-library.</p></td>
-        <td><code>&#39;svg&#39;</code></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Exceptions:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>ImportError</code></td>
-        <td><p>If <code>graphviz</code> is not installed.</p></td>
-      </tr>
-  </tbody>
-</table>
     </div>
 
   </div>
@@ -1988,6 +1963,9 @@ library.</p></td>
               
 
             </article>
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
           </div>
         </div>
         
@@ -1995,7 +1973,8 @@ library.</p></td>
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href="../../release_notes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Release Notes" rel="prev">
@@ -2076,10 +2055,10 @@ library.</p></td>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       

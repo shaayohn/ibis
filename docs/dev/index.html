@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://ibis-project.org/dev/">
       
       <link rel="icon" href="static/icons/ibis/logo.svg">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
     
     
       
@@ -19,15 +19,16 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.8c5ef100.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.1d29e8d0.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
         
           
           
           <meta name="theme-color" content="#009485">
         
+      
       
     
     
@@ -2188,7 +2189,7 @@ sacrifice maintainability to get to those insights!</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Ibis</label><label for="__tabbed_5_2">SQL</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">docs/example.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">docs/example.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2208,7 +2209,7 @@ sacrifice maintainability to get to those insights!</p>
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
 
 <span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;crunchbase.db&quot;</span><span class="p">)</span>
 
@@ -2229,11 +2230,10 @@ sacrifice maintainability to get to those insights!</p>
     <span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">acq_rate</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">acq_ipos</span> <span class="o">/</span> <span class="n">t</span><span class="o">.</span><span class="n">num_investments</span><span class="p">)</span>
     <span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">docs/example.sql</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">docs/example.sql</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2252,7 +2252,7 @@ sacrifice maintainability to get to those insights!</p>
 <span class="normal">17</span>
 <span class="normal">18</span>
 <span class="normal">19</span>
-<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"></span>
+<span class="normal">20</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">SELECT</span><span class="w"></span>
 <span class="w">  </span><span class="o">*</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="k">CAST</span><span class="p">(</span><span class="n">acq_ipos</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">num_investments</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">FLOAT</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">acq_rate</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
@@ -2272,8 +2272,7 @@ sacrifice maintainability to get to those insights!</p>
 <span class="w">  </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
 <span class="w">  </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">DESC</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -2291,7 +2290,7 @@ including the <a href="backends/PostgreSQL/">PostgreSQL</a> and
 <div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Ibis</label><label for="__tabbed_6_2">SQLAlchemy</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">docs/example.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">docs/example.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2311,7 +2310,7 @@ including the <a href="backends/PostgreSQL/">PostgreSQL</a> and
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
 
 <span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;crunchbase.db&quot;</span><span class="p">)</span>
 
@@ -2332,11 +2331,10 @@ including the <a href="backends/PostgreSQL/">PostgreSQL</a> and
     <span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">acq_rate</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">acq_ipos</span> <span class="o">/</span> <span class="n">t</span><span class="o">.</span><span class="n">num_investments</span><span class="p">)</span>
     <span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="p">)</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<table class="highlighttable"><tr><th colspan="2" class="filename"><div class="highlight"><span class="filename">docs/sqlalchemy_example.py</span></div></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">docs/sqlalchemy_example.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2364,7 +2362,7 @@ including the <a href="backends/PostgreSQL/">PostgreSQL</a> and
 <span class="normal">26</span>
 <span class="normal">27</span>
 <span class="normal">28</span>
-<span class="normal">29</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">sqlalchemy</span> <span class="k">as</span> <span class="nn">sa</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">sqlalchemy</span> <span class="k">as</span> <span class="nn">sa</span>
 
 <span class="n">c</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s2">&quot;companies&quot;</span><span class="p">)</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s2">&quot;investments&quot;</span><span class="p">)</span>
@@ -2393,8 +2391,7 @@ including the <a href="backends/PostgreSQL/">PostgreSQL</a> and
     <span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="p">)</span>
 <span class="n">expr</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">select</span><span class="p">([(</span><span class="n">a</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">acq_ipos</span> <span class="o">/</span> <span class="n">a</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">num_investments</span><span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;acq_rate&quot;</span><span class="p">)])</span>
-</code></pre></div>
-</td></tr></table>
+</code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
@@ -2428,6 +2425,9 @@ including the <a href="backends/PostgreSQL/">PostgreSQL</a> and
               
 
             </article>
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
           </div>
         </div>
         
@@ -2435,7 +2435,10 @@ including the <a href="backends/PostgreSQL/">PostgreSQL</a> and
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+      
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
       
         
@@ -2501,10 +2504,10 @@ including the <a href="backends/PostgreSQL/">PostgreSQL</a> and
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
         <script src="javascripts/mathjax.js"></script>
       

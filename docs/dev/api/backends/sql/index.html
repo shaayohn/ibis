@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://ibis-project.org/dev/api/backends/sql/">
       
       <link rel="icon" href="../../../static/icons/ibis/logo.svg">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
     
     
       
@@ -19,15 +19,16 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c5ef100.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
         
           
           
           <meta name="theme-color" content="#009485">
         
+      
       
     
     
@@ -1533,30 +1534,31 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend-attributes" class="md-nav__link">
-    Attributes
+  <a href="#ibis.backends.base.sql.BaseSQLBackend-methods" class="md-nav__link">
+    Methods
   </a>
   
-    <nav class="md-nav" aria-label="Attributes">
+    <nav class="md-nav" aria-label="Methods">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.current_database" class="md-nav__link">
-    current_database
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.compile" class="md-nav__link">
+    compile()
+  </a>
+  
+    <nav class="md-nav" aria-label="compile()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.compile--parameters" class="md-nav__link">
+    Parameters
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.db_identity" class="md-nav__link">
-    db_identity
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.version" class="md-nav__link">
-    version
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.compile--returns" class="md-nav__link">
+    Returns
   </a>
   
 </li>
@@ -1567,94 +1569,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend-methods" class="md-nav__link">
-    Methods
-  </a>
-  
-    <nav class="md-nav" aria-label="Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.add_operation" class="md-nav__link">
-    add_operation()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.compile" class="md-nav__link">
-    compile()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.connect" class="md-nav__link">
-    connect()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.create_database" class="md-nav__link">
-    create_database()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.create_table" class="md-nav__link">
-    create_table()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.create_view" class="md-nav__link">
-    create_view()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.database" class="md-nav__link">
-    database()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.drop_table" class="md-nav__link">
-    drop_table()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.drop_view" class="md-nav__link">
-    drop_view()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.backends.base.sql.BaseSQLBackend.execute" class="md-nav__link">
     execute()
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="execute()">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.exists_database" class="md-nav__link">
-    exists_database()
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.execute--parameters" class="md-nav__link">
+    Parameters
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.exists_table" class="md-nav__link">
-    exists_table()
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.execute--returns" class="md-nav__link">
+    Returns
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1663,6 +1600,19 @@
     explain()
   </a>
   
+    <nav class="md-nav" aria-label="explain()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.explain--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1670,19 +1620,32 @@
     has_operation()
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="has_operation()">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.list_databases" class="md-nav__link">
-    list_databases()
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.has_operation--parameters" class="md-nav__link">
+    Parameters
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.list_tables" class="md-nav__link">
-    list_tables()
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.has_operation--returns" class="md-nav__link">
+    Returns
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.has_operation--examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1691,12 +1654,52 @@
     raw_sql()
   </a>
   
+    <nav class="md-nav" aria-label="raw_sql()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.raw_sql--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.raw_sql--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
   <a href="#ibis.backends.base.sql.BaseSQLBackend.sql" class="md-nav__link">
     sql()
   </a>
+  
+    <nav class="md-nav" aria-label="sql()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.sql--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.sql--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1705,12 +1708,25 @@
     table()
   </a>
   
+    <nav class="md-nav" aria-label="table()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.table--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.verify" class="md-nav__link">
-    verify()
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.table--returns" class="md-nav__link">
+    Returns
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1809,30 +1825,31 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend-attributes" class="md-nav__link">
-    Attributes
+  <a href="#ibis.backends.base.sql.BaseSQLBackend-methods" class="md-nav__link">
+    Methods
   </a>
   
-    <nav class="md-nav" aria-label="Attributes">
+    <nav class="md-nav" aria-label="Methods">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.current_database" class="md-nav__link">
-    current_database
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.compile" class="md-nav__link">
+    compile()
+  </a>
+  
+    <nav class="md-nav" aria-label="compile()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.compile--parameters" class="md-nav__link">
+    Parameters
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.db_identity" class="md-nav__link">
-    db_identity
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.version" class="md-nav__link">
-    version
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.compile--returns" class="md-nav__link">
+    Returns
   </a>
   
 </li>
@@ -1843,94 +1860,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend-methods" class="md-nav__link">
-    Methods
-  </a>
-  
-    <nav class="md-nav" aria-label="Methods">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.add_operation" class="md-nav__link">
-    add_operation()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.compile" class="md-nav__link">
-    compile()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.connect" class="md-nav__link">
-    connect()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.create_database" class="md-nav__link">
-    create_database()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.create_table" class="md-nav__link">
-    create_table()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.create_view" class="md-nav__link">
-    create_view()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.database" class="md-nav__link">
-    database()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.drop_table" class="md-nav__link">
-    drop_table()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.drop_view" class="md-nav__link">
-    drop_view()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.backends.base.sql.BaseSQLBackend.execute" class="md-nav__link">
     execute()
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="execute()">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.exists_database" class="md-nav__link">
-    exists_database()
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.execute--parameters" class="md-nav__link">
+    Parameters
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.exists_table" class="md-nav__link">
-    exists_table()
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.execute--returns" class="md-nav__link">
+    Returns
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1939,6 +1891,19 @@
     explain()
   </a>
   
+    <nav class="md-nav" aria-label="explain()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.explain--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1946,19 +1911,32 @@
     has_operation()
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="has_operation()">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.list_databases" class="md-nav__link">
-    list_databases()
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.has_operation--parameters" class="md-nav__link">
+    Parameters
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.list_tables" class="md-nav__link">
-    list_tables()
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.has_operation--returns" class="md-nav__link">
+    Returns
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.has_operation--examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1967,12 +1945,52 @@
     raw_sql()
   </a>
   
+    <nav class="md-nav" aria-label="raw_sql()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.raw_sql--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.raw_sql--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
   <a href="#ibis.backends.base.sql.BaseSQLBackend.sql" class="md-nav__link">
     sql()
   </a>
+  
+    <nav class="md-nav" aria-label="sql()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.sql--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.sql--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1981,12 +1999,25 @@
     table()
   </a>
   
+    <nav class="md-nav" aria-label="table()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.table--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.sql.BaseSQLBackend.verify" class="md-nav__link">
-    verify()
+  <a href="#ibis.backends.base.sql.BaseSQLBackend.table--returns" class="md-nav__link">
+    Returns
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2050,171 +2081,10 @@ BaseSQLBackend            (<a class="autorefs autorefs-internal" title="ibis.bac
 
 
 
-<h3 id="ibis.backends.base.sql.BaseSQLBackend-attributes">Attributes<a href="#ibis.backends.base.sql.BaseSQLBackend-attributes" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
-
-  <div class="doc doc-object doc-attribute">
-
-
-
-<h4 id="ibis.backends.base.sql.BaseSQLBackend.current_database" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">current_database</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-      <small class="doc doc-property doc-property-property"><code>property</code></small>
-      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
-  </span>
-
-<a href="#ibis.backends.base.sql.BaseSQLBackend.current_database" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Return the name of the current database.</p>
-<p>Backends that don't support different databases will return None.</p>
-
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>str | None</code></td>
-      <td><p>Name of the current database.</p></td>
-    </tr>
-  </tbody>
-</table>    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-attribute">
-
-
-
-<h4 id="ibis.backends.base.sql.BaseSQLBackend.db_identity" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">db_identity</span><span class="p">:</span> <span class="nb">str</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-cached"><code>cached</code></small>
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-      <small class="doc doc-property doc-property-property"><code>property</code></small>
-      <small class="doc doc-property doc-property-writable"><code>writable</code></small>
-  </span>
-
-<a href="#ibis.backends.base.sql.BaseSQLBackend.db_identity" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Return the identity of the database.</p>
-<p>Multiple connections to the same
-database will return the same value for <code>db_identity</code>.</p>
-<p>The default implementation assumes connection parameters uniquely
-specify the database.</p>
-
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>str</code></td>
-      <td><p>Database identity</p></td>
-    </tr>
-  </tbody>
-</table>    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-attribute">
-
-
-
-<h4 id="ibis.backends.base.sql.BaseSQLBackend.version" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">version</span><span class="p">:</span> <span class="nb">str</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-      <small class="doc doc-property doc-property-property"><code>property</code></small>
-      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
-  </span>
-
-<a href="#ibis.backends.base.sql.BaseSQLBackend.version" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Return the version of the backend engine.</p>
-<p>For database servers, return the server version.</p>
-<p>For others such as SQLite and pandas return the version of the
-underlying library or application.</p>
-
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>str</code></td>
-      <td><p>The backend version</p></td>
-    </tr>
-  </tbody>
-</table>    </div>
-
-  </div>
-
 
 
 
 <h3 id="ibis.backends.base.sql.BaseSQLBackend-methods">Methods<a href="#ibis.backends.base.sql.BaseSQLBackend-methods" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.backends.base.sql.BaseSQLBackend.add_operation" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">add_operation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">operation</span><span class="p">)</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-  </span>
-
-<a href="#ibis.backends.base.sql.BaseSQLBackend.add_operation" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Add a translation function to the backend for a specific operation.</p>
-<p>Operations are defined in <code>ibis.expr.operations</code>, and a translation
-function receives the translator object and an expression as
-parameters, and returns a value depending on the backend. For example,
-in SQL backends, a NullLiteral operation could be translated to the
-string <code>"NULL"</code>.</p>
-
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nd">@ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">add_operation</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">expr</span><span class="o">.</span><span class="n">operations</span><span class="o">.</span><span class="n">NullLiteral</span><span class="p">)</span>
-<span class="o">...</span> <span class="k">def</span> <span class="nf">_null_literal</span><span class="p">(</span><span class="n">translator</span><span class="p">,</span> <span class="n">expression</span><span class="p">):</span>
-<span class="o">...</span>     <span class="k">return</span> <span class="s1">&#39;NULL&#39;</span>
-</code></pre></div>
-
-    </div>
-
-  </div>
-
-
 
   <div class="doc doc-object doc-method">
 
@@ -2229,462 +2099,21 @@ string <code>"NULL"</code>.</p>
     <div class="doc doc-contents ">
 
       <p>Compille an Ibis expression.</p>
+<h6 id="ibis.backends.base.sql.BaseSQLBackend.compile--parameters">Parameters<a class="headerlink" href="#ibis.backends.base.sql.BaseSQLBackend.compile--parameters" title="Anchor link to this section for reference">&para;</a></h6>
+<p>expr
+    Ibis expression
+limit
+    For expressions yielding result sets; retrieve at most this number
+    of values/rows. Overrides any limit already set on the expression.
+params
+    Named unbound parameters
+timecontext
+    Additional information about data source time boundaries</p>
+<h6 id="ibis.backends.base.sql.BaseSQLBackend.compile--returns">Returns<a class="headerlink" href="#ibis.backends.base.sql.BaseSQLBackend.compile--returns" title="Anchor link to this section for reference">&para;</a></h6>
+<p>Any
+    The output of compilation. The type of this value depends on the
+    backend.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>expr</code></td>
-        <td><code>ir.Expr</code></td>
-        <td><p>Ibis expression</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
-        <td><code>limit</code></td>
-        <td><code>str | None</code></td>
-        <td><p>For expressions yielding result sets; retrieve at most this number
-of values/rows. Overrides any limit already set on the expression.</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>params</code></td>
-        <td><code>Mapping[ir.Expr, Any] | None</code></td>
-        <td><p>Named unbound parameters</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>timecontext</code></td>
-        <td><code>TimeContext | None</code></td>
-        <td><p>Additional information about data source time boundaries</p></td>
-        <td><code>None</code></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>Any</code></td>
-      <td><p>The output of compilation. The type of this value depends on the
-backend.</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.backends.base.sql.BaseSQLBackend.connect" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-  </span>
-
-<a href="#ibis.backends.base.sql.BaseSQLBackend.connect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Connect to the database.</p>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>args</code></td>
-        <td><code>None</code></td>
-        <td><p>Connection parameters</p></td>
-        <td><code>()</code></td>
-      </tr>
-      <tr>
-        <td><code>kwargs</code></td>
-        <td><code>None</code></td>
-        <td><p>Additional connection parameters</p></td>
-        <td><code>{}</code></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>BaseBackend</code></td>
-      <td><p>An instance of the backend</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.backends.base.sql.BaseSQLBackend.create_database" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_database</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-  </span>
-
-<a href="#ibis.backends.base.sql.BaseSQLBackend.create_database" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Create a new database.</p>
-<p>Not all backends implement this method.</p>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>name</code></td>
-        <td><code>str</code></td>
-        <td><p>Name of the new database.</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
-        <td><code>force</code></td>
-        <td><code>bool</code></td>
-        <td><p>If <code>False</code>, an exception is raised if the database already exists.</p></td>
-        <td><code>False</code></td>
-      </tr>
-  </tbody>
-</table>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.backends.base.sql.BaseSQLBackend.create_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-  </span>
-
-<a href="#ibis.backends.base.sql.BaseSQLBackend.create_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Create a new table.</p>
-<p>Not all backends implement this method.</p>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>name</code></td>
-        <td><code>str</code></td>
-        <td><p>Name of the new table.</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
-        <td><code>obj</code></td>
-        <td><code>pd.DataFrame | ir.Table | None</code></td>
-        <td><p>An Ibis table expression or pandas table that will be used to
-extract the schema and the data of the new table. If not provided,
-<code>schema</code> must be given.</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>schema</code></td>
-        <td><code>ibis.Schema | None</code></td>
-        <td><p>The schema for the new table. Only one of <code>schema</code> or <code>obj</code> can be
-provided.</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>database</code></td>
-        <td><code>str | None</code></td>
-        <td><p>Name of the database where the table will be created, if not the
-default.</p></td>
-        <td><code>None</code></td>
-      </tr>
-  </tbody>
-</table>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.backends.base.sql.BaseSQLBackend.create_view" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">create_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-  </span>
-
-<a href="#ibis.backends.base.sql.BaseSQLBackend.create_view" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Create a view.</p>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>name</code></td>
-        <td><code>str</code></td>
-        <td><p>Name for the new view.</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
-        <td><code>expr</code></td>
-        <td><code>ir.Table</code></td>
-        <td><p>An Ibis table expression that will be used to extract the query
-of the view.</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
-        <td><code>database</code></td>
-        <td><code>str | None</code></td>
-        <td><p>Name of the database where the view will be created, if not the
-default.</p></td>
-        <td><code>None</code></td>
-      </tr>
-  </tbody>
-</table>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.backends.base.sql.BaseSQLBackend.database" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">database</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-  </span>
-
-<a href="#ibis.backends.base.sql.BaseSQLBackend.database" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Return a <code>Database</code> object for the <code>name</code> database.</p>
-<div class="admonition warning">
-<p class="admonition-title">DEPRECATED: <code>database</code> is deprecated; use equivalent methods in the backend</p>
-</div>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>name</code></td>
-        <td><code>str | None</code></td>
-        <td><p>Name of the database to return the object for.</p></td>
-        <td><code>None</code></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>Database</code></td>
-      <td><p>A database object for the specified database.</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.backends.base.sql.BaseSQLBackend.drop_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">drop_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-  </span>
-
-<a href="#ibis.backends.base.sql.BaseSQLBackend.drop_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Drop a table.</p>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>name</code></td>
-        <td><code>str</code></td>
-        <td><p>Name of the table to drop.</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
-        <td><code>database</code></td>
-        <td><code>str | None</code></td>
-        <td><p>Name of the database where the table exists, if not the default.</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>force</code></td>
-        <td><code>bool</code></td>
-        <td><p>If <code>False</code>, an exception is raised if the table does not exist.</p></td>
-        <td><code>False</code></td>
-      </tr>
-  </tbody>
-</table>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.backends.base.sql.BaseSQLBackend.drop_view" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">drop_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-  </span>
-
-<a href="#ibis.backends.base.sql.BaseSQLBackend.drop_view" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Drop a view.</p>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>name</code></td>
-        <td><code>str</code></td>
-        <td><p>Name of the view to drop.</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
-        <td><code>database</code></td>
-        <td><code>str | None</code></td>
-        <td><p>Name of the database where the view exists, if not the default.</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>force</code></td>
-        <td><code>bool</code></td>
-        <td><p>If <code>False</code>, an exception is raised if the view does not exist.</p></td>
-        <td><code>False</code></td>
-      </tr>
-  </tbody>
-</table>
     </div>
 
   </div>
@@ -2706,192 +2135,24 @@ default.</p></td>
       <p>Compile and execute an Ibis expression.</p>
 <p>Compile and execute Ibis expression using this backend client
 interface, returning results in-memory in the appropriate object type</p>
+<h6 id="ibis.backends.base.sql.BaseSQLBackend.execute--parameters">Parameters<a class="headerlink" href="#ibis.backends.base.sql.BaseSQLBackend.execute--parameters" title="Anchor link to this section for reference">&para;</a></h6>
+<p>expr
+    Ibis expression
+limit
+    For expressions yielding result sets; retrieve at most this number
+    of values/rows. Overrides any limit already set on the expression.
+params
+    Named unbound parameters
+kwargs
+    Backend specific arguments. For example, the clickhouse backend
+    uses this to receive <code>external_tables</code> as a dictionary of pandas
+    DataFrames.</p>
+<h6 id="ibis.backends.base.sql.BaseSQLBackend.execute--returns">Returns<a class="headerlink" href="#ibis.backends.base.sql.BaseSQLBackend.execute--returns" title="Anchor link to this section for reference">&para;</a></h6>
+<p>DataFrame | Series | Scalar
+    * <code>Table</code>: pandas.DataFrame
+    * <code>Column</code>: pandas.Series
+    * <code>Scalar</code>: Python scalar value</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>expr</code></td>
-        <td><code>ir.Expr</code></td>
-        <td><p>Ibis expression</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
-        <td><code>limit</code></td>
-        <td><code>str</code></td>
-        <td><p>For expressions yielding result sets; retrieve at most this number
-of values/rows. Overrides any limit already set on the expression.</p></td>
-        <td><code>&#39;default&#39;</code></td>
-      </tr>
-      <tr>
-        <td><code>params</code></td>
-        <td><code>Mapping[ir.Scalar, Any] | None</code></td>
-        <td><p>Named unbound parameters</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>kwargs</code></td>
-        <td><code>Any</code></td>
-        <td><p>Backend specific arguments. For example, the clickhouse backend
-uses this to receive <code>external_tables</code> as a dictionary of pandas
-DataFrames.</p></td>
-        <td><code>{}</code></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>DataFrame | Series | Scalar</code></td>
-      <td><ul>
-<li><code>Table</code>: pandas.DataFrame</li>
-<li><code>Column</code>: pandas.Series</li>
-<li><code>Scalar</code>: Python scalar value</li>
-</ul></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.backends.base.sql.BaseSQLBackend.exists_database" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">exists_database</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-  </span>
-
-<a href="#ibis.backends.base.sql.BaseSQLBackend.exists_database" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Return whether a database name exists in the current connection.</p>
-<div class="admonition warning">
-<p class="admonition-title">DEPRECATED: <code>exists_database</code> is deprecated as of v2.0; use <code>name in client.list_databases()</code></p>
-</div>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>name</code></td>
-        <td><code>str</code></td>
-        <td><p>Database to check for existence</p></td>
-        <td><em>required</em></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>bool</code></td>
-      <td><p>Whether <code>name</code> exists</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.backends.base.sql.BaseSQLBackend.exists_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">exists_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-  </span>
-
-<a href="#ibis.backends.base.sql.BaseSQLBackend.exists_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Return whether a table name exists in the database.</p>
-<div class="admonition warning">
-<p class="admonition-title">DEPRECATED: <code>exists_table</code> is deprecated as of v2.0; use <code>name in client.list_tables()</code></p>
-</div>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>name</code></td>
-        <td><code>str</code></td>
-        <td><p>Table name</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
-        <td><code>database</code></td>
-        <td><code>str | None</code></td>
-        <td><p>Database to check if given</p></td>
-        <td><code>None</code></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>bool</code></td>
-      <td><p>Whether <code>name</code> is a table</p></td>
-    </tr>
-  </tbody>
-</table>
     </div>
 
   </div>
@@ -2913,22 +2174,10 @@ DataFrames.</p></td>
       <p>Explain an expression.</p>
 <p>Return the query plan associated with the indicated expression or SQL
 query.</p>
+<h6 id="ibis.backends.base.sql.BaseSQLBackend.explain--returns">Returns<a class="headerlink" href="#ibis.backends.base.sql.BaseSQLBackend.explain--returns" title="Anchor link to this section for reference">&para;</a></h6>
+<p>str
+    Query plan</p>
 
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>str</code></td>
-      <td><p>Query plan</p></td>
-    </tr>
-  </tbody>
-</table>
     </div>
 
   </div>
@@ -2951,174 +2200,26 @@ query.</p>
     <div class="doc doc-contents ">
 
       <p>Return whether the backend implements support for <code>operation</code>.</p>
+<h6 id="ibis.backends.base.sql.BaseSQLBackend.has_operation--parameters">Parameters<a class="headerlink" href="#ibis.backends.base.sql.BaseSQLBackend.has_operation--parameters" title="Anchor link to this section for reference">&para;</a></h6>
+<p>operation
+    A class corresponding to an operation.</p>
+<h6 id="ibis.backends.base.sql.BaseSQLBackend.has_operation--returns">Returns<a class="headerlink" href="#ibis.backends.base.sql.BaseSQLBackend.has_operation--returns" title="Anchor link to this section for reference">&para;</a></h6>
+<p>bool
+    Whether the backend implements the operation.</p>
+<h6 id="ibis.backends.base.sql.BaseSQLBackend.has_operation--examples">Examples<a class="headerlink" href="#ibis.backends.base.sql.BaseSQLBackend.has_operation--examples" title="Anchor link to this section for reference">&para;</a></h6>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import ibis
+import ibis.expr.operations as ops
+ibis.sqlite.has_operation(ops.ArrayIndex)
+False
+ibis.postgres.has_operation(ops.ArrayIndex)
+True</p>
+</blockquote>
+</blockquote>
+</blockquote>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>operation</code></td>
-        <td><code>type[ops.Value]</code></td>
-        <td><p>A class corresponding to an operation.</p></td>
-        <td><em>required</em></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis.expr.operations</span> <span class="k">as</span> <span class="nn">ops</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">has_operation</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">ArrayIndex</span><span class="p">)</span>
-<span class="kc">False</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">postgres</span><span class="o">.</span><span class="n">has_operation</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">ArrayIndex</span><span class="p">)</span>
-<span class="kc">True</span>
-</code></pre></div>
-
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>bool</code></td>
-      <td><p>Whether the backend implements the operation.</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.backends.base.sql.BaseSQLBackend.list_databases" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">list_databases</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">like</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-  </span>
-
-<a href="#ibis.backends.base.sql.BaseSQLBackend.list_databases" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>List existing databases in the current connection.</p>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>like</code></td>
-        <td><code>str</code></td>
-        <td><p>A pattern in Python's regex format to filter returned database
-names.</p></td>
-        <td><code>None</code></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>list[str]</code></td>
-      <td><p>The database names that exist in the current connection, that match
-the <code>like</code> pattern if provided.</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.backends.base.sql.BaseSQLBackend.list_tables" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">list_tables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">like</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-  </span>
-
-<a href="#ibis.backends.base.sql.BaseSQLBackend.list_tables" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Return the list of table names in the current database.</p>
-<p>For some backends, the tables may be files in a directory,
-or other equivalent entities in a SQL database.</p>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>like</code></td>
-        <td><code>str | None</code></td>
-        <td><p>A pattern in Python's regex format.</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>database</code></td>
-        <td><code>str | None</code></td>
-        <td><p>The database to list tables of, if not the current one.</p></td>
-        <td><code>None</code></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>list[str]</code></td>
-      <td><p>The list of the table names that match the pattern <code>like</code>.</p></td>
-    </tr>
-  </tbody>
-</table>
     </div>
 
   </div>
@@ -3140,41 +2241,13 @@ or other equivalent entities in a SQL database.</p>
       <p>Execute a query string.</p>
 <p>Could have unexpected results if the query modifies the behavior of
 the session in a way unknown to Ibis; be careful.</p>
+<h6 id="ibis.backends.base.sql.BaseSQLBackend.raw_sql--parameters">Parameters<a class="headerlink" href="#ibis.backends.base.sql.BaseSQLBackend.raw_sql--parameters" title="Anchor link to this section for reference">&para;</a></h6>
+<p>query
+    DML or DDL statement</p>
+<h6 id="ibis.backends.base.sql.BaseSQLBackend.raw_sql--returns">Returns<a class="headerlink" href="#ibis.backends.base.sql.BaseSQLBackend.raw_sql--returns" title="Anchor link to this section for reference">&para;</a></h6>
+<p>Any
+    Backend cursor</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>query</code></td>
-        <td><code>str</code></td>
-        <td><p>DML or DDL statement</p></td>
-        <td><em>required</em></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>Any</code></td>
-      <td><p>Backend cursor</p></td>
-    </tr>
-  </tbody>
-</table>
     </div>
 
   </div>
@@ -3194,41 +2267,13 @@ the session in a way unknown to Ibis; be careful.</p>
     <div class="doc doc-contents ">
 
       <p>Convert a SQL query to an Ibis table expression.</p>
+<h6 id="ibis.backends.base.sql.BaseSQLBackend.sql--parameters">Parameters<a class="headerlink" href="#ibis.backends.base.sql.BaseSQLBackend.sql--parameters" title="Anchor link to this section for reference">&para;</a></h6>
+<p>query
+    SQL string</p>
+<h6 id="ibis.backends.base.sql.BaseSQLBackend.sql--returns">Returns<a class="headerlink" href="#ibis.backends.base.sql.BaseSQLBackend.sql--returns" title="Anchor link to this section for reference">&para;</a></h6>
+<p>Table
+    Table expression</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>query</code></td>
-        <td><code>str</code></td>
-        <td><p>SQL string</p></td>
-        <td><em>required</em></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.Table</code></td>
-      <td><p>Table expression</p></td>
-    </tr>
-  </tbody>
-</table>
     </div>
 
   </div>
@@ -3248,72 +2293,14 @@ the session in a way unknown to Ibis; be careful.</p>
     <div class="doc doc-contents ">
 
       <p>Construct a table expression.</p>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>name</code></td>
-        <td><code>str</code></td>
-        <td><p>Table name</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
-        <td><code>database</code></td>
-        <td><code>str | None</code></td>
-        <td><p>Database name</p></td>
-        <td><code>None</code></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.Table</code></td>
-      <td><p>Table expression</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.backends.base.sql.BaseSQLBackend.verify" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">verify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-  </span>
-
-<a href="#ibis.backends.base.sql.BaseSQLBackend.verify" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Verify <code>expr</code> is an expression that can be compiled.</p>
-<div class="admonition warning">
-<p class="admonition-title">DEPRECATED: <code>verify</code> is deprecated as of v2.0; <code>compile</code> and capture <code>TranslationError</code> instead</p>
-</div>
+<h6 id="ibis.backends.base.sql.BaseSQLBackend.table--parameters">Parameters<a class="headerlink" href="#ibis.backends.base.sql.BaseSQLBackend.table--parameters" title="Anchor link to this section for reference">&para;</a></h6>
+<p>name
+    Table name
+database
+    Database name</p>
+<h6 id="ibis.backends.base.sql.BaseSQLBackend.table--returns">Returns<a class="headerlink" href="#ibis.backends.base.sql.BaseSQLBackend.table--returns" title="Anchor link to this section for reference">&para;</a></h6>
+<p>Table
+    Table expression</p>
 
     </div>
 
@@ -3345,6 +2332,9 @@ the session in a way unknown to Ibis; be careful.</p>
               
 
             </article>
+            
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
           </div>
         </div>
         
@@ -3352,7 +2342,8 @@ the session in a way unknown to Ibis; be careful.</p>
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
         <a href="../pandas/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Pandas-like Backend Base Classes" rel="prev">
@@ -3433,10 +2424,10 @@ the session in a way unknown to Ibis; be careful.</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
         <script src="../../../javascripts/mathjax.js"></script>
       
