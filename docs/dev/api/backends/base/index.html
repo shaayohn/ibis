@@ -1782,60 +1782,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.exists_database" class="md-nav__link">
-    exists_database()
-  </a>
-  
-    <nav class="md-nav" aria-label="exists_database()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.exists_database--parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.exists_database--returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.exists_table" class="md-nav__link">
-    exists_table()
-  </a>
-  
-    <nav class="md-nav" aria-label="exists_table()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.exists_table--parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.exists_table--returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.backends.base.BaseBackend.has_operation" class="md-nav__link">
     has_operation()
   </a>
@@ -1926,20 +1872,6 @@
           <li class="md-nav__item">
   <a href="#ibis.backends.base.BaseBackend.register_options" class="md-nav__link">
     register_options()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.table" class="md-nav__link">
-    table()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.verify" class="md-nav__link">
-    verify()
   </a>
   
 </li>
@@ -2343,60 +2275,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.exists_database" class="md-nav__link">
-    exists_database()
-  </a>
-  
-    <nav class="md-nav" aria-label="exists_database()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.exists_database--parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.exists_database--returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.exists_table" class="md-nav__link">
-    exists_table()
-  </a>
-  
-    <nav class="md-nav" aria-label="exists_table()">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.exists_table--parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.exists_table--returns" class="md-nav__link">
-    Returns
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.backends.base.BaseBackend.has_operation" class="md-nav__link">
     has_operation()
   </a>
@@ -2487,20 +2365,6 @@
           <li class="md-nav__item">
   <a href="#ibis.backends.base.BaseBackend.register_options" class="md-nav__link">
     register_options()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.table" class="md-nav__link">
-    table()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.base.BaseBackend.verify" class="md-nav__link">
-    verify()
   </a>
   
 </li>
@@ -2942,66 +2806,6 @@ force
 
 
 
-<h4 id="ibis.backends.base.BaseBackend.exists_database" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">exists_database</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></code>
-
-
-<a href="#ibis.backends.base.BaseBackend.exists_database" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Return whether a database name exists in the current connection.</p>
-<div class="admonition warning">
-<p class="admonition-title">DEPRECATED: <code>exists_database</code> is deprecated as of v2.0; use <code>name in client.list_databases()</code></p>
-</div>
-<h6 id="ibis.backends.base.BaseBackend.exists_database--parameters">Parameters<a class="headerlink" href="#ibis.backends.base.BaseBackend.exists_database--parameters" title="Anchor link to this section for reference">&para;</a></h6>
-<p>name
-    Database to check for existence</p>
-<h6 id="ibis.backends.base.BaseBackend.exists_database--returns">Returns<a class="headerlink" href="#ibis.backends.base.BaseBackend.exists_database--returns" title="Anchor link to this section for reference">&para;</a></h6>
-<p>bool
-    Whether <code>name</code> exists</p>
-
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.backends.base.BaseBackend.exists_table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">exists_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-
-<a href="#ibis.backends.base.BaseBackend.exists_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Return whether a table name exists in the database.</p>
-<div class="admonition warning">
-<p class="admonition-title">DEPRECATED: <code>exists_table</code> is deprecated as of v2.0; use <code>name in client.list_tables()</code></p>
-</div>
-<h6 id="ibis.backends.base.BaseBackend.exists_table--parameters">Parameters<a class="headerlink" href="#ibis.backends.base.BaseBackend.exists_table--parameters" title="Anchor link to this section for reference">&para;</a></h6>
-<p>name
-    Table name
-database
-    Database to check if given</p>
-<h6 id="ibis.backends.base.BaseBackend.exists_table--returns">Returns<a class="headerlink" href="#ibis.backends.base.BaseBackend.exists_table--returns" title="Anchor link to this section for reference">&para;</a></h6>
-<p>bool
-    Whether <code>name</code> is a table</p>
-
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
 <h4 id="ibis.backends.base.BaseBackend.has_operation" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">has_operation</span><span class="p">(</span><span class="n">operation</span><span class="p">)</span></code>
 
@@ -3114,52 +2918,6 @@ database : str, optional
     <div class="doc doc-contents ">
 
       <p>Register custom backend options.</p>
-
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.backends.base.BaseBackend.table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-
-<a href="#ibis.backends.base.BaseBackend.table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Return a table expression from the database.</p>
-<div class="admonition warning">
-<p class="admonition-title">DEPRECATED: <code>table</code> is deprecated as of v2.0; change the current database before calling <code>.table()</code></p>
-</div>
-
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.backends.base.BaseBackend.verify" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">verify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-
-<a href="#ibis.backends.base.BaseBackend.verify" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Verify <code>expr</code> is an expression that can be compiled.</p>
-<div class="admonition warning">
-<p class="admonition-title">DEPRECATED: <code>verify</code> is deprecated as of v2.0; <code>compile</code> and capture <code>TranslationError</code> instead</p>
-</div>
 
     </div>
 
