@@ -5423,7 +5423,7 @@ CrossJoin[r4, r7]</p>
 
 
 <h6 id="ibis.expr.types.relations.Table.difference" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">difference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">difference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.Table.difference" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
@@ -5434,7 +5434,9 @@ CrossJoin[r4, r7]</p>
 <p>The input tables must have identical schemas.</p>
 <h6 id="ibis.expr.types.relations.Table.difference--parameters">Parameters<a class="headerlink" href="#ibis.expr.types.relations.Table.difference--parameters" title="Anchor link to this section for reference">&para;</a></h6>
 <p>right
-    Table expression</p>
+    Table expression
+distinct
+    Only diff distinct rows not occurring in the calling table</p>
 <h6 id="ibis.expr.types.relations.Table.difference--returns">Returns<a class="headerlink" href="#ibis.expr.types.relations.Table.difference--returns" title="Anchor link to this section for reference">&para;</a></h6>
 <p>Table
     The rows present in <code>left</code> that are not present in <code>right</code>.</p>
@@ -5813,7 +5815,7 @@ result = t.group_by([b1, b2]).aggregate(sum_of_c=t.c.sum())</p>
 
 
 <h6 id="ibis.expr.types.relations.Table.intersect" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.Table.intersect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
@@ -5824,7 +5826,9 @@ result = t.group_by([b1, b2]).aggregate(sum_of_c=t.c.sum())</p>
 <p>The input tables must have identical schemas.</p>
 <h6 id="ibis.expr.types.relations.Table.intersect--parameters">Parameters<a class="headerlink" href="#ibis.expr.types.relations.Table.intersect--parameters" title="Anchor link to this section for reference">&para;</a></h6>
 <p>right
-    Table expression</p>
+    Table expression
+distinct
+    Only intersect distinct rows not occurring in the calling table</p>
 <h6 id="ibis.expr.types.relations.Table.intersect--returns">Returns<a class="headerlink" href="#ibis.expr.types.relations.Table.intersect--returns" title="Anchor link to this section for reference">&para;</a></h6>
 <p>Table
     The rows common amongst <code>left</code> and <code>right</code>.</p>
@@ -6440,8 +6444,7 @@ SQLStringView[r0]: _ibis_view_1
 <p>right
     Table expression
 distinct
-    Only union distinct rows not occurring in the calling table (this
-    can be very expensive, be careful)</p>
+    Only union distinct rows not occurring in the calling table</p>
 <h6 id="ibis.expr.types.relations.Table.union--returns">Returns<a class="headerlink" href="#ibis.expr.types.relations.Table.union--returns" title="Anchor link to this section for reference">&para;</a></h6>
 <p>Table
     Union of table and <code>right</code></p>
@@ -6739,7 +6742,7 @@ CrossJoin[r4, r7]</p>
 
 
 <h6 id="ibis.expr.types.relations.TableExpr.difference" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">difference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">difference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.TableExpr.difference" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
@@ -6750,7 +6753,9 @@ CrossJoin[r4, r7]</p>
 <p>The input tables must have identical schemas.</p>
 <h6 id="ibis.expr.types.relations.TableExpr.difference--parameters">Parameters<a class="headerlink" href="#ibis.expr.types.relations.TableExpr.difference--parameters" title="Anchor link to this section for reference">&para;</a></h6>
 <p>right
-    Table expression</p>
+    Table expression
+distinct
+    Only diff distinct rows not occurring in the calling table</p>
 <h6 id="ibis.expr.types.relations.TableExpr.difference--returns">Returns<a class="headerlink" href="#ibis.expr.types.relations.TableExpr.difference--returns" title="Anchor link to this section for reference">&para;</a></h6>
 <p>Table
     The rows present in <code>left</code> that are not present in <code>right</code>.</p>
@@ -7129,7 +7134,7 @@ result = t.group_by([b1, b2]).aggregate(sum_of_c=t.c.sum())</p>
 
 
 <h6 id="ibis.expr.types.relations.TableExpr.intersect" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.TableExpr.intersect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
@@ -7140,7 +7145,9 @@ result = t.group_by([b1, b2]).aggregate(sum_of_c=t.c.sum())</p>
 <p>The input tables must have identical schemas.</p>
 <h6 id="ibis.expr.types.relations.TableExpr.intersect--parameters">Parameters<a class="headerlink" href="#ibis.expr.types.relations.TableExpr.intersect--parameters" title="Anchor link to this section for reference">&para;</a></h6>
 <p>right
-    Table expression</p>
+    Table expression
+distinct
+    Only intersect distinct rows not occurring in the calling table</p>
 <h6 id="ibis.expr.types.relations.TableExpr.intersect--returns">Returns<a class="headerlink" href="#ibis.expr.types.relations.TableExpr.intersect--returns" title="Anchor link to this section for reference">&para;</a></h6>
 <p>Table
     The rows common amongst <code>left</code> and <code>right</code>.</p>
@@ -7756,8 +7763,7 @@ SQLStringView[r0]: _ibis_view_1
 <p>right
     Table expression
 distinct
-    Only union distinct rows not occurring in the calling table (this
-    can be very expensive, be careful)</p>
+    Only union distinct rows not occurring in the calling table</p>
 <h6 id="ibis.expr.types.relations.TableExpr.union--returns">Returns<a class="headerlink" href="#ibis.expr.types.relations.TableExpr.union--returns" title="Anchor link to this section for reference">&para;</a></h6>
 <p>Table
     Union of table and <code>right</code></p>
