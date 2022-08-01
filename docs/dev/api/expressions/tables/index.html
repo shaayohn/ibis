@@ -6024,7 +6024,7 @@ True</p>
 
 
 <h6 id="ibis.expr.types.relations.Table.projection" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">projection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exprs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">projection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">exprs</span><span class="p">,</span> <span class="o">**</span><span class="n">named_exprs</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.Table.projection" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
@@ -6036,6 +6036,9 @@ True</p>
 aggregate's value over the number of rows in the table and
 automatically constructs a window function expression. See the examples
 section for more details.</p>
+<p>For backwards compatibility the keyword argument <code>exprs</code> is reserved
+and cannot be used to name an expression. This behavior will be removed
+in v4.</p>
 <h6 id="ibis.expr.types.relations.Table.projection--parameters">Parameters<a class="headerlink" href="#ibis.expr.types.relations.Table.projection--parameters" title="Anchor link to this section for reference">&para;</a></h6>
 <p>exprs
     Column expression, string, or list of column expressions and
@@ -6049,9 +6052,8 @@ section for more details.</p>
 <blockquote>
 <blockquote>
 <p>import ibis
-fields = [('a', 'int64'), ('b', 'double')]
-t = ibis.table(fields, name='t')
-proj = t.projection([t.a, (t.b + 1).name('b_plus_1')])
+t = ibis.table(dict(a="int64", b="double"), name='t')
+proj = t.select(t.a, b_plus_1=t.b + 1)
 proj
 r0 := UnboundTable[t]
   a int64
@@ -6060,7 +6062,7 @@ Selection[r0]
   selections:
     a:        r0.a
     b_plus_1: r0.b + 1
-proj2 = t[t.a, (t.b + 1).name('b_plus_1')]
+proj2 = t.select("a", b_plus_1=t.b + 1)
 proj.equals(proj2)
 True</p>
 </blockquote>
@@ -6070,7 +6072,7 @@ True</p>
 <blockquote>
 <blockquote>
 <blockquote>
-<p>agg_proj = t[t.a.sum().name('sum_a'), t.b.mean().name('mean_b')]
+<p>agg_proj = t.select(sum_a=t.a.sum(), mean_b=t.b.mean())
 agg_proj
 r0 := UnboundTable[t]
   a int64
@@ -6090,7 +6092,7 @@ column/scalar-aggregate operations like</p>
 <blockquote>
 <blockquote>
 <blockquote>
-<p>t[(t.a - t.a.mean()).name('demeaned_a')]
+<p>t.select(demeaned_a=t.a - t.a.mean())
 r0 := UnboundTable[t]
   a int64
   b float64
@@ -6203,7 +6205,7 @@ backends where it represents the physical location
 
 
 <h6 id="ibis.expr.types.relations.Table.select" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exprs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">exprs</span><span class="p">,</span> <span class="o">**</span><span class="n">named_exprs</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.Table.select" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
@@ -6215,6 +6217,9 @@ backends where it represents the physical location
 aggregate's value over the number of rows in the table and
 automatically constructs a window function expression. See the examples
 section for more details.</p>
+<p>For backwards compatibility the keyword argument <code>exprs</code> is reserved
+and cannot be used to name an expression. This behavior will be removed
+in v4.</p>
 <h6 id="ibis.expr.types.relations.Table.select--parameters">Parameters<a class="headerlink" href="#ibis.expr.types.relations.Table.select--parameters" title="Anchor link to this section for reference">&para;</a></h6>
 <p>exprs
     Column expression, string, or list of column expressions and
@@ -6228,9 +6233,8 @@ section for more details.</p>
 <blockquote>
 <blockquote>
 <p>import ibis
-fields = [('a', 'int64'), ('b', 'double')]
-t = ibis.table(fields, name='t')
-proj = t.projection([t.a, (t.b + 1).name('b_plus_1')])
+t = ibis.table(dict(a="int64", b="double"), name='t')
+proj = t.select(t.a, b_plus_1=t.b + 1)
 proj
 r0 := UnboundTable[t]
   a int64
@@ -6239,7 +6243,7 @@ Selection[r0]
   selections:
     a:        r0.a
     b_plus_1: r0.b + 1
-proj2 = t[t.a, (t.b + 1).name('b_plus_1')]
+proj2 = t.select("a", b_plus_1=t.b + 1)
 proj.equals(proj2)
 True</p>
 </blockquote>
@@ -6249,7 +6253,7 @@ True</p>
 <blockquote>
 <blockquote>
 <blockquote>
-<p>agg_proj = t[t.a.sum().name('sum_a'), t.b.mean().name('mean_b')]
+<p>agg_proj = t.select(sum_a=t.a.sum(), mean_b=t.b.mean())
 agg_proj
 r0 := UnboundTable[t]
   a int64
@@ -6269,7 +6273,7 @@ column/scalar-aggregate operations like</p>
 <blockquote>
 <blockquote>
 <blockquote>
-<p>t[(t.a - t.a.mean()).name('demeaned_a')]
+<p>t.select(demeaned_a=t.a - t.a.mean())
 r0 := UnboundTable[t]
   a int64
   b float64
@@ -7343,7 +7347,7 @@ True</p>
 
 
 <h6 id="ibis.expr.types.relations.TableExpr.projection" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">projection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exprs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">projection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">exprs</span><span class="p">,</span> <span class="o">**</span><span class="n">named_exprs</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.TableExpr.projection" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
@@ -7355,6 +7359,9 @@ True</p>
 aggregate's value over the number of rows in the table and
 automatically constructs a window function expression. See the examples
 section for more details.</p>
+<p>For backwards compatibility the keyword argument <code>exprs</code> is reserved
+and cannot be used to name an expression. This behavior will be removed
+in v4.</p>
 <h6 id="ibis.expr.types.relations.TableExpr.projection--parameters">Parameters<a class="headerlink" href="#ibis.expr.types.relations.TableExpr.projection--parameters" title="Anchor link to this section for reference">&para;</a></h6>
 <p>exprs
     Column expression, string, or list of column expressions and
@@ -7368,9 +7375,8 @@ section for more details.</p>
 <blockquote>
 <blockquote>
 <p>import ibis
-fields = [('a', 'int64'), ('b', 'double')]
-t = ibis.table(fields, name='t')
-proj = t.projection([t.a, (t.b + 1).name('b_plus_1')])
+t = ibis.table(dict(a="int64", b="double"), name='t')
+proj = t.select(t.a, b_plus_1=t.b + 1)
 proj
 r0 := UnboundTable[t]
   a int64
@@ -7379,7 +7385,7 @@ Selection[r0]
   selections:
     a:        r0.a
     b_plus_1: r0.b + 1
-proj2 = t[t.a, (t.b + 1).name('b_plus_1')]
+proj2 = t.select("a", b_plus_1=t.b + 1)
 proj.equals(proj2)
 True</p>
 </blockquote>
@@ -7389,7 +7395,7 @@ True</p>
 <blockquote>
 <blockquote>
 <blockquote>
-<p>agg_proj = t[t.a.sum().name('sum_a'), t.b.mean().name('mean_b')]
+<p>agg_proj = t.select(sum_a=t.a.sum(), mean_b=t.b.mean())
 agg_proj
 r0 := UnboundTable[t]
   a int64
@@ -7409,7 +7415,7 @@ column/scalar-aggregate operations like</p>
 <blockquote>
 <blockquote>
 <blockquote>
-<p>t[(t.a - t.a.mean()).name('demeaned_a')]
+<p>t.select(demeaned_a=t.a - t.a.mean())
 r0 := UnboundTable[t]
   a int64
   b float64
@@ -7522,7 +7528,7 @@ backends where it represents the physical location
 
 
 <h6 id="ibis.expr.types.relations.TableExpr.select" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exprs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">select</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">exprs</span><span class="p">,</span> <span class="o">**</span><span class="n">named_exprs</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.TableExpr.select" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
@@ -7534,6 +7540,9 @@ backends where it represents the physical location
 aggregate's value over the number of rows in the table and
 automatically constructs a window function expression. See the examples
 section for more details.</p>
+<p>For backwards compatibility the keyword argument <code>exprs</code> is reserved
+and cannot be used to name an expression. This behavior will be removed
+in v4.</p>
 <h6 id="ibis.expr.types.relations.TableExpr.select--parameters">Parameters<a class="headerlink" href="#ibis.expr.types.relations.TableExpr.select--parameters" title="Anchor link to this section for reference">&para;</a></h6>
 <p>exprs
     Column expression, string, or list of column expressions and
@@ -7547,9 +7556,8 @@ section for more details.</p>
 <blockquote>
 <blockquote>
 <p>import ibis
-fields = [('a', 'int64'), ('b', 'double')]
-t = ibis.table(fields, name='t')
-proj = t.projection([t.a, (t.b + 1).name('b_plus_1')])
+t = ibis.table(dict(a="int64", b="double"), name='t')
+proj = t.select(t.a, b_plus_1=t.b + 1)
 proj
 r0 := UnboundTable[t]
   a int64
@@ -7558,7 +7566,7 @@ Selection[r0]
   selections:
     a:        r0.a
     b_plus_1: r0.b + 1
-proj2 = t[t.a, (t.b + 1).name('b_plus_1')]
+proj2 = t.select("a", b_plus_1=t.b + 1)
 proj.equals(proj2)
 True</p>
 </blockquote>
@@ -7568,7 +7576,7 @@ True</p>
 <blockquote>
 <blockquote>
 <blockquote>
-<p>agg_proj = t[t.a.sum().name('sum_a'), t.b.mean().name('mean_b')]
+<p>agg_proj = t.select(sum_a=t.a.sum(), mean_b=t.b.mean())
 agg_proj
 r0 := UnboundTable[t]
   a int64
@@ -7588,7 +7596,7 @@ column/scalar-aggregate operations like</p>
 <blockquote>
 <blockquote>
 <blockquote>
-<p>t[(t.a - t.a.mean()).name('demeaned_a')]
+<p>t.select(demeaned_a=t.a - t.a.mean())
 r0 := UnboundTable[t]
   a int64
   b float64
