@@ -2125,6 +2125,41 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.unpack" class="md-nav__link">
+    unpack()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.unpack--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.unpack--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.unpack--examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.unpack--see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.view" class="md-nav__link">
     view()
   </a>
@@ -2874,6 +2909,41 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.TableExpr.union--returns" class="md-nav__link">
     Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.TableExpr.unpack" class="md-nav__link">
+    unpack()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.TableExpr.unpack--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.TableExpr.unpack--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.TableExpr.unpack--examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.TableExpr.unpack--see-also" class="md-nav__link">
+    See Also
   </a>
   
 </li>
@@ -4144,6 +4214,41 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.unpack" class="md-nav__link">
+    unpack()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.unpack--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.unpack--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.unpack--examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.unpack--see-also" class="md-nav__link">
+    See Also
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.view" class="md-nav__link">
     view()
   </a>
@@ -4893,6 +4998,41 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.TableExpr.union--returns" class="md-nav__link">
     Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.TableExpr.unpack" class="md-nav__link">
+    unpack()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.TableExpr.unpack--parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.TableExpr.unpack--returns" class="md-nav__link">
+    Returns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.TableExpr.unpack--examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.TableExpr.unpack--see-also" class="md-nav__link">
+    See Also
   </a>
   
 </li>
@@ -6499,6 +6639,57 @@ distinct
 
 
 
+<h6 id="ibis.expr.types.relations.Table.unpack" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">unpack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">columns</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.relations.Table.unpack" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
+
+    <div class="doc doc-contents ">
+
+      <p>Project the struct fields of each of <code>columns</code> into <code>self</code>.</p>
+<p>Existing fields are retained in the projection.</p>
+<h6 id="ibis.expr.types.relations.Table.unpack--parameters">Parameters<a class="headerlink" href="#ibis.expr.types.relations.Table.unpack--parameters" title="Anchor link to this section for reference">&para;</a></h6>
+<p>columns
+    String column names to project into <code>self</code>.</p>
+<h6 id="ibis.expr.types.relations.Table.unpack--returns">Returns<a class="headerlink" href="#ibis.expr.types.relations.Table.unpack--returns" title="Anchor link to this section for reference">&para;</a></h6>
+<p>Table
+    The child table with struct fields of each of <code>columns</code> projected.</p>
+<h6 id="ibis.expr.types.relations.Table.unpack--examples">Examples<a class="headerlink" href="#ibis.expr.types.relations.Table.unpack--examples" title="Anchor link to this section for reference">&para;</a></h6>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>schema = dict(a="struct<b: float, c: string>", d="string")
+t = ibis.table(schema, name="t")
+t
+UnboundTable: t
+  a struct<b: float64, c: string>
+  d string
+t.unpack("a")
+r0 := UnboundTable: t
+  a struct<b: float64, c: string>
+  d string</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Selection[r0]
+  selections:
+    b: StructField(r0.a, field='b')
+    c: StructField(r0.a, field='c')
+    d: r0.d</p>
+<h6 id="ibis.expr.types.relations.Table.unpack--see-also">See Also<a class="headerlink" href="#ibis.expr.types.relations.Table.unpack--see-also" title="Anchor link to this section for reference">&para;</a></h6>
+<p>ibis.expr.types.structs.StructValue.lift</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
 <h6 id="ibis.expr.types.relations.Table.view" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">view</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
 
@@ -7811,6 +8002,57 @@ distinct
 <h6 id="ibis.expr.types.relations.TableExpr.union--returns">Returns<a class="headerlink" href="#ibis.expr.types.relations.TableExpr.union--returns" title="Anchor link to this section for reference">&para;</a></h6>
 <p>Table
     Union of table and <code>right</code></p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h6 id="ibis.expr.types.relations.TableExpr.unpack" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">unpack</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">columns</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.relations.TableExpr.unpack" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
+
+    <div class="doc doc-contents ">
+
+      <p>Project the struct fields of each of <code>columns</code> into <code>self</code>.</p>
+<p>Existing fields are retained in the projection.</p>
+<h6 id="ibis.expr.types.relations.TableExpr.unpack--parameters">Parameters<a class="headerlink" href="#ibis.expr.types.relations.TableExpr.unpack--parameters" title="Anchor link to this section for reference">&para;</a></h6>
+<p>columns
+    String column names to project into <code>self</code>.</p>
+<h6 id="ibis.expr.types.relations.TableExpr.unpack--returns">Returns<a class="headerlink" href="#ibis.expr.types.relations.TableExpr.unpack--returns" title="Anchor link to this section for reference">&para;</a></h6>
+<p>Table
+    The child table with struct fields of each of <code>columns</code> projected.</p>
+<h6 id="ibis.expr.types.relations.TableExpr.unpack--examples">Examples<a class="headerlink" href="#ibis.expr.types.relations.TableExpr.unpack--examples" title="Anchor link to this section for reference">&para;</a></h6>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>schema = dict(a="struct<b: float, c: string>", d="string")
+t = ibis.table(schema, name="t")
+t
+UnboundTable: t
+  a struct<b: float64, c: string>
+  d string
+t.unpack("a")
+r0 := UnboundTable: t
+  a struct<b: float64, c: string>
+  d string</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Selection[r0]
+  selections:
+    b: StructField(r0.a, field='b')
+    c: StructField(r0.a, field='c')
+    d: r0.d</p>
+<h6 id="ibis.expr.types.relations.TableExpr.unpack--see-also">See Also<a class="headerlink" href="#ibis.expr.types.relations.TableExpr.unpack--see-also" title="Anchor link to this section for reference">&para;</a></h6>
+<p>ibis.expr.types.structs.StructValue.lift</p>
 
     </div>
 
