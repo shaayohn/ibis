@@ -1491,6 +1491,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ibis.common.pretty.show_sql" class="md-nav__link">
+    show_sql()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ibis.expr.random.random" class="md-nav__link">
     random()
   </a>
@@ -1983,6 +1990,13 @@
         <li class="md-nav__item">
   <a href="#ibis.expr.api.param" class="md-nav__link">
     param()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ibis.common.pretty.show_sql" class="md-nav__link">
+    show_sql()
   </a>
   
 </li>
@@ -3177,6 +3191,75 @@ key/value pairs of fixed types)</p></td>
 
 
 
+<h2 id="ibis.common.pretty.show_sql" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">show_sql</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+<a href="#ibis.common.pretty.show_sql" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+      <p>Pretty-print the compiled SQL string of an expression.</p>
+<p>If a dialect cannot be inferred and one was not passed, duckdb
+will be used as the dialect</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>expr</code></td>
+        <td><code>ir.Expr</code></td>
+        <td><p>Ibis expression whose SQL will be printed</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>dialect</code></td>
+        <td><code>str | None</code></td>
+        <td><p>String dialect. This is typically not required, but can be useful if
+ibis cannot infer the backend dialect.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>file</code></td>
+        <td><code>IO[str] | None</code></td>
+        <td><p>File to write output to</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">show_sql</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>  <span class="c1"># duckdb dialect by default</span>
+<span class="n">SELECT</span>
+  <span class="n">t0</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="n">CAST</span><span class="p">(</span><span class="mi">2</span> <span class="n">AS</span> <span class="n">SMALLINT</span><span class="p">)</span> <span class="n">AS</span> <span class="n">c</span>
+<span class="n">FROM</span> <span class="n">t</span> <span class="n">AS</span> <span class="n">t0</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">show_sql</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="s2">&quot;mysql&quot;</span><span class="p">)</span>
+<span class="n">SELECT</span>
+  <span class="n">t0</span><span class="o">.</span><span class="n">a</span> <span class="o">*</span> <span class="mi">2</span> <span class="n">AS</span> <span class="n">c</span>
+<span class="n">FROM</span> <span class="n">t</span> <span class="n">AS</span> <span class="n">t0</span>
+</code></pre></div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
 <h2 id="ibis.expr.random.random" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">random</span><span class="p">()</span></code>
 
@@ -3884,7 +3967,7 @@ of fixed types)</p></td>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 5, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 10, 2022</span>
       
     
   </small>
