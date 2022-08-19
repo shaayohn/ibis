@@ -1816,8 +1816,16 @@ from <code>pyproject.toml</code></p>
 </div>
 <div class="tabbed-block">
 <p>Run the following command</p>
-<div class="highlight"><pre><span></span><code>python ./dev/poetry2setup.py -o setup.py
+<div class="highlight"><pre><span></span><code><span class="nv">PYTHONHASHSEED</span><span class="o">=</span><span class="m">0</span> python ./dev/poetry2setup.py -o setup.py
 </code></pre></div>
+<div class="admonition question">
+<p class="admonition-title">Why do we need to set <code>PYTHONHASHSEED</code>?</p>
+<p>Dependencies' <a href="https://python-poetry.org/docs/pyproject/#extras"><code>extras</code></a> are stored
+in-memory using a <code>frozenset</code>, the elements of which are arbitrarily ordered.</p>
+<p>As of 2022-02-24 this is <a href="https://github.com/python-poetry/poetry-core/pull/280">fixed in the default
+branch</a> of
+[<code>poetry-core</code>] but isn't yet released.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1850,7 +1858,7 @@ package.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 19, 2022</span>
       
     
   </small>

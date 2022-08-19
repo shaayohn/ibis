@@ -2302,7 +2302,7 @@ for connection parameter information.</p>
 
 
 <h4 id="ibis.backends.duckdb.Backend.do_connect" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">do_connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s1">&#39;:memory:&#39;</span><span class="p">,</span> <span class="n">read_only</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">do_connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s1">&#39;:memory:&#39;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">read_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">config</span><span class="p">)</span></code>
 
 
 <a href="#ibis.backends.duckdb.Backend.do_connect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -2323,19 +2323,32 @@ for connection parameter information.</p>
   </thead>
   <tbody>
       <tr>
-        <td><code>path</code></td>
+        <td><code>database</code></td>
         <td><code>str | Path</code></td>
-        <td><p>Path to a duckdb database</p></td>
+        <td><p>Path to a duckdb database.</p></td>
         <td><code>&#39;:memory:&#39;</code></td>
       </tr>
       <tr>
         <td><code>read_only</code></td>
         <td><code>bool</code></td>
-        <td><p>Whether the database is read-only</p></td>
+        <td><p>Whether the database is read-only.</p></td>
         <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>config</code></td>
+        <td><code>Any</code></td>
+        <td><p>DuckDB configuration parameters. See the <a href="https://duckdb.org/docs/sql/configuration">DuckDB configuration
+documentation</a> for
+possible configuration values.</p></td>
+        <td><code>{}</code></td>
       </tr>
   </tbody>
 </table>
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">duckdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;database.ddb&quot;</span><span class="p">,</span> <span class="n">threads</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">memory_limit</span><span class="o">=</span><span class="s2">&quot;1GB&quot;</span><span class="p">)</span>
+</code></pre></div>
+
     </div>
 
   </div>
