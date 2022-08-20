@@ -1603,6 +1603,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.Column.argmax" class="md-nav__link">
+    argmax()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.Column.argmin" class="md-nav__link">
+    argmin()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.generic.Column.count" class="md-nav__link">
     count()
   </a>
@@ -1610,8 +1624,29 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.Column.max" class="md-nav__link">
+    max()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.Column.min" class="md-nav__link">
+    min()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.generic.Column.nth" class="md-nav__link">
     nth()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.Column.parent" class="md-nav__link">
+    parent()
   </a>
   
 </li>
@@ -2157,6 +2192,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.Column.argmax" class="md-nav__link">
+    argmax()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.Column.argmin" class="md-nav__link">
+    argmin()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.generic.Column.count" class="md-nav__link">
     count()
   </a>
@@ -2164,8 +2213,29 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.Column.max" class="md-nav__link">
+    max()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.Column.min" class="md-nav__link">
+    min()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.generic.Column.nth" class="md-nav__link">
     nth()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.generic.Column.parent" class="md-nav__link">
+    parent()
   </a>
   
 </li>
@@ -3622,6 +3692,46 @@ Column            (<a class="autorefs autorefs-internal" title="ibis.expr.types.
 
 
 
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="ibis.expr.types.generic.Column.argmax" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">argmax</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.generic.Column.argmax" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Return the value of <code>self</code> that maximizes <code>key</code>.</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="ibis.expr.types.generic.Column.argmin" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">argmin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.generic.Column.argmin" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Return the value of <code>self</code> that minimizes <code>key</code>.</p>
+
+    </div>
+
+  </div>
+
+
+
 
   <div class="doc doc-object doc-method">
 
@@ -3685,6 +3795,44 @@ Column            (<a class="autorefs autorefs-internal" title="ibis.expr.types.
 
 
 
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="ibis.expr.types.generic.Column.max" class="doc doc-heading">
+<code class="highlight language-python"><span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.generic.Column.max" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Return the maximum of a column.</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="ibis.expr.types.generic.Column.min" class="doc doc-heading">
+<code class="highlight language-python"><span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.generic.Column.min" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Return the minimum of a column.</p>
+
+    </div>
+
+  </div>
+
 
 
   <div class="doc doc-object doc-method">
@@ -3740,6 +3888,28 @@ Column            (<a class="autorefs autorefs-internal" title="ibis.expr.types.
   </div>
 
 
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="ibis.expr.types.generic.Column.parent" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">parent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.generic.Column.parent" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <div class="admonition warning">
+<p class="admonition-title">DEPRECATED: <code>parent</code> is deprecated as of v4.0.0; </p>
+</div>
+
+    </div>
+
+  </div>
 
 
 
