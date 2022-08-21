@@ -2241,7 +2241,7 @@ StructValue            (<a class="autorefs autorefs-internal" title="ibis.expr.t
 
     <div class="doc doc-contents ">
 
-      <p>Destructure <code>self</code> into a <code>DestructValue</code>.</p>
+      <p>Destructure a <code>StructValue</code> into the corresponding struct fields.</p>
 <p>When assigned, a destruct value will be destructured and assigned to
 multiple columns.</p>
 
@@ -2255,8 +2255,8 @@ multiple columns.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code>DestructValue</code></td>
-      <td><p>A destruct value expression.</p></td>
+      <td><code>list[ir.ValueExpr]</code></td>
+      <td><p>Value expressions corresponding to the struct fields.</p></td>
     </tr>
   </tbody>
 </table>
