@@ -221,6 +221,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ibis-project.org/dev/how_to/duckdb_register/</loc>
+         <lastmod>2022-08-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ibis-project.org/dev/how_to/topk/</loc>
          <lastmod>2022-08-23</lastmod>
          <changefreq>daily</changefreq>
