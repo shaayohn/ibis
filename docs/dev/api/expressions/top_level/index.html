@@ -1584,7 +1584,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ibis.expr.api.where" class="md-nav__link">
+  <a href="#ibis.expr.types.logical.where" class="md-nav__link">
     where()
   </a>
   
@@ -2088,7 +2088,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ibis.expr.api.where" class="md-nav__link">
+  <a href="#ibis.expr.types.logical.where" class="md-nav__link">
     where()
   </a>
   
@@ -3842,15 +3842,15 @@ of fixed types)</p></td>
 
 
 
-<h2 id="ibis.expr.api.where" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">where</span><span class="p">(</span><span class="n">boolean_expr</span><span class="p">,</span> <span class="n">true_expr</span><span class="p">,</span> <span class="n">false_null_expr</span><span class="p">)</span></code>
+<h2 id="ibis.expr.types.logical.where" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">where</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">true_expr</span><span class="p">,</span> <span class="n">false_expr</span><span class="p">)</span></code>
 
 
-<a href="#ibis.expr.api.where" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
+<a href="#ibis.expr.types.logical.where" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
     <div class="doc doc-contents first">
 
-      <p>Return <code>true_expr</code> if <code>boolean_expr</code> is <code>True</code> else <code>false_null_expr</code>.</p>
+      <p>Construct a ternary conditional expression.</p>
 
 <p><strong>Parameters:</strong></p>
 <table>
@@ -3864,25 +3864,28 @@ of fixed types)</p></td>
   </thead>
   <tbody>
       <tr>
-        <td><code>boolean_expr</code></td>
-        <td><code>ir.BooleanValue</code></td>
-        <td><p>A boolean expression</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
         <td><code>true_expr</code></td>
         <td><code>ir.Value</code></td>
-        <td><p>Value returned if <code>boolean_expr</code> is <code>True</code></p></td>
+        <td><p>Expression to return if <code>self</code> evaluates to <code>True</code></p></td>
         <td><em>required</em></td>
       </tr>
       <tr>
-        <td><code>false_null_expr</code></td>
+        <td><code>false_expr</code></td>
         <td><code>ir.Value</code></td>
-        <td><p>Value returned if <code>boolean_expr</code> is <code>False</code> or <code>NULL</code></p></td>
+        <td><p>Expression to return if <code>self</code> evaluates to <code>False</code></p></td>
         <td><em>required</em></td>
       </tr>
   </tbody>
 </table>
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">([(</span><span class="s2">&quot;is_person&quot;</span><span class="p">,</span> <span class="s2">&quot;boolean&quot;</span><span class="p">)],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">is_person</span><span class="o">.</span><span class="n">ifelse</span><span class="p">(</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">expr</span><span class="p">))</span>
+<span class="n">SELECT</span> <span class="n">CASE</span> <span class="n">WHEN</span> <span class="err">`</span><span class="n">is_person</span><span class="err">`</span> <span class="n">THEN</span> <span class="s1">&#39;yes&#39;</span> <span class="n">ELSE</span> <span class="s1">&#39;no&#39;</span> <span class="n">END</span> <span class="n">AS</span> <span class="err">`</span><span class="n">tmp</span><span class="err">`</span>
+<span class="n">FROM</span> <span class="n">t</span>
+</code></pre></div>
+
 <p><strong>Returns:</strong></p>
 <table>
   <thead>
@@ -3894,7 +3897,7 @@ of fixed types)</p></td>
   <tbody>
     <tr>
       <td><code>ir.Value</code></td>
-      <td><p>An expression</p></td>
+      <td><p>The value of <code>true_expr</code> if <code>arg</code> is <code>True</code> else <code>false_expr</code></p></td>
     </tr>
   </tbody>
 </table>

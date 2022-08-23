@@ -5341,8 +5341,8 @@ the SQL expression that is correct for your query engine.</p>
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>SELECT `country`, count(*) AS `num_persons`, avg(`age`) AS `avg_age`,
-       avg(CASE WHEN `gender` = &#39;M&#39; THEN `age` ELSE NULL END) AS `avg_male`,
-       avg(CASE WHEN `gender` = &#39;F&#39; THEN `age` ELSE NULL END) AS `avg_female`
+       avg(if(`gender` = &#39;M&#39;, `age`, NULL)) AS `avg_male`,
+       avg(if(`gender` = &#39;F&#39;, `age`, NULL)) AS `avg_female`
 FROM population
 GROUP BY 1
 </pre>
@@ -6237,8 +6237,7 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *,
-       CASE WHEN `two` &lt; 0 THEN &#39;Negative&#39; ELSE &#39;Non-Negative&#39; END AS `group`
+<pre>SELECT *, if(`two` &lt; 0, &#39;Negative&#39;, &#39;Non-Negative&#39;) AS `group`
 FROM my_data
 </pre>
 </div>
@@ -6311,7 +6310,7 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, CASE WHEN `two` &gt; 0 THEN `two` ELSE NULL END AS `two_positive`
+<pre>SELECT *, if(`two` &gt; 0, `two`, NULL) AS `two_positive`
 FROM my_data
 </pre>
 </div>
@@ -6403,7 +6402,7 @@ print(ibis.impala.compile(expr))</div>
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>SELECT *,
-       CASE WHEN upper(`country`) IN (&#39;UNITED STATES&#39;, &#39;CANADA&#39;) THEN &#39;North America&#39; ELSE `country` END AS `refined_group`
+       if(upper(`country`) IN (&#39;UNITED STATES&#39;, &#39;CANADA&#39;), &#39;North America&#39;, `country`) AS `refined_group`
 FROM population
 </pre>
 </div>
@@ -6702,13 +6701,11 @@ print(ibis.impala.compile(agged))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *,
-       CASE WHEN `two` IS NULL THEN &#39;valid&#39; ELSE &#39;invalid&#39; END AS `is_valid`
+<pre>SELECT *, if(`two` IS NULL, &#39;valid&#39;, &#39;invalid&#39;) AS `is_valid`
 FROM my_data
 SELECT `is_valid`, sum(`three` IS NOT NULL) AS `three_count`
 FROM (
-  SELECT *,
-         CASE WHEN `two` IS NULL THEN &#39;valid&#39; ELSE &#39;invalid&#39; END AS `is_valid`
+  SELECT *, if(`two` IS NULL, &#39;valid&#39;, &#39;invalid&#39;) AS `is_valid`
   FROM my_data
   WHERE `one` IS NOT NULL
 ) t0
