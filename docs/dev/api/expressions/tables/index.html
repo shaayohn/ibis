@@ -2797,14 +2797,14 @@ columns.</p></td>
 
 
 <h4 id="ibis.expr.types.relations.Table.difference" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">difference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">difference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.Table.difference" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
     <div class="doc doc-contents ">
 
-      <p>Compute the set difference of two table expressions.</p>
+      <p>Compute the set difference of multiple table expressions.</p>
 <p>The input tables must have identical schemas.</p>
 
 <p><strong>Parameters:</strong></p>
@@ -2819,10 +2819,10 @@ columns.</p></td>
   </thead>
   <tbody>
       <tr>
-        <td><code>right</code></td>
+        <td><code>*tables</code></td>
         <td><code>Table</code></td>
-        <td><p>Table expression</p></td>
-        <td><em>required</em></td>
+        <td><p>One or more table expressions</p></td>
+        <td><code>()</code></td>
       </tr>
       <tr>
         <td><code>distinct</code></td>
@@ -2843,7 +2843,7 @@ columns.</p></td>
   <tbody>
     <tr>
       <td><code>Table</code></td>
-      <td><p>The rows present in <code>left</code> that are not present in <code>right</code>.</p></td>
+      <td><p>The rows present in <code>self</code> that are not present in <code>tables</code>.</p></td>
     </tr>
   </tbody>
 </table>
@@ -3481,14 +3481,14 @@ as a scalar, all columns are filled with that value.</p></td>
 
 
 <h4 id="ibis.expr.types.relations.Table.intersect" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.Table.intersect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
     <div class="doc doc-contents ">
 
-      <p>Compute the set intersection of two table expressions.</p>
+      <p>Compute the set intersection of multiple table expressions.</p>
 <p>The input tables must have identical schemas.</p>
 
 <p><strong>Parameters:</strong></p>
@@ -3503,15 +3503,15 @@ as a scalar, all columns are filled with that value.</p></td>
   </thead>
   <tbody>
       <tr>
-        <td><code>right</code></td>
+        <td><code>*tables</code></td>
         <td><code>Table</code></td>
-        <td><p>Table expression</p></td>
-        <td><em>required</em></td>
+        <td><p>One or more table expressions</p></td>
+        <td><code>()</code></td>
       </tr>
       <tr>
         <td><code>distinct</code></td>
         <td><code>bool</code></td>
-        <td><p>Only intersect distinct rows not occurring in the calling table</p></td>
+        <td><p>Only return distinct rows</p></td>
         <td><code>True</code></td>
       </tr>
   </tbody>
@@ -3527,7 +3527,7 @@ as a scalar, all columns are filled with that value.</p></td>
   <tbody>
     <tr>
       <td><code>Table</code></td>
-      <td><p>The rows common amongst <code>left</code> and <code>right</code>.</p></td>
+      <td><p>A new table containing the intersection of all input tables.</p></td>
     </tr>
   </tbody>
 </table>
@@ -4418,14 +4418,14 @@ details on using named table expressions in a SQL string.</p>
 
 
 <h4 id="ibis.expr.types.relations.Table.union" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.Table.union" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
 
     <div class="doc doc-contents ">
 
-      <p>Compute the set union of two table expressions.</p>
+      <p>Compute the set union of multiple table expressions.</p>
 <p>The input tables must have identical schemas.</p>
 
 <p><strong>Parameters:</strong></p>
@@ -4440,15 +4440,15 @@ details on using named table expressions in a SQL string.</p>
   </thead>
   <tbody>
       <tr>
-        <td><code>right</code></td>
+        <td><code>*tables</code></td>
         <td><code>Table</code></td>
-        <td><p>Table expression</p></td>
-        <td><em>required</em></td>
+        <td><p>One or more table expressions</p></td>
+        <td><code>()</code></td>
       </tr>
       <tr>
         <td><code>distinct</code></td>
         <td><code>bool</code></td>
-        <td><p>Only union distinct rows not occurring in the calling table</p></td>
+        <td><p>Only return distinct rows</p></td>
         <td><code>False</code></td>
       </tr>
   </tbody>
@@ -4464,7 +4464,7 @@ details on using named table expressions in a SQL string.</p>
   <tbody>
     <tr>
       <td><code>Table</code></td>
-      <td><p>Union of table and <code>right</code></p></td>
+      <td><p>A new table containing the union of all input tables.</p></td>
     </tr>
   </tbody>
 </table>

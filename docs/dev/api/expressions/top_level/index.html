@@ -1437,6 +1437,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.difference" class="md-nav__link">
+    difference()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ibis.expr.types.generic.greatest" class="md-nav__link">
     greatest()
   </a>
@@ -1446,6 +1453,13 @@
         <li class="md-nav__item">
   <a href="#ibis.expr.types.logical.ifelse" class="md-nav__link">
     ifelse()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.intersect" class="md-nav__link">
+    intersect()
   </a>
   
 </li>
@@ -1579,6 +1593,13 @@
         <li class="md-nav__item">
   <a href="#ibis.expr.window.trailing_window" class="md-nav__link">
     trailing_window()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.union" class="md-nav__link">
+    union()
   </a>
   
 </li>
@@ -1941,6 +1962,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.difference" class="md-nav__link">
+    difference()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ibis.expr.types.generic.greatest" class="md-nav__link">
     greatest()
   </a>
@@ -1950,6 +1978,13 @@
         <li class="md-nav__item">
   <a href="#ibis.expr.types.logical.ifelse" class="md-nav__link">
     ifelse()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.intersect" class="md-nav__link">
+    intersect()
   </a>
   
 </li>
@@ -2083,6 +2118,13 @@
         <li class="md-nav__item">
   <a href="#ibis.expr.window.trailing_window" class="md-nav__link">
     trailing_window()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.union" class="md-nav__link">
+    union()
   </a>
   
 </li>
@@ -2576,6 +2618,67 @@ scalar (if the inputs are Python literals)</p></td>
 
 
 
+<h2 id="ibis.expr.types.relations.difference" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">difference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.relations.difference" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+      <p>Compute the set difference of multiple table expressions.</p>
+<p>The input tables must have identical schemas.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>*tables</code></td>
+        <td><code>Table</code></td>
+        <td><p>One or more table expressions</p></td>
+        <td><code>()</code></td>
+      </tr>
+      <tr>
+        <td><code>distinct</code></td>
+        <td><code>bool</code></td>
+        <td><p>Only diff distinct rows not occurring in the calling table</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Table</code></td>
+      <td><p>The rows present in <code>self</code> that are not present in <code>tables</code>.</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
 <h2 id="ibis.expr.types.generic.greatest" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">greatest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span></code>
 
@@ -2686,6 +2789,67 @@ scalar (if the inputs are Python literals)</p></td>
     <tr>
       <td><code>ir.Value</code></td>
       <td><p>The value of <code>true_expr</code> if <code>arg</code> is <code>True</code> else <code>false_expr</code></p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="ibis.expr.types.relations.intersect" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.relations.intersect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+      <p>Compute the set intersection of multiple table expressions.</p>
+<p>The input tables must have identical schemas.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>*tables</code></td>
+        <td><code>Table</code></td>
+        <td><p>One or more table expressions</p></td>
+        <td><code>()</code></td>
+      </tr>
+      <tr>
+        <td><code>distinct</code></td>
+        <td><code>bool</code></td>
+        <td><p>Only return distinct rows</p></td>
+        <td><code>True</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Table</code></td>
+      <td><p>A new table containing the intersection of all input tables.</p></td>
     </tr>
   </tbody>
 </table>
@@ -3842,6 +4006,67 @@ of fixed types)</p></td>
 
 
 
+<h2 id="ibis.expr.types.relations.union" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.relations.union" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+      <p>Compute the set union of multiple table expressions.</p>
+<p>The input tables must have identical schemas.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>*tables</code></td>
+        <td><code>Table</code></td>
+        <td><p>One or more table expressions</p></td>
+        <td><code>()</code></td>
+      </tr>
+      <tr>
+        <td><code>distinct</code></td>
+        <td><code>bool</code></td>
+        <td><p>Only return distinct rows</p></td>
+        <td><code>False</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Table</code></td>
+      <td><p>A new table containing the union of all input tables.</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
 <h2 id="ibis.expr.types.logical.where" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">where</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">true_expr</span><span class="p">,</span> <span class="n">false_expr</span><span class="p">)</span></code>
 
@@ -3986,7 +4211,7 @@ of fixed types)</p></td>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 10, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 23, 2022</span>
       
     
   </small>
