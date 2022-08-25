@@ -1514,13 +1514,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.datatypes.core.Any" class="md-nav__link">
-    Any
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.expr.datatypes.core.Array" class="md-nav__link">
     Array
   </a>
@@ -2202,13 +2195,6 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.datatypes.core.parse" class="md-nav__link">
     parse()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.expr.datatypes.core.parse_type" class="md-nav__link">
-    parse_type()
   </a>
   
 </li>
@@ -2408,13 +2394,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.datatypes.core.Any" class="md-nav__link">
-    Any
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.expr.datatypes.core.Array" class="md-nav__link">
     Array
   </a>
@@ -3100,13 +3079,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#ibis.expr.datatypes.core.parse_type" class="md-nav__link">
-    parse_type()
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3229,33 +3201,7 @@ value is <a class="autorefs autorefs-external" href="https://docs.python.org/3/l
 
 
 
-
 <h3 id="ibis.expr.datatypes.core-classes">Classes<a href="#ibis.expr.datatypes.core-classes" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
-
-  <div class="doc doc-object doc-class">
-
-
-
-<h4 id="ibis.expr.datatypes.core.Any" class="doc doc-heading">
-        <code>
-Any            (<a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.DataType" href="#ibis.expr.datatypes.core.DataType">DataType</a>)
-        </code>
-
-
-
-<a href="#ibis.expr.datatypes.core.Any" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Values of any type.</p>
-
-
-
-    </div>
-
-  </div>
-
-
 
   <div class="doc doc-object doc-class">
 
@@ -3304,7 +3250,7 @@ Array            (<a class="autorefs autorefs-internal" title="ibis.expr.datatyp
 
 <h4 id="ibis.expr.datatypes.core.Binary" class="doc doc-heading">
         <code>
-Binary            (<span title="ibis.common.grounds.Singleton">Singleton</span>, <a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Variadic" href="#ibis.expr.datatypes.core.Variadic">Variadic</a>)
+Binary            (<a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Variadic" href="#ibis.expr.datatypes.core.Variadic">Variadic</a>, <span title="ibis.common.grounds.Singleton">Singleton</span>)
         </code>
 
 
@@ -4462,7 +4408,7 @@ MultiPolygon            (<a class="autorefs autorefs-internal" title="ibis.expr.
 
 <h4 id="ibis.expr.datatypes.core.Null" class="doc doc-heading">
         <code>
-Null            (<span title="ibis.common.grounds.Singleton">Singleton</span>, <a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.DataType" href="#ibis.expr.datatypes.core.DataType">DataType</a>)
+Null            (<a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.DataType" href="#ibis.expr.datatypes.core.DataType">DataType</a>, <span title="ibis.common.grounds.Singleton">Singleton</span>)
         </code>
 
 
@@ -4539,7 +4485,7 @@ represent holes in that shape (internal rings).</p>
 
 <h4 id="ibis.expr.datatypes.core.Primitive" class="doc doc-heading">
         <code>
-Primitive            (<span title="ibis.common.grounds.Singleton">Singleton</span>, <a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.DataType" href="#ibis.expr.datatypes.core.DataType">DataType</a>)
+Primitive            (<a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.DataType" href="#ibis.expr.datatypes.core.DataType">DataType</a>, <span title="ibis.common.grounds.Singleton">Singleton</span>)
         </code>
 
 
@@ -4669,7 +4615,7 @@ SignedInteger            (<a class="autorefs autorefs-internal" title="ibis.expr
 
 <h4 id="ibis.expr.datatypes.core.String" class="doc doc-heading">
         <code>
-String            (<span title="ibis.common.grounds.Singleton">Singleton</span>, <a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Variadic" href="#ibis.expr.datatypes.core.Variadic">Variadic</a>)
+String            (<a class="autorefs autorefs-internal" title="ibis.expr.datatypes.core.Variadic" href="#ibis.expr.datatypes.core.Variadic">Variadic</a>, <span title="ibis.common.grounds.Singleton">Singleton</span>)
         </code>
 
 
@@ -5292,28 +5238,6 @@ common but repeatedly-used complex types.</p>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ty</span> <span class="o">==</span> <span class="n">dt</span><span class="o">.</span><span class="n">Array</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
 <span class="kc">True</span>
 </code></pre></div>
-
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-function">
-
-
-
-<h4 id="ibis.expr.datatypes.core.parse_type" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">parse_type</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
-
-
-<a href="#ibis.expr.datatypes.core.parse_type" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <div class="admonition warning">
-<p class="admonition-title">DEPRECATED: <code>parse_type</code> is deprecated as of v4.0; use ibis.expr.datatypes.core.parse</p>
-</div>
 
     </div>
 
