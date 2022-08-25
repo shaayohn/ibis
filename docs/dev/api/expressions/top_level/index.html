@@ -1528,7 +1528,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ibis.expr.api.random" class="md-nav__link">
+  <a href="#ibis.expr.random.random" class="md-nav__link">
     random()
   </a>
   
@@ -2053,7 +2053,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ibis.expr.api.random" class="md-nav__link">
+  <a href="#ibis.expr.random.random" class="md-nav__link">
     random()
   </a>
   
@@ -2803,7 +2803,7 @@ scalar (if the inputs are Python literals)</p></td>
 
 
 <h2 id="ibis.expr.types.relations.intersect" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.intersect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
@@ -3440,11 +3440,11 @@ ibis cannot infer the backend dialect.</p></td>
 
 
 
-<h2 id="ibis.expr.api.random" class="doc doc-heading">
+<h2 id="ibis.expr.random.random" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">random</span><span class="p">()</span></code>
 
 
-<a href="#ibis.expr.api.random" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
+<a href="#ibis.expr.random.random" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
     <div class="doc doc-contents first">
 
@@ -3461,7 +3461,7 @@ ibis cannot infer the backend dialect.</p></td>
   </thead>
   <tbody>
     <tr>
-      <td><code>ir.FloatingScalar</code></td>
+      <td><code>FloatingScalar</code></td>
       <td><p>Random float value expression</p></td>
     </tr>
   </tbody>
@@ -3736,14 +3736,14 @@ of fixed types)</p></td>
 
 
 <h2 id="ibis.expr.api.table" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">table</span><span class="p">(</span><span class="n">schema</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">table</span><span class="p">(</span><span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.api.table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
     <div class="doc doc-contents first">
 
-      <p>Create an unbound table for building expressions without data.</p>
+      <p>Create a table literal or an abstract table without data.</p>
 
 <p><strong>Parameters:</strong></p>
 <table>
@@ -3758,9 +3758,9 @@ of fixed types)</p></td>
   <tbody>
       <tr>
         <td><code>schema</code></td>
-        <td><code>SupportsSchema</code></td>
+        <td><code>SupportsSchema | None</code></td>
         <td><p>A schema for the table</p></td>
-        <td><em>required</em></td>
+        <td><code>None</code></td>
       </tr>
       <tr>
         <td><code>name</code></td>
@@ -3770,6 +3770,15 @@ of fixed types)</p></td>
       </tr>
   </tbody>
 </table>
+<p><strong>Examples:</strong></p>
+    <p>Create a table with no data backing it</p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">schema</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span>
+<span class="n">UnboundTable</span><span class="p">:</span> <span class="n">unbound_table_0</span>
+  <span class="n">a</span> <span class="n">int64</span>
+  <span class="n">b</span> <span class="n">string</span>
+</code></pre></div>
+
 <p><strong>Returns:</strong></p>
 <table>
   <thead>
@@ -3781,7 +3790,7 @@ of fixed types)</p></td>
   <tbody>
     <tr>
       <td><code>ir.Table</code></td>
-      <td><p>An unbound table expression</p></td>
+      <td><p>A table expression</p></td>
     </tr>
   </tbody>
 </table>
@@ -4007,7 +4016,7 @@ of fixed types)</p></td>
 
 
 <h2 id="ibis.expr.types.relations.union" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.union" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
