@@ -808,6 +808,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6">
@@ -830,6 +832,20 @@
     <li class="md-nav__item">
       <a href="../../../how_to/duckdb_register/" class="md-nav__link">
         Use `register` to load external data files with the DuckDB backend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how_to/ffill_bfill_w_window/" class="md-nav__link">
+        How to `ffill` and `bfill` using Window Functions
       </a>
     </li>
   
@@ -1045,6 +1061,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_9_1">
@@ -1081,6 +1099,20 @@
     <li class="md-nav__item">
       <a href="../../../blog/Ibis-version-3.1.0-release/" class="md-nav__link">
         Ibis v3.1.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/ffill-and-bfill-using-ibis/" class="md-nav__link">
+        `ffill` and `bfill` using Ibis
       </a>
     </li>
   
@@ -1527,7 +1559,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ibis.expr.api.random" class="md-nav__link">
+  <a href="#ibis.expr.random.random" class="md-nav__link">
     random()
   </a>
   
@@ -2052,7 +2084,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ibis.expr.api.random" class="md-nav__link">
+  <a href="#ibis.expr.random.random" class="md-nav__link">
     random()
   </a>
   
@@ -2803,7 +2835,7 @@ scalar (if the inputs are Python literals)</p></td>
 
 
 <h2 id="ibis.expr.types.relations.intersect" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.intersect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
@@ -3440,11 +3472,11 @@ ibis cannot infer the backend dialect.</p></td>
 
 
 
-<h2 id="ibis.expr.api.random" class="doc doc-heading">
+<h2 id="ibis.expr.random.random" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">random</span><span class="p">()</span></code>
 
 
-<a href="#ibis.expr.api.random" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
+<a href="#ibis.expr.random.random" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
     <div class="doc doc-contents first">
 
@@ -3461,7 +3493,7 @@ ibis cannot infer the backend dialect.</p></td>
   </thead>
   <tbody>
     <tr>
-      <td><code>ir.FloatingScalar</code></td>
+      <td><code>FloatingScalar</code></td>
       <td><p>Random float value expression</p></td>
     </tr>
   </tbody>
@@ -4016,7 +4048,7 @@ of fixed types)</p></td>
 
 
 <h2 id="ibis.expr.types.relations.union" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.union" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
