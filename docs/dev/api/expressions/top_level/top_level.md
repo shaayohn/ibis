@@ -6,6 +6,7 @@ These methods and objects are available directly in the `ibis` module.
 
 `NA` is the null scalar.
 
+::: ibis.and_
 ::: ibis.array
 ::: ibis.asc
 ::: ibis.case
@@ -24,6 +25,7 @@ These methods and objects are available directly in the `ibis` module.
 ::: ibis.negate
 ::: ibis.now
 ::: ibis.null
+::: ibis.or_
 ::: ibis.param
 ::: ibis.show_sql
 ::: ibis.random

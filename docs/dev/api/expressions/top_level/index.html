@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://ibis-project.org/dev/api/expressions/top_level/">
       
       <link rel="icon" href="../../../static/icons/ibis/logo.svg">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.3">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.4">
     
     
       
@@ -808,6 +808,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6">
@@ -830,6 +832,20 @@
     <li class="md-nav__item">
       <a href="../../../how_to/duckdb_register/" class="md-nav__link">
         Use `register` to load external data files with the DuckDB backend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../how_to/ffill_bfill_w_window/" class="md-nav__link">
+        How to `ffill` and `bfill` using Window Functions
       </a>
     </li>
   
@@ -1045,6 +1061,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_9_1">
@@ -1081,6 +1099,20 @@
     <li class="md-nav__item">
       <a href="../../../blog/Ibis-version-3.1.0-release/" class="md-nav__link">
         Ibis v3.1.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/ffill-and-bfill-using-ibis/" class="md-nav__link">
+        `ffill` and `bfill` using Ibis
       </a>
     </li>
   
@@ -1387,6 +1419,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ibis.expr.api.and_" class="md-nav__link">
+    and_()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ibis.expr.types.arrays.array" class="md-nav__link">
     array()
   </a>
@@ -1513,6 +1552,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ibis.expr.api.or_" class="md-nav__link">
+    or_()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ibis.expr.api.param" class="md-nav__link">
     param()
   </a>
@@ -1527,7 +1573,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ibis.expr.api.random" class="md-nav__link">
+  <a href="#ibis.expr.random.random" class="md-nav__link">
     random()
   </a>
   
@@ -1912,6 +1958,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ibis.expr.api.and_" class="md-nav__link">
+    and_()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ibis.expr.types.arrays.array" class="md-nav__link">
     array()
   </a>
@@ -2038,6 +2091,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ibis.expr.api.or_" class="md-nav__link">
+    or_()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ibis.expr.api.param" class="md-nav__link">
     param()
   </a>
@@ -2052,7 +2112,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ibis.expr.api.random" class="md-nav__link">
+  <a href="#ibis.expr.random.random" class="md-nav__link">
     random()
   </a>
   
@@ -2168,6 +2228,61 @@
 <p>These methods and objects are available directly in the <code>ibis</code> module.</p>
 <h2 id="na"><code>NA</code><a class="headerlink" href="#na" title="Anchor link to this section for reference">&para;</a></h2>
 <p><code>NA</code> is the null scalar.</p>
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="ibis.expr.api.and_" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">and_</span><span class="p">(</span><span class="o">*</span><span class="n">predicates</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.api.and_" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+      <p>Combine multiple predicates using <code>&amp;</code>.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>predicates</code></td>
+        <td><code>ir.BooleanValue</code></td>
+        <td><p>Boolean value expressions</p></td>
+        <td><code>()</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ir.BooleanValue</code></td>
+      <td><p>A new predicate that evaluates to True if all composing predicates are
+True. If no predicates were provided, returns True.</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
 
 
   <div class="doc doc-object doc-function">
@@ -2803,7 +2918,7 @@ scalar (if the inputs are Python literals)</p></td>
 
 
 <h2 id="ibis.expr.types.relations.intersect" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.intersect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
@@ -3138,7 +3253,7 @@ the type of <code>value</code>.</p></td>
 
 
 <h2 id="ibis.expr.types.maps.map" class="doc doc-heading">
-<code class="highlight language-python"><span class="nb">map</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="nb">map</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.maps.map" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
@@ -3159,16 +3274,17 @@ the type of <code>value</code>.</p></td>
   </thead>
   <tbody>
       <tr>
-        <td><code>keys</code></td>
-        <td><code>None</code></td>
-        <td><p>Keys of the map</p></td>
+        <td><code>value</code></td>
+        <td><code>Iterable[tuple[K, V]] | Mapping[K, V]</code></td>
+        <td><p>the literal map value</p></td>
         <td><em>required</em></td>
       </tr>
       <tr>
-        <td><code>values</code></td>
+        <td><code>type</code></td>
+        <td><code>str | dt.DataType | None</code></td>
+        <td><p>An instance of <code>ibis.expr.datatypes.DataType</code> or a string indicating
+the ibis type of <code>value</code>.</p></td>
         <td><code>None</code></td>
-        <td><p>Values of the map</p></td>
-        <td><em>required</em></td>
       </tr>
   </tbody>
 </table>
@@ -3193,8 +3309,8 @@ the type of <code>value</code>.</p></td>
   <tbody>
     <tr>
       <td><code>MapValue</code></td>
-      <td><p>An expression representing either a map column or literal (associative
-array with key/value pairs of fixed types)</p></td>
+      <td><p>An expression representing a literal map (associative array with
+key/value pairs of fixed types)</p></td>
     </tr>
   </tbody>
 </table>
@@ -3288,6 +3404,61 @@ array with key/value pairs of fixed types)</p></td>
 
       <p>Create a NULL/NA scalar</p>
 
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="ibis.expr.api.or_" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">or_</span><span class="p">(</span><span class="o">*</span><span class="n">predicates</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.api.or_" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+      <p>Combine multiple predicates using <code>|</code>.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>predicates</code></td>
+        <td><code>ir.BooleanValue</code></td>
+        <td><p>Boolean value expressions</p></td>
+        <td><code>()</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ir.BooleanValue</code></td>
+      <td><p>A new predicate that evaluates to True if any composing predicates are
+True. If no predicates were provided, returns False.</p></td>
+    </tr>
+  </tbody>
+</table>
     </div>
 
   </div>
@@ -3439,11 +3610,11 @@ ibis cannot infer the backend dialect.</p></td>
 
 
 
-<h2 id="ibis.expr.api.random" class="doc doc-heading">
+<h2 id="ibis.expr.random.random" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">random</span><span class="p">()</span></code>
 
 
-<a href="#ibis.expr.api.random" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
+<a href="#ibis.expr.random.random" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
     <div class="doc doc-contents first">
 
@@ -3460,7 +3631,7 @@ ibis cannot infer the backend dialect.</p></td>
   </thead>
   <tbody>
     <tr>
-      <td><code>ir.FloatingScalar</code></td>
+      <td><code>FloatingScalar</code></td>
       <td><p>Random float value expression</p></td>
     </tr>
   </tbody>
@@ -4015,7 +4186,7 @@ of fixed types)</p></td>
 
 
 <h2 id="ibis.expr.types.relations.union" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.union" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
@@ -4219,11 +4390,12 @@ of fixed types)</p></td>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 23, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
       
     
   </small>
 </div>
+
 
 
 
