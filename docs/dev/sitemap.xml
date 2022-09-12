@@ -191,11 +191,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ibis-project.org/dev/blog/ffill-and-bfill-using-ibis/</loc>
-         <lastmod>2022-09-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://ibis-project.org/dev/community/ecosystem/</loc>
          <lastmod>2022-09-12</lastmod>
          <changefreq>daily</changefreq>
@@ -227,11 +222,6 @@
     </url>
     <url>
          <loc>https://ibis-project.org/dev/how_to/duckdb_register/</loc>
-         <lastmod>2022-09-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ibis-project.org/dev/how_to/ffill_bfill_w_window/</loc>
          <lastmod>2022-09-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
