@@ -1572,6 +1572,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ibis.common.pretty.to_sql" class="md-nav__link">
+    to_sql()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ibis.expr.random.random" class="md-nav__link">
     random()
   </a>
@@ -2106,6 +2113,13 @@
         <li class="md-nav__item">
   <a href="#ibis.common.pretty.show_sql" class="md-nav__link">
     show_sql()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ibis.common.pretty.to_sql" class="md-nav__link">
+    to_sql()
   </a>
   
 </li>
@@ -3609,6 +3623,66 @@ ibis cannot infer the backend dialect.</p></td>
 
 
 
+<h2 id="ibis.common.pretty.to_sql" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">to_sql</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+<a href="#ibis.common.pretty.to_sql" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+      <p>Return the formatted SQL string for an expression.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>expr</code></td>
+        <td><code>ir.Expr</code></td>
+        <td><p>Ibis expression.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>dialect</code></td>
+        <td><code>str | None</code></td>
+        <td><p>SQL dialect to use for compilation.</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>str</code></td>
+      <td><p>Formatted SQL string</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
 <h2 id="ibis.expr.random.random" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">random</span><span class="p">()</span></code>
 
@@ -4389,7 +4463,7 @@ of fixed types)</p></td>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2022</span>
       
     
   </small>
