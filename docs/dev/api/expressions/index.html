@@ -1703,13 +1703,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.types.core.Expr.verify" class="md-nav__link">
-    verify()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.expr.types.core.Expr.visualize" class="md-nav__link">
     visualize()
   </a>
@@ -1759,7 +1752,8 @@
 
 <h2 id="ibis.expr.types.core.Expr" class="doc doc-heading">
         <code>
-Expr        </code>
+Expr            (<span title="ibis.common.grounds.Immutable">Immutable</span>)
+        </code>
 
 
 
@@ -1829,7 +1823,7 @@ execute will result in an error.</p></td>
       </tr>
       <tr>
         <td><code>params</code></td>
-        <td><code>Mapping[Value, Any] | None</code></td>
+        <td><code>Mapping[ir.Value, Any] | None</code></td>
         <td><p>Mapping of scalar parameter expressions to value</p></td>
         <td><code>None</code></td>
       </tr>
@@ -1888,7 +1882,7 @@ execute will result in an error.</p></td>
       </tr>
       <tr>
         <td><code>params</code></td>
-        <td><code>Mapping[Value, Any] | None</code></td>
+        <td><code>Mapping[ir.Value, Any] | None</code></td>
         <td><p>Mapping of scalar parameter expressions to value</p></td>
         <td><code>None</code></td>
       </tr>
@@ -1983,29 +1977,6 @@ keyword</p></td>
     </tr>
   </tbody>
 </table>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.expr.types.core.Expr.verify" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">verify</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
-
-
-<a href="#ibis.expr.types.core.Expr.verify" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Return True if expression can be compiled to its attached client.</p>
-<div class="admonition warning">
-<p class="admonition-title">DEPRECATED: <code>verify</code> is deprecated as of v2.0; call <a class="autorefs autorefs-internal" href="#ibis.expr.types.core.Expr.compile"><code>Expr.compile</code></a> and catch TranslationError</p>
-</div>
-
     </div>
 
   </div>

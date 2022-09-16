@@ -1581,7 +1581,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ibis.expr.random.random" class="md-nav__link">
+  <a href="#ibis.expr.api.random" class="md-nav__link">
     random()
   </a>
   
@@ -2127,7 +2127,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ibis.expr.random.random" class="md-nav__link">
+  <a href="#ibis.expr.api.random" class="md-nav__link">
     random()
   </a>
   
@@ -2934,7 +2934,7 @@ scalar (if the inputs are Python literals)</p></td>
 
 
 <h2 id="ibis.expr.types.relations.intersect" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.intersect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
@@ -3269,7 +3269,7 @@ the type of <code>value</code>.</p></td>
 
 
 <h2 id="ibis.expr.types.maps.map" class="doc doc-heading">
-<code class="highlight language-python"><span class="nb">map</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="nb">map</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.maps.map" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
@@ -3290,17 +3290,16 @@ the type of <code>value</code>.</p></td>
   </thead>
   <tbody>
       <tr>
-        <td><code>value</code></td>
-        <td><code>Iterable[tuple[K, V]] | Mapping[K, V]</code></td>
-        <td><p>the literal map value</p></td>
+        <td><code>keys</code></td>
+        <td><code>None</code></td>
+        <td><p>Keys of the map</p></td>
         <td><em>required</em></td>
       </tr>
       <tr>
-        <td><code>type</code></td>
-        <td><code>str | dt.DataType | None</code></td>
-        <td><p>An instance of <code>ibis.expr.datatypes.DataType</code> or a string indicating
-the ibis type of <code>value</code>.</p></td>
+        <td><code>values</code></td>
         <td><code>None</code></td>
+        <td><p>Values of the map</p></td>
+        <td><em>required</em></td>
       </tr>
   </tbody>
 </table>
@@ -3325,8 +3324,8 @@ the ibis type of <code>value</code>.</p></td>
   <tbody>
     <tr>
       <td><code>MapValue</code></td>
-      <td><p>An expression representing a literal map (associative array with
-key/value pairs of fixed types)</p></td>
+      <td><p>An expression representing either a map column or literal (associative
+array with key/value pairs of fixed types)</p></td>
     </tr>
   </tbody>
 </table>
@@ -3686,11 +3685,11 @@ ibis cannot infer the backend dialect.</p></td>
 
 
 
-<h2 id="ibis.expr.random.random" class="doc doc-heading">
+<h2 id="ibis.expr.api.random" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">random</span><span class="p">()</span></code>
 
 
-<a href="#ibis.expr.random.random" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
+<a href="#ibis.expr.api.random" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
 
     <div class="doc doc-contents first">
 
@@ -3707,7 +3706,7 @@ ibis cannot infer the backend dialect.</p></td>
   </thead>
   <tbody>
     <tr>
-      <td><code>FloatingScalar</code></td>
+      <td><code>ir.FloatingScalar</code></td>
       <td><p>Random float value expression</p></td>
     </tr>
   </tbody>
@@ -4262,7 +4261,7 @@ of fixed types)</p></td>
 
 
 <h2 id="ibis.expr.types.relations.union" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.union" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
