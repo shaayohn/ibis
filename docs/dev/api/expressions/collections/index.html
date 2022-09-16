@@ -1627,6 +1627,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.maps.MapValue.contains" class="md-nav__link">
+    contains()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.maps.MapValue.get" class="md-nav__link">
     get()
   </a>
@@ -1998,6 +2005,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.maps.MapValue.contains" class="md-nav__link">
+    contains()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.maps.MapValue.get" class="md-nav__link">
     get()
   </a>
@@ -2291,7 +2305,7 @@ StructValue            (<a class="autorefs autorefs-internal" title="ibis.expr.t
 
     <div class="doc doc-contents ">
 
-      <p>Destructure <code>self</code> into a <code>DestructValue</code>.</p>
+      <p>Destructure a <code>StructValue</code> into the corresponding struct fields.</p>
 <p>When assigned, a destruct value will be destructured and assigned to
 multiple columns.</p>
 
@@ -2305,8 +2319,8 @@ multiple columns.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code>DestructValue</code></td>
-      <td><p>A destruct value expression.</p></td>
+      <td><code>list[ir.ValueExpr]</code></td>
+      <td><p>Value expressions corresponding to the struct fields.</p></td>
     </tr>
   </tbody>
 </table>
@@ -2415,6 +2429,60 @@ MapValue            (<a class="autorefs autorefs-internal" title="ibis.expr.type
 
 
 
+<h4 id="ibis.expr.types.maps.MapValue.contains" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.maps.MapValue.contains" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Return whether the map contains <code>key</code>.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>key</code></td>
+        <td><code>int | str | ir.IntegerValue | ir.StringValue</code></td>
+        <td><p>Mapping key for which to check</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ir.BooleanValue</code></td>
+      <td><p>Boolean indicating the presence of <code>key</code> in the map expression</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
 <h4 id="ibis.expr.types.maps.MapValue.get" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
@@ -2454,11 +2522,11 @@ MapValue            (<a class="autorefs autorefs-internal" title="ibis.expr.type
     <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">m</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
-<span class="n">MapValueOrDefaultForKey</span><span class="p">(</span><span class="n">frozendict</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}),</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">MapGet</span><span class="p">(</span><span class="n">frozendict</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}),</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">MapValueOrDefaultForKey</span><span class="p">(</span><span class="n">frozendict</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}),</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">MapGet</span><span class="p">(</span><span class="n">frozendict</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}),</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
-<span class="n">MapValueOrDefaultForKey</span><span class="p">(</span><span class="n">frozendict</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}),</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">MapGet</span><span class="p">(</span><span class="n">frozendict</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}),</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
