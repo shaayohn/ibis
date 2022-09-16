@@ -1783,6 +1783,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.backends.pandas.BasePandasBackend.exists_database" class="md-nav__link">
+    exists_database()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.pandas.BasePandasBackend.exists_table" class="md-nav__link">
+    exists_table()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.backends.pandas.BasePandasBackend.from_dataframe" class="md-nav__link">
     from_dataframe()
   </a>
@@ -1806,6 +1820,20 @@
           <li class="md-nav__item">
   <a href="#ibis.backends.pandas.BasePandasBackend.list_tables" class="md-nav__link">
     list_tables()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.pandas.BasePandasBackend.table" class="md-nav__link">
+    table()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.pandas.BasePandasBackend.verify" class="md-nav__link">
+    verify()
   </a>
   
 </li>
@@ -2084,6 +2112,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.backends.pandas.BasePandasBackend.exists_database" class="md-nav__link">
+    exists_database()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.pandas.BasePandasBackend.exists_table" class="md-nav__link">
+    exists_table()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.backends.pandas.BasePandasBackend.from_dataframe" class="md-nav__link">
     from_dataframe()
   </a>
@@ -2107,6 +2149,20 @@
           <li class="md-nav__item">
   <a href="#ibis.backends.pandas.BasePandasBackend.list_tables" class="md-nav__link">
     list_tables()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.pandas.BasePandasBackend.table" class="md-nav__link">
+    table()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.pandas.BasePandasBackend.verify" class="md-nav__link">
+    verify()
   </a>
   
 </li>
@@ -2836,6 +2892,132 @@ default.</p></td>
 
 
 
+<h4 id="ibis.backends.pandas.BasePandasBackend.exists_database" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">exists_database</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
+  </span>
+
+<a href="#ibis.backends.pandas.BasePandasBackend.exists_database" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Return whether a database name exists in the current connection.</p>
+<div class="admonition warning">
+<p class="admonition-title">DEPRECATED: <code>exists_database</code> is deprecated as of v2.0; use <code>name in client.list_databases()</code></p>
+</div>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>str</code></td>
+        <td><p>Database to check for existence</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>bool</code></td>
+      <td><p>Whether <code>name</code> exists</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="ibis.backends.pandas.BasePandasBackend.exists_table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">exists_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
+  </span>
+
+<a href="#ibis.backends.pandas.BasePandasBackend.exists_table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Return whether a table name exists in the database.</p>
+<div class="admonition warning">
+<p class="admonition-title">DEPRECATED: <code>exists_table</code> is deprecated as of v2.0; use <code>name in client.list_tables()</code></p>
+</div>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>name</code></td>
+        <td><code>str</code></td>
+        <td><p>Table name</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>database</code></td>
+        <td><code>str | None</code></td>
+        <td><p>Database to check if given</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>bool</code></td>
+      <td><p>Whether <code>name</code> is a table</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
 <h4 id="ibis.backends.pandas.BasePandasBackend.from_dataframe" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">from_dataframe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;df&#39;</span><span class="p">,</span> <span class="n">client</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
@@ -3082,6 +3264,54 @@ or other equivalent entities in a SQL database.</p>
   </div>
 
 
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="ibis.backends.pandas.BasePandasBackend.table" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+<a href="#ibis.backends.pandas.BasePandasBackend.table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Return a table expression from the database.</p>
+<div class="admonition warning">
+<p class="admonition-title">DEPRECATED: <code>table</code> is deprecated as of v2.0; change the current database before calling <code>.table()</code></p>
+</div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="ibis.backends.pandas.BasePandasBackend.verify" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">verify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
+  </span>
+
+<a href="#ibis.backends.pandas.BasePandasBackend.verify" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Verify <code>expr</code> is an expression that can be compiled.</p>
+<div class="admonition warning">
+<p class="admonition-title">DEPRECATED: <code>verify</code> is deprecated as of v2.0; <code>compile</code> and capture <code>TranslationError</code> instead</p>
+</div>
+
+    </div>
+
+  </div>
 
 
 

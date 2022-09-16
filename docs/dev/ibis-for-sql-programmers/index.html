@@ -5164,7 +5164,7 @@ stats = events.group_by(keys).aggregate(
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>SELECT extract(`ts`, &#39;year&#39;) AS `year`, extract(`ts`, &#39;month&#39;) AS `month`,
-       count(1) AS `total`, count(DISTINCT `session_id`) AS `sessions`
+       count(*) AS `total`, count(DISTINCT `session_id`) AS `sessions`
 FROM web_events
 GROUP BY 1, 2
 </pre>
@@ -5374,7 +5374,7 @@ the SQL expression that is correct for your query engine.</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT `country`, count(1) AS `num_persons`, avg(`age`) AS `avg_age`,
+<pre>SELECT `country`, count(*) AS `num_persons`, avg(`age`) AS `avg_age`,
        avg(if(`gender` = &#39;M&#39;, `age`, NULL)) AS `avg_male`,
        avg(if(`gender` = &#39;F&#39;, `age`, NULL)) AS `avg_female`
 FROM population
@@ -5449,7 +5449,7 @@ print(ibis.impala.compile(freqs))</div>
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>SELECT extract(`ts`, &#39;year&#39;) AS `year`, extract(`ts`, &#39;month&#39;) AS `month`,
-       count(1) AS `count`
+       count(*) AS `count`
 FROM web_events
 GROUP BY 1, 2
 </pre>
@@ -5526,7 +5526,7 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT extract(`ts`, &#39;year&#39;) AS `year`, count(1) AS `count`
+<pre>SELECT extract(`ts`, &#39;year&#39;) AS `year`, count(*) AS `count`
 FROM web_events
 GROUP BY 1
 </pre>
@@ -5617,7 +5617,7 @@ print(ibis.impala.compile(expr))</div>
 <pre>SELECT `one`, sum(`two`) AS `total`
 FROM my_data
 GROUP BY 1
-HAVING count(1) &gt;= 1000
+HAVING count(*) &gt;= 1000
 </pre>
 </div>
 </div>
@@ -6816,8 +6816,7 @@ print(ibis.impala.compile(expr))</div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>SELECT *
 FROM my_data
-WHERE (`two` BETWEEN 10 AND 50) AND
-      (`one` IS NOT NULL)
+WHERE `two` BETWEEN 10 AND 50 AND (`one` IS NOT NULL)
 </pre>
 </div>
 </div>
@@ -7749,7 +7748,7 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT t0.`key1`, count(1) AS `count`
+<pre>SELECT t0.`key1`, count(*) AS `count`
 FROM table1 t0
   INNER JOIN table2 t1
     ON t0.`value1` &lt; t1.`value2`

@@ -3200,7 +3200,7 @@ DateColumn.last_date = last_date</div>
   country       string
   date_of_birth date
 
-LastDate(date_of_birth): LastDate(r0.date_of_birth)</pre>
+LastDate(r0.date_of_birth)</pre>
 </div>
 
 </div>
@@ -3262,7 +3262,7 @@ LastDate(date_of_birth): LastDate(r0.date_of_birth)</pre>
   country       string
   date_of_birth date
 
-LastDate(date_of_birth, Equals(country, &#39;Indonesia&#39;)): LastDate(r0.date_of_birth, where=r0.country == &#39;Indonesia&#39;)</pre>
+LastDate(r0.date_of_birth, where=r0.country == &#39;Indonesia&#39;)</pre>
 </div>
 
 </div>
@@ -3601,7 +3601,7 @@ expr</div>
   independence_date date
   independence_from string
 
-LastDate(independence_date): LastDate(r0.independence_date)</pre>
+LastDate(r0.independence_date)</pre>
 </div>
 
 </div>
@@ -3657,130 +3657,10 @@ print(sql_expr)</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In [12], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> sql_expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">expr</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compile</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(sql_expr)
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/expr/types/core.py:309</span>, in <span class="ansi-cyan-fg">Expr.compile</span><span class="ansi-blue-fg">(self, limit, timecontext, params)</span>
-<span class="ansi-green-intense-fg ansi-bold">    285</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">compile</span>(
-<span class="ansi-green-intense-fg ansi-bold">    286</span>     <span style="color: rgb(0,135,0)">self</span>,
-<span class="ansi-green-intense-fg ansi-bold">    287</span>     limit: <span style="color: rgb(0,135,0)">int</span> <span style="color: rgb(98,98,98)">|</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>,
-<span class="ansi-green-intense-fg ansi-bold">    288</span>     timecontext: TimeContext <span style="color: rgb(98,98,98)">|</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>,
-<span class="ansi-green-intense-fg ansi-bold">    289</span>     params: Mapping[ir<span style="color: rgb(98,98,98)">.</span>Value, Any] <span style="color: rgb(98,98,98)">|</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>,
-<span class="ansi-green-intense-fg ansi-bold">    290</span> ):
-<span class="ansi-green-intense-fg ansi-bold">    291</span>     <span style="color: rgb(175,0,0)">&#34;&#34;&#34;Compile to an execution target.</span>
-<span class="ansi-green-intense-fg ansi-bold">    292</span> 
-<span class="ansi-green-intense-fg ansi-bold">    293</span> <span style="color: rgb(175,0,0)">    Parameters</span>
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    307</span> <span style="color: rgb(175,0,0)">        Mapping of scalar parameter expressions to value</span>
-<span class="ansi-green-intense-fg ansi-bold">    308</span> <span style="color: rgb(175,0,0)">    &#34;&#34;&#34;</span>
-<span class="ansi-green-fg">--&gt; 309</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_find_backend</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compile</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-intense-fg ansi-bold">    310</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">timecontext</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">timecontext</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">params</span>
-<span class="ansi-green-intense-fg ansi-bold">    311</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/__init__.py:280</span>, in <span class="ansi-cyan-fg">BaseSQLBackend.compile</span><span class="ansi-blue-fg">(self, expr, limit, params, timecontext)</span>
-<span class="ansi-green-intense-fg ansi-bold">    251</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">compile</span>(
-<span class="ansi-green-intense-fg ansi-bold">    252</span>     <span style="color: rgb(0,135,0)">self</span>,
-<span class="ansi-green-intense-fg ansi-bold">    253</span>     expr: ir<span style="color: rgb(98,98,98)">.</span>Expr,
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    256</span>     timecontext: TimeContext <span style="color: rgb(98,98,98)">|</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>,
-<span class="ansi-green-intense-fg ansi-bold">    257</span> ) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> Any:
-<span class="ansi-green-intense-fg ansi-bold">    258</span>     <span style="color: rgb(175,0,0)">&#34;&#34;&#34;Compile an Ibis expression.</span>
-<span class="ansi-green-intense-fg ansi-bold">    259</span> 
-<span class="ansi-green-intense-fg ansi-bold">    260</span> <span style="color: rgb(175,0,0)">    Parameters</span>
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    276</span> <span style="color: rgb(175,0,0)">        backend.</span>
-<span class="ansi-green-intense-fg ansi-bold">    277</span> <span style="color: rgb(175,0,0)">    &#34;&#34;&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">    278</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compiler</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">to_ast_ensure_limit</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-intense-fg ansi-bold">    279</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">expr</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">params</span>
-<span class="ansi-green-fg">--&gt; 280</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compile</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/base.py:41</span>, in <span class="ansi-cyan-fg">QueryAST.compile</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">     39</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">compile</span>(<span style="color: rgb(0,135,0)">self</span>):
-<span class="ansi-green-intense-fg ansi-bold">     40</span>     compiled_setup_queries <span style="color: rgb(98,98,98)">=</span> [q<span style="color: rgb(98,98,98)">.</span>compile() <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> q <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>setup_queries]
-<span class="ansi-green-fg">---&gt; 41</span>     compiled_queries <span style="color: rgb(98,98,98)">=</span> [q<span style="color: rgb(98,98,98)">.</span>compile() <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> q <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>queries]
-<span class="ansi-green-intense-fg ansi-bold">     42</span>     compiled_teardown_queries <span style="color: rgb(98,98,98)">=</span> [
-<span class="ansi-green-intense-fg ansi-bold">     43</span>         q<span style="color: rgb(98,98,98)">.</span>compile() <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> q <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>teardown_queries
-<span class="ansi-green-intense-fg ansi-bold">     44</span>     ]
-<span class="ansi-green-intense-fg ansi-bold">     45</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>context<span style="color: rgb(98,98,98)">.</span>collapse(
-<span class="ansi-green-intense-fg ansi-bold">     46</span>         <span style="color: rgb(0,135,0)">list</span>(
-<span class="ansi-green-intense-fg ansi-bold">     47</span>             chain(
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">     52</span>         )
-<span class="ansi-green-intense-fg ansi-bold">     53</span>     )
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/base.py:41</span>, in <span class="ansi-cyan-fg">&lt;listcomp&gt;</span><span class="ansi-blue-fg">(.0)</span>
-<span class="ansi-green-intense-fg ansi-bold">     39</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">compile</span>(<span style="color: rgb(0,135,0)">self</span>):
-<span class="ansi-green-intense-fg ansi-bold">     40</span>     compiled_setup_queries <span style="color: rgb(98,98,98)">=</span> [q<span style="color: rgb(98,98,98)">.</span>compile() <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> q <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>setup_queries]
-<span class="ansi-green-fg">---&gt; 41</span>     compiled_queries <span style="color: rgb(98,98,98)">=</span> [<span class="ansi-yellow-bg">q</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compile</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span> <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> q <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>queries]
-<span class="ansi-green-intense-fg ansi-bold">     42</span>     compiled_teardown_queries <span style="color: rgb(98,98,98)">=</span> [
-<span class="ansi-green-intense-fg ansi-bold">     43</span>         q<span style="color: rgb(98,98,98)">.</span>compile() <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> q <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>teardown_queries
-<span class="ansi-green-intense-fg ansi-bold">     44</span>     ]
-<span class="ansi-green-intense-fg ansi-bold">     45</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>context<span style="color: rgb(98,98,98)">.</span>collapse(
-<span class="ansi-green-intense-fg ansi-bold">     46</span>         <span style="color: rgb(0,135,0)">list</span>(
-<span class="ansi-green-intense-fg ansi-bold">     47</span>             chain(
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">     52</span>         )
-<span class="ansi-green-intense-fg ansi-bold">     53</span>     )
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/alchemy/query_builder.py:192</span>, in <span class="ansi-cyan-fg">AlchemySelect.compile</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">    183</span> steps <span style="color: rgb(98,98,98)">=</span> [
-<span class="ansi-green-intense-fg ansi-bold">    184</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_add_select,
-<span class="ansi-green-intense-fg ansi-bold">    185</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_add_groupby,
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    188</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_add_limit,
-<span class="ansi-green-intense-fg ansi-bold">    189</span> ]
-<span class="ansi-green-intense-fg ansi-bold">    191</span> <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> step <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> steps:
-<span class="ansi-green-fg">--&gt; 192</span>     frag <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">step</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">frag</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    194</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> frag
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/alchemy/query_builder.py:222</span>, in <span class="ansi-cyan-fg">AlchemySelect._add_select</span><span class="ansi-blue-fg">(self, table_set)</span>
-<span class="ansi-green-intense-fg ansi-bold">    220</span> <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> op <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>select_set:
-<span class="ansi-green-intense-fg ansi-bold">    221</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">isinstance</span>(op, ops<span style="color: rgb(98,98,98)">.</span>Value):
-<span class="ansi-green-fg">--&gt; 222</span>         arg <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_translate</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">op</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">named</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">True</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    223</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> <span style="color: rgb(0,135,0)">isinstance</span>(op, ops<span style="color: rgb(98,98,98)">.</span>TableNode):
-<span class="ansi-green-intense-fg ansi-bold">    224</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> op<span style="color: rgb(98,98,98)">.</span>equals(<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>table_set):
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/query_builder.py:233</span>, in <span class="ansi-cyan-fg">Select._translate</span><span class="ansi-blue-fg">(self, expr, named, permit_subquery)</span>
-<span class="ansi-green-intense-fg ansi-bold">    226</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">_translate</span>(<span style="color: rgb(0,135,0)">self</span>, expr, named<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>, permit_subquery<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>):
-<span class="ansi-green-intense-fg ansi-bold">    227</span>     translator <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>translator_class(
-<span class="ansi-green-intense-fg ansi-bold">    228</span>         expr,
-<span class="ansi-green-intense-fg ansi-bold">    229</span>         context<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>context,
-<span class="ansi-green-intense-fg ansi-bold">    230</span>         named<span style="color: rgb(98,98,98)">=</span>named,
-<span class="ansi-green-intense-fg ansi-bold">    231</span>         permit_subquery<span style="color: rgb(98,98,98)">=</span>permit_subquery,
-<span class="ansi-green-intense-fg ansi-bold">    232</span>     )
-<span class="ansi-green-fg">--&gt; 233</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">translator</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">get_result</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/translator.py:200</span>, in <span class="ansi-cyan-fg">ExprTranslator.get_result</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">    198</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">get_result</span>(<span style="color: rgb(0,135,0)">self</span>):
-<span class="ansi-green-intense-fg ansi-bold">    199</span>     <span style="color: rgb(175,0,0)">&#34;&#34;&#34;Compile SQL expression into a string.&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">--&gt; 200</span>     translated <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">translate</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">node</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    201</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_needs_name(<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>node):
-<span class="ansi-green-intense-fg ansi-bold">    202</span>         <span style="color: rgb(95,135,135)"># TODO: this could fail in various ways</span>
-<span class="ansi-green-intense-fg ansi-bold">    203</span>         translated <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>name(translated, <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>node<span style="color: rgb(98,98,98)">.</span>name)
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/translator.py:232</span>, in <span class="ansi-cyan-fg">ExprTranslator.translate</span><span class="ansi-blue-fg">(self, op)</span>
-<span class="ansi-green-intense-fg ansi-bold">    230</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> <span style="color: rgb(0,135,0)">type</span>(op) <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_registry:
-<span class="ansi-green-intense-fg ansi-bold">    231</span>     formatter <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_registry[<span style="color: rgb(0,135,0)">type</span>(op)]
-<span class="ansi-green-fg">--&gt; 232</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">formatter</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">op</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    233</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
-<span class="ansi-green-intense-fg ansi-bold">    234</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> com<span style="color: rgb(98,98,98)">.</span>OperationNotDefinedError(
-<span class="ansi-green-intense-fg ansi-bold">    235</span>         <span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">No translation rule for </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span><span style="color: rgb(0,135,0)">type</span>(op)<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)">&#39;</span>
-<span class="ansi-green-intense-fg ansi-bold">    236</span>     )
-
-Cell <span class="ansi-green-fg">In [7], line 7</span>, in <span class="ansi-cyan-fg">_last_date</span><span class="ansi-blue-fg">(translator, expr)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span style="color: rgb(175,0,255)">@ibis</span><span style="color: rgb(98,98,98)">.</span>sqlite<span style="color: rgb(98,98,98)">.</span>add_operation(LastDate)
-<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">_last_date</span>(translator, expr):
-<span class="ansi-green-intense-fg ansi-bold">      6</span>     <span style="color: rgb(95,135,135)"># pull out the arguments to the expression</span>
-<span class="ansi-green-fg">----&gt; 7</span>     arg, where <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">expr</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">op</span>()<span style="color: rgb(98,98,98)">.</span>args
-<span class="ansi-green-intense-fg ansi-bold">      9</span>     <span style="color: rgb(95,135,135)"># compile the argument</span>
-<span class="ansi-green-intense-fg ansi-bold">     10</span>     compiled_arg <span style="color: rgb(98,98,98)">=</span> translator<span style="color: rgb(98,98,98)">.</span>translate(arg)
-
-<span class="ansi-red-fg">AttributeError</span>: &#39;LastDate&#39; object has no attribute &#39;op&#39;</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>SELECT max(t0.independence_date) AS tmp 
+FROM main.independence AS t0
+</pre>
 </div>
 </div>
 
@@ -3830,125 +3710,15 @@ Cell <span class="ansi-green-fg">In [7], line 7</span>, in <span class="ansi-cya
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In [13], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">expr</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">execute</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
 
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/expr/types/core.py:281</span>, in <span class="ansi-cyan-fg">Expr.execute</span><span class="ansi-blue-fg">(self, limit, timecontext, params, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    256</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">execute</span>(
-<span class="ansi-green-intense-fg ansi-bold">    257</span>     <span style="color: rgb(0,135,0)">self</span>,
-<span class="ansi-green-intense-fg ansi-bold">    258</span>     limit: <span style="color: rgb(0,135,0)">int</span> <span style="color: rgb(98,98,98)">|</span> <span style="color: rgb(0,135,0)">str</span> <span style="color: rgb(98,98,98)">|</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">default</span><span style="color: rgb(175,0,0)">&#39;</span>,
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    261</span>     <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs: Any,
-<span class="ansi-green-intense-fg ansi-bold">    262</span> ):
-<span class="ansi-green-intense-fg ansi-bold">    263</span>     <span style="color: rgb(175,0,0)">&#34;&#34;&#34;Execute an expression against its backend if one exists.</span>
-<span class="ansi-green-intense-fg ansi-bold">    264</span> 
-<span class="ansi-green-intense-fg ansi-bold">    265</span> <span style="color: rgb(175,0,0)">    Parameters</span>
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    279</span> <span style="color: rgb(175,0,0)">        Mapping of scalar parameter expressions to value</span>
-<span class="ansi-green-intense-fg ansi-bold">    280</span> <span style="color: rgb(175,0,0)">    &#34;&#34;&#34;</span>
-<span class="ansi-green-fg">--&gt; 281</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_find_backend</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">use_default</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">True</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">execute</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-intense-fg ansi-bold">    282</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">timecontext</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">timecontext</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span>
-<span class="ansi-green-intense-fg ansi-bold">    283</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
 
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/__init__.py:181</span>, in <span class="ansi-cyan-fg">BaseSQLBackend.execute</span><span class="ansi-blue-fg">(self, expr, params, limit, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    177</span> kwargs<span style="color: rgb(98,98,98)">.</span>pop(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">timecontext</span><span style="color: rgb(175,0,0)">&#39;</span>, <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>)
-<span class="ansi-green-intense-fg ansi-bold">    178</span> query_ast <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>compiler<span style="color: rgb(98,98,98)">.</span>to_ast_ensure_limit(
-<span class="ansi-green-intense-fg ansi-bold">    179</span>     expr, limit, params<span style="color: rgb(98,98,98)">=</span>params
-<span class="ansi-green-intense-fg ansi-bold">    180</span> )
-<span class="ansi-green-fg">--&gt; 181</span> sql <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">query_ast</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compile</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    182</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_log(sql)
-<span class="ansi-green-intense-fg ansi-bold">    184</span> schema <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>ast_schema(query_ast, <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs)
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/base.py:41</span>, in <span class="ansi-cyan-fg">QueryAST.compile</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">     39</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">compile</span>(<span style="color: rgb(0,135,0)">self</span>):
-<span class="ansi-green-intense-fg ansi-bold">     40</span>     compiled_setup_queries <span style="color: rgb(98,98,98)">=</span> [q<span style="color: rgb(98,98,98)">.</span>compile() <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> q <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>setup_queries]
-<span class="ansi-green-fg">---&gt; 41</span>     compiled_queries <span style="color: rgb(98,98,98)">=</span> [q<span style="color: rgb(98,98,98)">.</span>compile() <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> q <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>queries]
-<span class="ansi-green-intense-fg ansi-bold">     42</span>     compiled_teardown_queries <span style="color: rgb(98,98,98)">=</span> [
-<span class="ansi-green-intense-fg ansi-bold">     43</span>         q<span style="color: rgb(98,98,98)">.</span>compile() <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> q <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>teardown_queries
-<span class="ansi-green-intense-fg ansi-bold">     44</span>     ]
-<span class="ansi-green-intense-fg ansi-bold">     45</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>context<span style="color: rgb(98,98,98)">.</span>collapse(
-<span class="ansi-green-intense-fg ansi-bold">     46</span>         <span style="color: rgb(0,135,0)">list</span>(
-<span class="ansi-green-intense-fg ansi-bold">     47</span>             chain(
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">     52</span>         )
-<span class="ansi-green-intense-fg ansi-bold">     53</span>     )
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/base.py:41</span>, in <span class="ansi-cyan-fg">&lt;listcomp&gt;</span><span class="ansi-blue-fg">(.0)</span>
-<span class="ansi-green-intense-fg ansi-bold">     39</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">compile</span>(<span style="color: rgb(0,135,0)">self</span>):
-<span class="ansi-green-intense-fg ansi-bold">     40</span>     compiled_setup_queries <span style="color: rgb(98,98,98)">=</span> [q<span style="color: rgb(98,98,98)">.</span>compile() <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> q <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>setup_queries]
-<span class="ansi-green-fg">---&gt; 41</span>     compiled_queries <span style="color: rgb(98,98,98)">=</span> [<span class="ansi-yellow-bg">q</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compile</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span> <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> q <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>queries]
-<span class="ansi-green-intense-fg ansi-bold">     42</span>     compiled_teardown_queries <span style="color: rgb(98,98,98)">=</span> [
-<span class="ansi-green-intense-fg ansi-bold">     43</span>         q<span style="color: rgb(98,98,98)">.</span>compile() <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> q <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>teardown_queries
-<span class="ansi-green-intense-fg ansi-bold">     44</span>     ]
-<span class="ansi-green-intense-fg ansi-bold">     45</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>context<span style="color: rgb(98,98,98)">.</span>collapse(
-<span class="ansi-green-intense-fg ansi-bold">     46</span>         <span style="color: rgb(0,135,0)">list</span>(
-<span class="ansi-green-intense-fg ansi-bold">     47</span>             chain(
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">     52</span>         )
-<span class="ansi-green-intense-fg ansi-bold">     53</span>     )
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/alchemy/query_builder.py:192</span>, in <span class="ansi-cyan-fg">AlchemySelect.compile</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">    183</span> steps <span style="color: rgb(98,98,98)">=</span> [
-<span class="ansi-green-intense-fg ansi-bold">    184</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_add_select,
-<span class="ansi-green-intense-fg ansi-bold">    185</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_add_groupby,
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    188</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_add_limit,
-<span class="ansi-green-intense-fg ansi-bold">    189</span> ]
-<span class="ansi-green-intense-fg ansi-bold">    191</span> <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> step <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> steps:
-<span class="ansi-green-fg">--&gt; 192</span>     frag <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">step</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">frag</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    194</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> frag
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/alchemy/query_builder.py:222</span>, in <span class="ansi-cyan-fg">AlchemySelect._add_select</span><span class="ansi-blue-fg">(self, table_set)</span>
-<span class="ansi-green-intense-fg ansi-bold">    220</span> <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> op <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>select_set:
-<span class="ansi-green-intense-fg ansi-bold">    221</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">isinstance</span>(op, ops<span style="color: rgb(98,98,98)">.</span>Value):
-<span class="ansi-green-fg">--&gt; 222</span>         arg <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_translate</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">op</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">named</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">True</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    223</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> <span style="color: rgb(0,135,0)">isinstance</span>(op, ops<span style="color: rgb(98,98,98)">.</span>TableNode):
-<span class="ansi-green-intense-fg ansi-bold">    224</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> op<span style="color: rgb(98,98,98)">.</span>equals(<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>table_set):
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/query_builder.py:233</span>, in <span class="ansi-cyan-fg">Select._translate</span><span class="ansi-blue-fg">(self, expr, named, permit_subquery)</span>
-<span class="ansi-green-intense-fg ansi-bold">    226</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">_translate</span>(<span style="color: rgb(0,135,0)">self</span>, expr, named<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>, permit_subquery<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>):
-<span class="ansi-green-intense-fg ansi-bold">    227</span>     translator <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>translator_class(
-<span class="ansi-green-intense-fg ansi-bold">    228</span>         expr,
-<span class="ansi-green-intense-fg ansi-bold">    229</span>         context<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>context,
-<span class="ansi-green-intense-fg ansi-bold">    230</span>         named<span style="color: rgb(98,98,98)">=</span>named,
-<span class="ansi-green-intense-fg ansi-bold">    231</span>         permit_subquery<span style="color: rgb(98,98,98)">=</span>permit_subquery,
-<span class="ansi-green-intense-fg ansi-bold">    232</span>     )
-<span class="ansi-green-fg">--&gt; 233</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">translator</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">get_result</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/translator.py:200</span>, in <span class="ansi-cyan-fg">ExprTranslator.get_result</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">    198</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">get_result</span>(<span style="color: rgb(0,135,0)">self</span>):
-<span class="ansi-green-intense-fg ansi-bold">    199</span>     <span style="color: rgb(175,0,0)">&#34;&#34;&#34;Compile SQL expression into a string.&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">--&gt; 200</span>     translated <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">translate</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">node</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    201</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_needs_name(<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>node):
-<span class="ansi-green-intense-fg ansi-bold">    202</span>         <span style="color: rgb(95,135,135)"># TODO: this could fail in various ways</span>
-<span class="ansi-green-intense-fg ansi-bold">    203</span>         translated <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>name(translated, <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>node<span style="color: rgb(98,98,98)">.</span>name)
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/translator.py:232</span>, in <span class="ansi-cyan-fg">ExprTranslator.translate</span><span class="ansi-blue-fg">(self, op)</span>
-<span class="ansi-green-intense-fg ansi-bold">    230</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> <span style="color: rgb(0,135,0)">type</span>(op) <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_registry:
-<span class="ansi-green-intense-fg ansi-bold">    231</span>     formatter <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_registry[<span style="color: rgb(0,135,0)">type</span>(op)]
-<span class="ansi-green-fg">--&gt; 232</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">formatter</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">op</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    233</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
-<span class="ansi-green-intense-fg ansi-bold">    234</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> com<span style="color: rgb(98,98,98)">.</span>OperationNotDefinedError(
-<span class="ansi-green-intense-fg ansi-bold">    235</span>         <span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">No translation rule for </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span><span style="color: rgb(0,135,0)">type</span>(op)<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)">&#39;</span>
-<span class="ansi-green-intense-fg ansi-bold">    236</span>     )
-
-Cell <span class="ansi-green-fg">In [7], line 7</span>, in <span class="ansi-cyan-fg">_last_date</span><span class="ansi-blue-fg">(translator, expr)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span style="color: rgb(175,0,255)">@ibis</span><span style="color: rgb(98,98,98)">.</span>sqlite<span style="color: rgb(98,98,98)">.</span>add_operation(LastDate)
-<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">_last_date</span>(translator, expr):
-<span class="ansi-green-intense-fg ansi-bold">      6</span>     <span style="color: rgb(95,135,135)"># pull out the arguments to the expression</span>
-<span class="ansi-green-fg">----&gt; 7</span>     arg, where <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">expr</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">op</span>()<span style="color: rgb(98,98,98)">.</span>args
-<span class="ansi-green-intense-fg ansi-bold">      9</span>     <span style="color: rgb(95,135,135)"># compile the argument</span>
-<span class="ansi-green-intense-fg ansi-bold">     10</span>     compiled_arg <span style="color: rgb(98,98,98)">=</span> translator<span style="color: rgb(98,98,98)">.</span>translate(arg)
-
-<span class="ansi-red-fg">AttributeError</span>: &#39;LastDate&#39; object has no attribute &#39;op&#39;</pre>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Timestamp(&#39;2011-07-09 00:00:00&#39;)</pre>
 </div>
+
 </div>
 
 </div>
@@ -4026,7 +3796,7 @@ expr</div>
   independence_date date
   independence_from string
 
-LastDate(independence_date, Equals(independence_from, &#39;Spanish Empire&#39;)): LastDate(r0.independence_date, where=r0.independence_from == &#39;Spanish Empire&#39;)</pre>
+LastDate(r0.independence_date, where=r0.independence_from == &#39;Spanish Empire&#39;)</pre>
 </div>
 
 </div>
@@ -4079,126 +3849,15 @@ result</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In [15], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> result <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">expr</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">execute</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> result
 
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/expr/types/core.py:281</span>, in <span class="ansi-cyan-fg">Expr.execute</span><span class="ansi-blue-fg">(self, limit, timecontext, params, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    256</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">execute</span>(
-<span class="ansi-green-intense-fg ansi-bold">    257</span>     <span style="color: rgb(0,135,0)">self</span>,
-<span class="ansi-green-intense-fg ansi-bold">    258</span>     limit: <span style="color: rgb(0,135,0)">int</span> <span style="color: rgb(98,98,98)">|</span> <span style="color: rgb(0,135,0)">str</span> <span style="color: rgb(98,98,98)">|</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">default</span><span style="color: rgb(175,0,0)">&#39;</span>,
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    261</span>     <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs: Any,
-<span class="ansi-green-intense-fg ansi-bold">    262</span> ):
-<span class="ansi-green-intense-fg ansi-bold">    263</span>     <span style="color: rgb(175,0,0)">&#34;&#34;&#34;Execute an expression against its backend if one exists.</span>
-<span class="ansi-green-intense-fg ansi-bold">    264</span> 
-<span class="ansi-green-intense-fg ansi-bold">    265</span> <span style="color: rgb(175,0,0)">    Parameters</span>
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    279</span> <span style="color: rgb(175,0,0)">        Mapping of scalar parameter expressions to value</span>
-<span class="ansi-green-intense-fg ansi-bold">    280</span> <span style="color: rgb(175,0,0)">    &#34;&#34;&#34;</span>
-<span class="ansi-green-fg">--&gt; 281</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_find_backend</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">use_default</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">True</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">execute</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-intense-fg ansi-bold">    282</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">timecontext</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">timecontext</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span>
-<span class="ansi-green-intense-fg ansi-bold">    283</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
 
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/__init__.py:181</span>, in <span class="ansi-cyan-fg">BaseSQLBackend.execute</span><span class="ansi-blue-fg">(self, expr, params, limit, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    177</span> kwargs<span style="color: rgb(98,98,98)">.</span>pop(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">timecontext</span><span style="color: rgb(175,0,0)">&#39;</span>, <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>)
-<span class="ansi-green-intense-fg ansi-bold">    178</span> query_ast <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>compiler<span style="color: rgb(98,98,98)">.</span>to_ast_ensure_limit(
-<span class="ansi-green-intense-fg ansi-bold">    179</span>     expr, limit, params<span style="color: rgb(98,98,98)">=</span>params
-<span class="ansi-green-intense-fg ansi-bold">    180</span> )
-<span class="ansi-green-fg">--&gt; 181</span> sql <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">query_ast</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compile</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    182</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_log(sql)
-<span class="ansi-green-intense-fg ansi-bold">    184</span> schema <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>ast_schema(query_ast, <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs)
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/base.py:41</span>, in <span class="ansi-cyan-fg">QueryAST.compile</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">     39</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">compile</span>(<span style="color: rgb(0,135,0)">self</span>):
-<span class="ansi-green-intense-fg ansi-bold">     40</span>     compiled_setup_queries <span style="color: rgb(98,98,98)">=</span> [q<span style="color: rgb(98,98,98)">.</span>compile() <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> q <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>setup_queries]
-<span class="ansi-green-fg">---&gt; 41</span>     compiled_queries <span style="color: rgb(98,98,98)">=</span> [q<span style="color: rgb(98,98,98)">.</span>compile() <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> q <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>queries]
-<span class="ansi-green-intense-fg ansi-bold">     42</span>     compiled_teardown_queries <span style="color: rgb(98,98,98)">=</span> [
-<span class="ansi-green-intense-fg ansi-bold">     43</span>         q<span style="color: rgb(98,98,98)">.</span>compile() <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> q <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>teardown_queries
-<span class="ansi-green-intense-fg ansi-bold">     44</span>     ]
-<span class="ansi-green-intense-fg ansi-bold">     45</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>context<span style="color: rgb(98,98,98)">.</span>collapse(
-<span class="ansi-green-intense-fg ansi-bold">     46</span>         <span style="color: rgb(0,135,0)">list</span>(
-<span class="ansi-green-intense-fg ansi-bold">     47</span>             chain(
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">     52</span>         )
-<span class="ansi-green-intense-fg ansi-bold">     53</span>     )
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/base.py:41</span>, in <span class="ansi-cyan-fg">&lt;listcomp&gt;</span><span class="ansi-blue-fg">(.0)</span>
-<span class="ansi-green-intense-fg ansi-bold">     39</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">compile</span>(<span style="color: rgb(0,135,0)">self</span>):
-<span class="ansi-green-intense-fg ansi-bold">     40</span>     compiled_setup_queries <span style="color: rgb(98,98,98)">=</span> [q<span style="color: rgb(98,98,98)">.</span>compile() <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> q <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>setup_queries]
-<span class="ansi-green-fg">---&gt; 41</span>     compiled_queries <span style="color: rgb(98,98,98)">=</span> [<span class="ansi-yellow-bg">q</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compile</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span> <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> q <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>queries]
-<span class="ansi-green-intense-fg ansi-bold">     42</span>     compiled_teardown_queries <span style="color: rgb(98,98,98)">=</span> [
-<span class="ansi-green-intense-fg ansi-bold">     43</span>         q<span style="color: rgb(98,98,98)">.</span>compile() <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> q <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>teardown_queries
-<span class="ansi-green-intense-fg ansi-bold">     44</span>     ]
-<span class="ansi-green-intense-fg ansi-bold">     45</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>context<span style="color: rgb(98,98,98)">.</span>collapse(
-<span class="ansi-green-intense-fg ansi-bold">     46</span>         <span style="color: rgb(0,135,0)">list</span>(
-<span class="ansi-green-intense-fg ansi-bold">     47</span>             chain(
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">     52</span>         )
-<span class="ansi-green-intense-fg ansi-bold">     53</span>     )
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/alchemy/query_builder.py:192</span>, in <span class="ansi-cyan-fg">AlchemySelect.compile</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">    183</span> steps <span style="color: rgb(98,98,98)">=</span> [
-<span class="ansi-green-intense-fg ansi-bold">    184</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_add_select,
-<span class="ansi-green-intense-fg ansi-bold">    185</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_add_groupby,
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    188</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_add_limit,
-<span class="ansi-green-intense-fg ansi-bold">    189</span> ]
-<span class="ansi-green-intense-fg ansi-bold">    191</span> <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> step <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> steps:
-<span class="ansi-green-fg">--&gt; 192</span>     frag <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">step</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">frag</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    194</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> frag
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/alchemy/query_builder.py:222</span>, in <span class="ansi-cyan-fg">AlchemySelect._add_select</span><span class="ansi-blue-fg">(self, table_set)</span>
-<span class="ansi-green-intense-fg ansi-bold">    220</span> <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> op <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>select_set:
-<span class="ansi-green-intense-fg ansi-bold">    221</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">isinstance</span>(op, ops<span style="color: rgb(98,98,98)">.</span>Value):
-<span class="ansi-green-fg">--&gt; 222</span>         arg <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_translate</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">op</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">named</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">True</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    223</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> <span style="color: rgb(0,135,0)">isinstance</span>(op, ops<span style="color: rgb(98,98,98)">.</span>TableNode):
-<span class="ansi-green-intense-fg ansi-bold">    224</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> op<span style="color: rgb(98,98,98)">.</span>equals(<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>table_set):
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/query_builder.py:233</span>, in <span class="ansi-cyan-fg">Select._translate</span><span class="ansi-blue-fg">(self, expr, named, permit_subquery)</span>
-<span class="ansi-green-intense-fg ansi-bold">    226</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">_translate</span>(<span style="color: rgb(0,135,0)">self</span>, expr, named<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>, permit_subquery<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>):
-<span class="ansi-green-intense-fg ansi-bold">    227</span>     translator <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>translator_class(
-<span class="ansi-green-intense-fg ansi-bold">    228</span>         expr,
-<span class="ansi-green-intense-fg ansi-bold">    229</span>         context<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>context,
-<span class="ansi-green-intense-fg ansi-bold">    230</span>         named<span style="color: rgb(98,98,98)">=</span>named,
-<span class="ansi-green-intense-fg ansi-bold">    231</span>         permit_subquery<span style="color: rgb(98,98,98)">=</span>permit_subquery,
-<span class="ansi-green-intense-fg ansi-bold">    232</span>     )
-<span class="ansi-green-fg">--&gt; 233</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">translator</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">get_result</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/translator.py:200</span>, in <span class="ansi-cyan-fg">ExprTranslator.get_result</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">    198</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">get_result</span>(<span style="color: rgb(0,135,0)">self</span>):
-<span class="ansi-green-intense-fg ansi-bold">    199</span>     <span style="color: rgb(175,0,0)">&#34;&#34;&#34;Compile SQL expression into a string.&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">--&gt; 200</span>     translated <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">translate</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">node</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    201</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_needs_name(<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>node):
-<span class="ansi-green-intense-fg ansi-bold">    202</span>         <span style="color: rgb(95,135,135)"># TODO: this could fail in various ways</span>
-<span class="ansi-green-intense-fg ansi-bold">    203</span>         translated <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>name(translated, <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>node<span style="color: rgb(98,98,98)">.</span>name)
-
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/translator.py:232</span>, in <span class="ansi-cyan-fg">ExprTranslator.translate</span><span class="ansi-blue-fg">(self, op)</span>
-<span class="ansi-green-intense-fg ansi-bold">    230</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> <span style="color: rgb(0,135,0)">type</span>(op) <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_registry:
-<span class="ansi-green-intense-fg ansi-bold">    231</span>     formatter <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_registry[<span style="color: rgb(0,135,0)">type</span>(op)]
-<span class="ansi-green-fg">--&gt; 232</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">formatter</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">op</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    233</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
-<span class="ansi-green-intense-fg ansi-bold">    234</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> com<span style="color: rgb(98,98,98)">.</span>OperationNotDefinedError(
-<span class="ansi-green-intense-fg ansi-bold">    235</span>         <span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">No translation rule for </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span><span style="color: rgb(0,135,0)">type</span>(op)<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)">&#39;</span>
-<span class="ansi-green-intense-fg ansi-bold">    236</span>     )
-
-Cell <span class="ansi-green-fg">In [7], line 7</span>, in <span class="ansi-cyan-fg">_last_date</span><span class="ansi-blue-fg">(translator, expr)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span style="color: rgb(175,0,255)">@ibis</span><span style="color: rgb(98,98,98)">.</span>sqlite<span style="color: rgb(98,98,98)">.</span>add_operation(LastDate)
-<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">_last_date</span>(translator, expr):
-<span class="ansi-green-intense-fg ansi-bold">      6</span>     <span style="color: rgb(95,135,135)"># pull out the arguments to the expression</span>
-<span class="ansi-green-fg">----&gt; 7</span>     arg, where <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">expr</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">op</span>()<span style="color: rgb(98,98,98)">.</span>args
-<span class="ansi-green-intense-fg ansi-bold">      9</span>     <span style="color: rgb(95,135,135)"># compile the argument</span>
-<span class="ansi-green-intense-fg ansi-bold">     10</span>     compiled_arg <span style="color: rgb(98,98,98)">=</span> translator<span style="color: rgb(98,98,98)">.</span>translate(arg)
-
-<span class="ansi-red-fg">AttributeError</span>: &#39;LastDate&#39; object has no attribute &#39;op&#39;</pre>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Timestamp(&#39;1898-06-12 00:00:00&#39;)</pre>
 </div>
+
 </div>
 
 </div>

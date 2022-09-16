@@ -1583,8 +1583,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.materialize" class="md-nav__link">
+    materialize()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.mutate" class="md-nav__link">
     mutate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.prevent_rewrite" class="md-nav__link">
+    prevent_rewrite()
   </a>
   
 </li>
@@ -2188,8 +2202,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.materialize" class="md-nav__link">
+    materialize()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.mutate" class="md-nav__link">
     mutate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.prevent_rewrite" class="md-nav__link">
+    prevent_rewrite()
   </a>
   
 </li>
@@ -2671,7 +2699,7 @@ columns.</p></td>
 
 
 <h4 id="ibis.expr.types.relations.Table.count" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.Table.count" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -2679,42 +2707,6 @@ columns.</p></td>
     <div class="doc doc-contents ">
 
       <p>Compute the number of rows in the table.</p>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>where</code></td>
-        <td><code>ir.BooleanValue | None</code></td>
-        <td><p>Optional boolean expression to filter rows when counting.</p></td>
-        <td><code>None</code></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">r0</span> <span class="o">:=</span> <span class="n">UnboundTable</span><span class="p">:</span> <span class="n">t</span>
-  <span class="n">a</span> <span class="n">int64</span>
-<span class="n">count</span><span class="p">:</span> <span class="n">CountStar</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">),</span> <span class="n">total</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
-<span class="n">r0</span> <span class="o">:=</span> <span class="n">UnboundTable</span><span class="p">:</span> <span class="n">t</span>
-  <span class="n">a</span> <span class="n">int64</span>
-<span class="n">Aggregation</span><span class="p">[</span><span class="n">r0</span><span class="p">]</span>
-  <span class="n">metrics</span><span class="p">:</span>
-    <span class="n">n</span><span class="p">:</span>     <span class="n">CountStar</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">r0</span><span class="o">.</span><span class="n">a</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">total</span><span class="p">:</span> <span class="n">Sum</span><span class="p">(</span><span class="n">r0</span><span class="o">.</span><span class="n">a</span><span class="p">)</span>
-</code></pre></div>
 
 <p><strong>Returns:</strong></p>
 <table>
@@ -3523,7 +3515,7 @@ as a scalar, all columns are filled with that value.</p></td>
 
 
 <h4 id="ibis.expr.types.relations.Table.intersect" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">intersect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.Table.intersect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -3708,6 +3700,28 @@ columns.</p></td>
 
 
 
+<h4 id="ibis.expr.types.relations.Table.materialize" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">materialize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.relations.Table.materialize" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <div class="admonition warning">
+<p class="admonition-title">DEPRECATED: <code>materialize</code> is deprecated as of v3.0; remove the <code>.materialize()</code> call, it has no effect</p>
+</div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
 <h4 id="ibis.expr.types.relations.Table.mutate" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">mutate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exprs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">mutations</span><span class="p">)</span></code>
 
@@ -3789,6 +3803,66 @@ the new columns.</p>
 
   </div>
 
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="ibis.expr.types.relations.Table.prevent_rewrite" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">prevent_rewrite</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.relations.Table.prevent_rewrite" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Prevent optimization from happening below this expression.</p>
+<div class="admonition warning">
+<p class="admonition-title">DEPRECATED: <code>prevent_rewrite</code> is deprecated as of v4.0; </p>
+</div>
+<p>Only valid on SQL-string generating backends.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>client</code></td>
+        <td><code>None</code></td>
+        <td><p>A client to use to create the SQLQueryResult operation. This can be
+useful if you're compiling an expression that derives from an
+<code>UnboundTable</code> operation.</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Table</code></td>
+      <td><p>An opaque SQL query</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
 
 
 
@@ -4378,7 +4452,7 @@ details on using named table expressions in a SQL string.</p>
 
 
 <h4 id="ibis.expr.types.relations.Table.union" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">union</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.Table.union" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
