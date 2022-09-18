@@ -2259,7 +2259,7 @@
 </code></pre></div>
 <h3 id="ecosystem">Ecosystem<a class="headerlink" href="#ecosystem" title="Anchor link to this section for reference">&para;</a></h3>
 <h4 id="ibis-builds-on-top-of-and-works-with-existing-python-tools">Ibis builds on top of and works with existing Python tools.<a class="headerlink" href="#ibis-builds-on-top-of-and-works-with-existing-python-tools" title="Anchor link to this section for reference">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="n">t</span><span class="o">.</span><span class="n">semi_join</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">t</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">exp</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">expr</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">semi_join</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">t</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">a</span><span class="o">.</span><span class="n">exp</span><span class="p">()</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>  <span class="c1"># a pandas DataFrame!</span>
 </code></pre></div>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Anchor link to this section for reference">&para;</a></h2>
@@ -2516,7 +2516,7 @@ including the <a href="backends/PostgreSQL/">PostgreSQL</a> and
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 4, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 17, 2022</span>
       
     
   </small>
