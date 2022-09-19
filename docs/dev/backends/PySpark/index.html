@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://ibis-project.org/dev/backends/PySpark/">
       
       <link rel="icon" href="../../static/icons/ibis/logo.svg">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.0">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.1">
     
     
       
@@ -983,19 +983,6 @@
   <a href="#ibis.backends.pyspark.Backend.Options" class="md-nav__link">
     Options
   </a>
-  
-    <nav class="md-nav" aria-label="Options">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.Options-attributes" class="md-nav__link">
-    Attributes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2155,19 +2142,6 @@
     Options
   </a>
   
-    <nav class="md-nav" aria-label="Options">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.pyspark.Backend.Options-attributes" class="md-nav__link">
-    Attributes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -2680,19 +2654,34 @@ underlying library or application.</p>
 
 <h5 id="ibis.backends.pyspark.Backend.Options" class="doc doc-heading">
         <code>
-Options            (<span title="ibis.config.BaseModel">BaseModel</span>)
+Options            (<span title="ibis.config.Config">Config</span>)
         </code>
 
 
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-pydantic-model"><code>pydantic-model</code></small>
-  </span>
 
 <a href="#ibis.backends.pyspark.Backend.Options" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
     <div class="doc doc-contents ">
 
+      <p>PySpark options.</p>
 
+<p><strong>Attributes:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>treat_nan_as_null</code></td>
+        <td><code>bool</code></td>
+        <td><p>Treat NaNs in floating point expressions as NULL.</p></td>
+      </tr>
+  </tbody>
+</table>
 
 
 
@@ -2701,27 +2690,9 @@ Options            (<span title="ibis.config.BaseModel">BaseModel</span>)
 
 
 
-<h6 id="ibis.backends.pyspark.Backend.Options-attributes">Attributes<a href="#ibis.backends.pyspark.Backend.Options-attributes" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
-
-  <div class="doc doc-object doc-attribute">
 
 
 
-<h7 id="ibis.backends.pyspark.Backend.Options.treat_nan_as_null" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">treat_nan_as_null</span><span class="p">:</span> <span class="nb">bool</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
-  </span>
-
-<a href="#ibis.backends.pyspark.Backend.Options.treat_nan_as_null" class="headerlink" title="Anchor link to this section for reference">&para;</a></h7>
-
-    <div class="doc doc-contents ">
-
-      <p>Treat NaNs in floating point expressions as NULL.</p>
-    </div>
-
-  </div>
 
 
 
@@ -3950,7 +3921,7 @@ the session in a way unknown to Ibis; be careful.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.48f2be22.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d691e9de.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       

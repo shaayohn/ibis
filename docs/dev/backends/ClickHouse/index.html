@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://ibis-project.org/dev/backends/ClickHouse/">
       
       <link rel="icon" href="../../static/icons/ibis/logo.svg">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.0">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.1">
     
     
       
@@ -871,19 +871,6 @@
   <a href="#ibis.backends.clickhouse.Backend.Options" class="md-nav__link">
     Options
   </a>
-  
-    <nav class="md-nav" aria-label="Options">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.clickhouse.Backend.Options-attributes" class="md-nav__link">
-    Attributes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2093,19 +2080,6 @@
     Options
   </a>
   
-    <nav class="md-nav" aria-label="Options">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.clickhouse.Backend.Options-attributes" class="md-nav__link">
-    Attributes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
         
       </ul>
@@ -2596,19 +2570,34 @@ underlying library or application.</p>
 
 <h5 id="ibis.backends.clickhouse.Backend.Options" class="doc doc-heading">
         <code>
-Options            (<span title="ibis.config.BaseModel">BaseModel</span>)
+Options            (<span title="ibis.config.Config">Config</span>)
         </code>
 
 
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-pydantic-model"><code>pydantic-model</code></small>
-  </span>
 
 <a href="#ibis.backends.clickhouse.Backend.Options" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
     <div class="doc doc-contents ">
 
+      <p>Clickhouse options.</p>
 
+<p><strong>Attributes:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>temp_db</code></td>
+        <td><code>str</code></td>
+        <td><p>Database to use for temporary objects.</p></td>
+      </tr>
+  </tbody>
+</table>
 
 
 
@@ -2617,27 +2606,9 @@ Options            (<span title="ibis.config.BaseModel">BaseModel</span>)
 
 
 
-<h6 id="ibis.backends.clickhouse.Backend.Options-attributes">Attributes<a href="#ibis.backends.clickhouse.Backend.Options-attributes" class="headerlink" title="Anchor link to this section for reference">&para;</a></h6>
-
-  <div class="doc doc-object doc-attribute">
 
 
 
-<h7 id="ibis.backends.clickhouse.Backend.Options.temp_db" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">temp_db</span><span class="p">:</span> <span class="nb">str</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-pydantic-field"><code>pydantic-field</code></small>
-  </span>
-
-<a href="#ibis.backends.clickhouse.Backend.Options.temp_db" class="headerlink" title="Anchor link to this section for reference">&para;</a></h7>
-
-    <div class="doc doc-contents ">
-
-      <p>Database to use for temporary objects.</p>
-    </div>
-
-  </div>
 
 
 
@@ -3740,7 +3711,7 @@ external datasources for the query</p></td>
     <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.tabs.link", "header.autohide", "navigation.indexes", "navigation.instant", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.48f2be22.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d691e9de.min.js"></script>
       
         <script src="../../javascripts/mathjax.js"></script>
       
