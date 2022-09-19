@@ -2920,7 +2920,7 @@ columns.</p></td>
 
 
 <h4 id="ibis.expr.types.relations.Table.drop" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">drop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fields</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">drop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">fields</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.Table.drop" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -2942,9 +2942,9 @@ columns.</p></td>
   <tbody>
       <tr>
         <td><code>fields</code></td>
-        <td><code>str | Sequence[str]</code></td>
+        <td><code>str</code></td>
         <td><p>Fields to drop</p></td>
-        <td><em>required</em></td>
+        <td><code>()</code></td>
       </tr>
   </tbody>
 </table>
@@ -2959,7 +2959,7 @@ columns.</p></td>
   <tbody>
     <tr>
       <td><code>Table</code></td>
-      <td><p>Expression without <code>fields</code></p></td>
+      <td><p>A table with all columns in <code>fields</code> removed.</p></td>
     </tr>
   </tbody>
 </table>
