@@ -5691,7 +5691,7 @@ print(ibis.impala.compile(sorted))</div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>SELECT *
 FROM web_events
-ORDER BY extract(`ts`, &#39;year&#39;), extract(`ts`, &#39;month&#39;)
+ORDER BY extract(`ts`, &#39;year&#39;) ASC, extract(`ts`, &#39;month&#39;) ASC
 </pre>
 </div>
 </div>
@@ -8760,7 +8760,7 @@ print(ibis.impala.compile(expr))</div>
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>SELECT *,
-       `two` - lag(`two`) OVER (PARTITION BY `one` ORDER BY `two`) AS `two_first_diff`
+       `two` - lag(`two`) OVER (PARTITION BY `one` ORDER BY `two` ASC) AS `two_first_diff`
 FROM my_data
 </pre>
 </div>
