@@ -778,6 +778,8 @@
         
           
         
+          
+        
       
       
         
@@ -934,6 +936,20 @@
     <li class="md-nav__item">
       <a href="../../../backends/SQLite/" class="md-nav__link">
         SQLite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backends/Snowflake/" class="md-nav__link">
+        Snowflake
       </a>
     </li>
   
@@ -3197,7 +3213,7 @@ def _julianday(translator, expr):
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/nix/store/n36rskrqqw2phrscnfmn7wd0ryj29ry4-python3-3.10.6-env/lib/python3.10/site-packages/pyproj/__init__.py:92: UserWarning: Valid PROJ data directory not found. Either set the path using the environmental variable PROJ_DATA (PROJ 9.1+) | PROJ_LIB (PROJ&lt;9.1) or with `pyproj.datadir.set_data_dir`.
+<pre>/nix/store/h2rvp8s08myb9fzjk9i5gxlcbbx6by4n-python3-3.10.6-env/lib/python3.10/site-packages/pyproj/__init__.py:92: UserWarning: Valid PROJ data directory not found. Either set the path using the environmental variable PROJ_DATA (PROJ 9.1+) | PROJ_LIB (PROJ&lt;9.1) or with `pyproj.datadir.set_data_dir`.
   warnings.warn(str(err))
 </pre>
 </div>
@@ -3569,22 +3585,22 @@ File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/expr/types/core.py:325</s
 <span class="ansi-green-intense-fg ansi-bold">    326</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">timecontext</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">timecontext</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">params</span>
 <span class="ansi-green-intense-fg ansi-bold">    327</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
 
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/__init__.py:280</span>, in <span class="ansi-cyan-fg">BaseSQLBackend.compile</span><span class="ansi-blue-fg">(self, expr, limit, params, timecontext)</span>
-<span class="ansi-green-intense-fg ansi-bold">    251</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">compile</span>(
-<span class="ansi-green-intense-fg ansi-bold">    252</span>     <span style="color: rgb(0,135,0)">self</span>,
-<span class="ansi-green-intense-fg ansi-bold">    253</span>     expr: ir<span style="color: rgb(98,98,98)">.</span>Expr,
+File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/__init__.py:284</span>, in <span class="ansi-cyan-fg">BaseSQLBackend.compile</span><span class="ansi-blue-fg">(self, expr, limit, params, timecontext)</span>
+<span class="ansi-green-intense-fg ansi-bold">    255</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">compile</span>(
+<span class="ansi-green-intense-fg ansi-bold">    256</span>     <span style="color: rgb(0,135,0)">self</span>,
+<span class="ansi-green-intense-fg ansi-bold">    257</span>     expr: ir<span style="color: rgb(98,98,98)">.</span>Expr,
 <span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    256</span>     timecontext: TimeContext <span style="color: rgb(98,98,98)">|</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>,
-<span class="ansi-green-intense-fg ansi-bold">    257</span> ) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> Any:
-<span class="ansi-green-intense-fg ansi-bold">    258</span>     <span style="color: rgb(175,0,0)">&#34;&#34;&#34;Compile an Ibis expression.</span>
-<span class="ansi-green-intense-fg ansi-bold">    259</span> 
-<span class="ansi-green-intense-fg ansi-bold">    260</span> <span style="color: rgb(175,0,0)">    Parameters</span>
+<span class="ansi-green-intense-fg ansi-bold">    260</span>     timecontext: TimeContext <span style="color: rgb(98,98,98)">|</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>,
+<span class="ansi-green-intense-fg ansi-bold">    261</span> ) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> Any:
+<span class="ansi-green-intense-fg ansi-bold">    262</span>     <span style="color: rgb(175,0,0)">&#34;&#34;&#34;Compile an Ibis expression.</span>
+<span class="ansi-green-intense-fg ansi-bold">    263</span> 
+<span class="ansi-green-intense-fg ansi-bold">    264</span> <span style="color: rgb(175,0,0)">    Parameters</span>
 <span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    276</span> <span style="color: rgb(175,0,0)">        backend.</span>
-<span class="ansi-green-intense-fg ansi-bold">    277</span> <span style="color: rgb(175,0,0)">    &#34;&#34;&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">    278</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compiler</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">to_ast_ensure_limit</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-intense-fg ansi-bold">    279</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">expr</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">params</span>
-<span class="ansi-green-fg">--&gt; 280</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compile</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    280</span> <span style="color: rgb(175,0,0)">        backend.</span>
+<span class="ansi-green-intense-fg ansi-bold">    281</span> <span style="color: rgb(175,0,0)">    &#34;&#34;&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">    282</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compiler</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">to_ast_ensure_limit</span><span class="ansi-yellow-bg">(</span>
+<span class="ansi-green-intense-fg ansi-bold">    283</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">expr</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">params</span>
+<span class="ansi-green-fg">--&gt; 284</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compile</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
 
 File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/base.py:41</span>, in <span class="ansi-cyan-fg">QueryAST.compile</span><span class="ansi-blue-fg">(self)</span>
 <span class="ansi-green-intense-fg ansi-bold">     39</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">compile</span>(<span style="color: rgb(0,135,0)">self</span>):
@@ -3659,11 +3675,11 @@ File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compile
 <span class="ansi-green-intense-fg ansi-bold">    235</span>         <span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">No translation rule for </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span><span style="color: rgb(0,135,0)">type</span>(op)<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)">&#39;</span>
 <span class="ansi-green-intense-fg ansi-bold">    236</span>     )
 
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/alchemy/registry.py:221</span>, in <span class="ansi-cyan-fg">_alias</span><span class="ansi-blue-fg">(t, op)</span>
-<span class="ansi-green-intense-fg ansi-bold">    218</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">_alias</span>(t, op):
-<span class="ansi-green-intense-fg ansi-bold">    219</span>     <span style="color: rgb(95,135,135)"># just compile the underlying argument because the naming is handled</span>
-<span class="ansi-green-intense-fg ansi-bold">    220</span>     <span style="color: rgb(95,135,135)"># by the translator for the top level expression</span>
-<span class="ansi-green-fg">--&gt; 221</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">t</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">translate</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">op</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">arg</span><span class="ansi-yellow-bg">)</span>
+File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/alchemy/registry.py:222</span>, in <span class="ansi-cyan-fg">_alias</span><span class="ansi-blue-fg">(t, op)</span>
+<span class="ansi-green-intense-fg ansi-bold">    219</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">_alias</span>(t, op):
+<span class="ansi-green-intense-fg ansi-bold">    220</span>     <span style="color: rgb(95,135,135)"># just compile the underlying argument because the naming is handled</span>
+<span class="ansi-green-intense-fg ansi-bold">    221</span>     <span style="color: rgb(95,135,135)"># by the translator for the top level expression</span>
+<span class="ansi-green-fg">--&gt; 222</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">t</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">translate</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">op</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">arg</span><span class="ansi-yellow-bg">)</span>
 
 File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/translator.py:232</span>, in <span class="ansi-cyan-fg">ExprTranslator.translate</span><span class="ansi-blue-fg">(self, op)</span>
 <span class="ansi-green-intense-fg ansi-bold">    230</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> <span style="color: rgb(0,135,0)">type</span>(op) <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_registry:
@@ -3762,14 +3778,14 @@ File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/expr/types/core.py:297</s
 <span class="ansi-green-intense-fg ansi-bold">    298</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">timecontext</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">timecontext</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span>
 <span class="ansi-green-intense-fg ansi-bold">    299</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
 
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/__init__.py:181</span>, in <span class="ansi-cyan-fg">BaseSQLBackend.execute</span><span class="ansi-blue-fg">(self, expr, params, limit, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    177</span> kwargs<span style="color: rgb(98,98,98)">.</span>pop(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">timecontext</span><span style="color: rgb(175,0,0)">&#39;</span>, <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>)
-<span class="ansi-green-intense-fg ansi-bold">    178</span> query_ast <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>compiler<span style="color: rgb(98,98,98)">.</span>to_ast_ensure_limit(
-<span class="ansi-green-intense-fg ansi-bold">    179</span>     expr, limit, params<span style="color: rgb(98,98,98)">=</span>params
-<span class="ansi-green-intense-fg ansi-bold">    180</span> )
-<span class="ansi-green-fg">--&gt; 181</span> sql <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">query_ast</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compile</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    182</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_log(sql)
-<span class="ansi-green-intense-fg ansi-bold">    184</span> schema <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>ast_schema(query_ast, <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs)
+File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/__init__.py:185</span>, in <span class="ansi-cyan-fg">BaseSQLBackend.execute</span><span class="ansi-blue-fg">(self, expr, params, limit, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    181</span> kwargs<span style="color: rgb(98,98,98)">.</span>pop(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">timecontext</span><span style="color: rgb(175,0,0)">&#39;</span>, <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>)
+<span class="ansi-green-intense-fg ansi-bold">    182</span> query_ast <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>compiler<span style="color: rgb(98,98,98)">.</span>to_ast_ensure_limit(
+<span class="ansi-green-intense-fg ansi-bold">    183</span>     expr, limit, params<span style="color: rgb(98,98,98)">=</span>params
+<span class="ansi-green-intense-fg ansi-bold">    184</span> )
+<span class="ansi-green-fg">--&gt; 185</span> sql <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">query_ast</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compile</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    186</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_log(sql)
+<span class="ansi-green-intense-fg ansi-bold">    188</span> schema <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>ast_schema(query_ast, <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs)
 
 File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/base.py:41</span>, in <span class="ansi-cyan-fg">QueryAST.compile</span><span class="ansi-blue-fg">(self)</span>
 <span class="ansi-green-intense-fg ansi-bold">     39</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">compile</span>(<span style="color: rgb(0,135,0)">self</span>):
@@ -3844,11 +3860,11 @@ File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compile
 <span class="ansi-green-intense-fg ansi-bold">    235</span>         <span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">No translation rule for </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span><span style="color: rgb(0,135,0)">type</span>(op)<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)">&#39;</span>
 <span class="ansi-green-intense-fg ansi-bold">    236</span>     )
 
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/alchemy/registry.py:221</span>, in <span class="ansi-cyan-fg">_alias</span><span class="ansi-blue-fg">(t, op)</span>
-<span class="ansi-green-intense-fg ansi-bold">    218</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">_alias</span>(t, op):
-<span class="ansi-green-intense-fg ansi-bold">    219</span>     <span style="color: rgb(95,135,135)"># just compile the underlying argument because the naming is handled</span>
-<span class="ansi-green-intense-fg ansi-bold">    220</span>     <span style="color: rgb(95,135,135)"># by the translator for the top level expression</span>
-<span class="ansi-green-fg">--&gt; 221</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">t</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">translate</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">op</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">arg</span><span class="ansi-yellow-bg">)</span>
+File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/alchemy/registry.py:222</span>, in <span class="ansi-cyan-fg">_alias</span><span class="ansi-blue-fg">(t, op)</span>
+<span class="ansi-green-intense-fg ansi-bold">    219</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">_alias</span>(t, op):
+<span class="ansi-green-intense-fg ansi-bold">    220</span>     <span style="color: rgb(95,135,135)"># just compile the underlying argument because the naming is handled</span>
+<span class="ansi-green-intense-fg ansi-bold">    221</span>     <span style="color: rgb(95,135,135)"># by the translator for the top level expression</span>
+<span class="ansi-green-fg">--&gt; 222</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">t</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">translate</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">op</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">arg</span><span class="ansi-yellow-bg">)</span>
 
 File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/translator.py:232</span>, in <span class="ansi-cyan-fg">ExprTranslator.translate</span><span class="ansi-blue-fg">(self, op)</span>
 <span class="ansi-green-intense-fg ansi-bold">    230</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> <span style="color: rgb(0,135,0)">type</span>(op) <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_registry:
@@ -4030,14 +4046,14 @@ scalar</div>
 Cell <span class="ansi-green-fg">In [14], line 1</span>
 <span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">con</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">execute</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">julianday_scalar</span><span class="ansi-yellow-bg">)</span>
 
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/__init__.py:181</span>, in <span class="ansi-cyan-fg">BaseSQLBackend.execute</span><span class="ansi-blue-fg">(self, expr, params, limit, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    177</span> kwargs<span style="color: rgb(98,98,98)">.</span>pop(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">timecontext</span><span style="color: rgb(175,0,0)">&#39;</span>, <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>)
-<span class="ansi-green-intense-fg ansi-bold">    178</span> query_ast <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>compiler<span style="color: rgb(98,98,98)">.</span>to_ast_ensure_limit(
-<span class="ansi-green-intense-fg ansi-bold">    179</span>     expr, limit, params<span style="color: rgb(98,98,98)">=</span>params
-<span class="ansi-green-intense-fg ansi-bold">    180</span> )
-<span class="ansi-green-fg">--&gt; 181</span> sql <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">query_ast</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compile</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    182</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_log(sql)
-<span class="ansi-green-intense-fg ansi-bold">    184</span> schema <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>ast_schema(query_ast, <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs)
+File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/__init__.py:185</span>, in <span class="ansi-cyan-fg">BaseSQLBackend.execute</span><span class="ansi-blue-fg">(self, expr, params, limit, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    181</span> kwargs<span style="color: rgb(98,98,98)">.</span>pop(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">timecontext</span><span style="color: rgb(175,0,0)">&#39;</span>, <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>)
+<span class="ansi-green-intense-fg ansi-bold">    182</span> query_ast <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>compiler<span style="color: rgb(98,98,98)">.</span>to_ast_ensure_limit(
+<span class="ansi-green-intense-fg ansi-bold">    183</span>     expr, limit, params<span style="color: rgb(98,98,98)">=</span>params
+<span class="ansi-green-intense-fg ansi-bold">    184</span> )
+<span class="ansi-green-fg">--&gt; 185</span> sql <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">query_ast</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compile</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    186</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_log(sql)
+<span class="ansi-green-intense-fg ansi-bold">    188</span> schema <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>ast_schema(query_ast, <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs)
 
 File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/compiler/base.py:41</span>, in <span class="ansi-cyan-fg">QueryAST.compile</span><span class="ansi-blue-fg">(self)</span>
 <span class="ansi-green-intense-fg ansi-bold">     39</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">compile</span>(<span style="color: rgb(0,135,0)">self</span>):
