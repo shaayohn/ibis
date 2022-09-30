@@ -3924,7 +3924,7 @@ column/scalar-aggregate operations like</p>
 
     <div class="doc doc-contents ">
 
-      <p>Change table column names, otherwise leaving table unaltered.</p>
+      <p>Rename columns in the table.</p>
 
 <p><strong>Parameters:</strong></p>
 <table>
@@ -3939,8 +3939,10 @@ column/scalar-aggregate operations like</p>
   <tbody>
       <tr>
         <td><code>substitutions</code></td>
-        <td><code>Mapping[str, str]</code></td>
-        <td><p>Name mapping</p></td>
+        <td><code>Mapping[str, str] | Callable[[str], str | None]</code></td>
+        <td><p>A mapping or function from old to new column names. If a column
+isn't in the mapping (or if the callable returns None) it is left
+with its original name.</p></td>
         <td><em>required</em></td>
       </tr>
   </tbody>
