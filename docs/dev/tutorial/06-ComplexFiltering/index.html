@@ -3029,118 +3029,24 @@ countries.limit(5)</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━┳━━━┓
+┃<span style="font-weight: bold"> iso_alpha2 </span>┃<span style="font-weight: bold"> iso_alpha3 </span>┃<span style="font-weight: bold"> iso_numeric </span>┃<span style="font-weight: bold"> fips   </span>┃<span style="font-weight: bold"> name                 </span>┃<span style="font-weight: bold"> capital          </span>┃<span style="font-weight: bold"> area_km2 </span>┃<span style="font-weight: bold"> … </span>┃
+┡━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━╇━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>     │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>     │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span>       │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span> │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>               │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>           │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">float64</span>  │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+├────────────┼────────────┼─────────────┼────────┼──────────────────────┼──────────────────┼──────────┼───┤
+│ AD         │ AND        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span> │ AN     │ Andorra              │ Andorra la Vella │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">468.0</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AE         │ ARE        │         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">784</span> │ AE     │ United Arab Emirates │ Abu Dhabi        │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">82880.0</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AF         │ AFG        │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span> │ AF     │ Afghanistan          │ Kabul            │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">647500.0</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AG         │ ATG        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">28</span> │ AC     │ Antigua and Barbuda  │ St. Johns        │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">443.0</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AI         │ AIA        │         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">660</span> │ AV     │ Anguilla             │ The Valley       │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">102.0</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+└────────────┴────────────┴─────────────┴────────┴──────────────────────┴──────────────────┴──────────┴───┘
+</pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>iso_alpha2</th>
-      <th>iso_alpha3</th>
-      <th>iso_numeric</th>
-      <th>fips</th>
-      <th>name</th>
-      <th>capital</th>
-      <th>area_km2</th>
-      <th>population</th>
-      <th>continent</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>AD</td>
-      <td>AND</td>
-      <td>20</td>
-      <td>AN</td>
-      <td>Andorra</td>
-      <td>Andorra la Vella</td>
-      <td>468.0</td>
-      <td>84000</td>
-      <td>EU</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AE</td>
-      <td>ARE</td>
-      <td>784</td>
-      <td>AE</td>
-      <td>United Arab Emirates</td>
-      <td>Abu Dhabi</td>
-      <td>82880.0</td>
-      <td>4975593</td>
-      <td>AS</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>AF</td>
-      <td>AFG</td>
-      <td>4</td>
-      <td>AF</td>
-      <td>Afghanistan</td>
-      <td>Kabul</td>
-      <td>647500.0</td>
-      <td>29121286</td>
-      <td>AS</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>AG</td>
-      <td>ATG</td>
-      <td>28</td>
-      <td>AC</td>
-      <td>Antigua and Barbuda</td>
-      <td>St. Johns</td>
-      <td>443.0</td>
-      <td>86754</td>
-      <td>NA</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>AI</td>
-      <td>AIA</td>
-      <td>660</td>
-      <td>AV</td>
-      <td>Anguilla</td>
-      <td>The Valley</td>
-      <td>102.0</td>
-      <td>13254</td>
-      <td>NA</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 </div>
 
 </div>
@@ -3290,82 +3196,21 @@ expr</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> iso_alpha2 </span>┃<span style="font-weight: bold"> iso_alpha3 </span>┃<span style="font-weight: bold"> iso_numeric </span>┃<span style="font-weight: bold"> fips   </span>┃<span style="font-weight: bold"> name    </span>┃<span style="font-weight: bold"> capital </span>┃<span style="font-weight: bold"> area_km2     </span>┃<span style="font-weight: bold"> population </span>┃<span style="font-weight: bold"> continent </span>┃
+┡━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>     │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>     │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span>       │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span> │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>  │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>  │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">float64</span>      │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span>      │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>    │
+├────────────┼────────────┼─────────────┼────────┼─────────┼─────────┼──────────────┼────────────┼───────────┤
+│ RU         │ RUS        │         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">643</span> │ RS     │ Russia  │ Moscow  │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.710000e+07</span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">140702000</span> │ EU        │
+│ UA         │ UKR        │         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">804</span> │ UP     │ Ukraine │ Kyiv    │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6.037000e+05</span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">45415596</span> │ EU        │
+└────────────┴────────────┴─────────────┴────────┴─────────┴─────────┴──────────────┴────────────┴───────────┘
+</pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>iso_alpha2</th>
-      <th>iso_alpha3</th>
-      <th>iso_numeric</th>
-      <th>fips</th>
-      <th>name</th>
-      <th>capital</th>
-      <th>area_km2</th>
-      <th>population</th>
-      <th>continent</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>RU</td>
-      <td>RUS</td>
-      <td>643</td>
-      <td>RS</td>
-      <td>Russia</td>
-      <td>Moscow</td>
-      <td>17100000.0</td>
-      <td>140702000</td>
-      <td>EU</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>UA</td>
-      <td>UKR</td>
-      <td>804</td>
-      <td>UP</td>
-      <td>Ukraine</td>
-      <td>Kyiv</td>
-      <td>603700.0</td>
-      <td>45415596</td>
-      <td>EU</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 </div>
 
 </div>
@@ -3435,94 +3280,22 @@ countries[
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> iso_alpha2 </span>┃<span style="font-weight: bold"> iso_alpha3 </span>┃<span style="font-weight: bold"> iso_numeric </span>┃<span style="font-weight: bold"> fips   </span>┃<span style="font-weight: bold"> name    </span>┃<span style="font-weight: bold"> capital </span>┃<span style="font-weight: bold"> area_km2     </span>┃<span style="font-weight: bold"> population </span>┃<span style="font-weight: bold"> continent </span>┃
+┡━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>     │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>     │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span>       │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span> │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>  │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>  │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">float64</span>      │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span>      │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>    │
+├────────────┼────────────┼─────────────┼────────┼─────────┼─────────┼──────────────┼────────────┼───────────┤
+│ FR         │ FRA        │         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">250</span> │ FR     │ France  │ Paris   │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5.470300e+05</span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">64768389</span> │ EU        │
+│ RU         │ RUS        │         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">643</span> │ RS     │ Russia  │ Moscow  │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.710000e+07</span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">140702000</span> │ EU        │
+│ UA         │ UKR        │         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">804</span> │ UP     │ Ukraine │ Kyiv    │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6.037000e+05</span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">45415596</span> │ EU        │
+└────────────┴────────────┴─────────────┴────────┴─────────┴─────────┴──────────────┴────────────┴───────────┘
+</pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>iso_alpha2</th>
-      <th>iso_alpha3</th>
-      <th>iso_numeric</th>
-      <th>fips</th>
-      <th>name</th>
-      <th>capital</th>
-      <th>area_km2</th>
-      <th>population</th>
-      <th>continent</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>FR</td>
-      <td>FRA</td>
-      <td>250</td>
-      <td>FR</td>
-      <td>France</td>
-      <td>Paris</td>
-      <td>547030.0</td>
-      <td>64768389</td>
-      <td>EU</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>RU</td>
-      <td>RUS</td>
-      <td>643</td>
-      <td>RS</td>
-      <td>Russia</td>
-      <td>Moscow</td>
-      <td>17100000.0</td>
-      <td>140702000</td>
-      <td>EU</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>UA</td>
-      <td>UKR</td>
-      <td>804</td>
-      <td>UP</td>
-      <td>Ukraine</td>
-      <td>Kyiv</td>
-      <td>603700.0</td>
-      <td>45415596</td>
-      <td>EU</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 </div>
 
 </div>
@@ -3588,119 +3361,31 @@ gdp</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> country_code </span>┃<span style="font-weight: bold"> year  </span>┃<span style="font-weight: bold"> value        </span>┃
+┡━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>       │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span> │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">float64</span>      │
+├──────────────┼───────┼──────────────┤
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1986</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4.054634e+08</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1987</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4.876025e+08</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1988</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5.964236e+08</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1989</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6.953044e+08</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1990</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7.648871e+08</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1991</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8.721387e+08</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1992</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9.584632e+08</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1993</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.082980e+09</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1994</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.245688e+09</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1995</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.320475e+09</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1996</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.379961e+09</span> │
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>            │     <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │            <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+└──────────────┴───────┴──────────────┘
+</pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>country_code</th>
-      <th>year</th>
-      <th>value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>ABW</td>
-      <td>1986</td>
-      <td>4.054634e+08</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>ABW</td>
-      <td>1987</td>
-      <td>4.876025e+08</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>ABW</td>
-      <td>1988</td>
-      <td>5.964236e+08</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>ABW</td>
-      <td>1989</td>
-      <td>6.953044e+08</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>ABW</td>
-      <td>1990</td>
-      <td>7.648871e+08</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>9995</th>
-      <td>SVK</td>
-      <td>2002</td>
-      <td>3.513034e+10</td>
-    </tr>
-    <tr>
-      <th>9996</th>
-      <td>SVK</td>
-      <td>2003</td>
-      <td>4.681659e+10</td>
-    </tr>
-    <tr>
-      <th>9997</th>
-      <td>SVK</td>
-      <td>2004</td>
-      <td>5.733202e+10</td>
-    </tr>
-    <tr>
-      <th>9998</th>
-      <td>SVK</td>
-      <td>2005</td>
-      <td>6.278531e+10</td>
-    </tr>
-    <tr>
-      <th>9999</th>
-      <td>SVK</td>
-      <td>2006</td>
-      <td>7.070810e+10</td>
-    </tr>
-  </tbody>
-</table>
-<p>10000 rows × 3 columns</p>
-</div>
 </div>
 
 </div>
@@ -3755,70 +3440,24 @@ countries[cond]['name']</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> name           </span>┃
+┡━━━━━━━━━━━━━━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>         │
+├────────────────┤
+│ China          │
+│ Germany        │
+│ United Kingdom │
+│ Japan          │
+│ United States  │
+└────────────────┘
+</pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>China</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Germany</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>United Kingdom</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Japan</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>United States</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 </div>
 
 </div>
@@ -3931,102 +3570,26 @@ metrics = [
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> continent </span>┃<span style="font-weight: bold"> # countries </span>┃<span style="font-weight: bold"> total population </span>┃<span style="font-weight: bold"> population arctic countries </span>┃
+┡━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>    │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int64</span>       │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int64</span>            │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int64</span>                       │
+├───────────┼─────────────┼──────────────────┼─────────────────────────────┤
+│ AF        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">58</span> │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1021238685</span> │                           <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">∅</span> │
+│ AN        │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span> │              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">170</span> │                           <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">∅</span> │
+│ AS        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">51</span> │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4130584841</span> │                           <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">∅</span> │
+│ EU        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">54</span> │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">750724554</span> │                   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">161092715</span> │
+│ NA        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">42</span> │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">540204371</span> │                   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">343968238</span> │
+│ OC        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">28</span> │         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">36067549</span> │                           <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">∅</span> │
+│ SA        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">14</span> │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">400143568</span> │                           <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">∅</span> │
+└───────────┴─────────────┴──────────────────┴─────────────────────────────┘
+</pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>continent</th>
-      <th># countries</th>
-      <th>total population</th>
-      <th>population arctic countries</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>AF</td>
-      <td>58</td>
-      <td>1021238685</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AN</td>
-      <td>5</td>
-      <td>170</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>AS</td>
-      <td>51</td>
-      <td>4130584841</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>EU</td>
-      <td>54</td>
-      <td>750724554</td>
-      <td>161092715.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>NA</td>
-      <td>42</td>
-      <td>540204371</td>
-      <td>343968238.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>OC</td>
-      <td>28</td>
-      <td>36067549</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>SA</td>
-      <td>14</td>
-      <td>400143568</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 </div>
 
 </div>

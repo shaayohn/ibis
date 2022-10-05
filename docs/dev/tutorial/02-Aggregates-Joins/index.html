@@ -2937,131 +2937,31 @@ countries['name', 'continent', 'area_km2', 'population']</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> name                 </span>┃<span style="font-weight: bold"> continent </span>┃<span style="font-weight: bold"> area_km2     </span>┃<span style="font-weight: bold"> population </span>┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>               │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>    │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">float64</span>      │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span>      │
+├──────────────────────┼───────────┼──────────────┼────────────┤
+│ Andorra              │ EU        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4.680000e+02</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">84000</span> │
+│ United Arab Emirates │ AS        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8.288000e+04</span> │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4975593</span> │
+│ Afghanistan          │ AS        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6.475000e+05</span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">29121286</span> │
+│ Antigua and Barbuda  │ NA        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4.430000e+02</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">86754</span> │
+│ Anguilla             │ NA        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.020000e+02</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13254</span> │
+│ Albania              │ EU        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.874800e+04</span> │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2986952</span> │
+│ Armenia              │ AS        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.980000e+04</span> │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2968000</span> │
+│ Netherlands Antilles │ NA        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9.600000e+02</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">300000</span> │
+│ Angola               │ AF        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.246700e+06</span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13068161</span> │
+│ Antarctica           │ AN        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.400000e+07</span> │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span> │
+│ Argentina            │ SA        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.766890e+06</span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">41343201</span> │
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>                    │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>         │            <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │          <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+└──────────────────────┴───────────┴──────────────┴────────────┘
+</pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>continent</th>
-      <th>area_km2</th>
-      <th>population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Andorra</td>
-      <td>EU</td>
-      <td>468.0</td>
-      <td>84000</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>United Arab Emirates</td>
-      <td>AS</td>
-      <td>82880.0</td>
-      <td>4975593</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Afghanistan</td>
-      <td>AS</td>
-      <td>647500.0</td>
-      <td>29121286</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Antigua and Barbuda</td>
-      <td>NA</td>
-      <td>443.0</td>
-      <td>86754</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Anguilla</td>
-      <td>NA</td>
-      <td>102.0</td>
-      <td>13254</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>247</th>
-      <td>Yemen</td>
-      <td>AS</td>
-      <td>527970.0</td>
-      <td>23495361</td>
-    </tr>
-    <tr>
-      <th>248</th>
-      <td>Mayotte</td>
-      <td>AF</td>
-      <td>374.0</td>
-      <td>159042</td>
-    </tr>
-    <tr>
-      <th>249</th>
-      <td>South Africa</td>
-      <td>AF</td>
-      <td>1219912.0</td>
-      <td>49000000</td>
-    </tr>
-    <tr>
-      <th>250</th>
-      <td>Zambia</td>
-      <td>AF</td>
-      <td>752614.0</td>
-      <td>13460305</td>
-    </tr>
-    <tr>
-      <th>251</th>
-      <td>Zimbabwe</td>
-      <td>AF</td>
-      <td>390580.0</td>
-      <td>13061000</td>
-    </tr>
-  </tbody>
-</table>
-<p>252 rows × 4 columns</p>
-</div>
 </div>
 
 </div>
@@ -3161,95 +3061,31 @@ continent_name</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> continent_name </span>┃
+┡━━━━━━━━━━━━━━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>         │
+├────────────────┤
+│ Europe         │
+│ Asia           │
+│ Asia           │
+│ North America  │
+│ North America  │
+│ Europe         │
+│ Asia           │
+│ North America  │
+│ Africa         │
+│ Antarctica     │
+│ South America  │
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>              │
+└────────────────┘
+</pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>continent_name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Europe</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Asia</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Asia</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>North America</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>North America</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>247</th>
-      <td>Asia</td>
-    </tr>
-    <tr>
-      <th>248</th>
-      <td>Africa</td>
-    </tr>
-    <tr>
-      <th>249</th>
-      <td>Africa</td>
-    </tr>
-    <tr>
-      <th>250</th>
-      <td>Africa</td>
-    </tr>
-    <tr>
-      <th>251</th>
-      <td>Africa</td>
-    </tr>
-  </tbody>
-</table>
-<p>252 rows × 1 columns</p>
-</div>
 </div>
 
 </div>
@@ -3392,131 +3228,31 @@ has a name when being returned.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> name                 </span>┃<span style="font-weight: bold"> continent_name </span>┃<span style="font-weight: bold"> area_km2     </span>┃<span style="font-weight: bold"> population </span>┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>               │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>         │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">float64</span>      │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span>      │
+├──────────────────────┼────────────────┼──────────────┼────────────┤
+│ Andorra              │ Europe         │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4.680000e+02</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">84000</span> │
+│ United Arab Emirates │ Asia           │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8.288000e+04</span> │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4975593</span> │
+│ Afghanistan          │ Asia           │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6.475000e+05</span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">29121286</span> │
+│ Antigua and Barbuda  │ North America  │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4.430000e+02</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">86754</span> │
+│ Anguilla             │ North America  │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.020000e+02</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13254</span> │
+│ Albania              │ Europe         │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.874800e+04</span> │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2986952</span> │
+│ Armenia              │ Asia           │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.980000e+04</span> │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2968000</span> │
+│ Netherlands Antilles │ North America  │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9.600000e+02</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">300000</span> │
+│ Angola               │ Africa         │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.246700e+06</span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13068161</span> │
+│ Antarctica           │ Antarctica     │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.400000e+07</span> │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span> │
+│ Argentina            │ South America  │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.766890e+06</span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">41343201</span> │
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>                    │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>              │            <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │          <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+└──────────────────────┴────────────────┴──────────────┴────────────┘
+</pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>continent_name</th>
-      <th>area_km2</th>
-      <th>population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Andorra</td>
-      <td>Europe</td>
-      <td>468.0</td>
-      <td>84000</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>United Arab Emirates</td>
-      <td>Asia</td>
-      <td>82880.0</td>
-      <td>4975593</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Afghanistan</td>
-      <td>Asia</td>
-      <td>647500.0</td>
-      <td>29121286</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Antigua and Barbuda</td>
-      <td>North America</td>
-      <td>443.0</td>
-      <td>86754</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Anguilla</td>
-      <td>North America</td>
-      <td>102.0</td>
-      <td>13254</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>247</th>
-      <td>Yemen</td>
-      <td>Asia</td>
-      <td>527970.0</td>
-      <td>23495361</td>
-    </tr>
-    <tr>
-      <th>248</th>
-      <td>Mayotte</td>
-      <td>Africa</td>
-      <td>374.0</td>
-      <td>159042</td>
-    </tr>
-    <tr>
-      <th>249</th>
-      <td>South Africa</td>
-      <td>Africa</td>
-      <td>1219912.0</td>
-      <td>49000000</td>
-    </tr>
-    <tr>
-      <th>250</th>
-      <td>Zambia</td>
-      <td>Africa</td>
-      <td>752614.0</td>
-      <td>13460305</td>
-    </tr>
-    <tr>
-      <th>251</th>
-      <td>Zimbabwe</td>
-      <td>Africa</td>
-      <td>390580.0</td>
-      <td>13061000</td>
-    </tr>
-  </tbody>
-</table>
-<p>252 rows × 4 columns</p>
-</div>
 </div>
 
 </div>
@@ -3580,131 +3316,31 @@ when using it in the list of columns to fetch.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> name                 </span>┃<span style="font-weight: bold"> continent     </span>┃<span style="font-weight: bold"> area_km2     </span>┃<span style="font-weight: bold"> population </span>┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━━━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>               │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>        │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">float64</span>      │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span>      │
+├──────────────────────┼───────────────┼──────────────┼────────────┤
+│ Andorra              │ Europe        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4.680000e+02</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">84000</span> │
+│ United Arab Emirates │ Asia          │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8.288000e+04</span> │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4975593</span> │
+│ Afghanistan          │ Asia          │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6.475000e+05</span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">29121286</span> │
+│ Antigua and Barbuda  │ North America │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4.430000e+02</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">86754</span> │
+│ Anguilla             │ North America │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.020000e+02</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13254</span> │
+│ Albania              │ Europe        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.874800e+04</span> │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2986952</span> │
+│ Armenia              │ Asia          │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.980000e+04</span> │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2968000</span> │
+│ Netherlands Antilles │ North America │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9.600000e+02</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">300000</span> │
+│ Angola               │ Africa        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.246700e+06</span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13068161</span> │
+│ Antarctica           │ Antarctica    │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.400000e+07</span> │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span> │
+│ Argentina            │ South America │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.766890e+06</span> │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">41343201</span> │
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>                    │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>             │            <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │          <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+└──────────────────────┴───────────────┴──────────────┴────────────┘
+</pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>continent</th>
-      <th>area_km2</th>
-      <th>population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Andorra</td>
-      <td>Europe</td>
-      <td>468.0</td>
-      <td>84000</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>United Arab Emirates</td>
-      <td>Asia</td>
-      <td>82880.0</td>
-      <td>4975593</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Afghanistan</td>
-      <td>Asia</td>
-      <td>647500.0</td>
-      <td>29121286</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Antigua and Barbuda</td>
-      <td>North America</td>
-      <td>443.0</td>
-      <td>86754</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Anguilla</td>
-      <td>North America</td>
-      <td>102.0</td>
-      <td>13254</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>247</th>
-      <td>Yemen</td>
-      <td>Asia</td>
-      <td>527970.0</td>
-      <td>23495361</td>
-    </tr>
-    <tr>
-      <th>248</th>
-      <td>Mayotte</td>
-      <td>Africa</td>
-      <td>374.0</td>
-      <td>159042</td>
-    </tr>
-    <tr>
-      <th>249</th>
-      <td>South Africa</td>
-      <td>Africa</td>
-      <td>1219912.0</td>
-      <td>49000000</td>
-    </tr>
-    <tr>
-      <th>250</th>
-      <td>Zambia</td>
-      <td>Africa</td>
-      <td>752614.0</td>
-      <td>13460305</td>
-    </tr>
-    <tr>
-      <th>251</th>
-      <td>Zimbabwe</td>
-      <td>Africa</td>
-      <td>390580.0</td>
-      <td>13061000</td>
-    </tr>
-  </tbody>
-</table>
-<p>252 rows × 4 columns</p>
-</div>
 </div>
 
 </div>
@@ -3771,86 +3407,26 @@ when using it in the list of columns to fetch.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> continent_name </span>┃<span style="font-weight: bold"> total_population </span>┃
+┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>         │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int64</span>            │
+├────────────────┼──────────────────┤
+│ Africa         │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1021238685</span> │
+│ Antarctica     │              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">170</span> │
+│ Asia           │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4130584841</span> │
+│ Europe         │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">750724554</span> │
+│ North America  │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">540204371</span> │
+│ Oceania        │         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">36067549</span> │
+│ South America  │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">400143568</span> │
+└────────────────┴──────────────────┘
+</pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>continent_name</th>
-      <th>total_population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Africa</td>
-      <td>1021238685</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Antarctica</td>
-      <td>170</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Asia</td>
-      <td>4130584841</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Europe</td>
-      <td>750724554</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>North America</td>
-      <td>540204371</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Oceania</td>
-      <td>36067549</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>South America</td>
-      <td>400143568</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 </div>
 
 </div>
@@ -4007,86 +3583,26 @@ over every group defined by the <code>group_by</code> method.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> continent_name </span>┃<span style="font-weight: bold"> total_population </span>┃
+┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>         │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int64</span>            │
+├────────────────┼──────────────────┤
+│ Africa         │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1021238685</span> │
+│ Antarctica     │              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">170</span> │
+│ Asia           │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4130584841</span> │
+│ Europe         │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">750724554</span> │
+│ North America  │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">540204371</span> │
+│ Oceania        │         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">36067549</span> │
+│ South America  │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">400143568</span> │
+└────────────────┴──────────────────┘
+</pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>continent_name</th>
-      <th>total_population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Africa</td>
-      <td>1021238685</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Antarctica</td>
-      <td>170</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Asia</td>
-      <td>4130584841</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Europe</td>
-      <td>750724554</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>North America</td>
-      <td>540204371</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Oceania</td>
-      <td>36067549</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>South America</td>
-      <td>400143568</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 </div>
 
 </div>
@@ -4155,94 +3671,26 @@ use both column names and expressions, and also a list with any of them (e.g. <c
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> continent </span>┃<span style="font-weight: bold"> total_population </span>┃<span style="font-weight: bold"> average_area </span>┃
+┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>    │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int64</span>            │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">float64</span>      │
+├───────────┼──────────────────┼──────────────┤
+│ AF        │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1021238685</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5.234534e+05</span> │
+│ AN        │              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">170</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.802439e+06</span> │
+│ AS        │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4130584841</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6.196685e+05</span> │
+│ EU        │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">750724554</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4.293017e+05</span> │
+│ NA        │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">540204371</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5.836313e+05</span> │
+│ OC        │         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">36067549</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3.044157e+05</span> │
+│ SA        │        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">400143568</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.272751e+06</span> │
+└───────────┴──────────────────┴──────────────┘
+</pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>continent</th>
-      <th>total_population</th>
-      <th>average_area</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>AF</td>
-      <td>1021238685</td>
-      <td>5.234534e+05</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AN</td>
-      <td>170</td>
-      <td>2.802439e+06</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>AS</td>
-      <td>4130584841</td>
-      <td>6.196685e+05</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>EU</td>
-      <td>750724554</td>
-      <td>4.293017e+05</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>NA</td>
-      <td>540204371</td>
-      <td>5.836313e+05</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>OC</td>
-      <td>36067549</td>
-      <td>3.044157e+05</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>SA</td>
-      <td>400143568</td>
-      <td>1.272751e+06</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 </div>
 
 </div>
@@ -4308,119 +3756,31 @@ gdp</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> country_code </span>┃<span style="font-weight: bold"> year  </span>┃<span style="font-weight: bold"> value        </span>┃
+┡━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>       │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span> │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">float64</span>      │
+├──────────────┼───────┼──────────────┤
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1986</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4.054634e+08</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1987</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4.876025e+08</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1988</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5.964236e+08</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1989</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6.953044e+08</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1990</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7.648871e+08</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1991</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8.721387e+08</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1992</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9.584632e+08</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1993</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.082980e+09</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1994</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.245688e+09</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1995</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.320475e+09</span> │
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1996</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.379961e+09</span> │
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>            │     <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │            <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+└──────────────┴───────┴──────────────┘
+</pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>country_code</th>
-      <th>year</th>
-      <th>value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>ABW</td>
-      <td>1986</td>
-      <td>4.054634e+08</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>ABW</td>
-      <td>1987</td>
-      <td>4.876025e+08</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>ABW</td>
-      <td>1988</td>
-      <td>5.964236e+08</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>ABW</td>
-      <td>1989</td>
-      <td>6.953044e+08</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>ABW</td>
-      <td>1990</td>
-      <td>7.648871e+08</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>9995</th>
-      <td>SVK</td>
-      <td>2002</td>
-      <td>3.513034e+10</td>
-    </tr>
-    <tr>
-      <th>9996</th>
-      <td>SVK</td>
-      <td>2003</td>
-      <td>4.681659e+10</td>
-    </tr>
-    <tr>
-      <th>9997</th>
-      <td>SVK</td>
-      <td>2004</td>
-      <td>5.733202e+10</td>
-    </tr>
-    <tr>
-      <th>9998</th>
-      <td>SVK</td>
-      <td>2005</td>
-      <td>6.278531e+10</td>
-    </tr>
-    <tr>
-      <th>9999</th>
-      <td>SVK</td>
-      <td>2006</td>
-      <td>7.070810e+10</td>
-    </tr>
-  </tbody>
-</table>
-<p>10000 rows × 3 columns</p>
-</div>
 </div>
 
 </div>
@@ -4582,143 +3942,31 @@ one matches the three letter code in the <code>gdp</code> table.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> iso_alpha2 </span>┃<span style="font-weight: bold"> iso_alpha3 </span>┃<span style="font-weight: bold"> iso_numeric </span>┃<span style="font-weight: bold"> fips   </span>┃<span style="font-weight: bold"> name                 </span>┃
+┡━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>     │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>     │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span>       │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span> │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>               │
+├────────────┼────────────┼─────────────┼────────┼──────────────────────┤
+│ AD         │ AND        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span> │ AN     │ Andorra              │
+│ AE         │ ARE        │         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">784</span> │ AE     │ United Arab Emirates │
+│ AF         │ AFG        │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span> │ AF     │ Afghanistan          │
+│ AG         │ ATG        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">28</span> │ AC     │ Antigua and Barbuda  │
+│ AI         │ AIA        │         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">660</span> │ AV     │ Anguilla             │
+│ AL         │ ALB        │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8</span> │ AL     │ Albania              │
+│ AM         │ ARM        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">51</span> │ AM     │ Armenia              │
+│ AN         │ ANT        │         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">530</span> │ NT     │ Netherlands Antilles │
+│ AO         │ AGO        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">24</span> │ AO     │ Angola               │
+│ AQ         │ ATA        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span> │ AY     │ Antarctica           │
+│ AR         │ ARG        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span> │ AR     │ Argentina            │
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>          │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>          │           <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>      │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>                    │
+└────────────┴────────────┴─────────────┴────────┴──────────────────────┘
+</pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>iso_alpha2</th>
-      <th>iso_alpha3</th>
-      <th>iso_numeric</th>
-      <th>fips</th>
-      <th>name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>AD</td>
-      <td>AND</td>
-      <td>20</td>
-      <td>AN</td>
-      <td>Andorra</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AE</td>
-      <td>ARE</td>
-      <td>784</td>
-      <td>AE</td>
-      <td>United Arab Emirates</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>AF</td>
-      <td>AFG</td>
-      <td>4</td>
-      <td>AF</td>
-      <td>Afghanistan</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>AG</td>
-      <td>ATG</td>
-      <td>28</td>
-      <td>AC</td>
-      <td>Antigua and Barbuda</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>AI</td>
-      <td>AIA</td>
-      <td>660</td>
-      <td>AV</td>
-      <td>Anguilla</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>247</th>
-      <td>YE</td>
-      <td>YEM</td>
-      <td>887</td>
-      <td>YM</td>
-      <td>Yemen</td>
-    </tr>
-    <tr>
-      <th>248</th>
-      <td>YT</td>
-      <td>MYT</td>
-      <td>175</td>
-      <td>MF</td>
-      <td>Mayotte</td>
-    </tr>
-    <tr>
-      <th>249</th>
-      <td>ZA</td>
-      <td>ZAF</td>
-      <td>710</td>
-      <td>SF</td>
-      <td>South Africa</td>
-    </tr>
-    <tr>
-      <th>250</th>
-      <td>ZM</td>
-      <td>ZMB</td>
-      <td>894</td>
-      <td>ZA</td>
-      <td>Zambia</td>
-    </tr>
-    <tr>
-      <th>251</th>
-      <td>ZW</td>
-      <td>ZWE</td>
-      <td>716</td>
-      <td>ZI</td>
-      <td>Zimbabwe</td>
-    </tr>
-  </tbody>
-</table>
-<p>252 rows × 5 columns</p>
-</div>
 </div>
 
 </div>
@@ -4790,227 +4038,31 @@ countries_and_gdp[countries, gdp]</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━━━━┳━━━┓
+┃<span style="font-weight: bold"> iso_alpha2 </span>┃<span style="font-weight: bold"> iso_alpha3 </span>┃<span style="font-weight: bold"> iso_numeric </span>┃<span style="font-weight: bold"> fips   </span>┃<span style="font-weight: bold"> name    </span>┃<span style="font-weight: bold"> capital          </span>┃<span style="font-weight: bold"> area_km2 </span>┃<span style="font-weight: bold"> population </span>┃<span style="font-weight: bold"> … </span>┃
+┡━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━━━━╇━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>     │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>     │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span>       │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span> │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>  │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>           │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">float64</span>  │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span>      │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+├────────────┼────────────┼─────────────┼────────┼─────────┼──────────────────┼──────────┼────────────┼───┤
+│ AD         │ AND        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span> │ AN     │ Andorra │ Andorra la Vella │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">468.0</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">84000</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AD         │ AND        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span> │ AN     │ Andorra │ Andorra la Vella │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">468.0</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">84000</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AD         │ AND        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span> │ AN     │ Andorra │ Andorra la Vella │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">468.0</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">84000</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AD         │ AND        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span> │ AN     │ Andorra │ Andorra la Vella │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">468.0</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">84000</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AD         │ AND        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span> │ AN     │ Andorra │ Andorra la Vella │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">468.0</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">84000</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AD         │ AND        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span> │ AN     │ Andorra │ Andorra la Vella │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">468.0</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">84000</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AD         │ AND        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span> │ AN     │ Andorra │ Andorra la Vella │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">468.0</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">84000</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AD         │ AND        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span> │ AN     │ Andorra │ Andorra la Vella │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">468.0</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">84000</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AD         │ AND        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span> │ AN     │ Andorra │ Andorra la Vella │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">468.0</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">84000</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AD         │ AND        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span> │ AN     │ Andorra │ Andorra la Vella │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">468.0</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">84000</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AD         │ AND        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span> │ AN     │ Andorra │ Andorra la Vella │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">468.0</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">84000</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>          │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>          │           <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>      │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>       │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>                │        <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │          <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+└────────────┴────────────┴─────────────┴────────┴─────────┴──────────────────┴──────────┴────────────┴───┘
+</pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>iso_alpha2</th>
-      <th>iso_alpha3</th>
-      <th>iso_numeric</th>
-      <th>fips</th>
-      <th>name</th>
-      <th>capital</th>
-      <th>area_km2</th>
-      <th>population</th>
-      <th>continent</th>
-      <th>country_code</th>
-      <th>year</th>
-      <th>value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>AD</td>
-      <td>AND</td>
-      <td>20</td>
-      <td>AN</td>
-      <td>Andorra</td>
-      <td>Andorra la Vella</td>
-      <td>468.0</td>
-      <td>84000</td>
-      <td>EU</td>
-      <td>AND</td>
-      <td>1970</td>
-      <td>7.861921e+07</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AD</td>
-      <td>AND</td>
-      <td>20</td>
-      <td>AN</td>
-      <td>Andorra</td>
-      <td>Andorra la Vella</td>
-      <td>468.0</td>
-      <td>84000</td>
-      <td>EU</td>
-      <td>AND</td>
-      <td>1971</td>
-      <td>8.940982e+07</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>AD</td>
-      <td>AND</td>
-      <td>20</td>
-      <td>AN</td>
-      <td>Andorra</td>
-      <td>Andorra la Vella</td>
-      <td>468.0</td>
-      <td>84000</td>
-      <td>EU</td>
-      <td>AND</td>
-      <td>1972</td>
-      <td>1.134082e+08</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>AD</td>
-      <td>AND</td>
-      <td>20</td>
-      <td>AN</td>
-      <td>Andorra</td>
-      <td>Andorra la Vella</td>
-      <td>468.0</td>
-      <td>84000</td>
-      <td>EU</td>
-      <td>AND</td>
-      <td>1973</td>
-      <td>1.508201e+08</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>AD</td>
-      <td>AND</td>
-      <td>20</td>
-      <td>AN</td>
-      <td>Andorra</td>
-      <td>Andorra la Vella</td>
-      <td>468.0</td>
-      <td>84000</td>
-      <td>EU</td>
-      <td>AND</td>
-      <td>1974</td>
-      <td>1.865587e+08</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>9482</th>
-      <td>ZW</td>
-      <td>ZWE</td>
-      <td>716</td>
-      <td>ZI</td>
-      <td>Zimbabwe</td>
-      <td>Harare</td>
-      <td>390580.0</td>
-      <td>13061000</td>
-      <td>AF</td>
-      <td>ZWE</td>
-      <td>2013</td>
-      <td>1.909102e+10</td>
-    </tr>
-    <tr>
-      <th>9483</th>
-      <td>ZW</td>
-      <td>ZWE</td>
-      <td>716</td>
-      <td>ZI</td>
-      <td>Zimbabwe</td>
-      <td>Harare</td>
-      <td>390580.0</td>
-      <td>13061000</td>
-      <td>AF</td>
-      <td>ZWE</td>
-      <td>2014</td>
-      <td>1.949552e+10</td>
-    </tr>
-    <tr>
-      <th>9484</th>
-      <td>ZW</td>
-      <td>ZWE</td>
-      <td>716</td>
-      <td>ZI</td>
-      <td>Zimbabwe</td>
-      <td>Harare</td>
-      <td>390580.0</td>
-      <td>13061000</td>
-      <td>AF</td>
-      <td>ZWE</td>
-      <td>2015</td>
-      <td>1.996312e+10</td>
-    </tr>
-    <tr>
-      <th>9485</th>
-      <td>ZW</td>
-      <td>ZWE</td>
-      <td>716</td>
-      <td>ZI</td>
-      <td>Zimbabwe</td>
-      <td>Harare</td>
-      <td>390580.0</td>
-      <td>13061000</td>
-      <td>AF</td>
-      <td>ZWE</td>
-      <td>2016</td>
-      <td>2.054868e+10</td>
-    </tr>
-    <tr>
-      <th>9486</th>
-      <td>ZW</td>
-      <td>ZWE</td>
-      <td>716</td>
-      <td>ZI</td>
-      <td>Zimbabwe</td>
-      <td>Harare</td>
-      <td>390580.0</td>
-      <td>13061000</td>
-      <td>AF</td>
-      <td>ZWE</td>
-      <td>2017</td>
-      <td>2.281301e+10</td>
-    </tr>
-  </tbody>
-</table>
-<p>9487 rows × 12 columns</p>
-</div>
 </div>
 
 </div>
@@ -5075,119 +4127,31 @@ gdp_2017</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> country_code </span>┃<span style="font-weight: bold"> year  </span>┃<span style="font-weight: bold"> value        </span>┃
+┡━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>       │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span> │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">float64</span>      │
+├──────────────┼───────┼──────────────┤
+│ ABW          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2017</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.700559e+09</span> │
+│ AFG          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2017</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.019176e+10</span> │
+│ AGO          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2017</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.221238e+11</span> │
+│ ALB          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2017</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.302506e+10</span> │
+│ AND          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2017</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3.013387e+09</span> │
+│ ARB          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2017</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.587032e+12</span> │
+│ ARE          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2017</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3.777011e+11</span> │
+│ ARG          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2017</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6.426959e+11</span> │
+│ ARM          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2017</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.152746e+10</span> │
+│ ASM          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2017</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6.020000e+08</span> │
+│ ATG          │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2017</span> │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.467978e+09</span> │
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>            │     <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │            <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+└──────────────┴───────┴──────────────┘
+</pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>country_code</th>
-      <th>year</th>
-      <th>value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>ABW</td>
-      <td>2017</td>
-      <td>2.700559e+09</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AFG</td>
-      <td>2017</td>
-      <td>2.019176e+10</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>AGO</td>
-      <td>2017</td>
-      <td>1.221238e+11</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>ALB</td>
-      <td>2017</td>
-      <td>1.302506e+10</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>AND</td>
-      <td>2017</td>
-      <td>3.013387e+09</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>242</th>
-      <td>XKX</td>
-      <td>2017</td>
-      <td>7.227700e+09</td>
-    </tr>
-    <tr>
-      <th>243</th>
-      <td>YEM</td>
-      <td>2017</td>
-      <td>2.681870e+10</td>
-    </tr>
-    <tr>
-      <th>244</th>
-      <td>ZAF</td>
-      <td>2017</td>
-      <td>3.495541e+11</td>
-    </tr>
-    <tr>
-      <th>245</th>
-      <td>ZMB</td>
-      <td>2017</td>
-      <td>2.586814e+10</td>
-    </tr>
-    <tr>
-      <th>246</th>
-      <td>ZWE</td>
-      <td>2017</td>
-      <td>2.281301e+10</td>
-    </tr>
-  </tbody>
-</table>
-<p>247 rows × 3 columns</p>
-</div>
 </div>
 
 </div>
@@ -5256,227 +4220,31 @@ countries_and_gdp[countries, gdp_2017]</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━┓
+┃<span style="font-weight: bold"> iso_alpha2 </span>┃<span style="font-weight: bold"> iso_alpha3 </span>┃<span style="font-weight: bold"> iso_numeric </span>┃<span style="font-weight: bold"> fips   </span>┃<span style="font-weight: bold"> name                 </span>┃<span style="font-weight: bold"> capital          </span>┃<span style="font-weight: bold"> area_km2     </span>┃<span style="font-weight: bold"> … </span>┃
+┡━━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>     │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>     │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span>       │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span> │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>               │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>           │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">float64</span>      │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+├────────────┼────────────┼─────────────┼────────┼──────────────────────┼──────────────────┼──────────────┼───┤
+│ AW         │ ABW        │         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">533</span> │ AA     │ Aruba                │ Oranjestad       │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.930000e+02</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AF         │ AFG        │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span> │ AF     │ Afghanistan          │ Kabul            │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6.475000e+05</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AO         │ AGO        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">24</span> │ AO     │ Angola               │ Luanda           │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.246700e+06</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AL         │ ALB        │           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8</span> │ AL     │ Albania              │ Tirana           │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.874800e+04</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AD         │ AND        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span> │ AN     │ Andorra              │ Andorra la Vella │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4.680000e+02</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AE         │ ARE        │         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">784</span> │ AE     │ United Arab Emirates │ Abu Dhabi        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8.288000e+04</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AR         │ ARG        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span> │ AR     │ Argentina            │ Buenos Aires     │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.766890e+06</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AM         │ ARM        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">51</span> │ AM     │ Armenia              │ Yerevan          │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.980000e+04</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AS         │ ASM        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">16</span> │ AQ     │ American Samoa       │ Pago Pago        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.990000e+02</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AG         │ ATG        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">28</span> │ AC     │ Antigua and Barbuda  │ St. Johns        │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4.430000e+02</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ AU         │ AUS        │          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">36</span> │ AS     │ Australia            │ Canberra         │ <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7.686850e+06</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>          │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>          │           <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>      │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>                    │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>                │            <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+└────────────┴────────────┴─────────────┴────────┴──────────────────────┴──────────────────┴──────────────┴───┘
+</pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>iso_alpha2</th>
-      <th>iso_alpha3</th>
-      <th>iso_numeric</th>
-      <th>fips</th>
-      <th>name</th>
-      <th>capital</th>
-      <th>area_km2</th>
-      <th>population</th>
-      <th>continent</th>
-      <th>country_code</th>
-      <th>year</th>
-      <th>value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>AW</td>
-      <td>ABW</td>
-      <td>533</td>
-      <td>AA</td>
-      <td>Aruba</td>
-      <td>Oranjestad</td>
-      <td>193.0</td>
-      <td>71566</td>
-      <td>NA</td>
-      <td>ABW</td>
-      <td>2017</td>
-      <td>2.700559e+09</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>AF</td>
-      <td>AFG</td>
-      <td>4</td>
-      <td>AF</td>
-      <td>Afghanistan</td>
-      <td>Kabul</td>
-      <td>647500.0</td>
-      <td>29121286</td>
-      <td>AS</td>
-      <td>AFG</td>
-      <td>2017</td>
-      <td>2.019176e+10</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>AO</td>
-      <td>AGO</td>
-      <td>24</td>
-      <td>AO</td>
-      <td>Angola</td>
-      <td>Luanda</td>
-      <td>1246700.0</td>
-      <td>13068161</td>
-      <td>AF</td>
-      <td>AGO</td>
-      <td>2017</td>
-      <td>1.221238e+11</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>AL</td>
-      <td>ALB</td>
-      <td>8</td>
-      <td>AL</td>
-      <td>Albania</td>
-      <td>Tirana</td>
-      <td>28748.0</td>
-      <td>2986952</td>
-      <td>EU</td>
-      <td>ALB</td>
-      <td>2017</td>
-      <td>1.302506e+10</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>AD</td>
-      <td>AND</td>
-      <td>20</td>
-      <td>AN</td>
-      <td>Andorra</td>
-      <td>Andorra la Vella</td>
-      <td>468.0</td>
-      <td>84000</td>
-      <td>EU</td>
-      <td>AND</td>
-      <td>2017</td>
-      <td>3.013387e+09</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>196</th>
-      <td>XK</td>
-      <td>XKX</td>
-      <td>0</td>
-      <td>KV</td>
-      <td>Kosovo</td>
-      <td>Pristina</td>
-      <td>10908.0</td>
-      <td>1800000</td>
-      <td>EU</td>
-      <td>XKX</td>
-      <td>2017</td>
-      <td>7.227700e+09</td>
-    </tr>
-    <tr>
-      <th>197</th>
-      <td>YE</td>
-      <td>YEM</td>
-      <td>887</td>
-      <td>YM</td>
-      <td>Yemen</td>
-      <td>Sanaa</td>
-      <td>527970.0</td>
-      <td>23495361</td>
-      <td>AS</td>
-      <td>YEM</td>
-      <td>2017</td>
-      <td>2.681870e+10</td>
-    </tr>
-    <tr>
-      <th>198</th>
-      <td>ZA</td>
-      <td>ZAF</td>
-      <td>710</td>
-      <td>SF</td>
-      <td>South Africa</td>
-      <td>Pretoria</td>
-      <td>1219912.0</td>
-      <td>49000000</td>
-      <td>AF</td>
-      <td>ZAF</td>
-      <td>2017</td>
-      <td>3.495541e+11</td>
-    </tr>
-    <tr>
-      <th>199</th>
-      <td>ZM</td>
-      <td>ZMB</td>
-      <td>894</td>
-      <td>ZA</td>
-      <td>Zambia</td>
-      <td>Lusaka</td>
-      <td>752614.0</td>
-      <td>13460305</td>
-      <td>AF</td>
-      <td>ZMB</td>
-      <td>2017</td>
-      <td>2.586814e+10</td>
-    </tr>
-    <tr>
-      <th>200</th>
-      <td>ZW</td>
-      <td>ZWE</td>
-      <td>716</td>
-      <td>ZI</td>
-      <td>Zimbabwe</td>
-      <td>Harare</td>
-      <td>390580.0</td>
-      <td>13061000</td>
-      <td>AF</td>
-      <td>ZWE</td>
-      <td>2017</td>
-      <td>2.281301e+10</td>
-    </tr>
-  </tbody>
-</table>
-<p>201 rows × 12 columns</p>
-</div>
 </div>
 
 </div>

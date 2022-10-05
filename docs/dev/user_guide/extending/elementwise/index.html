@@ -3118,12 +3118,15 @@ t.string_col.julianday()</div>
 
 
 
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>r0 := UnboundTable: t
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">r0 := UnboundTable: t
   string_col string
 
-JulianDay(string_col): JulianDay(r0.string_col)</pre>
+Selection[r0]
+  selections:
+    JulianDay(string_col): JulianDay(r0.string_col)
+</pre>
+
 </div>
 
 </div>
@@ -3371,12 +3374,13 @@ independence</div>
 
 
 
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>AlchemyTable: independence
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">AlchemyTable: independence
   country_code      string
   independence_date date
-  independence_from string</pre>
+  independence_from string
+</pre>
+
 </div>
 
 </div>
@@ -3433,14 +3437,17 @@ day</div>
 
 
 
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>r0 := AlchemyTable: independence
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">r0 := AlchemyTable: independence
   country_code      string
   independence_date date
   independence_from string
 
-Cast(independence_date, string): Cast(r0.independence_date, to=string)</pre>
+Selection[r0]
+  selections:
+    Cast(independence_date, string): Cast(r0.independence_date, to=string)
+</pre>
+
 </div>
 
 </div>
@@ -3497,14 +3504,17 @@ julianday_expr</div>
 
 
 
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>r0 := AlchemyTable: independence
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">r0 := AlchemyTable: independence
   country_code      string
   independence_date date
   independence_from string
 
-jday: JulianDay(Cast(r0.independence_date, to=string))</pre>
+Selection[r0]
+  selections:
+    jday: JulianDay(Cast(r0.independence_date, to=string))
+</pre>
+
 </div>
 
 </div>
@@ -3568,22 +3578,22 @@ Cell <span class="ansi-green-fg">In [10], line 1</span>
 <span class="ansi-green-fg">----&gt; 1</span> sql_expr <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">julianday_expr</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compile</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(sql_expr)
 
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/expr/types/core.py:304</span>, in <span class="ansi-cyan-fg">Expr.compile</span><span class="ansi-blue-fg">(self, limit, timecontext, params)</span>
-<span class="ansi-green-intense-fg ansi-bold">    280</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">compile</span>(
-<span class="ansi-green-intense-fg ansi-bold">    281</span>     <span style="color: rgb(0,135,0)">self</span>,
-<span class="ansi-green-intense-fg ansi-bold">    282</span>     limit: <span style="color: rgb(0,135,0)">int</span> <span style="color: rgb(98,98,98)">|</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>,
-<span class="ansi-green-intense-fg ansi-bold">    283</span>     timecontext: TimeContext <span style="color: rgb(98,98,98)">|</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>,
-<span class="ansi-green-intense-fg ansi-bold">    284</span>     params: Mapping[ir<span style="color: rgb(98,98,98)">.</span>Value, Any] <span style="color: rgb(98,98,98)">|</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>,
-<span class="ansi-green-intense-fg ansi-bold">    285</span> ):
-<span class="ansi-green-intense-fg ansi-bold">    286</span>     <span style="color: rgb(175,0,0)">&#34;&#34;&#34;Compile to an execution target.</span>
-<span class="ansi-green-intense-fg ansi-bold">    287</span> 
-<span class="ansi-green-intense-fg ansi-bold">    288</span> <span style="color: rgb(175,0,0)">    Parameters</span>
+File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/expr/types/core.py:305</span>, in <span class="ansi-cyan-fg">Expr.compile</span><span class="ansi-blue-fg">(self, limit, timecontext, params)</span>
+<span class="ansi-green-intense-fg ansi-bold">    281</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">compile</span>(
+<span class="ansi-green-intense-fg ansi-bold">    282</span>     <span style="color: rgb(0,135,0)">self</span>,
+<span class="ansi-green-intense-fg ansi-bold">    283</span>     limit: <span style="color: rgb(0,135,0)">int</span> <span style="color: rgb(98,98,98)">|</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>,
+<span class="ansi-green-intense-fg ansi-bold">    284</span>     timecontext: TimeContext <span style="color: rgb(98,98,98)">|</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>,
+<span class="ansi-green-intense-fg ansi-bold">    285</span>     params: Mapping[ir<span style="color: rgb(98,98,98)">.</span>Value, Any] <span style="color: rgb(98,98,98)">|</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>,
+<span class="ansi-green-intense-fg ansi-bold">    286</span> ):
+<span class="ansi-green-intense-fg ansi-bold">    287</span>     <span style="color: rgb(175,0,0)">&#34;&#34;&#34;Compile to an execution target.</span>
+<span class="ansi-green-intense-fg ansi-bold">    288</span> 
+<span class="ansi-green-intense-fg ansi-bold">    289</span> <span style="color: rgb(175,0,0)">    Parameters</span>
 <span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    302</span> <span style="color: rgb(175,0,0)">        Mapping of scalar parameter expressions to value</span>
-<span class="ansi-green-intense-fg ansi-bold">    303</span> <span style="color: rgb(175,0,0)">    &#34;&#34;&#34;</span>
-<span class="ansi-green-fg">--&gt; 304</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_find_backend</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compile</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-intense-fg ansi-bold">    305</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">timecontext</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">timecontext</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">params</span>
-<span class="ansi-green-intense-fg ansi-bold">    306</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    303</span> <span style="color: rgb(175,0,0)">        Mapping of scalar parameter expressions to value</span>
+<span class="ansi-green-intense-fg ansi-bold">    304</span> <span style="color: rgb(175,0,0)">    &#34;&#34;&#34;</span>
+<span class="ansi-green-fg">--&gt; 305</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_find_backend</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">compile</span><span class="ansi-yellow-bg">(</span>
+<span class="ansi-green-intense-fg ansi-bold">    306</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">timecontext</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">timecontext</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">params</span>
+<span class="ansi-green-intense-fg ansi-bold">    307</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
 
 File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/__init__.py:284</span>, in <span class="ansi-cyan-fg">BaseSQLBackend.compile</span><span class="ansi-blue-fg">(self, expr, limit, params, timecontext)</span>
 <span class="ansi-green-intense-fg ansi-bold">    255</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">compile</span>(
@@ -3761,22 +3771,22 @@ Cell <span class="ansi-green-fg">In [11], line 1</span>
 <span class="ansi-green-fg">----&gt; 1</span> result <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">julianday_expr</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">execute</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">      2</span> result<span style="color: rgb(98,98,98)">.</span>head()
 
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/expr/types/core.py:276</span>, in <span class="ansi-cyan-fg">Expr.execute</span><span class="ansi-blue-fg">(self, limit, timecontext, params, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    251</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">execute</span>(
-<span class="ansi-green-intense-fg ansi-bold">    252</span>     <span style="color: rgb(0,135,0)">self</span>,
-<span class="ansi-green-intense-fg ansi-bold">    253</span>     limit: <span style="color: rgb(0,135,0)">int</span> <span style="color: rgb(98,98,98)">|</span> <span style="color: rgb(0,135,0)">str</span> <span style="color: rgb(98,98,98)">|</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">default</span><span style="color: rgb(175,0,0)">&#39;</span>,
+File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/expr/types/core.py:277</span>, in <span class="ansi-cyan-fg">Expr.execute</span><span class="ansi-blue-fg">(self, limit, timecontext, params, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    252</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">execute</span>(
+<span class="ansi-green-intense-fg ansi-bold">    253</span>     <span style="color: rgb(0,135,0)">self</span>,
+<span class="ansi-green-intense-fg ansi-bold">    254</span>     limit: <span style="color: rgb(0,135,0)">int</span> <span style="color: rgb(98,98,98)">|</span> <span style="color: rgb(0,135,0)">str</span> <span style="color: rgb(98,98,98)">|</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">default</span><span style="color: rgb(175,0,0)">&#39;</span>,
 <span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    256</span>     <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs: Any,
-<span class="ansi-green-intense-fg ansi-bold">    257</span> ):
-<span class="ansi-green-intense-fg ansi-bold">    258</span>     <span style="color: rgb(175,0,0)">&#34;&#34;&#34;Execute an expression against its backend if one exists.</span>
-<span class="ansi-green-intense-fg ansi-bold">    259</span> 
-<span class="ansi-green-intense-fg ansi-bold">    260</span> <span style="color: rgb(175,0,0)">    Parameters</span>
+<span class="ansi-green-intense-fg ansi-bold">    257</span>     <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs: Any,
+<span class="ansi-green-intense-fg ansi-bold">    258</span> ):
+<span class="ansi-green-intense-fg ansi-bold">    259</span>     <span style="color: rgb(175,0,0)">&#34;&#34;&#34;Execute an expression against its backend if one exists.</span>
+<span class="ansi-green-intense-fg ansi-bold">    260</span> 
+<span class="ansi-green-intense-fg ansi-bold">    261</span> <span style="color: rgb(175,0,0)">    Parameters</span>
 <span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    274</span> <span style="color: rgb(175,0,0)">        Mapping of scalar parameter expressions to value</span>
-<span class="ansi-green-intense-fg ansi-bold">    275</span> <span style="color: rgb(175,0,0)">    &#34;&#34;&#34;</span>
-<span class="ansi-green-fg">--&gt; 276</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_find_backend</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">use_default</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">True</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">execute</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-intense-fg ansi-bold">    277</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">timecontext</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">timecontext</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span>
-<span class="ansi-green-intense-fg ansi-bold">    278</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    275</span> <span style="color: rgb(175,0,0)">        Mapping of scalar parameter expressions to value</span>
+<span class="ansi-green-intense-fg ansi-bold">    276</span> <span style="color: rgb(175,0,0)">    &#34;&#34;&#34;</span>
+<span class="ansi-green-fg">--&gt; 277</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_find_backend</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">use_default</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(0,135,0)">True</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">execute</span><span class="ansi-yellow-bg">(</span>
+<span class="ansi-green-intense-fg ansi-bold">    278</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">limit</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">timecontext</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">timecontext</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">params</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span>
+<span class="ansi-green-intense-fg ansi-bold">    279</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
 
 File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/base/sql/__init__.py:185</span>, in <span class="ansi-cyan-fg">BaseSQLBackend.execute</span><span class="ansi-blue-fg">(self, expr, params, limit, **kwargs)</span>
 <span class="ansi-green-intense-fg ansi-bold">    181</span> kwargs<span style="color: rgb(98,98,98)">.</span>pop(<span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">timecontext</span><span style="color: rgb(175,0,0)">&#39;</span>, <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>)

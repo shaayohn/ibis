@@ -2963,70 +2963,22 @@ countries['name', 'continent', 'population'].limit(3)</div>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-
-</div>
-
-</div>
-
-<div class="jp-OutputArea-child">
-
-    
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> name                 </span>┃<span style="font-weight: bold"> continent </span>┃<span style="font-weight: bold"> population </span>┃
+┡━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>               │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>    │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span>      │
+├──────────────────────┼───────────┼────────────┤
+│ Andorra              │ EU        │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">84000</span> │
+│ United Arab Emirates │ AS        │    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4975593</span> │
+│ Afghanistan          │ AS        │   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">29121286</span> │
+└──────────────────────┴───────────┴────────────┘
+</pre>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>continent</th>
-      <th>population</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Andorra</td>
-      <td>EU</td>
-      <td>84000</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>United Arab Emirates</td>
-      <td>AS</td>
-      <td>4975593</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Afghanistan</td>
-      <td>AS</td>
-      <td>29121286</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 </div>
 
 </div>
@@ -3098,9 +3050,8 @@ countries['name', 'continent', 'population'].limit(3)</div>
 
 
 
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>r0 := AlchemyTable: countries
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">r0 := AlchemyTable: countries
   iso_alpha2  string
   iso_alpha3  string
   iso_numeric int32
@@ -3117,7 +3068,9 @@ r1 := Selection[r0]
     continent:  r0.continent
     population: r0.population
 
-Limit[r1, n=3]</pre>
+Limit[r1, n=3]
+</pre>
+
 </div>
 
 </div>
@@ -3402,9 +3355,8 @@ population_in_millions</div>
 
 
 
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>r0 := AlchemyTable: countries
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">r0 := AlchemyTable: countries
   iso_alpha2  string
   iso_alpha3  string
   iso_numeric int32
@@ -3415,7 +3367,11 @@ population_in_millions</div>
   population  int32
   continent   string
 
-population_in_millions: r0.population / 1000000</pre>
+Selection[r0]
+  selections:
+    population_in_millions: r0.population / 1000000
+</pre>
+
 </div>
 
 </div>
@@ -3551,9 +3507,8 @@ population_in_millions: r0.population / 1000000</pre>
 
 
 
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>r0 := AlchemyTable: countries
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">r0 := AlchemyTable: countries
   iso_alpha2  string
   iso_alpha3  string
   iso_numeric int32
@@ -3570,7 +3525,9 @@ r1 := Selection[r0]
     continent:              r0.continent
     population_in_millions: r0.population / 1000000
 
-Limit[r1, n=3]</pre>
+Limit[r1, n=3]
+</pre>
+
 </div>
 
 </div>
