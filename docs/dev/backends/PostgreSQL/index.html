@@ -1101,6 +1101,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.backends.postgres.Backend.to_pyarrow" class="md-nav__link">
+    to_pyarrow()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.postgres.Backend.to_pyarrow_batches" class="md-nav__link">
+    to_pyarrow_batches()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.backends.postgres.Backend.udf" class="md-nav__link">
     udf()
   </a>
@@ -2221,6 +2235,20 @@
           <li class="md-nav__item">
   <a href="#ibis.backends.postgres.Backend.table" class="md-nav__link">
     table()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.postgres.Backend.to_pyarrow" class="md-nav__link">
+    to_pyarrow()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.backends.postgres.Backend.to_pyarrow_batches" class="md-nav__link">
+    to_pyarrow_batches()
   </a>
   
 </li>
@@ -3716,6 +3744,163 @@ and types of <code>table</code>.</p>
     <tr>
       <td><code>ir.Table</code></td>
       <td><p>Table expression</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h5 id="ibis.backends.postgres.Backend.to_pyarrow" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">to_pyarrow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
+  </span>
+
+<a href="#ibis.backends.postgres.Backend.to_pyarrow" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+
+    <div class="doc doc-contents ">
+
+      <p>Execute expression and return results in as a pyarrow table.</p>
+<div class="admonition warning">
+<p class="admonition-title">This API is experimental and subject to change.</p>
+</div>
+<p>This method is eager and will execute the associated expression
+immediately.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>expr</code></td>
+        <td><code>ir.Expr</code></td>
+        <td><p>Ibis expression to export to pyarrow</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>params</code></td>
+        <td><code>Mapping[ir.Scalar, Any] | None</code></td>
+        <td><p>Mapping of scalar parameter expressions to value.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>limit</code></td>
+        <td><code>int | str | None</code></td>
+        <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
+"no limit". The default is in <code>ibis/config.py</code>.</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>pa.Table</code></td>
+      <td><p>A pyarrow table holding the results of the executed expression.</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h5 id="ibis.backends.postgres.Backend.to_pyarrow_batches" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">to_pyarrow_batches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
+  </span>
+
+<a href="#ibis.backends.postgres.Backend.to_pyarrow_batches" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+
+    <div class="doc doc-contents ">
+
+      <p>Execute expression and return results in an iterator of pyarrow</p>
+<p>record batches.</p>
+<div class="admonition warning">
+<p class="admonition-title">This API is experimental and subject to change.</p>
+</div>
+<p>This method is eager and will execute the associated expression
+immediately.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>expr</code></td>
+        <td><code>ir.Expr</code></td>
+        <td><p>Ibis expression to export to pyarrow</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>limit</code></td>
+        <td><code>int | str | None</code></td>
+        <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
+"no limit". The default is in <code>ibis/config.py</code>.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>params</code></td>
+        <td><code>Mapping[ir.Scalar, Any] | None</code></td>
+        <td><p>Mapping of scalar parameter expressions to value.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>chunk_size</code></td>
+        <td><code>int</code></td>
+        <td><p>Number of rows in each returned record batch.</p></td>
+        <td><code>1000000</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>pa.RecordBatchReader</code></td>
+      <td><p>An iterator of pyarrow record batches.</p></td>
     </tr>
   </tbody>
 </table>
