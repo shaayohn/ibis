@@ -3531,7 +3531,7 @@ countries[cond]['name']</div>
     <span class="n">countries</span><span class="o">.</span><span class="n">population</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">where</span><span class="o">=</span><span class="n">arctic</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;population arctic countries&#39;</span><span class="p">),</span>
 <span class="p">]</span>
 
-<span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">continent</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">metrics</span><span class="p">))</span>
+<span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">continent</span><span class="p">)</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">metrics</span><span class="p">))</span>
 </pre></div>
 <div id="cell-9" class="clipboard-copy-txt">arctic = countries.name.isin(
     [
@@ -3552,7 +3552,7 @@ metrics = [
     countries.population.sum(where=arctic).name('population arctic countries'),
 ]
 
-(countries.groupby(countries.continent).aggregate(metrics))</div>
+(countries.group_by(countries.continent).aggregate(metrics))</div>
     
         </div>
     </div>
@@ -3609,7 +3609,7 @@ metrics = [
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 6, 2022</span>
       
     
   </small>

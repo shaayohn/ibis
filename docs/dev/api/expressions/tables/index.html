@@ -1557,13 +1557,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.types.relations.Table.groupby" class="md-nav__link">
-    groupby()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.head" class="md-nav__link">
     head()
   </a>
@@ -1650,13 +1643,6 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.set_column" class="md-nav__link">
     set_column()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.expr.types.relations.Table.sort_by" class="md-nav__link">
-    sort_by()
   </a>
   
 </li>
@@ -2169,13 +2155,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.expr.types.relations.Table.groupby" class="md-nav__link">
-    groupby()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.head" class="md-nav__link">
     head()
   </a>
@@ -2262,13 +2241,6 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.set_column" class="md-nav__link">
     set_column()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.expr.types.relations.Table.sort_by" class="md-nav__link">
-    sort_by()
   </a>
   
 </li>
@@ -3380,83 +3352,6 @@ as a scalar, all columns are filled with that value.</p></td>
 
 
 
-<h4 id="ibis.expr.types.relations.Table.groupby" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">groupby</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">additional_grouping_expressions</span><span class="p">)</span></code>
-
-
-<a href="#ibis.expr.types.relations.Table.groupby" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Create a grouped table expression.</p>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>by</code></td>
-        <td><code>None</code></td>
-        <td><p>Grouping expressions</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>additional_grouping_expressions</code></td>
-        <td><code>Any</code></td>
-        <td><p>Named grouping expressions</p></td>
-        <td><code>{}</code></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">ibis</span> <span class="kn">import</span> <span class="n">_</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;int32&#39;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s1">&#39;timestamp&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;double&#39;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">group_by</span><span class="p">([</span><span class="n">_</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> <span class="n">_</span><span class="o">.</span><span class="n">b</span><span class="p">])</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">sum_of_c</span><span class="o">=</span><span class="n">_</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
-<span class="n">r0</span> <span class="o">:=</span> <span class="n">UnboundTable</span><span class="p">:</span> <span class="n">t</span>
-  <span class="n">a</span> <span class="n">int32</span>
-  <span class="n">b</span> <span class="n">timestamp</span>
-  <span class="n">c</span> <span class="n">float64</span>
-<span class="n">Aggregation</span><span class="p">[</span><span class="n">r0</span><span class="p">]</span>
-  <span class="n">metrics</span><span class="p">:</span>
-    <span class="n">sum_of_c</span><span class="p">:</span> <span class="n">Sum</span><span class="p">(</span><span class="n">r0</span><span class="o">.</span><span class="n">c</span><span class="p">)</span>
-  <span class="n">by</span><span class="p">:</span>
-    <span class="n">a</span><span class="p">:</span> <span class="n">r0</span><span class="o">.</span><span class="n">a</span>
-    <span class="n">b</span><span class="p">:</span> <span class="n">r0</span><span class="o">.</span><span class="n">b</span>
-</code></pre></div>
-
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>GroupedTable</code></td>
-      <td><p>A grouped table expression</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
 <h4 id="ibis.expr.types.relations.Table.head" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">head</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span></code>
 
@@ -4288,27 +4183,6 @@ column/scalar-aggregate operations like</p>
     </tr>
   </tbody>
 </table>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="ibis.expr.types.relations.Table.sort_by" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">sort_by</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sort_exprs</span><span class="p">)</span></code>
-
-
-<a href="#ibis.expr.types.relations.Table.sort_by" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Deprecated.</p>
-<p>Use <code>order_by</code> instead.</p>
-
     </div>
 
   </div>
