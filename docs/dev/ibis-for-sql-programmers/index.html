@@ -5651,7 +5651,7 @@ HAVING count(1) &gt;= 1000
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="sorting-order-by">Sorting / <code>ORDER BY</code><a class="anchor-link" href="#sorting-order-by">&#182;</a></h2><p>To sort a table, use the <code>sort_by</code> method along with either column names
+<h2 id="sorting-order-by">Sorting / <code>ORDER BY</code><a class="anchor-link" href="#sorting-order-by">&#182;</a></h2><p>To sort a table, use the <code>order_by</code> method along with either column names
 or expressions that indicate the sorting keys:</p>
 
 </div>
@@ -5678,11 +5678,11 @@ or expressions that indicate the sorting keys:</p>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">sorted</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">sort_by</span><span class="p">([</span><span class="n">events</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">year</span><span class="p">(),</span> <span class="n">events</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">month</span><span class="p">()])</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">sorted</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">order_by</span><span class="p">([</span><span class="n">events</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">year</span><span class="p">(),</span> <span class="n">events</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">month</span><span class="p">()])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="nb">sorted</span><span class="p">))</span>
 </pre></div>
-<div id="cell-34" class="clipboard-copy-txt">sorted = events.sort_by([events.ts.year(), events.ts.month()])
+<div id="cell-34" class="clipboard-copy-txt">sorted = events.order_by([events.ts.year(), events.ts.month()])
 
 print(ibis.impala.compile(sorted))</div>
     
@@ -5753,13 +5753,13 @@ direction of any key, either wrap it in <code>ibis.desc</code> or pass a tuple w
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">sorted</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">sorted</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span>
     <span class="p">[</span><span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="s1">&#39;event_type&#39;</span><span class="p">),</span> <span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">month</span><span class="p">(),</span> <span class="kc">False</span><span class="p">)]</span>
 <span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">impala</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="nb">sorted</span><span class="p">))</span>
 </pre></div>
-<div id="cell-35" class="clipboard-copy-txt">sorted = events.sort_by(
+<div id="cell-35" class="clipboard-copy-txt">sorted = events.order_by(
     [ibis.desc('event_type'), (events.ts.month(), False)]
 ).limit(100)
 
@@ -9498,7 +9498,7 @@ FROM (
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2022</span>
       
     
   </small>

@@ -1606,6 +1606,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.order_by" class="md-nav__link">
+    order_by()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.projection" class="md-nav__link">
     projection()
   </a>
@@ -2206,6 +2213,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.mutate" class="md-nav__link">
     mutate()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.order_by" class="md-nav__link">
+    order_by()
   </a>
   
 </li>
@@ -3807,6 +3821,73 @@ the new columns.</p>
 
 
 
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="ibis.expr.types.relations.Table.order_by" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">order_by</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">by</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.relations.Table.order_by" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Sort a table by one or more expressions.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>by</code></td>
+        <td><code>str | ir.Column | tuple[str | ir.Column, bool] | Sequence[tuple[str | ir.Column, bool]]</code></td>
+        <td><p>An expression (or expressions) to sort the table by.</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;int64&#39;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">order_by</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)])</span>
+<span class="n">r0</span> <span class="o">:=</span> <span class="n">UnboundTable</span><span class="p">:</span> <span class="n">unbound_table_0</span>
+  <span class="n">a</span> <span class="n">int64</span>
+  <span class="n">b</span> <span class="n">string</span>
+<span class="n">Selection</span><span class="p">[</span><span class="n">r0</span><span class="p">]</span>
+  <span class="n">sort_keys</span><span class="p">:</span>
+     <span class="n">asc</span><span class="o">|</span><span class="n">r0</span><span class="o">.</span><span class="n">a</span>
+    <span class="n">desc</span><span class="o">|</span><span class="n">r0</span><span class="o">.</span><span class="n">b</span>
+</code></pre></div>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Table</code></td>
+      <td><p>Sorted table</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
 
   <div class="doc doc-object doc-method">
 
@@ -4225,55 +4306,9 @@ column/scalar-aggregate operations like</p>
 
     <div class="doc doc-contents ">
 
-      <p>Sort table by <code>sort_exprs</code></p>
+      <p>Deprecated.</p>
+<p>Use <code>order_by</code> instead.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>sort_exprs</code></td>
-        <td><code>str | ir.Column | tuple[str | ir.Column, bool] | Sequence[tuple[str | ir.Column, bool]]</code></td>
-        <td><p>Sort specifications</p></td>
-        <td><em>required</em></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;int64&#39;</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">sort_by</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)])</span>
-<span class="n">r0</span> <span class="o">:=</span> <span class="n">UnboundTable</span><span class="p">:</span> <span class="n">unbound_table_0</span>
-  <span class="n">a</span> <span class="n">int64</span>
-  <span class="n">b</span> <span class="n">string</span>
-<span class="n">Selection</span><span class="p">[</span><span class="n">r0</span><span class="p">]</span>
-  <span class="n">sort_keys</span><span class="p">:</span>
-     <span class="n">asc</span><span class="o">|</span><span class="n">r0</span><span class="o">.</span><span class="n">a</span>
-    <span class="n">desc</span><span class="o">|</span><span class="n">r0</span><span class="o">.</span><span class="n">b</span>
-</code></pre></div>
-
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>Table</code></td>
-      <td><p>Sorted table</p></td>
-    </tr>
-  </tbody>
-</table>
     </div>
 
   </div>

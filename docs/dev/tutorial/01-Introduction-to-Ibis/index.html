@@ -3830,7 +3830,7 @@ asian_countries</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Next, we want to find the most populated countries in Asia. To obtain them, we are going to sort the countries by the column <code>population</code>, and just fetch the first 10. To sort by a column in Ibis, we can use the <code>.sort_by()</code> method:</p>
+<p>Next, we want to find the most populated countries in Asia. To obtain them, we are going to sort the countries by the column <code>population</code>, and just fetch the first 10. To sort by a column in Ibis, we can use the <code>.order_by()</code> method:</p>
 
 </div>
 </div>
@@ -3856,9 +3856,9 @@ asian_countries</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">asian_countries</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="s1">&#39;population&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">asian_countries</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;population&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
-<div id="cell-15" class="clipboard-copy-txt">asian_countries.sort_by('population').limit(10)</div>
+<div id="cell-15" class="clipboard-copy-txt">asian_countries.order_by('population').limit(10)</div>
     
         </div>
     </div>
@@ -3915,7 +3915,7 @@ asian_countries</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This will return the least populated countries, since <code>.sort_by</code> will by default order in ascending order (ascending order like in <code>1, 2, 3, 4</code>). This behavior is consistent with SQL <code>ORDER BY</code>.</p>
+<p>This will return the least populated countries, since <code>.order_by</code> will by default order in ascending order (ascending order like in <code>1, 2, 3, 4</code>). This behavior is consistent with SQL <code>ORDER BY</code>.</p>
 <p>To order in descending order we can use <code>ibis.desc()</code>:</p>
 
 </div>
@@ -3942,9 +3942,9 @@ asian_countries</div>
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">asian_countries</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="s1">&#39;population&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">asian_countries</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="s1">&#39;population&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
-<div id="cell-16" class="clipboard-copy-txt">asian_countries.sort_by(ibis.desc('population')).limit(10)</div>
+<div id="cell-16" class="clipboard-copy-txt">asian_countries.order_by(ibis.desc('population')).limit(10)</div>
     
         </div>
     </div>
@@ -4017,7 +4017,7 @@ asian_countries</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 12, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2022</span>
       
     
   </small>

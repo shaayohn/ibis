@@ -4387,10 +4387,10 @@ metric</div>
             </clipboard-copy>
         </div>
             <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">expr</span> <span class="o">=</span> <span class="n">countries</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;first_letter&#39;</span><span class="p">)</span>
-<span class="n">expr</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_by</span><span class="p">((</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">expr</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">order_by</span><span class="p">((</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 <div id="cell-18" class="clipboard-copy-txt">expr = countries.name.lower().left(1).name('first_letter')
-expr.value_counts().sort_by(('count', False)).limit(10)</div>
+expr.value_counts().order_by(('count', False)).limit(10)</div>
     
         </div>
     </div>
@@ -5052,7 +5052,7 @@ independence[projection].limit(10)</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 12, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2022</span>
       
     
   </small>

@@ -3495,7 +3495,7 @@ bucketed.value_counts()</div>
     <span class="p">[</span><span class="s1">&#39;&lt; 1M&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt; 1M&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt; 10M&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt; 100M&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt; 1B&#39;</span><span class="p">]</span>
 <span class="p">)</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="s1">&#39;bucket_name&#39;</span><span class="p">)</span>
 
-<span class="n">expr</span> <span class="o">=</span> <span class="n">bucket_counts</span><span class="p">[</span><span class="n">labeled_bucket</span><span class="p">,</span> <span class="n">bucket_counts</span><span class="p">]</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="s1">&#39;bucket&#39;</span><span class="p">)</span>
+<span class="n">expr</span> <span class="o">=</span> <span class="n">bucket_counts</span><span class="p">[</span><span class="n">labeled_bucket</span><span class="p">,</span> <span class="n">bucket_counts</span><span class="p">]</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;bucket&#39;</span><span class="p">)</span>
 <span class="n">expr</span>
 </pre></div>
 <div id="cell-10" class="clipboard-copy-txt">bucket_counts = bucketed.value_counts()
@@ -3504,7 +3504,7 @@ labeled_bucket = bucket_counts.bucket.label(
     ['< 1M', '> 1M', '> 10M', '> 100M', '> 1B']
 ).name('bucket_name')
 
-expr = bucket_counts[labeled_bucket, bucket_counts].sort_by('bucket')
+expr = bucket_counts[labeled_bucket, bucket_counts].order_by('bucket')
 expr</div>
     
         </div>
@@ -3573,7 +3573,7 @@ expr</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 30, 2022</span>
       
     
   </small>

@@ -2344,7 +2344,7 @@ sacrifice maintainability to get to those insights!</p>
         <span class="p">),</span>
     <span class="p">)</span>
     <span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">acq_rate</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">acq_ipos</span> <span class="o">/</span> <span class="n">t</span><span class="o">.</span><span class="n">num_investments</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 </div>
@@ -2445,7 +2445,7 @@ including the <a href="backends/PostgreSQL/">PostgreSQL</a> and
         <span class="p">),</span>
     <span class="p">)</span>
     <span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">acq_rate</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">acq_ipos</span> <span class="o">/</span> <span class="n">t</span><span class="o">.</span><span class="n">num_investments</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">ibis</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 </div>
