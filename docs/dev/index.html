@@ -2323,9 +2323,7 @@ sacrifice maintainability to get to those insights!</p>
 <span class="normal">16</span>
 <span class="normal">17</span>
 <span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
 
 <span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;crunchbase.db&quot;</span><span class="p">)</span>
 
@@ -2338,9 +2336,7 @@ sacrifice maintainability to get to those insights!</p>
     <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
         <span class="n">num_investments</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">permalink</span><span class="o">.</span><span class="n">nunique</span><span class="p">(),</span>
         <span class="n">acq_ipos</span><span class="o">=</span><span class="p">(</span>
-            <span class="n">c</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">isin</span><span class="p">((</span><span class="s2">&quot;ipo&quot;</span><span class="p">,</span> <span class="s2">&quot;acquired&quot;</span><span class="p">))</span>
-            <span class="o">.</span><span class="n">ifelse</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">permalink</span><span class="p">,</span> <span class="n">ibis</span><span class="o">.</span><span class="n">NA</span><span class="p">)</span>
-            <span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+            <span class="n">c</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">isin</span><span class="p">((</span><span class="s2">&quot;ipo&quot;</span><span class="p">,</span> <span class="s2">&quot;acquired&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">ifelse</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">permalink</span><span class="p">,</span> <span class="n">ibis</span><span class="o">.</span><span class="n">NA</span><span class="p">)</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
         <span class="p">),</span>
     <span class="p">)</span>
     <span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">acq_rate</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">acq_ipos</span> <span class="o">/</span> <span class="n">t</span><span class="o">.</span><span class="n">num_investments</span><span class="p">)</span>
@@ -2424,9 +2420,7 @@ including the <a href="backends/PostgreSQL/">PostgreSQL</a> and
 <span class="normal">16</span>
 <span class="normal">17</span>
 <span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">ibis</span>
 
 <span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;crunchbase.db&quot;</span><span class="p">)</span>
 
@@ -2439,9 +2433,7 @@ including the <a href="backends/PostgreSQL/">PostgreSQL</a> and
     <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
         <span class="n">num_investments</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">permalink</span><span class="o">.</span><span class="n">nunique</span><span class="p">(),</span>
         <span class="n">acq_ipos</span><span class="o">=</span><span class="p">(</span>
-            <span class="n">c</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">isin</span><span class="p">((</span><span class="s2">&quot;ipo&quot;</span><span class="p">,</span> <span class="s2">&quot;acquired&quot;</span><span class="p">))</span>
-            <span class="o">.</span><span class="n">ifelse</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">permalink</span><span class="p">,</span> <span class="n">ibis</span><span class="o">.</span><span class="n">NA</span><span class="p">)</span>
-            <span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+            <span class="n">c</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">isin</span><span class="p">((</span><span class="s2">&quot;ipo&quot;</span><span class="p">,</span> <span class="s2">&quot;acquired&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">ifelse</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">permalink</span><span class="p">,</span> <span class="n">ibis</span><span class="o">.</span><span class="n">NA</span><span class="p">)</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
         <span class="p">),</span>
     <span class="p">)</span>
     <span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">acq_rate</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="o">.</span><span class="n">acq_ipos</span> <span class="o">/</span> <span class="n">t</span><span class="o">.</span><span class="n">num_investments</span><span class="p">)</span>
@@ -2474,11 +2466,7 @@ including the <a href="backends/PostgreSQL/">PostgreSQL</a> and
 <span class="normal">22</span>
 <span class="normal">23</span>
 <span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">sqlalchemy</span> <span class="k">as</span> <span class="nn">sa</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">sqlalchemy</span> <span class="k">as</span> <span class="nn">sa</span>
 
 <span class="n">c</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s2">&quot;companies&quot;</span><span class="p">)</span>
 <span class="n">i</span> <span class="o">=</span> <span class="n">sa</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s2">&quot;investments&quot;</span><span class="p">)</span>
@@ -2492,16 +2480,12 @@ including the <a href="backends/PostgreSQL/">PostgreSQL</a> and
             <span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;investor_name&quot;</span><span class="p">),</span>
             <span class="n">sa</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">permalink</span><span class="o">.</span><span class="n">distinct</span><span class="p">())</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;num_investments&quot;</span><span class="p">),</span>
             <span class="n">sa</span><span class="o">.</span><span class="n">func</span><span class="o">.</span><span class="n">count</span><span class="p">(</span>
-                <span class="n">sa</span><span class="o">.</span><span class="n">case</span><span class="p">(</span>
-                    <span class="p">[(</span><span class="n">c</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">in_</span><span class="p">((</span><span class="s2">&quot;ipo&quot;</span><span class="p">,</span> <span class="s2">&quot;acquired&quot;</span><span class="p">)),</span> <span class="n">c</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">permalink</span><span class="p">)]</span>
-                <span class="p">)</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
+                <span class="n">sa</span><span class="o">.</span><span class="n">case</span><span class="p">([(</span><span class="n">c</span><span class="o">.</span><span class="n">status</span><span class="o">.</span><span class="n">in_</span><span class="p">((</span><span class="s2">&quot;ipo&quot;</span><span class="p">,</span> <span class="s2">&quot;acquired&quot;</span><span class="p">)),</span> <span class="n">c</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">permalink</span><span class="p">)])</span><span class="o">.</span><span class="n">distinct</span><span class="p">()</span>
             <span class="p">)</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="s2">&quot;acq_ipos&quot;</span><span class="p">),</span>
         <span class="p">]</span>
     <span class="p">)</span>
     <span class="o">.</span><span class="n">select_from</span><span class="p">(</span>
-        <span class="n">c</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-            <span class="n">i</span><span class="p">,</span> <span class="n">onclause</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">permalink</span> <span class="o">==</span> <span class="n">i</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">company_permalink</span><span class="p">,</span> <span class="n">isouter</span><span class="o">=</span><span class="kc">True</span>
-        <span class="p">)</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">onclause</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">permalink</span> <span class="o">==</span> <span class="n">i</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">company_permalink</span><span class="p">,</span> <span class="n">isouter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="p">)</span>
     <span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
     <span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">desc</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
