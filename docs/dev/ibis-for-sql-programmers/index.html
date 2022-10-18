@@ -9132,7 +9132,7 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT *, extract(`ts`, &#39;month&#39;) AS `month`, extract(`ts`, &#39;year&#39;) AS `year`
+<pre>SELECT *, extract(`ts`, &#39;year&#39;) AS `year`, extract(`ts`, &#39;month&#39;) AS `month`
 FROM events
 </pre>
 </div>
