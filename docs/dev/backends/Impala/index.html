@@ -8012,10 +8012,14 @@ with all of your wrapper declarations and user APIs that you load with
 your Ibis session to plug in all your own functions.</p>
 <h2 id="working-with-secure-clusters-kerberos">Working with secure clusters (Kerberos)<a class="headerlink" href="#working-with-secure-clusters-kerberos" title="Anchor link to this section for reference">&para;</a></h2>
 <p>Ibis is compatible with Hadoop clusters that are secured with Kerberos (as well
-as SSL and LDAP). Just like the Impala shell and ODBC/JDBC connectors, Ibis
-connects to Impala through the HiveServer2 interface (using the impyla client).
-Therefore, the connection semantics are similar to the other access methods for
-working with secure clusters.</p>
+as SSL and LDAP). Note that to enable this support, you'll also need to install
+the <code>kerberos</code> package.</p>
+<div class="highlight"><pre><span></span><code>$ pip install kerberos
+</code></pre></div>
+<p>Just like the Impala shell and ODBC/JDBC connectors, Ibis connects to Impala
+through the HiveServer2 interface (using the impyla client). Therefore, the
+connection semantics are similar to the other access methods for working with
+secure clusters.</p>
 <p>Specifically, after authenticating yourself against Kerberos (e.g., by issuing
 the appropriate <code>kinit</code> commmand), simply pass <code>auth_mechanism='GSSAPI'</code> or
 <code>auth_mechanism='LDAP'</code> (and set <code>kerberos_service_name</code> if necessary along
@@ -8045,7 +8049,7 @@ to see the default configuration values for every component of CDH.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 2, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 18, 2022</span>
       
     
   </small>
