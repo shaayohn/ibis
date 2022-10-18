@@ -2607,8 +2607,7 @@ StringValue            (<a class="autorefs autorefs-internal" title="ibis.expr.t
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">text</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;Ibis project&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">text</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;project&#39;</span><span class="p">)</span>
-<span class="n">EndsWith</span><span class="p">(</span><span class="s1">&#39;Ibis project&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;project&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;project&#39;</span><span class="p">)</span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
@@ -2735,12 +2734,8 @@ implemented.</p></td>
 </table>
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">strings</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">find_in_set</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span>
-<span class="n">r0</span> <span class="o">:=</span> <span class="n">UnboundTable</span><span class="p">:</span> <span class="n">unbound_table_0</span>
-  <span class="n">strings</span> <span class="n">string</span>
-<span class="n">FindInSet</span><span class="p">(</span><span class="n">needle</span><span class="o">=</span><span class="n">r0</span><span class="o">.</span><span class="n">strings</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="n">ValueList</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">])])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">string_col</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">string_col</span><span class="o">.</span><span class="n">find_in_set</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">])</span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
@@ -2949,8 +2944,6 @@ the corresponding row in the output is <code>True</code>.</p></td>
     <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">sep</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">sep</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span>
-<span class="n">StringJoin</span><span class="p">(</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">ValueList</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])])</span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
@@ -3197,18 +3190,10 @@ the corresponding row in the output is <code>True</code>.</p></td>
 </table>
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">strings</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span>
-<span class="n">r0</span> <span class="o">:=</span> <span class="n">UnboundTable</span><span class="p">:</span> <span class="n">unbound_table_1</span>
-  <span class="n">strings</span> <span class="n">string</span>
-<span class="n">LPad</span><span class="p">(</span><span class="n">r0</span><span class="o">.</span><span class="n">strings</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>  <span class="c1"># &#39;a&#39; becomes &#39;----a&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span>
-<span class="n">LPad</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;abcdefg&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>  <span class="c1"># &#39;abcdefg&#39; becomes &#39;abcde&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span>
-<span class="n">LPad</span><span class="p">(</span><span class="s1">&#39;abcdefg&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">short_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">short_str</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>  <span class="c1"># ----a</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">long_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;abcdefg&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">long_str</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>  <span class="c1"># abcde</span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
@@ -3308,9 +3293,9 @@ the corresponding row in the output is <code>True</code>.</p></td>
   </tbody>
 </table>
 <p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.youtube.com/watch?v=kEuEcWfewf8&amp;t=10&quot;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">parse_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="s1">&#39;QUERY&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">)</span>
-<span class="s1">&#39;kEuEcWfewf8&#39;</span>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://www.youtube.com/watch?v=kEuEcWfewf8&amp;t=10&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">parse_url</span><span class="p">(</span><span class="s1">&#39;QUERY&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">)</span>  <span class="c1"># kEuEcWfewf</span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
@@ -3435,12 +3420,8 @@ the corresponding row in the output is <code>True</code>.</p></td>
 </table>
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">strings</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;(b+)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;&lt;&gt;&#39;</span><span class="p">)</span>  <span class="c1"># &#39;aaabbbaa&#39; becomes &#39;aaa&lt;bbb&gt;aaa&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span>
-<span class="n">r0</span> <span class="o">:=</span> <span class="n">UnboundTable</span><span class="p">:</span> <span class="n">unbound_table_1</span>
-  <span class="n">strings</span> <span class="n">string</span>
-<span class="n">StringReplace</span><span class="p">(</span><span class="n">r0</span><span class="o">.</span><span class="n">strings</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="s1">&#39;(b+)&#39;</span><span class="p">,</span> <span class="n">replacement</span><span class="o">=</span><span class="s1">&#39;&lt;</span><span class="se">\1</span><span class="s1">&gt;&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">str_literal</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;aaabbbaaa&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">str_literal</span><span class="o">.</span><span class="n">re_replace</span><span class="p">(</span><span class="s2">&quot;(b+)&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;&lt;&gt;&quot;</span><span class="p">)</span>  <span class="c1"># aaa&lt;bbb&gt;aaa</span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
@@ -3614,12 +3595,8 @@ the corresponding row in the output is <code>True</code>.</p></td>
 </table>
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">strings</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">strings</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;aaa&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">)</span>  <span class="c1"># &#39;aaabbbaaa&#39; becomes &#39;foobbbfoo&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span>
-<span class="n">r0</span> <span class="o">:=</span> <span class="n">UnboundTable</span><span class="p">:</span> <span class="n">unbound_table_1</span>
-  <span class="n">strings</span> <span class="n">string</span>
-<span class="n">StringReplace</span><span class="p">(</span><span class="n">r0</span><span class="o">.</span><span class="n">strings</span><span class="p">,</span> <span class="n">pattern</span><span class="o">=</span><span class="s1">&#39;aaa&#39;</span><span class="p">,</span> <span class="n">replacement</span><span class="o">=</span><span class="s1">&#39;foo&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">str_literal</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;aaabbbaaa&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">str_literal</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;aaa&quot;</span><span class="p">,</span> <span class="s2">&quot;ccc&quot;</span><span class="p">)</span>  <span class="c1"># cccbbbccc</span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
@@ -3834,18 +3811,10 @@ the corresponding row in the output is <code>True</code>.</p></td>
 </table>
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">string_col</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">string_col</span><span class="o">.</span><span class="n">rpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span>
-<span class="n">r0</span> <span class="o">:=</span> <span class="n">UnboundTable</span><span class="p">:</span> <span class="n">unbound_table_2</span>
-  <span class="n">string_col</span> <span class="n">string</span>
-<span class="n">RPad</span><span class="p">(</span><span class="n">r0</span><span class="o">.</span><span class="n">string_col</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>  <span class="c1"># &#39;a&#39; becomes &#39;a----&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span>
-<span class="n">RPad</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;abcdefg&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>  <span class="c1"># &#39;abcdefg&#39; becomes &#39;abcde&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span>
-<span class="n">RPad</span><span class="p">(</span><span class="s1">&#39;abcdefg&#39;</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">short_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">short_str</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>  <span class="c1"># a----</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">long_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;abcdefg&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">long_str</span><span class="o">.</span><span class="n">lpad</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>  <span class="c1"># abcde</span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
@@ -3994,8 +3963,7 @@ the corresponding row in the output is <code>True</code>.</p></td>
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">text</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;Ibis project&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">text</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Ibis&#39;</span><span class="p">)</span>
-<span class="n">StartsWith</span><span class="p">(</span><span class="s1">&#39;Ibis project&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s1">&#39;Ibis&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Ibis&#39;</span><span class="p">)</span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
@@ -4158,8 +4126,6 @@ entire string</p></td>
     <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">date_as_str</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s1">&#39;20170206&#39;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">date_as_str</span><span class="o">.</span><span class="n">to_timestamp</span><span class="p">(</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span>
-<span class="n">StringToTimestamp</span><span class="p">(</span><span class="s1">&#39;20170206&#39;</span><span class="p">,</span> <span class="n">format_str</span><span class="o">=</span><span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
@@ -4227,16 +4193,7 @@ entire string</p></td>
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">string_col</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">string_col</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span>
-<span class="n">r0</span> <span class="o">:=</span> <span class="n">UnboundTable</span><span class="p">:</span> <span class="n">unbound_table_0</span>
-  <span class="n">string_col</span> <span class="n">string</span>
-<span class="n">Translate</span><span class="p">(</span><span class="n">r0</span><span class="o">.</span><span class="n">string_col</span><span class="p">,</span> <span class="n">from_str</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">to_str</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">string_col</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;bc&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">expr</span>
-<span class="n">r0</span> <span class="o">:=</span> <span class="n">UnboundTable</span><span class="p">:</span> <span class="n">unbound_table_0</span>
-  <span class="n">string_col</span> <span class="n">string</span>
-<span class="n">Translate</span><span class="p">(</span><span class="n">r0</span><span class="o">.</span><span class="n">string_col</span><span class="p">,</span> <span class="n">from_str</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">to_str</span><span class="o">=</span><span class="s1">&#39;bc&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">string_col</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
