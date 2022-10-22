@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://ibis-project.org/dev/tutorial/05-IO-Create-Insert-External-Data/">
       
       <link rel="icon" href="../../static/icons/ibis/logo.svg">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.2">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.2">
     
     
       
@@ -471,6 +471,13 @@
         <li class="md-nav__item">
   <a href="#creating-new-tables-from-ibis-expressions" class="md-nav__link">
     Creating new tables from Ibis expressions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-new-tables-from-in-memory-pandas-dataframes" class="md-nav__link">
+    Creating new tables from in-memory Pandas dataframes
   </a>
   
 </li>
@@ -1749,6 +1756,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#creating-new-tables-from-in-memory-pandas-dataframes" class="md-nav__link">
+    Creating new tables from in-memory Pandas dataframes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#inserting-data-into-existing-tables" class="md-nav__link">
     Inserting data into existing tables
   </a>
@@ -2855,9 +2869,37 @@ Licensed under the Apache License, Version 2.0.
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="err">!</span><span class="n">curl</span> <span class="o">-</span><span class="n">LsS</span> <span class="o">-</span><span class="n">o</span> <span class="err">$</span><span class="n">TEMPDIR</span><span class="o">/</span><span class="n">geography</span><span class="o">.</span><span class="n">db</span> <span class="s1">&#39;https://storage.googleapis.com/ibis-tutorial-data/geography.db&#39;</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
+
+<span class="n">tempdir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">())</span>
+<span class="n">geography_db_file</span> <span class="o">=</span> <span class="n">tempdir</span> <span class="o">/</span> <span class="s1">&#39;geography.db&#39;</span>
+
+<span class="k">if</span> <span class="n">geography_db_file</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+    <span class="n">geography_db_file</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+
+<span class="n">_</span> <span class="o">=</span> <span class="n">urlretrieve</span><span class="p">(</span>
+    <span class="s1">&#39;https://storage.googleapis.com/ibis-tutorial-data/geography.db&#39;</span><span class="p">,</span>
+    <span class="n">geography_db_file</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
-<div id="cell-1" class="clipboard-copy-txt">!curl -LsS -o $TEMPDIR/geography.db 'https://storage.googleapis.com/ibis-tutorial-data/geography.db'</div>
+<div id="cell-1" class="clipboard-copy-txt">import os
+import tempfile
+from pathlib import Path
+from urllib.request import urlretrieve
+
+tempdir = Path(tempfile.gettempdir())
+geography_db_file = tempdir / 'geography.db'
+
+if geography_db_file.exists():
+    geography_db_file.unlink()
+
+_ = urlretrieve(
+    'https://storage.googleapis.com/ibis-tutorial-data/geography.db',
+    geography_db_file,
+)</div>
     
         </div>
     </div>
@@ -2887,27 +2929,17 @@ Licensed under the Apache License, Version 2.0.
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">tempfile</span>
-
-<span class="kn">import</span> <span class="nn">ibis</span>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">ibis</span>
 
 <span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
 
-<span class="n">connection</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">(),</span> <span class="s1">&#39;geography.db&#39;</span><span class="p">)</span>
-<span class="p">)</span>
+<span class="n">connection</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">geography_db_file</span><span class="p">)</span>
 </pre></div>
-<div id="cell-2" class="clipboard-copy-txt">import os
-import tempfile
-
-import ibis
+<div id="cell-2" class="clipboard-copy-txt">import ibis
 
 ibis.options.interactive = True
 
-connection = ibis.sqlite.connect(
-    os.path.join(tempfile.gettempdir(), 'geography.db')
-)</div>
+connection = ibis.sqlite.connect(geography_db_file)</div>
     
         </div>
     </div>
@@ -2929,7 +2961,7 @@ connection = ibis.sqlite.connect(
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/nix/store/z4hjjiv9ixjcs4wdj4fp0v4pv15s7nik-python3-3.10.6-env/lib/python3.10/site-packages/pyproj/__init__.py:92: UserWarning: Valid PROJ data directory not found. Either set the path using the environmental variable PROJ_DATA (PROJ 9.1+) | PROJ_LIB (PROJ&lt;9.1) or with `pyproj.datadir.set_data_dir`.
+<pre>/nix/store/rpqldc6s8myi5n8liy4m18mwniq0lvxm-python3-3.10.7-env/lib/python3.10/site-packages/pyproj/__init__.py:92: UserWarning: Valid PROJ data directory not found. Either set the path using the environmental variable PROJ_DATA (PROJ 9.1+) | PROJ_LIB (PROJ&lt;9.1) or with `pyproj.datadir.set_data_dir`.
   warnings.warn(str(err))
 </pre>
 </div>
@@ -3223,7 +3255,491 @@ continents</div>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="creating-new-tables-from-in-memory-pandas-dataframes">Creating new tables from in-memory Pandas dataframes<a class="anchor-link" href="#creating-new-tables-from-in-memory-pandas-dataframes">&#182;</a></h2><p>Pandas and NumPy are convenient to create test data in memory as a dataframe. This can then be turned into an Ibis expression using <code>ibis.memtable</code>.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-7">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+<span class="k">def</span> <span class="nf">make_students_df</span><span class="p">(</span><span class="n">num_records</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">random_seed</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;firstname&quot;</span><span class="p">:</span> <span class="n">rng</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">,</span> <span class="s2">&quot;John&quot;</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="n">num_records</span><span class="p">),</span>
+            <span class="s2">&quot;birth_date&quot;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="s2">&quot;2021-01-01&quot;</span><span class="p">)</span>
+                <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">365</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">num_records</span><span class="p">),</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;D&quot;</span><span class="p">)</span>
+            <span class="p">),</span>
+            <span class="s2">&quot;math_grade&quot;</span><span class="p">:</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">num_records</span><span class="p">)</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+<span class="n">students_df</span> <span class="o">=</span> <span class="n">make_students_df</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">students_memtable</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">memtable</span><span class="p">(</span><span class="n">students_df</span><span class="p">)</span>
+<span class="n">students_memtable</span>
+</pre></div>
+<div id="cell-7" class="clipboard-copy-txt">import pandas as pd
+import numpy as np
+
+
+def make_students_df(num_records, random_seed=None):
+    rng = np.random.default_rng(random_seed)
+    return pd.DataFrame(
+        {
+            "firstname": rng.choice(["Alice", "Bob", "Jane", "John"], size=num_records),
+            "birth_date": (
+                pd.to_datetime("2021-01-01")
+                + pd.to_timedelta(rng.integers(0, 365, size=num_records), unit="D")
+            ),
+            "math_grade": rng.normal(55, 10, size=num_records).clip(0, 100).round(1),
+        }
+    )
+
+students_df = make_students_df(21, random_seed=42)
+students_memtable = ibis.memtable(students_df)
+students_memtable
+</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> firstname </span>┃<span style="font-weight: bold"> birth_date          </span>┃<span style="font-weight: bold"> math_grade </span>┃
+┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">string</span>    │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">timestamp</span>           │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">float64</span>    │
+├───────────┼─────────────────────┼────────────┤
+│ Alice     │ <span style="color: #800080; text-decoration-color: #800080">2021-05-16 00:00:00</span> │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">48.2</span> │
+│ John      │ <span style="color: #800080; text-decoration-color: #800080">2021-03-08 00:00:00</span> │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">67.2</span> │
+│ Jane      │ <span style="color: #800080; text-decoration-color: #800080">2021-12-05 00:00:00</span> │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">53.5</span> │
+│ Bob       │ <span style="color: #800080; text-decoration-color: #800080">2021-10-13 00:00:00</span> │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">50.7</span> │
+│ Bob       │ <span style="color: #800080; text-decoration-color: #800080">2021-08-24 00:00:00</span> │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">51.5</span> │
+│ John      │ <span style="color: #800080; text-decoration-color: #800080">2021-05-27 00:00:00</span> │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">60.3</span> │
+│ Alice     │ <span style="color: #800080; text-decoration-color: #800080">2021-10-28 00:00:00</span> │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">58.7</span> │
+│ Jane      │ <span style="color: #800080; text-decoration-color: #800080">2021-07-19 00:00:00</span> │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">59.1</span> │
+│ Alice     │ <span style="color: #800080; text-decoration-color: #800080">2021-06-11 00:00:00</span> │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">59.3</span> │
+│ Alice     │ <span style="color: #800080; text-decoration-color: #800080">2021-06-14 00:00:00</span> │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">76.4</span> │
+│ Jane      │ <span style="color: #800080; text-decoration-color: #800080">2021-03-24 00:00:00</span> │       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">50.9</span> │
+│ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>         │ <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span>                   │          <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+└───────────┴─────────────────────┴────────────┘
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>By default <code>ibis.memtable</code> uses the <code>duckdb</code> in-memory backend to execute queries against the Pandas dataframe data efficiently.</p>
+<p>We can then materialize it as a physical table for a specific backend if necessary:</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-8">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">students_db_file</span> <span class="o">=</span> <span class="n">tempdir</span> <span class="o">/</span> <span class="s2">&quot;ibis_tutorial_students.duckdb&quot;</span>
+<span class="k">if</span> <span class="n">students_db_file</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+    <span class="n">students_db_file</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+
+<span class="n">connection</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">duckdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">students_db_file</span><span class="p">)</span>
+<span class="n">connection</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="s1">&#39;students&#39;</span><span class="p">,</span> <span class="n">students_memtable</span><span class="p">)</span>
+<span class="n">students</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;students&#39;</span><span class="p">)</span>
+<span class="n">students</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">students</span><span class="o">.</span><span class="n">birth_date</span><span class="o">.</span><span class="n">month</span><span class="p">())</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
+    <span class="n">count</span><span class="o">=</span><span class="n">students</span><span class="o">.</span><span class="n">count</span><span class="p">(),</span>
+    <span class="n">avg_math_grade</span><span class="o">=</span><span class="n">students</span><span class="o">.</span><span class="n">math_grade</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+<span class="p">)</span>
+</pre></div>
+<div id="cell-8" class="clipboard-copy-txt">students_db_file = tempdir / "ibis_tutorial_students.duckdb"
+if students_db_file.exists():
+    students_db_file.unlink()
+
+connection = ibis.duckdb.connect(students_db_file)
+connection.create_table('students', students_memtable)
+students = connection.table('students')
+students.group_by(students.birth_date.month()).aggregate(
+    count=students.count(),
+    avg_math_grade=students.math_grade.mean(),
+)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> month </span>┃<span style="font-weight: bold"> count </span>┃<span style="font-weight: bold"> avg_math_grade </span>┃
+┡━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span> │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int64</span> │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">float64</span>        │
+├───────┼───────┼────────────────┤
+│     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">66.300000</span> │
+│     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">49.900000</span> │
+│     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">60.166667</span> │
+│     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">46.800000</span> │
+│     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">54.250000</span> │
+│     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">67.850000</span> │
+│     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">53.000000</span> │
+│     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">56.500000</span> │
+│    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">54.100000</span> │
+│    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">11</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">57.550000</span> │
+│    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">12</span> │     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">53.500000</span> │
+│     <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │     <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │              <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+└───────┴───────┴────────────────┘
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Note that NumPy, Pandas and <code>ibis.memtable</code> are only suitable to generate data that fits in memory. To generate data larger than memory, we can generate data in chunks and iteratively insert the chunks using <code>connection.insert(tablename, pandas_dataframe)</code>:</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-9">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">connection</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">students</span><span class="o">.</span><span class="n">get_name</span><span class="p">(),</span> <span class="n">make_students_df</span><span class="p">(</span><span class="mi">10_000</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">43</span><span class="p">))</span>
+<span class="n">students</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+<div id="cell-9" class="clipboard-copy-txt">connection.insert(students.get_name(), make_students_df(10_000, random_seed=43))
+students.count()</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
+
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre><span class="ansi-cyan-intense-fg ansi-bold">10021</span></pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-10">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">connection</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">students</span><span class="o">.</span><span class="n">get_name</span><span class="p">(),</span> <span class="n">make_students_df</span><span class="p">(</span><span class="mi">10_000</span><span class="p">,</span> <span class="n">random_seed</span><span class="o">=</span><span class="mi">44</span><span class="p">))</span>
+<span class="n">students</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+<div id="cell-10" class="clipboard-copy-txt">connection.insert(students.get_name(), make_students_df(10_000, random_seed=44))
+students.count()</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
+
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre><span class="ansi-cyan-intense-fg ansi-bold">20021</span></pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-11">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">students</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">students</span><span class="o">.</span><span class="n">birth_date</span><span class="o">.</span><span class="n">month</span><span class="p">())</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
+    <span class="n">count</span><span class="o">=</span><span class="n">students</span><span class="o">.</span><span class="n">count</span><span class="p">(),</span>
+    <span class="n">avg_math_grade</span><span class="o">=</span><span class="n">students</span><span class="o">.</span><span class="n">math_grade</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+<span class="p">)</span>
+</pre></div>
+<div id="cell-11" class="clipboard-copy-txt">students.group_by(students.birth_date.month()).aggregate(
+    count=students.count(),
+    avg_math_grade=students.math_grade.mean(),
+)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">┏━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━━┓
+┃<span style="font-weight: bold"> month </span>┃<span style="font-weight: bold"> count </span>┃<span style="font-weight: bold"> avg_math_grade </span>┃
+┡━━━━━━━╇━━━━━━━╇━━━━━━━━━━━━━━━━┩
+│ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int32</span> │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">int64</span> │ <span style="color: #000080; text-decoration-color: #000080; font-weight: bold">float64</span>        │
+├───────┼───────┼────────────────┤
+│     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1751</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">55.217133</span> │
+│     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1539</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">55.189799</span> │
+│     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1717</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">55.157833</span> │
+│     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1630</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">54.603742</span> │
+│     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1728</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">54.916319</span> │
+│     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1623</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">54.700924</span> │
+│     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1710</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">54.884503</span> │
+│     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8</span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1712</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">55.278797</span> │
+│     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9</span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1622</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">55.300062</span> │
+│    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1679</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">55.220310</span> │
+│    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">11</span> │  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1626</span> │      <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">55.042005</span> │
+│     <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │     <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │              <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">…</span> │
+└───────┴───────┴────────────────┘
+</pre>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="inserting-data-into-existing-tables">Inserting data into existing tables<a class="anchor-link" href="#inserting-data-into-existing-tables">&#182;</a></h2><p>Some backends support inserting data into existing tables from expressions. This can be done using <code>connection.insert('table_name', expr)</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 
 </div>
 </div>
@@ -3238,8 +3754,7 @@ continents</div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2022</span>
-      
+      2022-10-19
     
   </small>
 </div>

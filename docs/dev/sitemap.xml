@@ -2,312 +2,312 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://ibis-project.org/dev/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/CODE_OF_CONDUCT/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>None</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/ibis-for-sql-programmers/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/release_notes/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/about/license/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/about/roadmap/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/about/team/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/api/config/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/api/datatypes/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/api/schemas/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/api/backends/base/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/api/backends/pandas/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/api/backends/sql/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/api/backends/sqlalchemy/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/api/expressions/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/api/expressions/collections/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/api/expressions/generic/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/api/expressions/geospatial/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/api/expressions/numeric/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/api/expressions/strings/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/api/expressions/tables/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/api/expressions/timestamps/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/api/expressions/top_level/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/backends/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/backends/ClickHouse/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/backends/Dask/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/backends/Datafusion/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/backends/DuckDB/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/backends/Impala/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/backends/MySQL/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/backends/Pandas/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/backends/PostgreSQL/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/backends/PySpark/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/backends/SQLite/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/backends/Snowflake/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/backends/support_matrix/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/blog/Ibis-version-3.0.0-release/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/blog/Ibis-version-3.1.0-release/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/blog/ffill-and-bfill-using-ibis/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/community/ecosystem/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/contribute/01_environment/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/contribute/02_workflow/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/contribute/03_style/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/contribute/04_backend_tests/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/contribute/05_maintainers_guide/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/how_to/duckdb_register/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/how_to/ffill_bfill_w_window/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/how_to/topk/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/tutorial/01-Introduction-to-Ibis/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/tutorial/02-Aggregates-Joins/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/tutorial/03-Expressions-Lazy-Mode-Logging/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/tutorial/04-More-Value-Expressions/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/tutorial/05-IO-Create-Insert-External-Data/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/tutorial/06-ComplexFiltering/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/tutorial/07-Analytics-Tools/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/tutorial/08-Geospatial-Analysis/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/user_guide/configuration/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/user_guide/design/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/user_guide/self_joins/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/user_guide/extending/elementwise/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibis-project.org/dev/user_guide/extending/reduction/</loc>
-         <lastmod>2022-10-19</lastmod>
+         <lastmod>2022-10-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
