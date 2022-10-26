@@ -16,6 +16,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ibis-project.org/dev/ibis-for-pandas-users/</loc>
+         <lastmod>2022-10-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ibis-project.org/dev/ibis-for-sql-programmers/</loc>
          <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
