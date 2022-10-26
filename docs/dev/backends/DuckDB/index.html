@@ -3520,7 +3520,7 @@ the session in a way unknown to Ibis; be careful.</p>
 
 
 <h5 id="ibis.backends.duckdb.Backend.register" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#ibis.backends.duckdb.Backend.register" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
@@ -3555,6 +3555,14 @@ dataset.</p></td>
 filename if a path (with hyphens replaced with underscores), or
 sequentially generated name otherwise.</p></td>
         <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>**kwargs</code></td>
+        <td><code>Any</code></td>
+        <td><p>Additional keyword arguments passed to DuckDB loading functions for
+CSV or parquet.  See <a href="https://duckdb.org/docs/data/csv">https://duckdb.org/docs/data/csv</a> and
+<a href="https://duckdb.org/docs/data/parquet">https://duckdb.org/docs/data/parquet</a> for more information.</p></td>
+        <td><code>{}</code></td>
       </tr>
   </tbody>
 </table>
