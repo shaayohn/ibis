@@ -1490,6 +1490,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.agg" class="md-nav__link">
+    agg()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.aggregate" class="md-nav__link">
     aggregate()
   </a>
@@ -2088,6 +2095,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.relations.Table.agg" class="md-nav__link">
+    agg()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.relations.Table.aggregate" class="md-nav__link">
     aggregate()
   </a>
@@ -2452,6 +2466,78 @@ Table            (<a class="autorefs autorefs-internal" title="ibis.expr.types.c
 
 
 <h3 id="ibis.expr.types.relations.Table-methods">Methods<a href="#ibis.expr.types.relations.Table-methods" class="headerlink" title="Anchor link to this section for reference">&para;</a></h3>
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="ibis.expr.types.relations.Table.agg" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">agg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">having</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.relations.Table.agg" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Aggregate a table with a given set of reductions grouping by <code>by</code>.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>metrics</code></td>
+        <td><code>Sequence[ir.Scalar] | None</code></td>
+        <td><p>Aggregate expressions</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>by</code></td>
+        <td><code>Sequence[ir.Value] | None</code></td>
+        <td><p>Grouping expressions</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>having</code></td>
+        <td><code>Sequence[ir.BooleanValue] | None</code></td>
+        <td><p>Post-aggregation filters</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>kwargs</code></td>
+        <td><code>ir.Value</code></td>
+        <td><p>Named aggregate expressions</p></td>
+        <td><code>{}</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Table</code></td>
+      <td><p>An aggregate table expression</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
 
   <div class="doc doc-object doc-method">
 
