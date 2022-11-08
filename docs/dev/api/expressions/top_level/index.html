@@ -1642,6 +1642,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ibis.expr.api.read" class="md-nav__link">
+    read()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ibis.expr.api.row_number" class="md-nav__link">
     row_number()
   </a>
@@ -2183,6 +2190,13 @@
         <li class="md-nav__item">
   <a href="#ibis.expr.window.range_window" class="md-nav__link">
     range_window()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ibis.expr.api.read" class="md-nav__link">
+    read()
   </a>
   
 </li>
@@ -3843,6 +3857,76 @@ value of the order-by expression.</p>
 
 
 
+<h2 id="ibis.expr.api.read" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">read</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.api.read" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+      <p>Lazily load a data source located at <code>path</code>.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>path</code></td>
+        <td><code>str | Path</code></td>
+        <td><p>A filesystem path or URL. Supports CSV, TSV, and Parquet files.</p></td>
+        <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>kwargs</code></td>
+        <td><code>Any</code></td>
+        <td><p>DuckDB-specific keyword arguments for the file type.</p>
+<ul>
+<li>CSV/TSV: <a href="https://duckdb.org/docs/data/csv#parameters">https://duckdb.org/docs/data/csv#parameters</a>.</li>
+<li>Parquet: <a href="https://duckdb.org/docs/data/parquet">https://duckdb.org/docs/data/parquet</a></li>
+</ul></td>
+        <td><code>{}</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">batting</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;ci/ibis-testing-data/batting.csv&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">diamonds</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;ci/ibis-testing-data/parquet/diamonds/diamonds.parquet&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ft</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;parquet://ci/ibis-testing-data/parquet/functional_alltypes/*&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ir.Table</code></td>
+      <td><p>Table expression representing a file</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
 <h2 id="ibis.expr.api.row_number" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">row_number</span><span class="p">()</span></code>
 
@@ -4512,7 +4596,7 @@ of fixed types)</p></td>
   <small>
     
       Last update:
-      2022-09-13
+      2022-11-02
     
   </small>
 </div>
