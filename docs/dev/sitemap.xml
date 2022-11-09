@@ -6,11 +6,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ibis-project.org/dev/CODE_OF_CONDUCT/</loc>
-         <lastmod>2022-11-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>None</loc>
          <lastmod>2022-11-09</lastmod>
          <changefreq>daily</changefreq>
@@ -26,22 +21,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://ibis-project.org/dev/install/</loc>
+         <lastmod>2022-11-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://ibis-project.org/dev/release_notes/</loc>
-         <lastmod>2022-11-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ibis-project.org/dev/about/license/</loc>
-         <lastmod>2022-11-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ibis-project.org/dev/about/roadmap/</loc>
-         <lastmod>2022-11-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://ibis-project.org/dev/about/team/</loc>
          <lastmod>2022-11-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -206,32 +191,37 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ibis-project.org/dev/community/ecosystem/</loc>
+         <loc>https://ibis-project.org/dev/community/</loc>
          <lastmod>2022-11-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ibis-project.org/dev/contribute/01_environment/</loc>
+         <loc>https://ibis-project.org/dev/community/contribute/</loc>
          <lastmod>2022-11-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ibis-project.org/dev/contribute/02_workflow/</loc>
+         <loc>https://ibis-project.org/dev/community/contribute/01_environment/</loc>
          <lastmod>2022-11-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ibis-project.org/dev/contribute/03_style/</loc>
+         <loc>https://ibis-project.org/dev/community/contribute/02_workflow/</loc>
          <lastmod>2022-11-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ibis-project.org/dev/contribute/04_backend_tests/</loc>
+         <loc>https://ibis-project.org/dev/community/contribute/03_style/</loc>
          <lastmod>2022-11-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ibis-project.org/dev/contribute/05_maintainers_guide/</loc>
+         <loc>https://ibis-project.org/dev/community/contribute/05_maintainers_guide/</loc>
+         <lastmod>2022-11-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ibis-project.org/dev/docs/</loc>
          <lastmod>2022-11-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -252,6 +242,11 @@
     </url>
     <url>
          <loc>https://ibis-project.org/dev/how_to/topk/</loc>
+         <lastmod>2022-11-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://ibis-project.org/dev/tutorial/</loc>
          <lastmod>2022-11-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
