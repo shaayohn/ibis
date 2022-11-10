@@ -3719,7 +3719,7 @@ CSV or parquet.  See <a href="https://duckdb.org/docs/data/csv">https://duckdb.o
 
 
 <h5 id="ibis.backends.duckdb.Backend.sql" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">sql</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">sql</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
   <span class="doc doc-properties">
       <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
@@ -3747,6 +3747,13 @@ CSV or parquet.  See <a href="https://duckdb.org/docs/data/csv">https://duckdb.o
         <td><code>str</code></td>
         <td><p>SQL string</p></td>
         <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>schema</code></td>
+        <td><code>sch.Schema | None</code></td>
+        <td><p>The expected schema for this query. If not provided, will be
+inferred automatically if possible.</p></td>
+        <td><code>None</code></td>
       </tr>
   </tbody>
 </table>

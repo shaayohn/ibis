@@ -4822,7 +4822,7 @@ subset.columns</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/home/runner/work/ibis/ibis/ibis/expr/types/relations.py:758: FutureWarning: Passing a sequence of fields to `drop` is deprecated and will be removed in version 5.0, use `drop(*fields)` instead
+<pre>/home/runner/work/ibis/ibis/ibis/expr/types/relations.py:759: FutureWarning: Passing a sequence of fields to `drop` is deprecated and will be removed in version 5.0, use `drop(*fields)` instead
   warnings.warn(
 </pre>
 </div>
@@ -5523,12 +5523,12 @@ reverse sort then use the <code>head</code> method to retrieve the "top" rows.</
 Cell <span class="ansi-green-fg">In [30], line 1</span>
 <span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">t</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">tail</span>(<span style="color: rgb(98,98,98)">1</span>)
 
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/expr/types/relations.py:189</span>, in <span class="ansi-cyan-fg">Table.__getattr__</span><span class="ansi-blue-fg">(self, key)</span>
-<span class="ansi-green-intense-fg ansi-bold">    185</span>     hint <span style="color: rgb(98,98,98)">=</span> common_typos[key]
-<span class="ansi-green-intense-fg ansi-bold">    186</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">AttributeError</span>(
-<span class="ansi-green-intense-fg ansi-bold">    187</span>         <span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Table</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)"> object has no attribute </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>key<span class="ansi-bold" style="color: rgb(175,95,135)">!r}</span><span style="color: rgb(175,0,0)">, </span><span style="color: rgb(175,0,0)">&#34;</span> <span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">did you mean </span><span style="color: rgb(175,0,0)">&#39;</span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>hint<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">    188</span>     )
-<span class="ansi-green-fg">--&gt; 189</span> <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">AttributeError</span>(<span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Table</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)"> object has no attribute </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>key<span class="ansi-bold" style="color: rgb(175,95,135)">!r}</span><span style="color: rgb(175,0,0)">&#34;</span>)
+File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/expr/types/relations.py:190</span>, in <span class="ansi-cyan-fg">Table.__getattr__</span><span class="ansi-blue-fg">(self, key)</span>
+<span class="ansi-green-intense-fg ansi-bold">    186</span>     hint <span style="color: rgb(98,98,98)">=</span> common_typos[key]
+<span class="ansi-green-intense-fg ansi-bold">    187</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">AttributeError</span>(
+<span class="ansi-green-intense-fg ansi-bold">    188</span>         <span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Table</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)"> object has no attribute </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>key<span class="ansi-bold" style="color: rgb(175,95,135)">!r}</span><span style="color: rgb(175,0,0)">, </span><span style="color: rgb(175,0,0)">&#34;</span> <span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">did you mean </span><span style="color: rgb(175,0,0)">&#39;</span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>hint<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">    189</span>     )
+<span class="ansi-green-fg">--&gt; 190</span> <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">AttributeError</span>(<span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">Table</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)"> object has no attribute </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>key<span class="ansi-bold" style="color: rgb(175,95,135)">!r}</span><span style="color: rgb(175,0,0)">&#34;</span>)
 
 <span class="ansi-red-fg">AttributeError</span>: &#39;Table&#39; object has no attribute &#39;tail&#39;</pre>
 </div>
@@ -6490,7 +6490,7 @@ sorted</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/home/runner/work/ibis/ibis/ibis/expr/types/relations.py:169: FutureWarning: `Table.sort_by` is deprecated and will be removed in 5.0, use `Table.order_by` instead
+<pre>/home/runner/work/ibis/ibis/ibis/expr/types/relations.py:170: FutureWarning: `Table.sort_by` is deprecated and will be removed in 5.0, use `Table.order_by` instead
   warnings.warn(
 </pre>
 </div>
