@@ -605,6 +605,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_3_3">
@@ -655,6 +657,20 @@
     <li class="md-nav__item">
       <a href="../../how_to/memtable-join/" class="md-nav__link">
         How to join an in-memory DataFrame to a TableExpression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how_to/sessionize/" class="md-nav__link">
+        How to Sessionize a Log of Events
       </a>
     </li>
   
@@ -2417,7 +2433,7 @@ for connection parameter information.</p>
 
 
 <h4 id="ibis.backends.duckdb.Backend.do_connect" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">do_connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s1">&#39;:memory:&#39;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">read_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">config</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">do_connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s1">&#39;:memory:&#39;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">read_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">temp_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">config</span><span class="p">)</span></code>
 
 
 <a href="#ibis.backends.duckdb.Backend.do_connect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -2448,6 +2464,13 @@ for connection parameter information.</p>
         <td><code>bool</code></td>
         <td><p>Whether the database is read-only.</p></td>
         <td><code>False</code></td>
+      </tr>
+      <tr>
+        <td><code>temp_directory</code></td>
+        <td><code>Path | str | None</code></td>
+        <td><p>Directory to use for spilling to disk. Only set by default for
+in-memory connections.</p></td>
+        <td><code>None</code></td>
       </tr>
       <tr>
         <td><code>config</code></td>
