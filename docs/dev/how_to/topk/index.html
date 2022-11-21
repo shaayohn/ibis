@@ -1801,30 +1801,60 @@
 <li>sum of order totals</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
-
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">interactive</span> <span class="o">=</span> <span class="kc">True</span>
-
 <span class="o">&gt;&gt;&gt;</span> <span class="n">con</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">duckdb</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>  <span class="c1"># in-memory duckdb</span>
-
 <span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">raw_sql</span><span class="p">(</span><span class="s2">&quot;CALL dbgen(sf=0.1)&quot;</span><span class="p">)</span>
-
 <span class="o">&gt;&gt;&gt;</span> <span class="n">orders</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s2">&quot;orders&quot;</span><span class="p">)</span>
-
 <span class="o">&gt;&gt;&gt;</span> <span class="n">orders</span><span class="o">.</span><span class="n">o_custkey</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># top 5 most frequent customers</span>
-   <span class="n">o_custkey</span>  <span class="n">count</span>
-<span class="mi">0</span>      <span class="mi">11998</span>     <span class="mi">36</span>
-<span class="mi">1</span>       <span class="mi">8761</span>     <span class="mi">36</span>
-<span class="mi">2</span>       <span class="mi">3151</span>     <span class="mi">35</span>
-<span class="mi">3</span>        <span class="mi">388</span>     <span class="mi">35</span>
-<span class="mi">4</span>       <span class="mi">8362</span>     <span class="mi">35</span>
+<span class="err">┏━━━━━━━━━━━┳━━━━━━━┓</span>
+<span class="err">┃</span> <span class="n">o_custkey</span> <span class="err">┃</span> <span class="n">count</span> <span class="err">┃</span>
+<span class="err">┡━━━━━━━━━━━╇━━━━━━━┩</span>
+<span class="err">│</span> <span class="err">!</span><span class="n">int32</span>    <span class="err">│</span> <span class="n">int64</span> <span class="err">│</span>
+<span class="err">├───────────┼───────┤</span>
+<span class="err">│</span>      <span class="mi">8761</span> <span class="err">│</span>    <span class="mi">36</span> <span class="err">│</span>
+<span class="err">│</span>     <span class="mi">11998</span> <span class="err">│</span>    <span class="mi">36</span> <span class="err">│</span>
+<span class="err">│</span>      <span class="mi">3151</span> <span class="err">│</span>    <span class="mi">35</span> <span class="err">│</span>
+<span class="err">│</span>      <span class="mi">8362</span> <span class="err">│</span>    <span class="mi">35</span> <span class="err">│</span>
+<span class="err">│</span>       <span class="mi">388</span> <span class="err">│</span>    <span class="mi">35</span> <span class="err">│</span>
+<span class="err">└───────────┴───────┘</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">topk</span> <span class="o">=</span> <span class="n">orders</span><span class="o">.</span><span class="n">o_custkey</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">orders</span><span class="o">.</span><span class="n">o_totalprice</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>  <span class="c1"># top 5 largest spending customers</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">topk</span>
+<span class="err">┏━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┓</span>
+<span class="err">┃</span> <span class="n">o_custkey</span> <span class="err">┃</span> <span class="nb">sum</span>            <span class="err">┃</span>
+<span class="err">┡━━━━━━━━━━━╇━━━━━━━━━━━━━━━━┩</span>
+<span class="err">│</span> <span class="err">!</span><span class="n">int32</span>    <span class="err">│</span> <span class="n">decimal</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="err">│</span>
+<span class="err">├───────────┼────────────────┤</span>
+<span class="err">│</span>      <span class="mi">8362</span> <span class="err">│</span>     <span class="mf">5793605.05</span> <span class="err">│</span>
+<span class="err">│</span>      <span class="mi">6958</span> <span class="err">│</span>     <span class="mf">5370682.19</span> <span class="err">│</span>
+<span class="err">│</span>      <span class="mi">9454</span> <span class="err">│</span>     <span class="mf">5354381.81</span> <span class="err">│</span>
+<span class="err">│</span>       <span class="mi">346</span> <span class="err">│</span>     <span class="mf">5323350.43</span> <span class="err">│</span>
+<span class="err">│</span>     <span class="mi">10354</span> <span class="err">│</span>     <span class="mf">5227957.24</span> <span class="err">│</span>
+<span class="err">└───────────┴────────────────┘</span>
+</code></pre></div>
+<!-- prettier-ignore-start -->
+<p>You can also use <a class="autorefs autorefs-internal" href="../../api/expressions/generic/#ibis.expr.types.generic.Column.topk"><code>topk</code></a> to retrieve the rows
+from the original table that match the key used, in this case <code>o_custkey</code>. This
+is done with a left semi join:</p>
+<!-- prettier-ignore-end -->
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">orders</span><span class="o">.</span><span class="n">o_custkey</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">orders</span><span class="o">.</span><span class="n">o_totalprice</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>  <span class="c1"># top 5 largest spending customers</span>
-   <span class="n">o_custkey</span>         <span class="nb">sum</span>
-<span class="mi">0</span>       <span class="mi">8362</span>  <span class="mf">5793605.05</span>
-<span class="mi">1</span>       <span class="mi">6958</span>  <span class="mf">5370682.19</span>
-<span class="mi">2</span>       <span class="mi">9454</span>  <span class="mf">5354381.81</span>
-<span class="mi">3</span>        <span class="mi">346</span>  <span class="mf">5323350.43</span>
-<span class="mi">4</span>      <span class="mi">10354</span>  <span class="mf">5227957.24</span>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">orders</span><span class="o">.</span><span class="n">semi_join</span><span class="p">(</span><span class="n">topk</span><span class="p">,</span> <span class="s2">&quot;o_custkey&quot;</span><span class="p">)</span>
+<span class="err">┏━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span class="err">┃</span> <span class="n">o_orderkey</span> <span class="err">┃</span> <span class="n">o_custkey</span> <span class="err">┃</span> <span class="n">o_orderstatus</span> <span class="err">┃</span> <span class="n">o_totalprice</span>    <span class="err">┃</span> <span class="n">o_orderdate</span> <span class="err">┃</span> <span class="n">o_orderpriority</span> <span class="err">┃</span> <span class="n">o_clerk</span>         <span class="err">┃</span> <span class="n">o_shippriority</span> <span class="err">┃</span> <span class="n">o_comment</span>                                                    <span class="err">┃</span>
+<span class="err">┡━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span class="err">│</span> <span class="err">!</span><span class="n">int32</span>     <span class="err">│</span> <span class="err">!</span><span class="n">int32</span>    <span class="err">│</span> <span class="err">!</span><span class="n">string</span>       <span class="err">│</span> <span class="err">!</span><span class="n">decimal</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="err">│</span> <span class="err">!</span><span class="n">date</span>       <span class="err">│</span> <span class="err">!</span><span class="n">string</span>         <span class="err">│</span> <span class="err">!</span><span class="n">string</span>         <span class="err">│</span> <span class="err">!</span><span class="n">int32</span>         <span class="err">│</span> <span class="err">!</span><span class="n">string</span>                                                      <span class="err">│</span>
+<span class="err">├────────────┼───────────┼───────────────┼─────────────────┼─────────────┼─────────────────┼─────────────────┼────────────────┼──────────────────────────────────────────────────────────────┤</span>
+<span class="err">│</span>       <span class="mi">4000</span> <span class="err">│</span>      <span class="mi">6958</span> <span class="err">│</span> <span class="n">F</span>             <span class="err">│</span>       <span class="mf">115722.85</span> <span class="err">│</span> <span class="mi">1992</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">04</span>  <span class="err">│</span> <span class="mi">5</span><span class="o">-</span><span class="n">LOW</span>           <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000000339 │              0 │ le carefully closely even pinto beans. regular, ironic foxe… │</span>
+<span class="err">│</span>      <span class="mi">14402</span> <span class="err">│</span>      <span class="mi">8362</span> <span class="err">│</span> <span class="n">F</span>             <span class="err">│</span>       <span class="mf">131557.79</span> <span class="err">│</span> <span class="mi">1993</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">15</span>  <span class="err">│</span> <span class="mi">3</span><span class="o">-</span><span class="n">MEDIUM</span>        <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000000672 │              0 │ azzle slyly. carefully regular instructions affix carefully… │</span>
+<span class="err">│</span>      <span class="mi">14784</span> <span class="err">│</span>     <span class="mi">10354</span> <span class="err">│</span> <span class="n">F</span>             <span class="err">│</span>       <span class="mf">216307.34</span> <span class="err">│</span> <span class="mi">1992</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">15</span>  <span class="err">│</span> <span class="mi">3</span><span class="o">-</span><span class="n">MEDIUM</span>        <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000000479 │              0 │ lyly final theodoli                                          │</span>
+<span class="err">│</span>      <span class="mi">17415</span> <span class="err">│</span>     <span class="mi">10354</span> <span class="err">│</span> <span class="n">O</span>             <span class="err">│</span>       <span class="mf">110427.40</span> <span class="err">│</span> <span class="mi">1996</span><span class="o">-</span><span class="mi">09</span><span class="o">-</span><span class="mi">18</span>  <span class="err">│</span> <span class="mi">2</span><span class="o">-</span><span class="n">HIGH</span>          <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000000148 │              0 │ . furiously even asymptotes wake carefully according to t    │</span>
+<span class="err">│</span>      <span class="mi">17760</span> <span class="err">│</span>      <span class="mi">9454</span> <span class="err">│</span> <span class="n">F</span>             <span class="err">│</span>       <span class="mf">167249.60</span> <span class="err">│</span> <span class="mi">1992</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">05</span>  <span class="err">│</span> <span class="mi">4</span><span class="o">-</span><span class="n">NOT</span> <span class="n">SPECIFIED</span> <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000000093 │              0 │ uriously final pinto beans wake furiously                    │</span>
+<span class="err">│</span>      <span class="mi">18853</span> <span class="err">│</span>      <span class="mi">9454</span> <span class="err">│</span> <span class="n">F</span>             <span class="err">│</span>       <span class="mf">163677.19</span> <span class="err">│</span> <span class="mi">1993</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">18</span>  <span class="err">│</span> <span class="mi">1</span><span class="o">-</span><span class="n">URGENT</span>        <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000000046 │              0 │ sts. courts haggle furiously. even, enticing depo            │</span>
+<span class="err">│</span>      <span class="mi">21317</span> <span class="err">│</span>      <span class="mi">8362</span> <span class="err">│</span> <span class="n">P</span>             <span class="err">│</span>       <span class="mf">267386.98</span> <span class="err">│</span> <span class="mi">1995</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">10</span>  <span class="err">│</span> <span class="mi">5</span><span class="o">-</span><span class="n">LOW</span>           <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000000737 │              0 │ Tiresias. accounts a                                         │</span>
+<span class="err">│</span>      <span class="mi">23138</span> <span class="err">│</span>      <span class="mi">8362</span> <span class="err">│</span> <span class="n">O</span>             <span class="err">│</span>       <span class="mf">174882.01</span> <span class="err">│</span> <span class="mi">1997</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">23</span>  <span class="err">│</span> <span class="mi">1</span><span class="o">-</span><span class="n">URGENT</span>        <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000000253 │              0 │ uctions integrate carefully regular pinto beans. silent acc… │</span>
+<span class="err">│</span>      <span class="mi">23972</span> <span class="err">│</span>     <span class="mi">10354</span> <span class="err">│</span> <span class="n">F</span>             <span class="err">│</span>       <span class="mf">129646.66</span> <span class="err">│</span> <span class="mi">1993</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">17</span>  <span class="err">│</span> <span class="mi">4</span><span class="o">-</span><span class="n">NOT</span> <span class="n">SPECIFIED</span> <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000001000 │              0 │ s. blithely final packages sleep quickly idle pearls. even,… │</span>
+<span class="err">│</span>      <span class="mi">24064</span> <span class="err">│</span>       <span class="mi">346</span> <span class="err">│</span> <span class="n">F</span>             <span class="err">│</span>       <span class="mf">147095.22</span> <span class="err">│</span> <span class="mi">1993</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">26</span>  <span class="err">│</span> <span class="mi">3</span><span class="o">-</span><span class="n">MEDIUM</span>        <span class="err">│</span> <span class="n">Clerk</span><span class="c1">#000000020 │              0 │ ithely final foxes. furiously final instructi                │</span>
+<span class="err">│</span>          <span class="err">…</span> <span class="err">│</span>         <span class="err">…</span> <span class="err">│</span> <span class="err">…</span>             <span class="err">│</span>               <span class="err">…</span> <span class="err">│</span> <span class="err">…</span>           <span class="err">│</span> <span class="err">…</span>               <span class="err">│</span> <span class="err">…</span>               <span class="err">│</span>              <span class="err">…</span> <span class="err">│</span> <span class="err">…</span>                                                            <span class="err">│</span>
+<span class="err">└────────────┴───────────┴───────────────┴─────────────────┴─────────────┴─────────────────┴─────────────────┴────────────────┴──────────────────────────────────────────────────────────────┘</span>
 </code></pre></div>
 
   <hr>
@@ -1832,7 +1862,7 @@
   <small>
     
       Last update:
-      2022-07-26
+      2022-11-21
     
   </small>
 </div>

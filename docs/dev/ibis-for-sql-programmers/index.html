@@ -9132,21 +9132,66 @@ print(ibis.impala.compile(expr2))</div>
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT t0.*
-FROM table1 t0
-  LEFT SEMI JOIN (
-    SELECT *
-    FROM (
-      SELECT `key1`, count(`key1`) AS `count`
-      FROM table1
-      GROUP BY 1
-    ) t2
-    ORDER BY `count` DESC
-    LIMIT 10
-  ) t1
-    ON t0.`key1` = t1.`key1`
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">RelationError</span>                             Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In [77], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> expr2 <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">t1</span><span class="ansi-yellow-bg">[</span><span class="ansi-yellow-bg">expr</span><span class="ansi-yellow-bg">]</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span style="color: rgb(0,135,0)">print</span>(ibis<span style="color: rgb(98,98,98)">.</span>impala<span style="color: rgb(98,98,98)">.</span>compile(expr2))
+
+File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/expr/types/relations.py:135</span>, in <span class="ansi-cyan-fg">Table.__getitem__</span><span class="ansi-blue-fg">(self, what)</span>
+<span class="ansi-green-intense-fg ansi-bold">    131</span> what <span style="color: rgb(98,98,98)">=</span> bind_expr(<span style="color: rgb(0,135,0)">self</span>, what)
+<span class="ansi-green-intense-fg ansi-bold">    133</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(0,135,0)">isinstance</span>(what, (<span style="color: rgb(0,135,0)">list</span>, <span style="color: rgb(0,135,0)">tuple</span>, Table)):
+<span class="ansi-green-intense-fg ansi-bold">    134</span>     <span style="color: rgb(95,135,135)"># Projection case</span>
+<span class="ansi-green-fg">--&gt; 135</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">select</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">what</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    136</span> <span class="ansi-bold" style="color: rgb(0,135,0)">elif</span> <span style="color: rgb(0,135,0)">isinstance</span>(what, BooleanColumn):
+<span class="ansi-green-intense-fg ansi-bold">    137</span>     <span style="color: rgb(95,135,135)"># Boolean predicate</span>
+<span class="ansi-green-intense-fg ansi-bold">    138</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>filter([what])
+
+File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/expr/types/relations.py:693</span>, in <span class="ansi-cyan-fg">Table.select</span><span class="ansi-blue-fg">(self, *exprs, **named_exprs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    682</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> <span class="ansi-bold" style="color: rgb(0,0,255)">ibis</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">expr</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">analysis</span> <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> <span class="ansi-bold" style="color: rgb(0,0,255)">an</span>
+<span class="ansi-green-intense-fg ansi-bold">    684</span> exprs <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">list</span>(
+<span class="ansi-green-intense-fg ansi-bold">    685</span>     itertools<span style="color: rgb(98,98,98)">.</span>chain(
+<span class="ansi-green-intense-fg ansi-bold">    686</span>         itertools<span style="color: rgb(98,98,98)">.</span>chain<span style="color: rgb(98,98,98)">.</span>from_iterable(<span style="color: rgb(0,135,0)">map</span>(util<span style="color: rgb(98,98,98)">.</span>promote_list, exprs)),
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-intense-fg ansi-bold">    691</span>     )
+<span class="ansi-green-intense-fg ansi-bold">    692</span> )
+<span class="ansi-green-fg">--&gt; 693</span> op <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">an</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">Projector</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">exprs</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">get_result</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    695</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> op<span style="color: rgb(98,98,98)">.</span>to_expr()
+
+File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/expr/analysis.py:531</span>, in <span class="ansi-cyan-fg">Projector.get_result</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">    528</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> fused_op <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
+<span class="ansi-green-intense-fg ansi-bold">    529</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> fused_op
+<span class="ansi-green-fg">--&gt; 531</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">ops</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">Selection</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">parent</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">clean_exprs</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/common/grounds.py:26</span>, in <span class="ansi-cyan-fg">BaseMeta.__call__</span><span class="ansi-blue-fg">(cls, *args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">     25</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">__call__</span>(<span style="color: rgb(0,135,0)">cls</span>, <span style="color: rgb(98,98,98)">*</span>args, <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> Base:
+<span class="ansi-green-fg">---&gt; 26</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">cls</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">__create__</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/common/grounds.py:106</span>, in <span class="ansi-cyan-fg">Annotable.__create__</span><span class="ansi-blue-fg">(cls, *args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    102</span> <span style="color: rgb(175,0,255)">@classmethod</span>
+<span class="ansi-green-intense-fg ansi-bold">    103</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">__create__</span>(<span style="color: rgb(0,135,0)">cls</span>, <span style="color: rgb(98,98,98)">*</span>args, <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> Annotable:
+<span class="ansi-green-intense-fg ansi-bold">    104</span>     <span style="color: rgb(95,135,135)"># construct the instance by passing the validated keyword arguments</span>
+<span class="ansi-green-intense-fg ansi-bold">    105</span>     kwargs <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">cls</span><span style="color: rgb(98,98,98)">.</span>__signature__<span style="color: rgb(98,98,98)">.</span>validate(<span style="color: rgb(98,98,98)">*</span>args, <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs)
+<span class="ansi-green-fg">--&gt; 106</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">super</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">__create__</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/common/grounds.py:35</span>, in <span class="ansi-cyan-fg">Base.__create__</span><span class="ansi-blue-fg">(cls, *args, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">     33</span> <span style="color: rgb(175,0,255)">@classmethod</span>
+<span class="ansi-green-intense-fg ansi-bold">     34</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">__create__</span>(<span style="color: rgb(0,135,0)">cls</span>, <span style="color: rgb(98,98,98)">*</span>args, <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> Base:
+<span class="ansi-green-fg">---&gt; 35</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">type</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg" style="color: rgb(0,0,255)">__call__</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">cls</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/expr/operations/relations.py:343</span>, in <span class="ansi-cyan-fg">Selection.__init__</span><span class="ansi-blue-fg">(self, table, selections, predicates, sort_keys, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    340</span> <span class="ansi-bold" style="color: rgb(0,135,0)">from</span> <span class="ansi-bold" style="color: rgb(0,0,255)">ibis</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">expr</span><span class="ansi-bold" style="color: rgb(0,0,255)">.</span><span class="ansi-bold" style="color: rgb(0,0,255)">analysis</span> <span class="ansi-bold" style="color: rgb(0,135,0)">import</span> shares_all_roots, shares_some_roots
+<span class="ansi-green-intense-fg ansi-bold">    342</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> shares_all_roots(selections <span style="color: rgb(98,98,98)">+</span> sort_keys, table):
+<span class="ansi-green-fg">--&gt; 343</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> com<span style="color: rgb(98,98,98)">.</span>RelationError(
+<span class="ansi-green-intense-fg ansi-bold">    344</span>         <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Selection expressions don</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">t fully originate from </span><span style="color: rgb(175,0,0)">&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">    345</span>         <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">dependencies of the table expression.</span><span style="color: rgb(175,0,0)">&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">    346</span>     )
+<span class="ansi-green-intense-fg ansi-bold">    348</span> <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> predicate <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> predicates:
+<span class="ansi-green-intense-fg ansi-bold">    349</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> shares_some_roots(predicate, table):
+
+<span class="ansi-red-fg">RelationError</span>: Selection expressions don&#39;t fully originate from dependencies of the table expression.</pre>
 </div>
 </div>
 
