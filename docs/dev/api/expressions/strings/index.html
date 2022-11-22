@@ -3437,13 +3437,17 @@ the corresponding row in the output is <code>True</code>.</p></td>
       <tr>
         <td><code>pattern</code></td>
         <td><code>str | StringValue</code></td>
-        <td><p>Reguar expression string</p></td>
+        <td><p>Reguar expression pattern string</p></td>
         <td><em>required</em></td>
       </tr>
       <tr>
         <td><code>index</code></td>
         <td><code>int | ir.IntegerValue</code></td>
-        <td><p>Zero-based index of match to return</p></td>
+        <td><p>The index of the match group to return.</p>
+<p>The behavior of this function follows the behavior of Python's
+<a href="https://docs.python.org/3/library/re.html#match-objects"><code>re.match</code></a>:
+when <code>index</code> is zero and there's a match, return the entire string,
+otherwise return the content of the <code>index</code>-th match group.</p></td>
         <td><em>required</em></td>
       </tr>
   </tbody>
@@ -3459,7 +3463,7 @@ the corresponding row in the output is <code>True</code>.</p></td>
   <tbody>
     <tr>
       <td><code>StringValue</code></td>
-      <td><p>Extracted match</p></td>
+      <td><p>Extracted match or whole string if <code>index</code> is zero</p></td>
     </tr>
   </tbody>
 </table>
