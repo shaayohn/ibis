@@ -7277,7 +7277,7 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT t0.`key1`, avg(t0.`value1` - t1.`value2`) AS `avg_diff`
+<pre>SELECT `key1`, avg(t0.`value1` - t1.`value2`) AS `avg_diff`
 FROM table1 t0
   LEFT OUTER JOIN table2 t1
     ON t0.`key1` = t1.`key3`
@@ -7440,7 +7440,7 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT t1.`key4`, t2.`key5`,
+<pre>SELECT `key4`, `key5`,
        sum((t0.`value1` + t1.`value2`) + t2.`value3`) AS `total`
 FROM table1 t0
   INNER JOIN table2 t1
@@ -7852,7 +7852,7 @@ print(ibis.impala.compile(expr))</div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>SELECT t0.`key1`, count(1) AS `count`
+<pre>SELECT `key1`, count(1) AS `count`
 FROM table1 t0
   INNER JOIN table2 t1
     ON t0.`value1` &lt; t1.`value2`
@@ -9160,10 +9160,10 @@ File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/expr/types/relations.py:6
 <span class="ansi-green-fg">--&gt; 693</span> op <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">an</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">Projector</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">exprs</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">get_result</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">    695</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> op<span style="color: rgb(98,98,98)">.</span>to_expr()
 
-File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/expr/analysis.py:531</span>, in <span class="ansi-cyan-fg">Projector.get_result</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">    528</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> fused_op <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
-<span class="ansi-green-intense-fg ansi-bold">    529</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> fused_op
-<span class="ansi-green-fg">--&gt; 531</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">ops</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">Selection</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">parent</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">clean_exprs</span><span class="ansi-yellow-bg">)</span>
+File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/expr/analysis.py:536</span>, in <span class="ansi-cyan-fg">Projector.get_result</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">    533</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> fused_op <span class="ansi-bold" style="color: rgb(175,0,255)">is</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>:
+<span class="ansi-green-intense-fg ansi-bold">    534</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> fused_op
+<span class="ansi-green-fg">--&gt; 536</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">ops</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">Selection</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">parent</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(0,135,0)">self</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">clean_exprs</span><span class="ansi-yellow-bg">)</span>
 
 File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/common/grounds.py:26</span>, in <span class="ansi-cyan-fg">BaseMeta.__call__</span><span class="ansi-blue-fg">(cls, *args, **kwargs)</span>
 <span class="ansi-green-intense-fg ansi-bold">     25</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">__call__</span>(<span style="color: rgb(0,135,0)">cls</span>, <span style="color: rgb(98,98,98)">*</span>args, <span style="color: rgb(98,98,98)">*</span><span style="color: rgb(98,98,98)">*</span>kwargs) <span style="color: rgb(98,98,98)">-</span><span style="color: rgb(98,98,98)">&gt;</span> Base:
