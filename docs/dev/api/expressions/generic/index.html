@@ -2793,7 +2793,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <p><strong>Examples:</strong></p>
     <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">coalesce</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">Coalesce</span><span class="p">([</span><span class="n">ValueList</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])])</span>
+<span class="n">Coalesce</span><span class="p">((</span><span class="kc">None</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
@@ -3190,7 +3190,7 @@ comparable with this column expression. Conclude by calling <code>.end()</code><
 <span class="o">&gt;&gt;&gt;</span> <span class="n">table</span><span class="o">.</span><span class="n">string_col</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;baz&#39;</span><span class="p">])</span>
 <span class="n">r0</span> <span class="o">:=</span> <span class="n">UnboundTable</span><span class="p">:</span> <span class="n">unbound_table_1</span>
   <span class="n">string_col</span> <span class="n">string</span>
-<span class="n">Contains</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">r0</span><span class="o">.</span><span class="n">string_col</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="n">ValueList</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;baz&#39;</span><span class="p">])])</span>
+<span class="n">Contains</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">r0</span><span class="o">.</span><span class="n">string_col</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;baz&#39;</span><span class="p">))</span>
 </code></pre></div>
     <p>Check whether a column's values are contained in another table's column</p>
     <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">table2</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">other_string_col</span><span class="o">=</span><span class="s1">&#39;string&#39;</span><span class="p">))</span>
