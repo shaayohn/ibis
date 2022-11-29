@@ -1051,15 +1051,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.datafusion.Backend.register_csv" class="md-nav__link">
-    register_csv()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.datafusion.Backend.register_parquet" class="md-nav__link">
-    register_parquet()
+  <a href="#ibis.backends.datafusion.Backend.register" class="md-nav__link">
+    register()
   </a>
   
 </li>
@@ -2293,15 +2286,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.datafusion.Backend.register_csv" class="md-nav__link">
-    register_csv()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.datafusion.Backend.register_parquet" class="md-nav__link">
-    register_parquet()
+  <a href="#ibis.backends.datafusion.Backend.register" class="md-nav__link">
+    register()
   </a>
   
 </li>
@@ -2406,7 +2392,7 @@ for connection parameter information.</p>
 
 
 <h4 id="ibis.backends.datafusion.Backend.do_connect" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">do_connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">do_connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 
 <a href="#ibis.backends.datafusion.Backend.do_connect" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -2428,9 +2414,9 @@ for connection parameter information.</p>
   <tbody>
       <tr>
         <td><code>config</code></td>
-        <td><code>Mapping[str, str | Path] | SessionContext</code></td>
+        <td><code>Mapping[str, str | Path] | SessionContext | None</code></td>
         <td><p>Mapping of table names to files.</p></td>
-        <td><em>required</em></td>
+        <td><code>None</code></td>
       </tr>
   </tbody>
 </table>
@@ -3258,15 +3244,16 @@ the <code>like</code> pattern if provided.</p></td>
 
 
 
-<h5 id="ibis.backends.datafusion.Backend.register_csv" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">register_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<h5 id="ibis.backends.datafusion.Backend.register" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">register</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">table_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
-<a href="#ibis.backends.datafusion.Backend.register_csv" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+<a href="#ibis.backends.datafusion.Backend.register" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
     <div class="doc doc-contents ">
 
-      <p>Register a CSV file with with <code>name</code> located at <code>path</code>.</p>
+      <p>Register a CSV or Parquet file with <code>table_name</code> located at</p>
+<p><code>source</code>.</p>
 
 <p><strong>Parameters:</strong></p>
 <table>
@@ -3280,67 +3267,16 @@ the <code>like</code> pattern if provided.</p></td>
   </thead>
   <tbody>
       <tr>
-        <td><code>name</code></td>
-        <td><code>str</code></td>
-        <td><p>The name of the table</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
-        <td><code>path</code></td>
+        <td><code>source</code></td>
         <td><code>str | Path</code></td>
-        <td><p>The path to the CSV file</p></td>
+        <td><p>The path to the file</p></td>
         <td><em>required</em></td>
       </tr>
       <tr>
-        <td><code>schema</code></td>
-        <td><code>sch.Schema | None</code></td>
-        <td><p>An optional schema</p></td>
+        <td><code>table_name</code></td>
+        <td><code>str | None</code></td>
+        <td><p>The name of the table</p></td>
         <td><code>None</code></td>
-      </tr>
-  </tbody>
-</table>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h5 id="ibis.backends.datafusion.Backend.register_parquet" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">register_parquet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span></code>
-
-
-<a href="#ibis.backends.datafusion.Backend.register_parquet" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-    <div class="doc doc-contents ">
-
-      <p>Register a parquet file with with <code>name</code> located at <code>path</code>.</p>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>name</code></td>
-        <td><code>str</code></td>
-        <td><p>The name of the table</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
-        <td><code>path</code></td>
-        <td><code>str | Path</code></td>
-        <td><p>The path to the Parquet file</p></td>
-        <td><em>required</em></td>
       </tr>
   </tbody>
 </table>
