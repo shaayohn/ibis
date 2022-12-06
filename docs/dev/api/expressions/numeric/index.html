@@ -4442,7 +4442,7 @@ NumericColumn            (<a class="autorefs autorefs-internal" title="ibis.expr
 
 
 <h4 id="ibis.expr.types.numeric.NumericColumn.histogram" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">histogram</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">binwidth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">closed</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">aux_hash</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">histogram</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">binwidth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-13</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.numeric.NumericColumn.histogram" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -4477,20 +4477,15 @@ NumericColumn            (<a class="autorefs autorefs-internal" title="ibis.expr
       <tr>
         <td><code>base</code></td>
         <td><code>float | None</code></td>
-        <td><p>Histogram base</p></td>
+        <td><p>The value of the first histogram bin. Defaults to the minimum value
+of <code>column</code>.</p></td>
         <td><code>None</code></td>
       </tr>
       <tr>
-        <td><code>closed</code></td>
-        <td><code>Literal[&#39;left&#39;, &#39;right&#39;]</code></td>
-        <td><p>Which side of each interval is closed</p></td>
-        <td><code>&#39;left&#39;</code></td>
-      </tr>
-      <tr>
-        <td><code>aux_hash</code></td>
-        <td><code>str | None</code></td>
-        <td><p>Auxiliary hash value to add to bucket names</p></td>
-        <td><code>None</code></td>
+        <td><code>eps</code></td>
+        <td><code>float</code></td>
+        <td><p>Allowed floating point epsilon for histogram base</p></td>
+        <td><code>1e-13</code></td>
       </tr>
   </tbody>
 </table>
@@ -4504,8 +4499,8 @@ NumericColumn            (<a class="autorefs autorefs-internal" title="ibis.expr
   </thead>
   <tbody>
     <tr>
-      <td><code>ir.CategoryColumn</code></td>
-      <td><p>Coded value expression</p></td>
+      <td><code>Column</code></td>
+      <td><p>Bucketed column</p></td>
     </tr>
   </tbody>
 </table>
