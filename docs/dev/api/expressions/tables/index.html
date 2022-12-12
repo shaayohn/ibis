@@ -4168,16 +4168,11 @@ with its original name.</p></td>
 
     <div class="doc doc-contents ">
 
-      <p>A numbering expression representing the row number of the results.</p>
-<p>It can be 0 or 1 indexed depending on the backend. Check the backend
-documentation for specifics.</p>
-
-<p><strong>Examples:</strong></p>
-    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">my_table</span><span class="p">[</span><span class="n">my_table</span><span class="o">.</span><span class="n">rowid</span><span class="p">(),</span> <span class="n">my_table</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
-<span class="mi">1</span><span class="o">|</span><span class="n">Ibis</span>
-<span class="mi">2</span><span class="o">|</span><span class="n">pandas</span>
-<span class="mi">3</span><span class="o">|</span><span class="n">Dask</span>
-</code></pre></div>
+      <p>A unique integer per row, only valid on physical tables.</p>
+<p>Any further meaning behind this expression is backend dependent.
+Generally this corresponds to some index into the database storage
+(for example, sqlite or duckdb's <code>rowid</code>).</p>
+<p>For a monotonically increasing row number, see <code>ibis.row_number</code>.</p>
 
 <p><strong>Returns:</strong></p>
 <table>
