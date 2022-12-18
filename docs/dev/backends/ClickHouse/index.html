@@ -1044,8 +1044,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.clickhouse.Backend.explain" class="md-nav__link">
-    explain()
+  <a href="#ibis.backends.clickhouse.Backend.has_operation" class="md-nav__link">
+    has_operation()
   </a>
   
 </li>
@@ -1067,13 +1067,6 @@
           <li class="md-nav__item">
   <a href="#ibis.backends.clickhouse.Backend.raw_sql" class="md-nav__link">
     raw_sql()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.clickhouse.Backend.sql" class="md-nav__link">
-    sql()
   </a>
   
 </li>
@@ -2368,8 +2361,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ibis.backends.clickhouse.Backend.explain" class="md-nav__link">
-    explain()
+  <a href="#ibis.backends.clickhouse.Backend.has_operation" class="md-nav__link">
+    has_operation()
   </a>
   
 </li>
@@ -2391,13 +2384,6 @@
           <li class="md-nav__item">
   <a href="#ibis.backends.clickhouse.Backend.raw_sql" class="md-nav__link">
     raw_sql()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibis.backends.clickhouse.Backend.sql" class="md-nav__link">
-    sql()
   </a>
   
 </li>
@@ -2590,7 +2576,7 @@ True is equivalent to <code>'lz4'</code>.</p></td>
 
 <h3 id="ibis.backends.clickhouse.Backend" class="doc doc-heading">
         <code>
-Backend            (<a class="autorefs autorefs-internal" title="ibis.backends.base.sql.BaseSQLBackend" href="../../api/backends/sql/#ibis.backends.base.sql.BaseSQLBackend">BaseSQLBackend</a>)
+Backend            (<a class="autorefs autorefs-internal" title="ibis.backends.base.BaseBackend" href="../../api/backends/base/#ibis.backends.base.BaseBackend">BaseBackend</a>)
         </code>
 
 
@@ -2948,72 +2934,15 @@ string <code>"NULL"</code>.</p>
 
 
 <h5 id="ibis.backends.clickhouse.Backend.compile" class="doc doc-heading">
-<code class="highlight language-python"><span class="nb">compile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timecontext</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="nb">compile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">_</span><span class="p">)</span></code>
 
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-  </span>
 
 <a href="#ibis.backends.clickhouse.Backend.compile" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
     <div class="doc doc-contents ">
 
-      <p>Compile an Ibis expression.</p>
+      <p>Compile an expression.</p>
 
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>expr</code></td>
-        <td><code>ir.Expr</code></td>
-        <td><p>Ibis expression</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
-        <td><code>limit</code></td>
-        <td><code>str | None</code></td>
-        <td><p>For expressions yielding result sets; retrieve at most this number
-of values/rows. Overrides any limit already set on the expression.</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>params</code></td>
-        <td><code>Mapping[ir.Expr, Any] | None</code></td>
-        <td><p>Named unbound parameters</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>timecontext</code></td>
-        <td><code>TimeContext | None</code></td>
-        <td><p>Additional information about data source time boundaries</p></td>
-        <td><code>None</code></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>Any</code></td>
-      <td><p>The output of compilation. The type of this value depends on the
-backend.</p></td>
-    </tr>
-  </tbody>
-</table>
     </div>
 
   </div>
@@ -3428,19 +3357,37 @@ default.</p></td>
 
 
 <h5 id="ibis.backends.clickhouse.Backend.execute" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">external_tables</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-  </span>
 
 <a href="#ibis.backends.clickhouse.Backend.execute" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
     <div class="doc doc-contents ">
 
-      <p>Compile and execute an Ibis expression.</p>
-<p>Compile and execute Ibis expression using this backend client
-interface, returning results in-memory in the appropriate object type</p>
+      <p>Execute an expression.</p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h5 id="ibis.backends.clickhouse.Backend.has_operation" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">has_operation</span><span class="p">(</span><span class="n">operation</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-classmethod"><code>classmethod</code></small>
+  </span>
+
+<a href="#ibis.backends.clickhouse.Backend.has_operation" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
+
+    <div class="doc doc-contents ">
+
+      <p>Return whether the backend implements support for <code>operation</code>.</p>
 
 <p><strong>Parameters:</strong></p>
 <table>
@@ -3454,77 +3401,21 @@ interface, returning results in-memory in the appropriate object type</p>
   </thead>
   <tbody>
       <tr>
-        <td><code>expr</code></td>
-        <td><code>ir.Expr</code></td>
-        <td><p>Ibis expression</p></td>
+        <td><code>operation</code></td>
+        <td><code>type[ops.Value]</code></td>
+        <td><p>A class corresponding to an operation.</p></td>
         <td><em>required</em></td>
       </tr>
-      <tr>
-        <td><code>limit</code></td>
-        <td><code>str</code></td>
-        <td><p>For expressions yielding result sets; retrieve at most this number
-of values/rows. Overrides any limit already set on the expression.</p></td>
-        <td><code>&#39;default&#39;</code></td>
-      </tr>
-      <tr>
-        <td><code>params</code></td>
-        <td><code>Mapping[ir.Scalar, Any] | None</code></td>
-        <td><p>Named unbound parameters</p></td>
-        <td><code>None</code></td>
-      </tr>
-      <tr>
-        <td><code>kwargs</code></td>
-        <td><code>Any</code></td>
-        <td><p>Backend specific arguments. For example, the clickhouse backend
-uses this to receive <code>external_tables</code> as a dictionary of pandas
-DataFrames.</p></td>
-        <td><code>{}</code></td>
-      </tr>
   </tbody>
 </table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>DataFrame | Series | Scalar</code></td>
-      <td><ul>
-<li><code>Table</code>: pandas.DataFrame</li>
-<li><code>Column</code>: pandas.Series</li>
-<li><code>Scalar</code>: Python scalar value</li>
-</ul></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h5 id="ibis.backends.clickhouse.Backend.explain" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">explain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-  </span>
-
-<a href="#ibis.backends.clickhouse.Backend.explain" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-    <div class="doc doc-contents ">
-
-      <p>Explain an expression.</p>
-<p>Return the query plan associated with the indicated expression or SQL
-query.</p>
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis.expr.operations</span> <span class="k">as</span> <span class="nn">ops</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">sqlite</span><span class="o">.</span><span class="n">has_operation</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">ArrayIndex</span><span class="p">)</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ibis</span><span class="o">.</span><span class="n">postgres</span><span class="o">.</span><span class="n">has_operation</span><span class="p">(</span><span class="n">ops</span><span class="o">.</span><span class="n">ArrayIndex</span><span class="p">)</span>
+<span class="kc">True</span>
+</code></pre></div>
 
 <p><strong>Returns:</strong></p>
 <table>
@@ -3536,8 +3427,8 @@ query.</p>
   </thead>
   <tbody>
     <tr>
-      <td><code>str</code></td>
-      <td><p>Query plan</p></td>
+      <td><code>bool</code></td>
+      <td><p>Whether the backend implements the operation.</p></td>
     </tr>
   </tbody>
 </table>
@@ -3670,7 +3561,7 @@ or other equivalent entities in a SQL database.</p>
 
 
 <h5 id="ibis.backends.clickhouse.Backend.raw_sql" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">raw_sql</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">external_tables</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">raw_sql</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">external_tables</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">_</span><span class="p">)</span></code>
 
 
 <a href="#ibis.backends.clickhouse.Backend.raw_sql" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
@@ -3726,69 +3617,6 @@ external datasources for the query</p></td>
 
 
 
-  <div class="doc doc-object doc-method">
-
-
-
-<h5 id="ibis.backends.clickhouse.Backend.sql" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">sql</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">schema</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-  </span>
-
-<a href="#ibis.backends.clickhouse.Backend.sql" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
-
-    <div class="doc doc-contents ">
-
-      <p>Convert a SQL query to an Ibis table expression.</p>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>query</code></td>
-        <td><code>str</code></td>
-        <td><p>SQL string</p></td>
-        <td><em>required</em></td>
-      </tr>
-      <tr>
-        <td><code>schema</code></td>
-        <td><code>sch.Schema | None</code></td>
-        <td><p>The expected schema for this query. If not provided, will be
-inferred automatically if possible.</p></td>
-        <td><code>None</code></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ir.Table</code></td>
-      <td><p>Table expression</p></td>
-    </tr>
-  </tbody>
-</table>
-    </div>
-
-  </div>
-
-
 
   <div class="doc doc-object doc-method">
 
@@ -3797,9 +3625,6 @@ inferred automatically if possible.</p></td>
 <h5 id="ibis.backends.clickhouse.Backend.table" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-  </span>
 
 <a href="#ibis.backends.clickhouse.Backend.table" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
@@ -3935,9 +3760,6 @@ immediately.</p>
 <h5 id="ibis.backends.clickhouse.Backend.to_pyarrow_batches" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">to_pyarrow_batches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-inherited"><code>inherited</code></small>
-  </span>
 
 <a href="#ibis.backends.clickhouse.Backend.to_pyarrow_batches" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
@@ -3945,9 +3767,6 @@ immediately.</p>
 
       <p>Execute expression and return results in an iterator of pyarrow</p>
 <p>record batches.</p>
-<div class="admonition warning">
-<p class="admonition-title">This API is experimental and subject to change.</p>
-</div>
 <p>This method is eager and will execute the associated expression
 immediately.</p>
 
