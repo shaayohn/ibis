@@ -3932,7 +3932,7 @@ Column            (<a class="autorefs autorefs-internal" title="ibis.expr.types.
 
 
 <h4 id="ibis.expr.types.generic.Column.arbitrary" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">arbitrary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">arbitrary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;first&#39;</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.generic.Column.arbitrary" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -3960,7 +3960,7 @@ Column            (<a class="autorefs autorefs-internal" title="ibis.expr.types.
       </tr>
       <tr>
         <td><code>how</code></td>
-        <td><code>Literal[&#39;first&#39;, &#39;last&#39;, &#39;heavy&#39;] | None</code></td>
+        <td><code>Literal[&#39;first&#39;, &#39;last&#39;, &#39;heavy&#39;]</code></td>
         <td><p>The method to use for selecting the element.</p>
 <ul>
 <li><code>"first"</code>: Select the first non-<code>NULL</code> element</li>
@@ -3969,7 +3969,7 @@ Column            (<a class="autorefs autorefs-internal" title="ibis.expr.types.
   hitters algorithm. <code>"heavy"</code> is only supported by Clickhouse
   backend.</li>
 </ul></td>
-        <td><code>None</code></td>
+        <td><code>&#39;first&#39;</code></td>
       </tr>
   </tbody>
 </table>
