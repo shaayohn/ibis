@@ -3234,7 +3234,7 @@ File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/sqlite/__init__.
 
 File <span class="ansi-green-fg">&lt;string&gt;:2</span>, in <span class="ansi-cyan-fg">__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py:309</span>, in <span class="ansi-cyan-fg">deprecated_params.&lt;locals&gt;.decorate.&lt;locals&gt;.warned</span><span class="ansi-blue-fg">(fn, *args, **kwargs)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py:309</span>, in <span class="ansi-cyan-fg">deprecated_params.&lt;locals&gt;.decorate.&lt;locals&gt;.warned</span><span class="ansi-blue-fg">(fn, *args, **kwargs)</span>
 <span class="ansi-green-intense-fg ansi-bold">    302</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> m <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> kwargs:
 <span class="ansi-green-intense-fg ansi-bold">    303</span>         _warn_with_version(
 <span class="ansi-green-intense-fg ansi-bold">    304</span>             messages[m],
@@ -3244,13 +3244,13 @@ File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-pyt
 <span class="ansi-green-intense-fg ansi-bold">    308</span>         )
 <span class="ansi-green-fg">--&gt; 309</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">fn</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:618</span>, in <span class="ansi-cyan-fg">Table.__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:618</span>, in <span class="ansi-cyan-fg">Table.__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
 <span class="ansi-green-intense-fg ansi-bold">    616</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> table
 <span class="ansi-green-intense-fg ansi-bold">    617</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> <span class="ansi-bold" style="color: rgb(215,95,95)">Exception</span>:
 <span class="ansi-green-fg">--&gt; 618</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> util<span style="color: rgb(98,98,98)">.</span>safe_reraise():
 <span class="ansi-green-intense-fg ansi-bold">    619</span>         metadata<span style="color: rgb(98,98,98)">.</span>_remove_table(name, schema)
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py:70</span>, in <span class="ansi-cyan-fg">safe_reraise.__exit__</span><span class="ansi-blue-fg">(self, type_, value, traceback)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py:70</span>, in <span class="ansi-cyan-fg">safe_reraise.__exit__</span><span class="ansi-blue-fg">(self, type_, value, traceback)</span>
 <span class="ansi-green-intense-fg ansi-bold">     68</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_exc_info <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>  <span style="color: rgb(95,135,135)"># remove potential circular references</span>
 <span class="ansi-green-intense-fg ansi-bold">     69</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>warn_only:
 <span class="ansi-green-fg">---&gt; 70</span>         <span class="ansi-yellow-bg">compat</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">raise_</span><span class="ansi-yellow-bg">(</span>
@@ -3262,7 +3262,7 @@ File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-pyt
 <span class="ansi-green-intense-fg ansi-bold">     76</span>         <span style="color: rgb(95,135,135)"># emulate Py3K&#39;s behavior of telling us when an exception</span>
 <span class="ansi-green-intense-fg ansi-bold">     77</span>         <span style="color: rgb(95,135,135)"># occurs in an exception handler.</span>
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/util/compat.py:211</span>, in <span class="ansi-cyan-fg">raise_</span><span class="ansi-blue-fg">(***failed resolving arguments***)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/util/compat.py:211</span>, in <span class="ansi-cyan-fg">raise_</span><span class="ansi-blue-fg">(***failed resolving arguments***)</span>
 <span class="ansi-green-intense-fg ansi-bold">    208</span>     exception<span style="color: rgb(98,98,98)">.</span>__cause__ <span style="color: rgb(98,98,98)">=</span> replace_context
 <span class="ansi-green-intense-fg ansi-bold">    210</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
 <span class="ansi-green-fg">--&gt; 211</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> exception
@@ -3272,14 +3272,14 @@ File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-pyt
 <span class="ansi-green-intense-fg ansi-bold">    215</span>     <span style="color: rgb(95,135,135)"># as the __traceback__ object creates a cycle</span>
 <span class="ansi-green-intense-fg ansi-bold">    216</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">del</span> exception, replace_context, from_, with_traceback
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:614</span>, in <span class="ansi-cyan-fg">Table.__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:614</span>, in <span class="ansi-cyan-fg">Table.__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
 <span class="ansi-green-intense-fg ansi-bold">    612</span> metadata<span style="color: rgb(98,98,98)">.</span>_add_table(name, schema, table)
 <span class="ansi-green-intense-fg ansi-bold">    613</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
 <span class="ansi-green-fg">--&gt; 614</span>     <span class="ansi-yellow-bg">table</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_init</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">name</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">metadata</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kw</span><span class="ansi-yellow-bg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">    615</span>     table<span style="color: rgb(98,98,98)">.</span>dispatch<span style="color: rgb(98,98,98)">.</span>after_parent_attach(table, metadata)
 <span class="ansi-green-intense-fg ansi-bold">    616</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> table
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:689</span>, in <span class="ansi-cyan-fg">Table._init</span><span class="ansi-blue-fg">(self, name, metadata, *args, **kwargs)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:689</span>, in <span class="ansi-cyan-fg">Table._init</span><span class="ansi-blue-fg">(self, name, metadata, *args, **kwargs)</span>
 <span class="ansi-green-intense-fg ansi-bold">    685</span> <span style="color: rgb(95,135,135)"># load column definitions from the database if &#39;autoload&#39; is defined</span>
 <span class="ansi-green-intense-fg ansi-bold">    686</span> <span style="color: rgb(95,135,135)"># we do it after the table is in the singleton dictionary to support</span>
 <span class="ansi-green-intense-fg ansi-bold">    687</span> <span style="color: rgb(95,135,135)"># circular foreign keys</span>
@@ -3298,7 +3298,7 @@ File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-pyt
 <span class="ansi-green-intense-fg ansi-bold">    702</span>     allow_replacements<span style="color: rgb(98,98,98)">=</span>extend_existing <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> keep_existing <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> autoload
 <span class="ansi-green-intense-fg ansi-bold">    703</span> )
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:724</span>, in <span class="ansi-cyan-fg">Table._autoload</span><span class="ansi-blue-fg">(self, metadata, autoload_with, include_columns, exclude_columns, resolve_fks, _extend_on)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:724</span>, in <span class="ansi-cyan-fg">Table._autoload</span><span class="ansi-blue-fg">(self, metadata, autoload_with, include_columns, exclude_columns, resolve_fks, _extend_on)</span>
 <span class="ansi-green-intense-fg ansi-bold">    722</span> insp <span style="color: rgb(98,98,98)">=</span> inspection<span style="color: rgb(98,98,98)">.</span>inspect(autoload_with)
 <span class="ansi-green-intense-fg ansi-bold">    723</span> <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> insp<span style="color: rgb(98,98,98)">.</span>_inspection_context() <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> conn_insp:
 <span class="ansi-green-fg">--&gt; 724</span>     <span class="ansi-yellow-bg">conn_insp</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">reflect_table</span><span class="ansi-yellow-bg">(</span>
@@ -3309,7 +3309,7 @@ File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-pyt
 <span class="ansi-green-intense-fg ansi-bold">    729</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">_extend_on</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">_extend_on</span><span class="ansi-yellow-bg">,</span>
 <span class="ansi-green-intense-fg ansi-bold">    730</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/engine/reflection.py:789</span>, in <span class="ansi-cyan-fg">Inspector.reflect_table</span><span class="ansi-blue-fg">(self, table, include_columns, exclude_columns, resolve_fks, _extend_on)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/engine/reflection.py:789</span>, in <span class="ansi-cyan-fg">Inspector.reflect_table</span><span class="ansi-blue-fg">(self, table, include_columns, exclude_columns, resolve_fks, _extend_on)</span>
 <span class="ansi-green-intense-fg ansi-bold">    787</span> <span style="color: rgb(95,135,135)"># NOTE: support tables/views with no columns</span>
 <span class="ansi-green-intense-fg ansi-bold">    788</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> found_table <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>has_table(table_name, schema):
 <span class="ansi-green-fg">--&gt; 789</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> exc<span style="color: rgb(98,98,98)">.</span>NoSuchTableError(table_name)
@@ -3409,7 +3409,7 @@ File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/sqlite/__init__.
 
 File <span class="ansi-green-fg">&lt;string&gt;:2</span>, in <span class="ansi-cyan-fg">__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py:309</span>, in <span class="ansi-cyan-fg">deprecated_params.&lt;locals&gt;.decorate.&lt;locals&gt;.warned</span><span class="ansi-blue-fg">(fn, *args, **kwargs)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py:309</span>, in <span class="ansi-cyan-fg">deprecated_params.&lt;locals&gt;.decorate.&lt;locals&gt;.warned</span><span class="ansi-blue-fg">(fn, *args, **kwargs)</span>
 <span class="ansi-green-intense-fg ansi-bold">    302</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> m <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> kwargs:
 <span class="ansi-green-intense-fg ansi-bold">    303</span>         _warn_with_version(
 <span class="ansi-green-intense-fg ansi-bold">    304</span>             messages[m],
@@ -3419,13 +3419,13 @@ File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-pyt
 <span class="ansi-green-intense-fg ansi-bold">    308</span>         )
 <span class="ansi-green-fg">--&gt; 309</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">fn</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:618</span>, in <span class="ansi-cyan-fg">Table.__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:618</span>, in <span class="ansi-cyan-fg">Table.__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
 <span class="ansi-green-intense-fg ansi-bold">    616</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> table
 <span class="ansi-green-intense-fg ansi-bold">    617</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> <span class="ansi-bold" style="color: rgb(215,95,95)">Exception</span>:
 <span class="ansi-green-fg">--&gt; 618</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> util<span style="color: rgb(98,98,98)">.</span>safe_reraise():
 <span class="ansi-green-intense-fg ansi-bold">    619</span>         metadata<span style="color: rgb(98,98,98)">.</span>_remove_table(name, schema)
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py:70</span>, in <span class="ansi-cyan-fg">safe_reraise.__exit__</span><span class="ansi-blue-fg">(self, type_, value, traceback)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py:70</span>, in <span class="ansi-cyan-fg">safe_reraise.__exit__</span><span class="ansi-blue-fg">(self, type_, value, traceback)</span>
 <span class="ansi-green-intense-fg ansi-bold">     68</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_exc_info <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>  <span style="color: rgb(95,135,135)"># remove potential circular references</span>
 <span class="ansi-green-intense-fg ansi-bold">     69</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>warn_only:
 <span class="ansi-green-fg">---&gt; 70</span>         <span class="ansi-yellow-bg">compat</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">raise_</span><span class="ansi-yellow-bg">(</span>
@@ -3437,7 +3437,7 @@ File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-pyt
 <span class="ansi-green-intense-fg ansi-bold">     76</span>         <span style="color: rgb(95,135,135)"># emulate Py3K&#39;s behavior of telling us when an exception</span>
 <span class="ansi-green-intense-fg ansi-bold">     77</span>         <span style="color: rgb(95,135,135)"># occurs in an exception handler.</span>
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/util/compat.py:211</span>, in <span class="ansi-cyan-fg">raise_</span><span class="ansi-blue-fg">(***failed resolving arguments***)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/util/compat.py:211</span>, in <span class="ansi-cyan-fg">raise_</span><span class="ansi-blue-fg">(***failed resolving arguments***)</span>
 <span class="ansi-green-intense-fg ansi-bold">    208</span>     exception<span style="color: rgb(98,98,98)">.</span>__cause__ <span style="color: rgb(98,98,98)">=</span> replace_context
 <span class="ansi-green-intense-fg ansi-bold">    210</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
 <span class="ansi-green-fg">--&gt; 211</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> exception
@@ -3447,14 +3447,14 @@ File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-pyt
 <span class="ansi-green-intense-fg ansi-bold">    215</span>     <span style="color: rgb(95,135,135)"># as the __traceback__ object creates a cycle</span>
 <span class="ansi-green-intense-fg ansi-bold">    216</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">del</span> exception, replace_context, from_, with_traceback
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:614</span>, in <span class="ansi-cyan-fg">Table.__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:614</span>, in <span class="ansi-cyan-fg">Table.__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
 <span class="ansi-green-intense-fg ansi-bold">    612</span> metadata<span style="color: rgb(98,98,98)">.</span>_add_table(name, schema, table)
 <span class="ansi-green-intense-fg ansi-bold">    613</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
 <span class="ansi-green-fg">--&gt; 614</span>     <span class="ansi-yellow-bg">table</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_init</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">name</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">metadata</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kw</span><span class="ansi-yellow-bg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">    615</span>     table<span style="color: rgb(98,98,98)">.</span>dispatch<span style="color: rgb(98,98,98)">.</span>after_parent_attach(table, metadata)
 <span class="ansi-green-intense-fg ansi-bold">    616</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> table
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:689</span>, in <span class="ansi-cyan-fg">Table._init</span><span class="ansi-blue-fg">(self, name, metadata, *args, **kwargs)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:689</span>, in <span class="ansi-cyan-fg">Table._init</span><span class="ansi-blue-fg">(self, name, metadata, *args, **kwargs)</span>
 <span class="ansi-green-intense-fg ansi-bold">    685</span> <span style="color: rgb(95,135,135)"># load column definitions from the database if &#39;autoload&#39; is defined</span>
 <span class="ansi-green-intense-fg ansi-bold">    686</span> <span style="color: rgb(95,135,135)"># we do it after the table is in the singleton dictionary to support</span>
 <span class="ansi-green-intense-fg ansi-bold">    687</span> <span style="color: rgb(95,135,135)"># circular foreign keys</span>
@@ -3473,7 +3473,7 @@ File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-pyt
 <span class="ansi-green-intense-fg ansi-bold">    702</span>     allow_replacements<span style="color: rgb(98,98,98)">=</span>extend_existing <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> keep_existing <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> autoload
 <span class="ansi-green-intense-fg ansi-bold">    703</span> )
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:724</span>, in <span class="ansi-cyan-fg">Table._autoload</span><span class="ansi-blue-fg">(self, metadata, autoload_with, include_columns, exclude_columns, resolve_fks, _extend_on)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:724</span>, in <span class="ansi-cyan-fg">Table._autoload</span><span class="ansi-blue-fg">(self, metadata, autoload_with, include_columns, exclude_columns, resolve_fks, _extend_on)</span>
 <span class="ansi-green-intense-fg ansi-bold">    722</span> insp <span style="color: rgb(98,98,98)">=</span> inspection<span style="color: rgb(98,98,98)">.</span>inspect(autoload_with)
 <span class="ansi-green-intense-fg ansi-bold">    723</span> <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> insp<span style="color: rgb(98,98,98)">.</span>_inspection_context() <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> conn_insp:
 <span class="ansi-green-fg">--&gt; 724</span>     <span class="ansi-yellow-bg">conn_insp</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">reflect_table</span><span class="ansi-yellow-bg">(</span>
@@ -3484,7 +3484,7 @@ File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-pyt
 <span class="ansi-green-intense-fg ansi-bold">    729</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">_extend_on</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">_extend_on</span><span class="ansi-yellow-bg">,</span>
 <span class="ansi-green-intense-fg ansi-bold">    730</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/engine/reflection.py:789</span>, in <span class="ansi-cyan-fg">Inspector.reflect_table</span><span class="ansi-blue-fg">(self, table, include_columns, exclude_columns, resolve_fks, _extend_on)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/engine/reflection.py:789</span>, in <span class="ansi-cyan-fg">Inspector.reflect_table</span><span class="ansi-blue-fg">(self, table, include_columns, exclude_columns, resolve_fks, _extend_on)</span>
 <span class="ansi-green-intense-fg ansi-bold">    787</span> <span style="color: rgb(95,135,135)"># NOTE: support tables/views with no columns</span>
 <span class="ansi-green-intense-fg ansi-bold">    788</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> found_table <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>has_table(table_name, schema):
 <span class="ansi-green-fg">--&gt; 789</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> exc<span style="color: rgb(98,98,98)">.</span>NoSuchTableError(table_name)
@@ -4976,7 +4976,7 @@ File <span class="ansi-green-fg">~/work/ibis/ibis/ibis/backends/sqlite/__init__.
 
 File <span class="ansi-green-fg">&lt;string&gt;:2</span>, in <span class="ansi-cyan-fg">__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py:309</span>, in <span class="ansi-cyan-fg">deprecated_params.&lt;locals&gt;.decorate.&lt;locals&gt;.warned</span><span class="ansi-blue-fg">(fn, *args, **kwargs)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/util/deprecations.py:309</span>, in <span class="ansi-cyan-fg">deprecated_params.&lt;locals&gt;.decorate.&lt;locals&gt;.warned</span><span class="ansi-blue-fg">(fn, *args, **kwargs)</span>
 <span class="ansi-green-intense-fg ansi-bold">    302</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> m <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> kwargs:
 <span class="ansi-green-intense-fg ansi-bold">    303</span>         _warn_with_version(
 <span class="ansi-green-intense-fg ansi-bold">    304</span>             messages[m],
@@ -4986,13 +4986,13 @@ File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-pyt
 <span class="ansi-green-intense-fg ansi-bold">    308</span>         )
 <span class="ansi-green-fg">--&gt; 309</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">fn</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:618</span>, in <span class="ansi-cyan-fg">Table.__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:618</span>, in <span class="ansi-cyan-fg">Table.__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
 <span class="ansi-green-intense-fg ansi-bold">    616</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> table
 <span class="ansi-green-intense-fg ansi-bold">    617</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> <span class="ansi-bold" style="color: rgb(215,95,95)">Exception</span>:
 <span class="ansi-green-fg">--&gt; 618</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> util<span style="color: rgb(98,98,98)">.</span>safe_reraise():
 <span class="ansi-green-intense-fg ansi-bold">    619</span>         metadata<span style="color: rgb(98,98,98)">.</span>_remove_table(name, schema)
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py:70</span>, in <span class="ansi-cyan-fg">safe_reraise.__exit__</span><span class="ansi-blue-fg">(self, type_, value, traceback)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py:70</span>, in <span class="ansi-cyan-fg">safe_reraise.__exit__</span><span class="ansi-blue-fg">(self, type_, value, traceback)</span>
 <span class="ansi-green-intense-fg ansi-bold">     68</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_exc_info <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>  <span style="color: rgb(95,135,135)"># remove potential circular references</span>
 <span class="ansi-green-intense-fg ansi-bold">     69</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>warn_only:
 <span class="ansi-green-fg">---&gt; 70</span>         <span class="ansi-yellow-bg">compat</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">raise_</span><span class="ansi-yellow-bg">(</span>
@@ -5004,7 +5004,7 @@ File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-pyt
 <span class="ansi-green-intense-fg ansi-bold">     76</span>         <span style="color: rgb(95,135,135)"># emulate Py3K&#39;s behavior of telling us when an exception</span>
 <span class="ansi-green-intense-fg ansi-bold">     77</span>         <span style="color: rgb(95,135,135)"># occurs in an exception handler.</span>
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/util/compat.py:211</span>, in <span class="ansi-cyan-fg">raise_</span><span class="ansi-blue-fg">(***failed resolving arguments***)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/util/compat.py:211</span>, in <span class="ansi-cyan-fg">raise_</span><span class="ansi-blue-fg">(***failed resolving arguments***)</span>
 <span class="ansi-green-intense-fg ansi-bold">    208</span>     exception<span style="color: rgb(98,98,98)">.</span>__cause__ <span style="color: rgb(98,98,98)">=</span> replace_context
 <span class="ansi-green-intense-fg ansi-bold">    210</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
 <span class="ansi-green-fg">--&gt; 211</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> exception
@@ -5014,14 +5014,14 @@ File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-pyt
 <span class="ansi-green-intense-fg ansi-bold">    215</span>     <span style="color: rgb(95,135,135)"># as the __traceback__ object creates a cycle</span>
 <span class="ansi-green-intense-fg ansi-bold">    216</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">del</span> exception, replace_context, from_, with_traceback
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:614</span>, in <span class="ansi-cyan-fg">Table.__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:614</span>, in <span class="ansi-cyan-fg">Table.__new__</span><span class="ansi-blue-fg">(cls, *args, **kw)</span>
 <span class="ansi-green-intense-fg ansi-bold">    612</span> metadata<span style="color: rgb(98,98,98)">.</span>_add_table(name, schema, table)
 <span class="ansi-green-intense-fg ansi-bold">    613</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
 <span class="ansi-green-fg">--&gt; 614</span>     <span class="ansi-yellow-bg">table</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">_init</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">name</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">metadata</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">*</span><span class="ansi-yellow-bg">kw</span><span class="ansi-yellow-bg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">    615</span>     table<span style="color: rgb(98,98,98)">.</span>dispatch<span style="color: rgb(98,98,98)">.</span>after_parent_attach(table, metadata)
 <span class="ansi-green-intense-fg ansi-bold">    616</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> table
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:689</span>, in <span class="ansi-cyan-fg">Table._init</span><span class="ansi-blue-fg">(self, name, metadata, *args, **kwargs)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:689</span>, in <span class="ansi-cyan-fg">Table._init</span><span class="ansi-blue-fg">(self, name, metadata, *args, **kwargs)</span>
 <span class="ansi-green-intense-fg ansi-bold">    685</span> <span style="color: rgb(95,135,135)"># load column definitions from the database if &#39;autoload&#39; is defined</span>
 <span class="ansi-green-intense-fg ansi-bold">    686</span> <span style="color: rgb(95,135,135)"># we do it after the table is in the singleton dictionary to support</span>
 <span class="ansi-green-intense-fg ansi-bold">    687</span> <span style="color: rgb(95,135,135)"># circular foreign keys</span>
@@ -5040,7 +5040,7 @@ File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-pyt
 <span class="ansi-green-intense-fg ansi-bold">    702</span>     allow_replacements<span style="color: rgb(98,98,98)">=</span>extend_existing <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> keep_existing <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> autoload
 <span class="ansi-green-intense-fg ansi-bold">    703</span> )
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:724</span>, in <span class="ansi-cyan-fg">Table._autoload</span><span class="ansi-blue-fg">(self, metadata, autoload_with, include_columns, exclude_columns, resolve_fks, _extend_on)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/sql/schema.py:724</span>, in <span class="ansi-cyan-fg">Table._autoload</span><span class="ansi-blue-fg">(self, metadata, autoload_with, include_columns, exclude_columns, resolve_fks, _extend_on)</span>
 <span class="ansi-green-intense-fg ansi-bold">    722</span> insp <span style="color: rgb(98,98,98)">=</span> inspection<span style="color: rgb(98,98,98)">.</span>inspect(autoload_with)
 <span class="ansi-green-intense-fg ansi-bold">    723</span> <span class="ansi-bold" style="color: rgb(0,135,0)">with</span> insp<span style="color: rgb(98,98,98)">.</span>_inspection_context() <span class="ansi-bold" style="color: rgb(0,135,0)">as</span> conn_insp:
 <span class="ansi-green-fg">--&gt; 724</span>     <span class="ansi-yellow-bg">conn_insp</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">reflect_table</span><span class="ansi-yellow-bg">(</span>
@@ -5051,7 +5051,7 @@ File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-pyt
 <span class="ansi-green-intense-fg ansi-bold">    729</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">_extend_on</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">=</span><span class="ansi-yellow-bg">_extend_on</span><span class="ansi-yellow-bg">,</span>
 <span class="ansi-green-intense-fg ansi-bold">    730</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">)</span>
 
-File <span class="ansi-green-fg">/nix/store/krg19sc02q6mxhadx3x56mz3hpjdvbrq-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/engine/reflection.py:789</span>, in <span class="ansi-cyan-fg">Inspector.reflect_table</span><span class="ansi-blue-fg">(self, table, include_columns, exclude_columns, resolve_fks, _extend_on)</span>
+File <span class="ansi-green-fg">/nix/store/7z79s93051yj3181p7vbzfla48yic3kd-python3-3.10.9-env/lib/python3.10/site-packages/sqlalchemy/engine/reflection.py:789</span>, in <span class="ansi-cyan-fg">Inspector.reflect_table</span><span class="ansi-blue-fg">(self, table, include_columns, exclude_columns, resolve_fks, _extend_on)</span>
 <span class="ansi-green-intense-fg ansi-bold">    787</span> <span style="color: rgb(95,135,135)"># NOTE: support tables/views with no columns</span>
 <span class="ansi-green-intense-fg ansi-bold">    788</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> found_table <span class="ansi-bold" style="color: rgb(175,0,255)">and</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>has_table(table_name, schema):
 <span class="ansi-green-fg">--&gt; 789</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> exc<span style="color: rgb(98,98,98)">.</span>NoSuchTableError(table_name)
