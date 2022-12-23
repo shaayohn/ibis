@@ -2445,11 +2445,9 @@ we're going to upcast.</p>
     <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">first</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">schema</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">})</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">second</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">schema</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;int&quot;</span><span class="p">})</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">first</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">second</span><span class="p">)</span>
-<span class="kc">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">first</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">second</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">third</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">schema</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="s2">&quot;array&lt;int&gt;&quot;</span><span class="p">})</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">first</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">third</span><span class="p">)</span>
-<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="ow">not</span> <span class="n">first</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">third</span><span class="p">)</span>
 </code></pre></div>
 
     </div>
