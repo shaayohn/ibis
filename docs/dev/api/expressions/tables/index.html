@@ -3095,7 +3095,7 @@ columns.</p></td>
 
 
 <h4 id="ibis.expr.types.relations.Table.difference" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">difference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">difference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.Table.difference" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
@@ -3117,7 +3117,7 @@ columns.</p></td>
   </thead>
   <tbody>
       <tr>
-        <td><code>*tables</code></td>
+        <td><code>tables</code></td>
         <td><code>Table</code></td>
         <td><p>One or more table expressions</p></td>
         <td><code>()</code></td>
@@ -4041,7 +4041,7 @@ the new columns.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Compute a new table expression using <code>exprs</code>.</p>
+      <p>Compute a new table expression using <code>exprs</code> and <code>named_exprs</code>.</p>
 <p>Passing an aggregate function to this method will broadcast the
 aggregate's value over the number of rows in the table and
 automatically constructs a window function expression. See the examples
@@ -4067,6 +4067,12 @@ in v4.</p>
         <td><p>Column expression, string, or list of column expressions and
 strings.</p></td>
         <td><code>()</code></td>
+      </tr>
+      <tr>
+        <td><code>named_exprs</code></td>
+        <td><code>ir.Value | str</code></td>
+        <td><p>Column expressions</p></td>
+        <td><code>{}</code></td>
       </tr>
   </tbody>
 </table>
@@ -4276,7 +4282,7 @@ Generally this corresponds to some index into the database storage
 
     <div class="doc doc-contents ">
 
-      <p>Compute a new table expression using <code>exprs</code>.</p>
+      <p>Compute a new table expression using <code>exprs</code> and <code>named_exprs</code>.</p>
 <p>Passing an aggregate function to this method will broadcast the
 aggregate's value over the number of rows in the table and
 automatically constructs a window function expression. See the examples
@@ -4302,6 +4308,12 @@ in v4.</p>
         <td><p>Column expression, string, or list of column expressions and
 strings.</p></td>
         <td><code>()</code></td>
+      </tr>
+      <tr>
+        <td><code>named_exprs</code></td>
+        <td><code>ir.Value | str</code></td>
+        <td><p>Column expressions</p></td>
+        <td><code>{}</code></td>
       </tr>
   </tbody>
 </table>

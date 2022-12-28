@@ -2914,7 +2914,7 @@ scalar (if the inputs are Python literals)</p></td>
 
 
 <h2 id="ibis.expr.types.relations.difference" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">difference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">difference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">tables</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">distinct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 
 <a href="#ibis.expr.types.relations.difference" class="headerlink" title="Anchor link to this section for reference">&para;</a></h2>
@@ -2936,7 +2936,7 @@ scalar (if the inputs are Python literals)</p></td>
   </thead>
   <tbody>
       <tr>
-        <td><code>*tables</code></td>
+        <td><code>tables</code></td>
         <td><code>Table</code></td>
         <td><p>One or more table expressions</p></td>
         <td><code>()</code></td>
@@ -4328,6 +4328,12 @@ of fixed types)</p></td>
         <td><code>None</code></td>
         <td><p>The value to use for constructing the timestamp</p></td>
         <td><em>required</em></td>
+      </tr>
+      <tr>
+        <td><code>args</code></td>
+        <td><code>None</code></td>
+        <td><p>Additional arguments used when constructing a timestamp</p></td>
+        <td><code>()</code></td>
       </tr>
       <tr>
         <td><code>timezone</code></td>

@@ -3201,6 +3201,12 @@ details.</p></td>
         <td><p>Path where to store the database data; otherwise uses Spark default</p></td>
         <td><code>None</code></td>
       </tr>
+      <tr>
+        <td><code>force</code></td>
+        <td><code>bool</code></td>
+        <td><p>Whether to append <code>IF EXISTS</code> to the database creation SQL</p></td>
+        <td><code>False</code></td>
+      </tr>
   </tbody>
 </table>
     </div>
@@ -4072,6 +4078,12 @@ immediately.</p>
 "no limit". The default is in <code>ibis/config.py</code>.</p></td>
         <td><code>None</code></td>
       </tr>
+      <tr>
+        <td><code>kwargs</code></td>
+        <td><code>Any</code></td>
+        <td><p>Keyword arguments</p></td>
+        <td><code>{}</code></td>
+      </tr>
   </tbody>
 </table>
 <p><strong>Returns:</strong></p>
@@ -4153,6 +4165,12 @@ immediately.</p>
         <td><code>int</code></td>
         <td><p>Number of rows in each returned record batch.</p></td>
         <td><code>1000000</code></td>
+      </tr>
+      <tr>
+        <td><code>kwargs</code></td>
+        <td><code>Any</code></td>
+        <td><p>Keyword arguments</p></td>
+        <td><code>{}</code></td>
       </tr>
   </tbody>
 </table>

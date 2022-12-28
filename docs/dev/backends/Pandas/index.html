@@ -3500,7 +3500,7 @@ or other equivalent entities in a SQL database.</p>
 
 
 <h5 id="ibis.backends.pandas.Backend.to_pyarrow" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_pyarrow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">to_pyarrow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#ibis.backends.pandas.Backend.to_pyarrow" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
@@ -3543,6 +3543,12 @@ immediately.</p>
         <td><p>An integer to effect a specific row limit. A value of <code>None</code> means
 "no limit". The default is in <code>ibis/config.py</code>.</p></td>
         <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>kwargs</code></td>
+        <td><code>Any</code></td>
+        <td><p>Keyword arguments</p></td>
+        <td><code>{}</code></td>
       </tr>
   </tbody>
 </table>
@@ -3624,6 +3630,12 @@ immediately.</p>
         <td><code>int</code></td>
         <td><p>Number of rows in each returned record batch.</p></td>
         <td><code>1000000</code></td>
+      </tr>
+      <tr>
+        <td><code>kwargs</code></td>
+        <td><code>Any</code></td>
+        <td><p>Keyword arguments</p></td>
+        <td><code>{}</code></td>
       </tr>
   </tbody>
 </table>

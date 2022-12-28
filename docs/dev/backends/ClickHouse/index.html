@@ -2548,6 +2548,18 @@ Default is <code>'lz4'</code> if installed else False.
 True is equivalent to <code>'lz4'</code>.</p></td>
         <td><code>&#39;lz4&#39;</code></td>
       </tr>
+      <tr>
+        <td><code>external_tables</code></td>
+        <td><code>None</code></td>
+        <td><p>External tables that can be used in a query.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>kwargs</code></td>
+        <td><code>Any</code></td>
+        <td><p>Client specific keyword arguments</p></td>
+        <td><code>{}</code></td>
+      </tr>
   </tbody>
 </table>
 <p><strong>Examples:</strong></p>
@@ -3730,6 +3742,12 @@ immediately.</p>
 "no limit". The default is in <code>ibis/config.py</code>.</p></td>
         <td><code>None</code></td>
       </tr>
+      <tr>
+        <td><code>kwargs</code></td>
+        <td><code>Any</code></td>
+        <td><p>Keyword arguments</p></td>
+        <td><code>{}</code></td>
+      </tr>
   </tbody>
 </table>
 <p><strong>Returns:</strong></p>
@@ -3805,6 +3823,12 @@ immediately.</p>
         <td><code>int</code></td>
         <td><p>Number of rows in each returned record batch.</p></td>
         <td><code>1000000</code></td>
+      </tr>
+      <tr>
+        <td><code>kwargs</code></td>
+        <td><code>Any</code></td>
+        <td><p>Keyword arguments</p></td>
+        <td><code>{}</code></td>
       </tr>
   </tbody>
 </table>

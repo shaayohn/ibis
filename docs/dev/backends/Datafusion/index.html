@@ -3268,8 +3268,7 @@ the <code>like</code> pattern if provided.</p></td>
 
     <div class="doc doc-contents ">
 
-      <p>Register a CSV or Parquet file with <code>table_name</code> located at</p>
-<p><code>source</code>.</p>
+      <p>Register a CSV or Parquet file with <code>table_name</code> located at <code>source</code>.</p>
 
 <p><strong>Parameters:</strong></p>
 <table>
@@ -3293,6 +3292,12 @@ the <code>like</code> pattern if provided.</p></td>
         <td><code>str | None</code></td>
         <td><p>The name of the table</p></td>
         <td><code>None</code></td>
+      </tr>
+      <tr>
+        <td><code>kwargs</code></td>
+        <td><code>Any</code></td>
+        <td><p>Datafusion-specific keyword arguments</p></td>
+        <td><code>{}</code></td>
       </tr>
   </tbody>
 </table>
@@ -3414,6 +3419,12 @@ immediately.</p>
 "no limit". The default is in <code>ibis/config.py</code>.</p></td>
         <td><code>None</code></td>
       </tr>
+      <tr>
+        <td><code>kwargs</code></td>
+        <td><code>Any</code></td>
+        <td><p>Keyword arguments</p></td>
+        <td><code>{}</code></td>
+      </tr>
   </tbody>
 </table>
 <p><strong>Returns:</strong></p>
@@ -3491,6 +3502,12 @@ immediately.</p>
         <td><code>int</code></td>
         <td><p>Number of rows in each returned record batch.</p></td>
         <td><code>1000000</code></td>
+      </tr>
+      <tr>
+        <td><code>kwargs</code></td>
+        <td><code>Any</code></td>
+        <td><p>Keyword arguments</p></td>
+        <td><code>{}</code></td>
       </tr>
   </tbody>
 </table>

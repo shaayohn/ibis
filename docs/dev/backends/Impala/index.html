@@ -4286,6 +4286,18 @@ this argument is <code>None</code>, then certificate validation is skipped.</p><
         <td><p>Specify a particular <code>impalad</code> service principal.</p></td>
         <td><code>&#39;impala&#39;</code></td>
       </tr>
+      <tr>
+        <td><code>pool_size</code></td>
+        <td><code>int</code></td>
+        <td><p>Size of the connection pool. Typically this is not necessary to configure.</p></td>
+        <td><code>8</code></td>
+      </tr>
+      <tr>
+        <td><code>hdfs_client</code></td>
+        <td><code>fsspec.spec.AbstractFileSystem | None</code></td>
+        <td><p>An existing HDFS client.</p></td>
+        <td><code>None</code></td>
+      </tr>
   </tbody>
 </table>
 <p><strong>Examples:</strong></p>
@@ -5470,6 +5482,12 @@ partition (year=2007, month=7), this can be either (2007, 7) or
         <td><code>None</code></td>
       </tr>
       <tr>
+        <td><code>values</code></td>
+        <td><code>None</code></td>
+        <td><p>Unsupported and unused</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
         <td><code>validate</code></td>
         <td><code>None</code></td>
         <td><p>If True, do more rigorous validation that schema of table being
@@ -5961,6 +5979,12 @@ generated</p></td>
         <td><code>None</code></td>
         <td><p>Character used to delimit columns</p></td>
         <td><code>&#39;,&#39;</code></td>
+      </tr>
+      <tr>
+        <td><code>na_rep</code></td>
+        <td><code>None</code></td>
+        <td><p>Character used to represent NULL values</p></td>
+        <td><code>None</code></td>
       </tr>
       <tr>
         <td><code>escapechar</code></td>

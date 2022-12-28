@@ -2508,6 +2508,12 @@ for connection parameter information.</p>
         <td><code>&#39;:memory:&#39;</code></td>
       </tr>
       <tr>
+        <td><code>path</code></td>
+        <td><code>str | Path</code></td>
+        <td><p>Deprecated, use <code>database</code> instead.</p></td>
+        <td><code>None</code></td>
+      </tr>
+      <tr>
         <td><code>read_only</code></td>
         <td><code>bool</code></td>
         <td><p>Whether the database is read-only.</p></td>
@@ -3928,7 +3934,7 @@ and types of <code>table</code>.</p>
 
 
 <h5 id="ibis.backends.duckdb.Backend.to_pyarrow" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_pyarrow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">to_pyarrow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#ibis.backends.duckdb.Backend.to_pyarrow" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
@@ -3972,6 +3978,12 @@ immediately.</p>
 "no limit". The default is in <code>ibis/config.py</code>.</p></td>
         <td><code>None</code></td>
       </tr>
+      <tr>
+        <td><code>kwargs</code></td>
+        <td><code>Any</code></td>
+        <td><p>Keyword arguments</p></td>
+        <td><code>{}</code></td>
+      </tr>
   </tbody>
 </table>
 <p><strong>Returns:</strong></p>
@@ -4000,7 +4012,7 @@ immediately.</p>
 
 
 <h5 id="ibis.backends.duckdb.Backend.to_pyarrow_batches" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_pyarrow_batches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">to_pyarrow_batches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
 
 
 <a href="#ibis.backends.duckdb.Backend.to_pyarrow_batches" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
@@ -4050,6 +4062,12 @@ immediately.</p>
         <td><code>int</code></td>
         <td><p>Number of rows in each returned record batch.</p></td>
         <td><code>1000000</code></td>
+      </tr>
+      <tr>
+        <td><code>kwargs</code></td>
+        <td><code>Any</code></td>
+        <td><p>Keyword arguments</p></td>
+        <td><code>{}</code></td>
       </tr>
   </tbody>
 </table>
