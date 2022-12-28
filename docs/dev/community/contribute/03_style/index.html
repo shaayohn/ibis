@@ -1886,17 +1886,13 @@
 
 <h1 id="style-and-formatting">Style and Formatting<a class="headerlink" href="#style-and-formatting" title="Anchor link to this section for reference">&para;</a></h1>
 <h2 id="code-style">Code Style<a class="headerlink" href="#code-style" title="Anchor link to this section for reference">&para;</a></h2>
-<p>The following tools are run in both CI and <code>pre-commit</code> checks to ensure codebase hygiene:</p>
 <ul>
 <li><a href="https://github.com/psf/black"><code>black</code></a>: Formatting Python code</li>
-<li><a href="https://github.com/PyCQA/isort"><code>isort</code></a>: Formatting and sorting <code>import</code> statements</li>
-<li><a href="https://github.com/MarcoGorelli/absolufy-imports"><code>absolufy-imports</code></a>: Automatically convert relative imports to absolute</li>
-<li><a href="https://flake8.pycqa.org/en/latest/"><code>flake8</code></a>: Linting Python code</li>
-<li><a href="https://github.com/Synthetica9/nix-linter"><code>nix-linter</code></a>: Linting nix files</li>
-<li><a href="https://github.com/nix-community/nixpkgs-fmt"><code>nixpkgs-fmt</code></a>: Formatting nix files</li>
+<li><a href="https://github.com/charliermarsh/ruff"><code>ruff</code></a>: Formatting and sorting <code>import</code> statements</li>
 <li><a href="https://github.com/koalaman/shellcheck"><code>shellcheck</code></a>: Linting shell scripts</li>
 <li><a href="https://github.com/mvdan/sh"><code>shfmt</code></a>: Formatting shell scripts</li>
-<li><a href="https://github.com/asottile/pyupgrade"><code>pyupgrade</code></a>: Ensuring the latest available Python syntax is used</li>
+<li><a href="https://github.com/nerdypepper/statix"><code>statix</code></a>: Linting nix files</li>
+<li><a href="https://github.com/nix-community/nixpkgs-fmt"><code>nixpkgs-fmt</code></a>: Formatting nix files</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1910,7 +1906,7 @@ standard format for docstrings.</p>
   <small>
     
       Last update:
-      2022-11-03
+      2022-12-28
     
   </small>
 </div>
