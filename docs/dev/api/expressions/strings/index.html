@@ -1338,6 +1338,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.authority" class="md-nav__link">
+    authority()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.strings.StringValue.capitalize" class="md-nav__link">
     capitalize()
   </a>
@@ -1373,6 +1380,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.file" class="md-nav__link">
+    file()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.strings.StringValue.find" class="md-nav__link">
     find()
   </a>
@@ -1387,8 +1401,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.fragment" class="md-nav__link">
+    fragment()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.strings.StringValue.hashbytes" class="md-nav__link">
     hashbytes()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.host" class="md-nav__link">
+    host()
   </a>
   
 </li>
@@ -1459,6 +1487,27 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.strings.StringValue.parse_url" class="md-nav__link">
     parse_url()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.path" class="md-nav__link">
+    path()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.protocol" class="md-nav__link">
+    protocol()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.query" class="md-nav__link">
+    query()
   </a>
   
 </li>
@@ -1578,6 +1627,13 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.strings.StringValue.upper" class="md-nav__link">
     upper()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.userinfo" class="md-nav__link">
+    userinfo()
   </a>
   
 </li>
@@ -2156,6 +2212,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.authority" class="md-nav__link">
+    authority()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.strings.StringValue.capitalize" class="md-nav__link">
     capitalize()
   </a>
@@ -2191,6 +2254,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.file" class="md-nav__link">
+    file()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.strings.StringValue.find" class="md-nav__link">
     find()
   </a>
@@ -2205,8 +2275,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.fragment" class="md-nav__link">
+    fragment()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ibis.expr.types.strings.StringValue.hashbytes" class="md-nav__link">
     hashbytes()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.host" class="md-nav__link">
+    host()
   </a>
   
 </li>
@@ -2277,6 +2361,27 @@
           <li class="md-nav__item">
   <a href="#ibis.expr.types.strings.StringValue.parse_url" class="md-nav__link">
     parse_url()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.path" class="md-nav__link">
+    path()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.protocol" class="md-nav__link">
+    protocol()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.query" class="md-nav__link">
+    query()
   </a>
   
 </li>
@@ -2400,6 +2505,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ibis.expr.types.strings.StringValue.userinfo" class="md-nav__link">
+    userinfo()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2487,6 +2599,47 @@ StringValue            (<a class="autorefs autorefs-internal" title="ibis.expr.t
     <tr>
       <td><code>ir.IntegerValue</code></td>
       <td><p>ASCII code of the first character of the input</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="ibis.expr.types.strings.StringValue.authority" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">authority</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.strings.StringValue.authority" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Parse a URL and extract authority.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://user:pass@example.com:80/docs/books&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">authority</span><span class="p">()</span>  <span class="c1"># user:pass@example.com:80</span>
+</code></pre></div>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>StringValue</code></td>
+      <td><p>Extracted string value</p></td>
     </tr>
   </tbody>
 </table>
@@ -2769,6 +2922,47 @@ StringValue            (<a class="autorefs autorefs-internal" title="ibis.expr.t
 
 
 
+<h4 id="ibis.expr.types.strings.StringValue.file" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">file</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.strings.StringValue.file" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Parse a URL and extract file.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://example.com:80/docs/books/tutorial/index.html?name=networking&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">authority</span><span class="p">()</span>  <span class="c1"># docs/books/tutorial/index.html?name=networking</span>
+</code></pre></div>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>StringValue</code></td>
+      <td><p>Extracted string value</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
 <h4 id="ibis.expr.types.strings.StringValue.find" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">substr</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
@@ -2898,6 +3092,47 @@ or if <code>self</code> contains <code>','</code>.</p></td>
 
 
 
+<h4 id="ibis.expr.types.strings.StringValue.fragment" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">fragment</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.strings.StringValue.fragment" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Parse a URL and extract fragment identifier.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://example.com:80/docs/#DOWNLOADING&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">fragment</span><span class="p">()</span>  <span class="c1"># DOWNLOADING</span>
+</code></pre></div>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>StringValue</code></td>
+      <td><p>Extracted string value</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
 <h4 id="ibis.expr.types.strings.StringValue.hashbytes" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">hashbytes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;sha256&#39;</span><span class="p">)</span></code>
 
@@ -2939,6 +3174,47 @@ or if <code>self</code> contains <code>','</code>.</p></td>
     <tr>
       <td><code>ir.BinaryValue</code></td>
       <td><p>Binary expression</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="ibis.expr.types.strings.StringValue.host" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">host</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.strings.StringValue.host" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Parse a URL and extract host.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://user:pass@example.com:80/docs/books&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">authority</span><span class="p">()</span>  <span class="c1"># example.com</span>
+</code></pre></div>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>StringValue</code></td>
+      <td><p>Extracted string value</p></td>
     </tr>
   </tbody>
 </table>
@@ -3399,6 +3675,9 @@ the corresponding row in the output is <code>True</code>.</p></td>
     <div class="doc doc-contents ">
 
       <p>Parse a URL and extract its components.</p>
+<div class="admonition warning">
+<p class="admonition-title">DEPRECATED: <code>StringValue.parse_url</code> is deprecated as of v4.0; use .protocol(), .authroity(), .userinfo(), .host(), .file(), .path(), .query(), or .fragment().</p>
+</div>
 <p><code>key</code> can be used to extract query values when <code>extract == 'QUERY'</code></p>
 
 <p><strong>Parameters:</strong></p>
@@ -3414,7 +3693,7 @@ the corresponding row in the output is <code>True</code>.</p></td>
   <tbody>
       <tr>
         <td><code>extract</code></td>
-        <td><code>Literal[&#39;PROTOCOL&#39;, &#39;HOST&#39;, &#39;PATH&#39;, &#39;REF&#39;, &#39;AUTHORITY&#39;, &#39;FILE&#39;, &#39;USERINFO&#39;, &#39;QUERY&#39;]</code></td>
+        <td><code>Literal[&#39;PROTOCOL&#39;, &#39;AUTHORITY&#39;, &#39;USERINFO&#39;, &#39;HOST&#39;, &#39;FILE&#39;, &#39;PATH&#39;, &#39;QUERY&#39;, &#39;REF&#39;]</code></td>
         <td><p>Component of URL to extract</p></td>
         <td><em>required</em></td>
       </tr>
@@ -3430,6 +3709,151 @@ the corresponding row in the output is <code>True</code>.</p></td>
     <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://www.youtube.com/watch?v=kEuEcWfewf8&amp;t=10&quot;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">parse_url</span><span class="p">(</span><span class="s1">&#39;QUERY&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">)</span>  <span class="c1"># kEuEcWfewf</span>
+</code></pre></div>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>StringValue</code></td>
+      <td><p>Extracted string value</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="ibis.expr.types.strings.StringValue.path" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">path</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.strings.StringValue.path" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Parse a URL and extract path.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://example.com:80/docs/books/tutorial/index.html?name=networking&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">authority</span><span class="p">()</span>  <span class="c1"># docs/books/tutorial/index.html</span>
+</code></pre></div>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>StringValue</code></td>
+      <td><p>Extracted string value</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="ibis.expr.types.strings.StringValue.protocol" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">protocol</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.strings.StringValue.protocol" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Parse a URL and extract protocol.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://user:pass@example.com:80/docs/books&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">protocol</span><span class="p">()</span>  <span class="c1"># https</span>
+</code></pre></div>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>StringValue</code></td>
+      <td><p>Extracted string value</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="ibis.expr.types.strings.StringValue.query" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.strings.StringValue.query" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Parse a URL and returns query strring or query string parameter.</p>
+<p>If key is passed, return the value of the query string parameter named.
+If key is absent, return the query string.</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>key</code></td>
+        <td><code>str | StringValue | None</code></td>
+        <td><p>Query component to extract</p></td>
+        <td><code>None</code></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://example.com:80/docs/books/tutorial/index.html?name=networking&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">query</span><span class="p">()</span>  <span class="c1"># name=networking</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">query_name</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>  <span class="c1"># networking</span>
 </code></pre></div>
 
 <p><strong>Returns:</strong></p>
@@ -4391,6 +4815,47 @@ entire string</p></td>
     <tr>
       <td><code>StringValue</code></td>
       <td><p>Uppercase string</p></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="ibis.expr.types.strings.StringValue.userinfo" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">userinfo</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code>
+
+
+<a href="#ibis.expr.types.strings.StringValue.userinfo" class="headerlink" title="Anchor link to this section for reference">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Parse a URL and extract user info.</p>
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">ibis</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">url</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">literal</span><span class="p">(</span><span class="s2">&quot;https://user:pass@example.com:80/docs/books&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">authority</span><span class="p">()</span>  <span class="c1"># user:pass</span>
+</code></pre></div>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>StringValue</code></td>
+      <td><p>Extracted string value</p></td>
     </tr>
   </tbody>
 </table>
