@@ -1994,11 +1994,11 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1"><code>nix-shell</code></label><label for="__tabbed_2_2"><code>nix-env</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>nix-shell -p gh
+<div class="highlight"><pre><span></span><code>nix-shell<span class="w"> </span>-p<span class="w"> </span>gh
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>nix-env -iA gh
+<div class="highlight"><pre><span></span><code>nix-env<span class="w"> </span>-iA<span class="w"> </span>gh
 </code></pre></div>
 </div>
 </div>
@@ -2006,17 +2006,17 @@
 </li>
 <li>
 <p>Fork and clone the ibis repository:</p>
-<div class="highlight"><pre><span></span><code>gh repo fork --clone --remote ibis-project/ibis
+<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>repo<span class="w"> </span>fork<span class="w"> </span>--clone<span class="w"> </span>--remote<span class="w"> </span>ibis-project/ibis
 </code></pre></div>
 </li>
 <li>
 <p>Set up the public <code>ibis</code> Cachix cache to pull pre-built dependencies:</p>
-<div class="highlight"><pre><span></span><code>nix-shell -p cachix --run <span class="s1">&#39;cachix use ibis&#39;</span>
+<div class="highlight"><pre><span></span><code>nix-shell<span class="w"> </span>-p<span class="w"> </span>cachix<span class="w"> </span>--run<span class="w"> </span><span class="s1">&#39;cachix use ibis&#39;</span>
 </code></pre></div>
 </li>
 <li>
 <p>Run <code>nix-shell</code> in the checkout directory:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ibis
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ibis
 nix-shell
 </code></pre></div>
 <p>This may take a while due to artifact download from the cache.</p>
@@ -2076,12 +2076,12 @@ nix-shell
 </li>
 <li>
 <p>Install <code>gh</code></p>
-<div class="highlight"><pre><span></span><code>conda install -c conda-forge gh
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>gh
 </code></pre></div>
 </li>
 <li>
 <p>Fork and clone the ibis repository:</p>
-<div class="highlight"><pre><span></span><code>gh repo fork --clone --remote ibis-project/ibis
+<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>repo<span class="w"> </span>fork<span class="w"> </span>--clone<span class="w"> </span>--remote<span class="w"> </span>ibis-project/ibis
 </code></pre></div>
 </li>
 <li>
@@ -2089,18 +2089,18 @@ nix-shell
 <div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Linux</label><label for="__tabbed_4_2">MacOS</label><label for="__tabbed_4_3">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ibis
-conda create -n ibis-dev --file<span class="o">=</span>conda-lock/linux-64-3.9.lock
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ibis
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>ibis-dev<span class="w"> </span>--file<span class="o">=</span>conda-lock/linux-64-3.9.lock
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ibis
-conda create -n ibis-dev --file<span class="o">=</span>conda-lock/osx-64-3.9.lock
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ibis
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>ibis-dev<span class="w"> </span>--file<span class="o">=</span>conda-lock/osx-64-3.9.lock
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ibis
-conda create -n ibis-dev --file<span class="o">=</span>conda-lock/win-64-3.9.lock
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ibis
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>ibis-dev<span class="w"> </span>--file<span class="o">=</span>conda-lock/win-64-3.9.lock
 </code></pre></div>
 </div>
 </div>
@@ -2108,18 +2108,18 @@ conda create -n ibis-dev --file<span class="o">=</span>conda-lock/win-64-3.9.loc
 </li>
 <li>
 <p>Activate the environment</p>
-<div class="highlight"><pre><span></span><code>conda activate ibis-dev
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>ibis-dev
 </code></pre></div>
 </li>
 <li>
 <p>Install your local copy of <code>ibis</code> into the Conda environment.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ibis
-pip install -e .
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ibis
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </code></pre></div>
 </li>
 <li>
 <p>If you want to run the backend test suite you'll need to install <code>docker-compose</code>:</p>
-<div class="highlight"><pre><span></span><code>conda install docker-compose -c conda-forge
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>docker-compose<span class="w"> </span>-c<span class="w"> </span>conda-forge
 </code></pre></div>
 </li>
 </ol>
@@ -2131,12 +2131,12 @@ pip install -e .
 </li>
 <li>
 <p>Install <code>gh</code></p>
-<div class="highlight"><pre><span></span><code>mamba install -c conda-forge gh
+<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>gh
 </code></pre></div>
 </li>
 <li>
 <p>Fork and clone the ibis repository:</p>
-<div class="highlight"><pre><span></span><code>gh repo fork --clone --remote ibis-project/ibis
+<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>repo<span class="w"> </span>fork<span class="w"> </span>--clone<span class="w"> </span>--remote<span class="w"> </span>ibis-project/ibis
 </code></pre></div>
 </li>
 <li>
@@ -2144,18 +2144,18 @@ pip install -e .
 <div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Linux</label><label for="__tabbed_5_2">MacOS</label><label for="__tabbed_5_3">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ibis
-mamba create -n ibis-dev --file<span class="o">=</span>conda-lock/linux-64-3.9.lock
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ibis
+mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>ibis-dev<span class="w"> </span>--file<span class="o">=</span>conda-lock/linux-64-3.9.lock
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ibis
-mamba create -n ibis-dev --file<span class="o">=</span>conda-lock/osx-64-3.9.lock
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ibis
+mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>ibis-dev<span class="w"> </span>--file<span class="o">=</span>conda-lock/osx-64-3.9.lock
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ibis
-mamba create -n ibis-dev --file<span class="o">=</span>conda-lock/win-64-3.9.lock
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ibis
+mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>ibis-dev<span class="w"> </span>--file<span class="o">=</span>conda-lock/win-64-3.9.lock
 </code></pre></div>
 </div>
 </div>
@@ -2163,18 +2163,18 @@ mamba create -n ibis-dev --file<span class="o">=</span>conda-lock/win-64-3.9.loc
 </li>
 <li>
 <p>Activate the environment</p>
-<div class="highlight"><pre><span></span><code>mamba activate ibis-dev
+<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>activate<span class="w"> </span>ibis-dev
 </code></pre></div>
 </li>
 <li>
 <p>Install your local copy of <code>ibis</code> into the Conda environment.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ibis
-pip install -e .
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ibis
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </code></pre></div>
 </li>
 <li>
 <p>If you want to run the backend test suite you'll need to install <code>docker-compose</code>:</p>
-<div class="highlight"><pre><span></span><code>mamba install docker-compose -c conda-forge
+<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>docker-compose<span class="w"> </span>-c<span class="w"> </span>conda-forge
 </code></pre></div>
 </li>
 </ol>
@@ -2196,23 +2196,23 @@ instructions.</p>
 </li>
 <li>
 <p>Fork and clone the ibis repository:</p>
-<div class="highlight"><pre><span></span><code>gh repo fork --clone --remote ibis-project/ibis
+<div class="highlight"><pre><span></span><code>gh<span class="w"> </span>repo<span class="w"> </span>fork<span class="w"> </span>--clone<span class="w"> </span>--remote<span class="w"> </span>ibis-project/ibis
 </code></pre></div>
 </li>
 <li>
 <p>Change directory into <code>ibis</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ibis
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>ibis
 </code></pre></div>
 </li>
 <li>
 <p>Install development dependencies</p>
-<div class="highlight"><pre><span></span><code>pip install <span class="s1">&#39;poetry&gt;=1.2&#39;</span>
-pip install -r requirements.txt
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;poetry&gt;=1.2&#39;</span>
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </code></pre></div>
 </li>
 <li>
 <p>Install ibis in development mode</p>
-<div class="highlight"><pre><span></span><code>pip install -e .
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </code></pre></div>
 </li>
 </ol>
@@ -2224,7 +2224,7 @@ pip install -r requirements.txt
 <p class="admonition-title">You <strong>must</strong> set up an environment with Nix as above to build the website and docs.</p>
 </div>
 <p>Then, run:</p>
-<div class="highlight"><pre><span></span><code>mkdocs serve
+<div class="highlight"><pre><span></span><code>mkdocs<span class="w"> </span>serve
 </code></pre></div>
 <div class="footnote">
 <hr />

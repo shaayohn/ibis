@@ -4143,15 +4143,15 @@ Impala shell.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">pip</label><label for="__tabbed_1_2">conda</label><label for="__tabbed_1_3">mamba</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>pip install <span class="s1">&#39;ibis-framework[impala]&#39;</span>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s1">&#39;ibis-framework[impala]&#39;</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>conda install -c conda-forge ibis-impala
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-impala
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code>mamba install -c conda-forge ibis-impala
+<div class="highlight"><pre><span></span><code>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ibis-impala
 </code></pre></div>
 </div>
 </div>
@@ -7873,7 +7873,7 @@ to look through your data and read and write files to and from HDFS:</p>
 <p>Suppose we wanted to download
 <code>/__ibis/ibis-testing-data/parquet/functional_alltypes</code>, which is a
 directory. We need only do:</p>
-<div class="highlight"><pre><span></span><code>$ rm -rf parquet_dir/
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>parquet_dir/
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;/__ibis/ibis-testing-data/parquet/functional_alltypes&#39;</span><span class="p">,</span>
 <span class="o">...</span>          <span class="s1">&#39;parquet_dir&#39;</span><span class="p">,</span>
@@ -7881,7 +7881,7 @@ directory. We need only do:</p>
 <span class="s1">&#39;/ibis/docs/source/tutorial/parquet_dir&#39;</span>
 </code></pre></div>
 <p>Now we have that directory locally:</p>
-<div class="highlight"><pre><span></span><code>$ ls parquet_dir/
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>parquet_dir/
 9a41de519352ab07-4e76bc4d9fb5a789_1624886651_data.0.parq
 9a41de519352ab07-4e76bc4d9fb5a78a_778826485_data.0.parq
 9a41de519352ab07-4e76bc4d9fb5a78b_1277612014_data.0.parq
@@ -7899,7 +7899,7 @@ directory. We need only do:</p>
 <p>Delete files and directories with <code>rm</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span><span class="o">.</span><span class="n">rm</span><span class="p">(</span><span class="s1">&#39;/__ibis/dir-write-example&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>rm -rf parquet_dir/
+<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>parquet_dir/
 </code></pre></div>
 <h2 id="queries-on-parquet-avro-and-delimited-files-in-hdfs">Queries on Parquet, Avro, and Delimited files in HDFS<a class="headerlink" href="#queries-on-parquet-avro-and-delimited-files-in-hdfs" title="Anchor link to this section for reference">&para;</a></h2>
 <p>Ibis can easily create temporary or persistent Impala tables that
@@ -7954,7 +7954,7 @@ for you, all in good time.</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">hdfs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;/__ibis/ibis-testing-data/csv&#39;</span><span class="p">,</span> <span class="s1">&#39;csv-files&#39;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="s1">&#39;/ibis/docs/source/tutorial/csv-files&#39;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>$ cat csv-files/0.csv
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>csv-files/0.csv
 63IEbRheTh,0.679388707915,6
 mG4hlqnjeG,2.80710565922,15
 JTPdX9SZH5,-0.155126406372,55
@@ -7966,7 +7966,7 @@ znsDuKOB1n,-0.566029637098,47
 4SRP9jlo1M,0.331460412318,88
 KsfjPyDf5e,-0.578930506363,70
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>$ rm -rf csv-files/
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>csv-files/
 </code></pre></div>
 <p>The schema here is pretty simple (see <code>ibis.schema</code> for more):</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">schema</span> <span class="o">=</span> <span class="n">ibis</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span>
@@ -8088,14 +8088,14 @@ may significantly speed up queries on smaller datasets:</p>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">con</span><span class="o">.</span><span class="n">disable_codegen</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s1">&#39;ibis_testing.functional_alltypes&#39;</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">time</span> python -c <span class="s2">&quot;(t.double_col + rand()).sum().execute()&quot;</span>
-<span class="m">27</span>.7 ms ± <span class="m">996</span> µs per loop <span class="o">(</span>mean ± std. dev. of <span class="m">7</span> runs, <span class="m">10</span> loops each<span class="o">)</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;(t.double_col + rand()).sum().execute()&quot;</span>
+<span class="m">27</span>.7<span class="w"> </span>ms<span class="w"> </span>±<span class="w"> </span><span class="m">996</span><span class="w"> </span>µs<span class="w"> </span>per<span class="w"> </span>loop<span class="w"> </span><span class="o">(</span>mean<span class="w"> </span>±<span class="w"> </span>std.<span class="w"> </span>dev.<span class="w"> </span>of<span class="w"> </span><span class="m">7</span><span class="w"> </span>runs,<span class="w"> </span><span class="m">10</span><span class="w"> </span>loops<span class="w"> </span>each<span class="o">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># Turn codegen back on</span>
 <span class="n">con</span><span class="o">.</span><span class="n">disable_codegen</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">time</span> python -c <span class="s2">&quot;(t.double_col + rand()).sum().execute()&quot;</span>
-<span class="m">27</span> ms ± <span class="m">1</span>.62 ms per loop <span class="o">(</span>mean ± std. dev. of <span class="m">7</span> runs, <span class="m">10</span> loops each<span class="o">)</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">time</span><span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;(t.double_col + rand()).sum().execute()&quot;</span>
+<span class="m">27</span><span class="w"> </span>ms<span class="w"> </span>±<span class="w"> </span><span class="m">1</span>.62<span class="w"> </span>ms<span class="w"> </span>per<span class="w"> </span>loop<span class="w"> </span><span class="o">(</span>mean<span class="w"> </span>±<span class="w"> </span>std.<span class="w"> </span>dev.<span class="w"> </span>of<span class="w"> </span><span class="m">7</span><span class="w"> </span>runs,<span class="w"> </span><span class="m">10</span><span class="w"> </span>loops<span class="w"> </span>each<span class="o">)</span>
 </code></pre></div>
 <p>It's important to remember that codegen is a fixed overhead and will
 significantly speed up queries on big data</p>
@@ -8108,17 +8108,17 @@ a C++ extension API.</p>
 <p>Let's take an example to illustrate how to make a C++ UDF available to
 Ibis. Here is a function that computes an approximate equality between
 floating point values:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;impala_udf/udf.h&quot;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;impala_udf/udf.h&quot;</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cctype&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cctype&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cmath&gt;</span>
 
-<span class="n">BooleanVal</span><span class="w"> </span><span class="nf">FuzzyEquals</span><span class="p">(</span><span class="n">FunctionContext</span><span class="o">*</span><span class="w"> </span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">DoubleVal</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">DoubleVal</span><span class="o">&amp;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">EPSILON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.000001f</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">is_null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">is_null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">BooleanVal</span><span class="o">::</span><span class="n">null</span><span class="p">();</span><span class="w"></span>
-<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fabs</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">val</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">val</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">BooleanVal</span><span class="p">(</span><span class="n">delta</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">EPSILON</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="n">BooleanVal</span><span class="w"> </span><span class="nf">FuzzyEquals</span><span class="p">(</span><span class="n">FunctionContext</span><span class="o">*</span><span class="w"> </span><span class="n">ctx</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">DoubleVal</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">DoubleVal</span><span class="o">&amp;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">EPSILON</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.000001f</span><span class="p">;</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">is_null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">is_null</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">BooleanVal</span><span class="o">::</span><span class="n">null</span><span class="p">();</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">delta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fabs</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">val</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">val</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">BooleanVal</span><span class="p">(</span><span class="n">delta</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">EPSILON</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>You can compile this to either a shared library (a <code>.so</code> file) or to
 LLVM bitcode with clang (a <code>.ll</code> file). Skipping that step for now (will
@@ -8172,7 +8172,7 @@ your Ibis session to plug in all your own functions.</p>
 <p>Ibis is compatible with Hadoop clusters that are secured with Kerberos (as well
 as SSL and LDAP). Note that to enable this support, you'll also need to install
 the <code>kerberos</code> package.</p>
-<div class="highlight"><pre><span></span><code>$ pip install kerberos
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>kerberos
 </code></pre></div>
 <p>Just like the Impala shell and ODBC/JDBC connectors, Ibis connects to Impala
 through the HiveServer2 interface (using the impyla client). Therefore, the

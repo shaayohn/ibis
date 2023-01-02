@@ -3774,8 +3774,8 @@ t</div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>In SQL, you might write something like:</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">two</span><span class="p">,</span><span class="w"> </span><span class="n">one</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">my_data</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">two</span><span class="p">,</span><span class="w"> </span><span class="n">one</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">my_data</span>
 </pre></div>
 <p>In Ibis, this is</p>
 
@@ -3935,8 +3935,8 @@ FROM my_data
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>What about adding new columns? To form a valid projection, all column
 expressions must be <strong>named</strong>. Let's look at the SQL:</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">two</span><span class="p">,</span><span class="w"> </span><span class="n">one</span><span class="p">,</span><span class="w"> </span><span class="n">three</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">new_col</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">my_data</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">two</span><span class="p">,</span><span class="w"> </span><span class="n">one</span><span class="p">,</span><span class="w"> </span><span class="n">three</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">new_col</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">my_data</span>
 </pre></div>
 <p>The last expression is written:</p>
 
@@ -4425,10 +4425,10 @@ FROM my_data
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Now let's take the SQL:</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">two</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">diff</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">my_data</span><span class="w"> </span><span class="n">t0</span><span class="w"></span>
-<span class="w">  </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">dim_table</span><span class="w"> </span><span class="n">t1</span><span class="w"></span>
-<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">one</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="k">key</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">two</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">diff</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">my_data</span><span class="w"> </span><span class="n">t0</span>
+<span class="w">  </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">dim_table</span><span class="w"> </span><span class="n">t1</span>
+<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">one</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="k">key</span>
 </pre></div>
 <p>To write this with Ibis, it is:</p>
 
@@ -4550,13 +4550,13 @@ FROM my_data t0
 projection context, it will be invoked with the "parent" table as its
 argument. This can help significantly when [composing complex operations.
 Consider this SQL:</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">one</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="k">abs</span><span class="p">(</span><span class="n">the_sum</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">mad</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">one</span><span class="p">,</span><span class="w"> </span><span class="n">three</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">two</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">the_sum</span><span class="w"></span>
-<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">my_data</span><span class="w"></span>
-<span class="w">  </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
-<span class="p">)</span><span class="w"> </span><span class="n">t0</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">one</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="k">abs</span><span class="p">(</span><span class="n">the_sum</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">mad</span>
+<span class="k">FROM</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">one</span><span class="p">,</span><span class="w"> </span><span class="n">three</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">two</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">the_sum</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">my_data</span>
+<span class="w">  </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+<span class="p">)</span><span class="w"> </span><span class="n">t0</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span>
 </pre></div>
 <p>This can be written as one chained expression:</p>
 
@@ -5404,19 +5404,19 @@ gender, and nationality:</p>
 <li>Total number of persons</li>
 </ul>
 <p>In SQL, you may write:</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">country</span><span class="p">,</span><span class="w"></span>
-<span class="w">       </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">num_persons</span><span class="p">,</span><span class="w"></span>
-<span class="w">       </span><span class="k">AVG</span><span class="p">(</span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_age</span><span class="w"></span>
-<span class="w">       </span><span class="k">AVG</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">gender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;M&#39;</span><span class="w"></span>
-<span class="w">             </span><span class="k">THEN</span><span class="w"> </span><span class="n">age</span><span class="w"></span>
-<span class="w">             </span><span class="k">ELSE</span><span class="w"> </span><span class="k">NULL</span><span class="w"></span>
-<span class="w">           </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_male</span><span class="p">,</span><span class="w"></span>
-<span class="w">       </span><span class="k">AVG</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">gender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;F&#39;</span><span class="w"></span>
-<span class="w">             </span><span class="k">THEN</span><span class="w"> </span><span class="n">age</span><span class="w"></span>
-<span class="w">             </span><span class="k">ELSE</span><span class="w"> </span><span class="k">NULL</span><span class="w"></span>
-<span class="w">           </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_female</span><span class="p">,</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">population</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">country</span><span class="p">,</span>
+<span class="w">       </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">num_persons</span><span class="p">,</span>
+<span class="w">       </span><span class="k">AVG</span><span class="p">(</span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_age</span>
+<span class="w">       </span><span class="k">AVG</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">gender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;M&#39;</span>
+<span class="w">             </span><span class="k">THEN</span><span class="w"> </span><span class="n">age</span>
+<span class="w">             </span><span class="k">ELSE</span><span class="w"> </span><span class="k">NULL</span>
+<span class="w">           </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_male</span><span class="p">,</span>
+<span class="w">       </span><span class="k">AVG</span><span class="p">(</span><span class="k">CASE</span><span class="w"> </span><span class="k">WHEN</span><span class="w"> </span><span class="n">gender</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;F&#39;</span>
+<span class="w">             </span><span class="k">THEN</span><span class="w"> </span><span class="n">age</span>
+<span class="w">             </span><span class="k">ELSE</span><span class="w"> </span><span class="k">NULL</span>
+<span class="w">           </span><span class="k">END</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_female</span><span class="p">,</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">population</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span>
 </pre></div>
 <p>Ibis makes this much simpler by giving you <code>where</code> option in aggregation
 functions:</p>
@@ -5620,9 +5620,9 @@ GROUP BY 1, 2
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="frequency-table-convenience-value_counts">Frequency table convenience: <code>value_counts</code><a class="anchor-link" href="#frequency-table-convenience-value_counts">&#182;</a></h3><p>Consider the SQL idiom:</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">some_column_expression</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="k">table</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">some_column_expression</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<span class="k">FROM</span><span class="w"> </span><span class="k">table</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span>
 </pre></div>
 <p>This is so common that, like pandas, there is a generic array method
 <code>value_counts</code> which does this for us:</p>
@@ -5703,10 +5703,10 @@ GROUP BY 1
 aggregation based on some group-wise condition holding true. For
 example, suppose we wanted to limit our analysis to groups containing at
 least 1000 observations:</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">one</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">two</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">my_data</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="k">HAVING</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1000</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">one</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">two</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">my_data</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span>
+<span class="k">HAVING</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1000</span>
 </pre></div>
 <p>With Ibis, you can do:</p>
 
@@ -6168,11 +6168,11 @@ FROM my_data
 <h3 id="case-statements"><code>CASE</code> statements<a class="anchor-link" href="#case-statements">&#182;</a></h3><p>SQL dialects typically support one or more kind of <code>CASE</code> statements.
 The first is the <em>simple case</em> that compares against exact values of an
 expression.</p>
-<div class="highlight"><pre><span></span><span class="k">CASE</span><span class="w"> </span><span class="n">expr</span><span class="w"></span>
-<span class="w">  </span><span class="k">WHEN</span><span class="w"> </span><span class="n">value_1</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">result_1</span><span class="w"></span>
-<span class="w">  </span><span class="k">WHEN</span><span class="w"> </span><span class="n">value_2</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">result_2</span><span class="w"></span>
-<span class="w">  </span><span class="k">ELSE</span><span class="w"> </span><span class="k">default</span><span class="w"></span>
-<span class="k">END</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">CASE</span><span class="w"> </span><span class="n">expr</span>
+<span class="w">  </span><span class="k">WHEN</span><span class="w"> </span><span class="n">value_1</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">result_1</span>
+<span class="w">  </span><span class="k">WHEN</span><span class="w"> </span><span class="n">value_2</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">result_2</span>
+<span class="w">  </span><span class="k">ELSE</span><span class="w"> </span><span class="k">default</span>
+<span class="k">END</span>
 </pre></div>
 <p>Value expressions in Ibis have a <code>case</code> method that allows us to emulate
 these semantics:</p>
@@ -6272,12 +6272,12 @@ FROM my_data
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>The more general case is that of an arbitrary list of boolean
 expressions and result values:</p>
-<div class="highlight"><pre><span></span><span class="k">CASE</span><span class="w"></span>
-<span class="w">  </span><span class="k">WHEN</span><span class="w"> </span><span class="n">boolean_expr1</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">result_1</span><span class="w"></span>
-<span class="w">  </span><span class="k">WHEN</span><span class="w"> </span><span class="n">boolean_expr2</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">result_2</span><span class="w"></span>
-<span class="w">  </span><span class="k">WHEN</span><span class="w"> </span><span class="n">boolean_expr3</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">result_3</span><span class="w"></span>
-<span class="w">  </span><span class="k">ELSE</span><span class="w"> </span><span class="k">default</span><span class="w"></span>
-<span class="k">END</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">CASE</span>
+<span class="w">  </span><span class="k">WHEN</span><span class="w"> </span><span class="n">boolean_expr1</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">result_1</span>
+<span class="w">  </span><span class="k">WHEN</span><span class="w"> </span><span class="n">boolean_expr2</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">result_2</span>
+<span class="w">  </span><span class="k">WHEN</span><span class="w"> </span><span class="n">boolean_expr3</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">result_3</span>
+<span class="w">  </span><span class="k">ELSE</span><span class="w"> </span><span class="k">default</span>
+<span class="k">END</span>
 </pre></div>
 <p>To do this, use <code>ibis.case</code>:</p>
 
@@ -6519,11 +6519,11 @@ FROM my_data
 <h3 id="set-membership-in-not-in">Set membership: <code>IN</code> / <code>NOT IN</code><a class="anchor-link" href="#set-membership-in-not-in">&#182;</a></h3><p>Let's look again at the population dataset. Suppose you wanted to
 combine the United States and Canada data into a "North America"
 category. Here would be some SQL to do it:</p>
-<div class="highlight"><pre><span></span><span class="k">CASE</span><span class="w"></span>
-<span class="w">  </span><span class="k">WHEN</span><span class="w"> </span><span class="k">upper</span><span class="p">(</span><span class="n">country</span><span class="p">)</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;UNITED STATES&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;CANADA&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;North America&#39;</span><span class="w"></span>
-<span class="w">  </span><span class="k">ELSE</span><span class="w"> </span><span class="n">country</span><span class="w"></span>
-<span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">refined_group</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">CASE</span>
+<span class="w">  </span><span class="k">WHEN</span><span class="w"> </span><span class="k">upper</span><span class="p">(</span><span class="n">country</span><span class="p">)</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;UNITED STATES&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;CANADA&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;North America&#39;</span>
+<span class="w">  </span><span class="k">ELSE</span><span class="w"> </span><span class="n">country</span>
+<span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">refined_group</span>
 </pre></div>
 <p>The Ibis equivalent of <code>IN</code> is the <code>isin</code> method. So we can write:</p>
 
@@ -6610,10 +6610,10 @@ FROM population
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>The opposite of <code>isin</code> is <code>notin</code>.</p>
 <h3 id="constant-and-literal-expressions">Constant and literal expressions<a class="anchor-link" href="#constant-and-literal-expressions">&#182;</a></h3><p>Consider a SQL expression like:</p>
-<div class="highlight"><pre><span></span><span class="s1">&#39;foo&#39;</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="n">column1</span><span class="p">,</span><span class="w"> </span><span class="n">column2</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="s1">&#39;foo&#39;</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="n">column1</span><span class="p">,</span><span class="w"> </span><span class="n">column2</span><span class="p">)</span>
 </pre></div>
 <p>which is equivalent to</p>
-<div class="highlight"><pre><span></span><span class="n">column1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;foo&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">column2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;foo&#39;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="n">column1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;foo&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">column2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;foo&#39;</span>
 </pre></div>
 <p>To build expressions off constant values, you must first convert the
 value (whether a Python string or number) to an Ibis expression using
@@ -7105,10 +7105,10 @@ t2 = ibis.table(
 determined by the next action that you take. There's several ways
 forward from here that address the spectrum of SQL use cases.</p>
 <h3 id="join-projection">Join + projection<a class="anchor-link" href="#join-projection">&#182;</a></h3><p>Consider the SQL:</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">value2</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span><span class="w"> </span><span class="n">t0</span><span class="w"></span>
-<span class="w">  </span><span class="k">LEFT</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">table2</span><span class="w"> </span><span class="n">t1</span><span class="w"></span>
-<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">key1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">key3</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">value2</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span><span class="w"> </span><span class="n">t0</span>
+<span class="w">  </span><span class="k">LEFT</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">table2</span><span class="w"> </span><span class="n">t1</span>
+<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">key1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">key3</span>
 </pre></div>
 <p>After one or more joins, you can reference any of the joined tables in a
 projection immediately after:</p>
@@ -7260,11 +7260,11 @@ FROM table1 t0
 also allows you to form statistics that reference any of the joined
 tables.</p>
 <p>Consider this SQL:</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">key1</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">t0</span><span class="p">.</span><span class="n">value1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">value2</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_diff</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span><span class="w"> </span><span class="n">t0</span><span class="w"></span>
-<span class="w">  </span><span class="k">LEFT</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">table2</span><span class="w"> </span><span class="n">t1</span><span class="w"></span>
-<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">key1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">key3</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">key1</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">t0</span><span class="p">.</span><span class="n">value1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">value2</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">avg_diff</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span><span class="w"> </span><span class="n">t0</span>
+<span class="w">  </span><span class="k">LEFT</span><span class="w"> </span><span class="k">OUTER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">table2</span><span class="w"> </span><span class="n">t1</span>
+<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">key1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">key3</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span>
 </pre></div>
 <p>As you would hope, the code is as follows:</p>
 
@@ -7517,11 +7517,11 @@ GROUP BY 1, 2
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="self-joins">Self joins<a class="anchor-link" href="#self-joins">&#182;</a></h3><p>What about when you need to join a table on itself? For example:</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">one</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">t0</span><span class="p">.</span><span class="n">two</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">three</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">metric</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">my_data</span><span class="w"> </span><span class="n">t0</span><span class="w"></span>
-<span class="w">  </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">my_data</span><span class="w"> </span><span class="n">t1</span><span class="w"></span>
-<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">one</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">one</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">one</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">t0</span><span class="p">.</span><span class="n">two</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">three</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">metric</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">my_data</span><span class="w"> </span><span class="n">t0</span>
+<span class="w">  </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">my_data</span><span class="w"> </span><span class="n">t1</span>
+<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">one</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">one</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span>
 </pre></div>
 <p>The table <code>view</code> method enables you to form a <em>self-reference</em> that is
 referentially distinct in expressions. Now you can proceed normally:</p>
@@ -8059,13 +8059,13 @@ purchases = ibis.table(
 let's say you want to limit your analysis of the <code>events</code> table to only
 sessions by users who have made a purchase.</p>
 <p>In SQL, you can do this using the somewhat esoteric <code>EXISTS</code> construct:</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="n">t0</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">purchases</span><span class="w"> </span><span class="n">t1</span><span class="w"></span>
-<span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">user_id</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">events</span><span class="w"> </span><span class="n">t0</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">purchases</span><span class="w"> </span><span class="n">t1</span>
+<span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">user_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">user_id</span>
+<span class="p">)</span>
 </pre></div>
 <p>To describe this operation in Ibis, you compare the <code>user_id</code> columns
 and use the <code>any</code> reduction:</p>
@@ -8265,12 +8265,12 @@ WHERE NOT EXISTS (
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="subqueries-with-in-not-in">Subqueries with <code>IN</code> / <code>NOT IN</code><a class="anchor-link" href="#subqueries-with-in-not-in">&#182;</a></h3><p>Subquery filters with <code>IN</code> (and <code>NOT IN</code>) are functionally similar to
 <code>EXISTS</code> subqueries. Let's look at some SQL:</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">events</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">user_id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">user_id</span><span class="w"></span>
-<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">purchases</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">events</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">user_id</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="n">user_id</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">purchases</span>
+<span class="p">)</span>
 </pre></div>
 <p>This is almost semantically the same as the <code>EXISTS</code> example. Indeed,
 you can write with Ibis:</p>
@@ -8354,12 +8354,12 @@ rewrite <code>IN</code> or <code>EXISTS</code> subqueries into the same set of r
 algebra operations.</p>
 <h3 id="comparison-with-scalar-aggregates">Comparison with scalar aggregates<a class="anchor-link" href="#comparison-with-scalar-aggregates">&#182;</a></h3><p>Sometime you want to compare a value with an unconditional aggregate
 value from a different table. Take the SQL:</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">value1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="k">max</span><span class="p">(</span><span class="n">value2</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">table2</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">value1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="k">max</span><span class="p">(</span><span class="n">value2</span><span class="p">)</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">table2</span>
+<span class="p">)</span>
 </pre></div>
 <p>With Ibis, the code is simpler and more pandas-like:</p>
 
@@ -8437,13 +8437,13 @@ WHERE `value1` &gt; (
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="conditional-aggregates">Conditional aggregates<a class="anchor-link" href="#conditional-aggregates">&#182;</a></h3><p>Suppose you want to compare a value with the aggregate value for some
 common group values between two tables. Here's some SQL:</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span><span class="w"> </span><span class="n">t0</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">value1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">value2</span><span class="p">)</span><span class="w"></span>
-<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">table2</span><span class="w"> </span><span class="n">t1</span><span class="w"></span>
-<span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">key1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">key3</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span><span class="w"> </span><span class="n">t0</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">value1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="k">SELECT</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">value2</span><span class="p">)</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">table2</span><span class="w"> </span><span class="n">t1</span>
+<span class="w">  </span><span class="k">WHERE</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">key1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">key3</span>
+<span class="p">)</span>
 </pre></div>
 <p>This query computes the average for each distinct value of <code>key3</code> and
 uses the corresponding average for the comparison, rather than the
@@ -8534,8 +8534,8 @@ WHERE t0.`value1` &gt; (
 <p>Ibis supports both use cases. So let's have a look. The first case is
 the simplest: call <code>distinct</code> on a table expression. First, here's the
 SQL:</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="o">*</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span>
 </pre></div>
 <p>And the Ibis Python code:</p>
 
@@ -8611,9 +8611,9 @@ FROM table1
 which computes the number of unique values in an expression. So if
 we're looking at the <code>events</code> table, let's compute the number of
 distinct <code>event_type</code> values for each <code>user_id</code>. First, the SQL:</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">user_id</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">event_type</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">unique_events</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">events</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">user_id</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">event_type</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">unique_events</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">events</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span>
 </pre></div>
 <p>In Ibis this is:</p>
 
@@ -8700,10 +8700,10 @@ functions, and there are additional ones such as <code>LEAD</code>, <code>LAG</c
 <li>A window frame clause. The default is to use the entire partition.</li>
 </ul>
 <p>So you may see SQL like:</p>
-<div class="highlight"><pre><span></span><span class="k">AVG</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">key1</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">AVG</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">(</span><span class="n">PARTITION</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">key1</span><span class="p">)</span>
 </pre></div>
 <p>Or simply</p>
-<div class="highlight"><pre><span></span><span class="k">AVG</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">()</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">AVG</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="n">OVER</span><span class="w"> </span><span class="p">()</span>
 </pre></div>
 <p>Ibis will automatically write window clauses when you use aggregate
 functions in a non-aggregate context. Suppose you wanted to subtract the
@@ -9008,11 +9008,11 @@ FROM my_data
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="top-k-operations">Top-K operations<a class="anchor-link" href="#top-k-operations">&#182;</a></h2><p>A common SQL idiom is the "top-K" or "top-N" operation: subsetting a
 dimension by aggregate statistics:</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">key1</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="o">`</span><span class="k">count</span><span class="o">`</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span><span class="w"></span>
-<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
-<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="o">`</span><span class="k">count</span><span class="o">`</span><span class="w"> </span><span class="k">DESC</span><span class="w"></span>
-<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">key1</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="o">`</span><span class="k">count</span><span class="o">`</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span>
+<span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="o">`</span><span class="k">count</span><span class="o">`</span><span class="w"> </span><span class="k">DESC</span>
+<span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span>
 </pre></div>
 <p>Ibis has a special analytic expression <code>topk</code>:</p>
 
@@ -9376,16 +9376,16 @@ LIMIT 10 OFFSET 10
 queries featuring them can be ported to Ibis.</p>
 <h3 id="common-table-expressions-ctes">Common table expressions (CTEs)<a class="anchor-link" href="#common-table-expressions-ctes">&#182;</a></h3><p>The simplest SQL CTE is a SQL statement that is used multiple times in a
 <code>SELECT</code> query, which can be "factored" out using the <code>WITH</code> keyword:</p>
-<div class="highlight"><pre><span></span><span class="k">WITH</span><span class="w"> </span><span class="n">t0</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span><span class="w"></span>
-<span class="w">   </span><span class="k">SELECT</span><span class="w"> </span><span class="n">region</span><span class="p">,</span><span class="w"> </span><span class="n">kind</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total</span><span class="w"></span>
-<span class="w">   </span><span class="k">FROM</span><span class="w"> </span><span class="n">purchases</span><span class="w"></span>
-<span class="w">   </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
-<span class="p">)</span><span class="w"></span>
-<span class="k">SELECT</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">region</span><span class="p">,</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">total</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">total</span><span class="w"></span>
-<span class="k">FROM</span><span class="w"> </span><span class="n">t0</span><span class="w"></span>
-<span class="w">  </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">t0</span><span class="w"> </span><span class="n">t1</span><span class="w"></span>
-<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">region</span><span class="w"></span>
-<span class="k">WHERE</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;foo&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;bar&#39;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">WITH</span><span class="w"> </span><span class="n">t0</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span>
+<span class="w">   </span><span class="k">SELECT</span><span class="w"> </span><span class="n">region</span><span class="p">,</span><span class="w"> </span><span class="n">kind</span><span class="p">,</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">total</span>
+<span class="w">   </span><span class="k">FROM</span><span class="w"> </span><span class="n">purchases</span>
+<span class="w">   </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span>
+<span class="p">)</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">region</span><span class="p">,</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">total</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">total</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">t0</span>
+<span class="w">  </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">t0</span><span class="w"> </span><span class="n">t1</span>
+<span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">region</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">t0</span><span class="p">.</span><span class="n">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;foo&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">t1</span><span class="p">.</span><span class="n">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;bar&#39;</span>
 </pre></div>
 <p>Explicit CTEs are not necessary with Ibis. Let's look at an example
 involving joining an aggregated table on itself after filtering:</p>
