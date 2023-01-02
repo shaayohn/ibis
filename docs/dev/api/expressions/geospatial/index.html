@@ -2924,10 +2924,8 @@ GeoSpatialValue            (<a class="autorefs autorefs-internal" title="ibis.ex
 
     <div class="doc doc-contents ">
 
-      <p>Return the angle in radians from the horizontal of the vector</p>
-<p>defined by <code>self</code> and <code>right</code>.</p>
-<p>Angle is computed clockwise from down-to-up on the clock:
-12=0; 3=PI/2; 6=PI; 9=3PI/2.</p>
+      <p>Return the angle in radians from the horizontal of the vector defined by the inputs.</p>
+<p>Angle is computed clockwise from down-to-up on the clock: 12=0; 3=PI/2; 6=PI; 9=3PI/2.</p>
 
 <p><strong>Parameters:</strong></p>
 <table>
@@ -2981,9 +2979,8 @@ GeoSpatialValue            (<a class="autorefs autorefs-internal" title="ibis.ex
 
     <div class="doc doc-contents ">
 
-      <p>Returns a geometry that represents all points whose distance from</p>
-<p>this Geometry is less than or equal to distance. Calculations are in
-the Spatial Reference System of this Geometry.</p>
+      <p>Return all points whose distance from this geometry is less than or equal to <code>radius</code>.</p>
+<p>Calculations are in the Spatial Reference System of this Geometry.</p>
 
 <p><strong>Parameters:</strong></p>
 <table>
@@ -4177,8 +4174,7 @@ This only works with linestrings.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Returns the 2-dimensional maximum distance between two geometries in</p>
-<p>projected units.</p>
+      <p>Returns the 2-dimensional max distance between two geometries in projected units.</p>
 <p>If <code>self</code> and <code>right</code> are the same geometry the function will return
 the distance between the two vertices most far from each other in that
 geometry.</p>
@@ -4362,8 +4358,7 @@ are in the same order.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Check if the geometries share space, have the same dimension, and</p>
-<p>are not completely contained by each other.</p>
+      <p>Check if the geometries share space, have the same dimension, and are not completely contained by each other.</p>
 
 <p><strong>Parameters:</strong></p>
 <table>
@@ -4694,8 +4689,7 @@ the geometry.</p>
 
     <div class="doc doc-contents ">
 
-      <p>Check if the geometries have at least one point in common, but do</p>
-<p>not intersect.</p>
+      <p>Check if the geometries have at least one point in common, but do not intersect.</p>
 
 <p><strong>Parameters:</strong></p>
 <table>

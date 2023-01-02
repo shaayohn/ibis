@@ -3776,15 +3776,14 @@ immediately.</p>
 
 
 <h5 id="ibis.backends.clickhouse.Backend.to_pyarrow_batches" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">to_pyarrow_batches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+<code class="highlight language-python"><span class="n">to_pyarrow_batches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expr</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="o">**</span><span class="n">_</span><span class="p">)</span></code>
 
 
 <a href="#ibis.backends.clickhouse.Backend.to_pyarrow_batches" class="headerlink" title="Anchor link to this section for reference">&para;</a></h5>
 
     <div class="doc doc-contents ">
 
-      <p>Execute expression and return results in an iterator of pyarrow</p>
-<p>record batches.</p>
+      <p>Execute expression and return an iterator of pyarrow record batches.</p>
 <p>This method is eager and will execute the associated expression
 immediately.</p>
 
@@ -3823,12 +3822,6 @@ immediately.</p>
         <td><code>int</code></td>
         <td><p>Number of rows in each returned record batch.</p></td>
         <td><code>1000000</code></td>
-      </tr>
-      <tr>
-        <td><code>kwargs</code></td>
-        <td><code>Any</code></td>
-        <td><p>Keyword arguments</p></td>
-        <td><code>{}</code></td>
       </tr>
   </tbody>
 </table>
