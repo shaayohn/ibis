@@ -194,22 +194,22 @@ def bq_param_date(_: dt.Date, value, name):
 
 
 class BigQueryTable(ops.DatabaseTable):
-    @property
-    def bq_table(self):
+    @functools.cached_property
+    def _bq_table(self):
         """get the google bigquery Table object for easy reference"""
         return self.source.client.get_table(self.name)
 
     @property
     def is_time_partitioned(self):
         """check whether the table is partitioned on time"""
-        return self.bq_table.time_partitioning is not None
+        return self._bq_table.time_partitioning is not None
 
-    @property
+    @functools.cached_property
     def time_partitions(self):
         """check whether the table is partitioned on time"""
         if self.is_time_partitioned:
-            partition_type = self.bq_table.time_partitioning.type_
-            partitions = self.source.client.list_partitions(self.bq_table)
+            partition_type = self._bq_table.time_partitioning.type_
+            partitions = self.source.client.list_partitions(self._bq_table)
         else:
             return None 
 
@@ -238,9 +238,13 @@ class BigQueryTable(ops.DatabaseTable):
     @property
     def time_partition_column(self):
         if self.is_time_partitioned:
-            return self.bq_table.time_partitioning.field
+            return self._bq_table.time_partitioning.field
         else:
             return None
+
+    @property
+    def num_rows(self):
+        return self._bq_table.num_rows
 
 
 def rename_partitioned_column(table_expr, bq_table, partition_col):
