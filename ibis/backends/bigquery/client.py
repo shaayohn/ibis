@@ -194,7 +194,57 @@ def bq_param_date(_: dt.Date, value, name):
 
 
 class BigQueryTable(ops.DatabaseTable):
-    pass
+    @functools.cached_property
+    def _bq_table(self):
+        """get the google bigquery Table object for easy reference"""
+        return self.source.client.get_table(self.name)
+
+    @property
+    def is_time_partitioned(self):
+        """check whether the table is partitioned on time"""
+        return self._bq_table.time_partitioning is not None
+
+    @functools.cached_property
+    def time_partitions(self):
+        """check whether the table is partitioned on time"""
+        if self.is_time_partitioned:
+            partition_type = self._bq_table.time_partitioning.type_
+            partitions = self.source.client.list_partitions(self._bq_table)
+        else:
+            return None 
+
+        def partitions_to_datetime(partitions, fmt):
+            return [datetime.strptime(partition, fmt) for partition in partitions]
+
+        if partition_type == 'YEAR':
+            return partitions_to_datetime(partitions, '%Y')
+        if partition_type == 'MONTH':
+            return partitions_to_datetime(partitions, '%Y%m')
+        if partition_type == 'DAY':
+            return partitions_to_datetime(partitions, '%Y%m%d')
+        if partition_type == 'HOUR':
+            return partitions_to_datetime(partitions, '%Y%m%d%H')
+        else:
+            return partitions
+
+    @property
+    def latest_partition(self):
+        return max(self.time_partitions)
+    
+    @property
+    def earliest_partition(self):
+        return min(self.time_partitions)
+
+    @property
+    def time_partition_column(self):
+        if self.is_time_partitioned:
+            return self._bq_table.time_partitioning.field
+        else:
+            return None
+
+    @property
+    def num_rows(self):
+        return self._bq_table.num_rows
 
 
 def rename_partitioned_column(table_expr, bq_table, partition_col):
